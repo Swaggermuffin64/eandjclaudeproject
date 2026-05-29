@@ -1,6 +1,8 @@
-export type PipelineStepName = 'ingest' | 'template' | 'dossier' | 'score' | 'audit';
+export type PipelineStepName = 'ingest' | 'template' | 'dossier' | 'score';
 
 export type PipelineStatus = 'pending' | 'processing' | 'completed' | 'error';
+
+export type RubricType = 'life-sciences' | 'technology';
 
 export interface PipelineStepResponse {
   step: PipelineStepName;
@@ -8,3 +10,75 @@ export interface PipelineStepResponse {
   data: Record<string, unknown> | null;
   timestamp: string;
 }
+
+// SSE event types streamed from backend to frontend
+
+export interface StepStartEvent {
+  type: 'step:start';
+  step: PipelineStepName;
+  timestamp: string;
+}
+
+export interface StepCompleteEvent {
+  type: 'step:complete';
+  step: PipelineStepName;
+  timestamp: string;
+}
+
+export interface ToolCallEvent {
+  type: 'tool:call';
+  step: PipelineStepName;
+  tool: string;
+  input: string;
+  timestamp: string;
+}
+
+export interface ToolResultEvent {
+  type: 'tool:result';
+  step: PipelineStepName;
+  tool: string;
+  summary: string;
+  timestamp: string;
+}
+
+export interface TextDeltaEvent {
+  type: 'text:delta';
+  step: PipelineStepName;
+  content: string;
+  timestamp: string;
+}
+
+export interface ResultDossierEvent {
+  type: 'result:dossier';
+  content: string;
+  timestamp: string;
+}
+
+export interface ResultScoreEvent {
+  type: 'result:score';
+  content: string;
+  timestamp: string;
+}
+
+export interface PipelineCompleteEvent {
+  type: 'pipeline:complete';
+  timestamp: string;
+}
+
+export interface PipelineErrorEvent {
+  type: 'pipeline:error';
+  error: string;
+  step: PipelineStepName;
+  timestamp: string;
+}
+
+export type PipelineEvent =
+  | StepStartEvent
+  | StepCompleteEvent
+  | ToolCallEvent
+  | ToolResultEvent
+  | TextDeltaEvent
+  | ResultDossierEvent
+  | ResultScoreEvent
+  | PipelineCompleteEvent
+  | PipelineErrorEvent;
