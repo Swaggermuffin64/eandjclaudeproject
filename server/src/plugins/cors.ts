@@ -3,6 +3,6 @@ import { FastifyInstance } from 'fastify';
 
 export async function registerCors(app: FastifyInstance) {
   await app.register(cors, {
-    origin: 'http://localhost:5173',
+    origin: 'http://localhost:3000',
   });
 }
