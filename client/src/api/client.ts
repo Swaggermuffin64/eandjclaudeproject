@@ -1,20 +1,79 @@
-import type { PipelineStepResponse, PipelineStepName } from '@shared/types/pipeline';
+import type { PipelineEvent, RubricType } from '@shared/types/pipeline';
 
 const BASE_URL = 'http://localhost:3001/api';
+
+export function startPipeline(
+  primaryPdf: File,
+  supplementaryPdfs: File[],
+  rubric: RubricType,
+  onEvent: (event: PipelineEvent) => void,
+): AbortController {
+  const controller = new AbortController();
+
+  const formData = new FormData();
+  formData.append('primaryPdf', primaryPdf);
+  for (const file of supplementaryPdfs) {
+    formData.append('supplementaryPdfs', file);
+  }
+  formData.append('rubric', rubric);
+
+  fetch(`${BASE_URL}/pipeline/run`, {
+    method: 'POST',
+    body: formData,
+    signal: controller.signal,
+  })
+    .then(async (response) => {
+      if (!response.ok) {
+        const body = await response.json().catch(() => ({ error: `HTTP ${response.status}` }));
+        onEvent({
+          type: 'pipeline:error',
+          error: body.error || `HTTP ${response.status}`,
+          step: 'ingest',
+          timestamp: new Date().toISOString(),
+        });
+        return;
+      }
+
+      const reader = response.body!.getReader();
+      const decoder = new TextDecoder();
+      let buffer = '';
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n');
+        buffer = lines.pop() || '';
+
+        for (const line of lines) {
+          if (line.startsWith('data: ')) {
+            try {
+              const event = JSON.parse(line.slice(6)) as PipelineEvent;
+              onEvent(event);
+            } catch {
+              // Skip malformed events
+            }
+          }
+        }
+      }
+    })
+    .catch((err) => {
+      if (err.name !== 'AbortError') {
+        onEvent({
+          type: 'pipeline:error',
+          error: err.message || 'Network error',
+          step: 'ingest',
+          timestamp: new Date().toISOString(),
+        });
+      }
+    });
+
+  return controller;
+}
 
 export async function fetchHealth(): Promise<{ status: string; timestamp: string }> {
   const res = await fetch(`${BASE_URL}/health`);
   if (!res.ok) throw new Error(`Health check failed: ${res.status}`);
-  return res.json();
-}
-
-export async function runPipelineStep(
-  step: PipelineStepName,
-): Promise<PipelineStepResponse> {
-  const res = await fetch(`${BASE_URL}/pipeline/${step}`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-  });
-  if (!res.ok) throw new Error(`Pipeline step "${step}" failed: ${res.status}`);
   return res.json();
 }
