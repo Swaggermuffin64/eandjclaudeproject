@@ -1,4 +1,4 @@
-import type { PipelineStepResponse } from '@shared/types/pipeline';
+import type { PipelineStepResponse, PipelineStepName } from '@shared/types/pipeline';
 
 const BASE_URL = 'http://localhost:3001/api';
 
@@ -9,7 +9,7 @@ export async function fetchHealth(): Promise<{ status: string; timestamp: string
 }
 
 export async function runPipelineStep(
-  step: string,
+  step: PipelineStepName,
 ): Promise<PipelineStepResponse> {
   const res = await fetch(`${BASE_URL}/pipeline/${step}`, {
     method: 'POST',
