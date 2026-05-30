@@ -49,9 +49,9 @@ export function usePipeline() {
   const abortRef = useRef<AbortController | null>(null);
   const eventIdRef = useRef(0);
 
-  const addFeedEvent = useCallback((type: string, message: string, step?: string) => {
+  const addFeedEvent = useCallback((type: string, message: string, step?: string, subcall?: string) => {
     const id = eventIdRef.current++;
-    setFeedEvents((prev) => [...prev, { id, type, step, message, timestamp: new Date().toISOString() }]);
+    setFeedEvents((prev) => [...prev, { id, type, step, subcall, message, timestamp: new Date().toISOString() }]);
   }, []);
 
   const addFiles = useCallback((newFiles: File[]) => {
@@ -156,7 +156,7 @@ export function usePipeline() {
           ...prev,
           [event.subcall]: { step: event.step, state: 'running' },
         }));
-        addFeedEvent(event.type, `${event.subcall} started`, event.step);
+        addFeedEvent(event.type, `${event.subcall} started`, event.step, event.subcall);
         break;
 
       case 'subcall:complete':
@@ -164,7 +164,7 @@ export function usePipeline() {
           ...prev,
           [event.subcall]: { step: event.step, state: 'done' },
         }));
-        addFeedEvent(event.type, `${event.subcall} complete`, event.step);
+        addFeedEvent(event.type, `${event.subcall} complete`, event.step, event.subcall);
         break;
 
       case 'result:dossier':
