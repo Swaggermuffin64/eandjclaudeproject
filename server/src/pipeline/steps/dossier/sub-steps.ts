@@ -1,6 +1,6 @@
 import type Anthropic from '@anthropic-ai/sdk';
 import type { PipelineEmitter } from '../../types.js';
-import { callOpus } from '../../claude/client.js';
+import { callOpus, type SystemPart } from '../../claude/client.js';
 import {
   getDossierPreambleMinimal,
   getDossierPreambleResearch,
@@ -14,13 +14,8 @@ import {
 // Module-level cached preambles — tailored per sub-step type to reduce tokens
 // ---------------------------------------------------------------------------
 
-/** Section 1 only (role + prohibited outputs). For R0, R6-R8. */
 const PREAMBLE_MINIMAL = getDossierPreambleMinimal();
-
-/** Sections 1-3 (role + classification tags + scarcity rules). For research blocks. */
 const PREAMBLE_RESEARCH = getDossierPreambleResearch();
-
-/** Sections 1-4 (research + routing ambiguity protocol). For R2 only. */
 const PREAMBLE_ROUTING = getDossierPreambleRouting();
 
 // ---------------------------------------------------------------------------
@@ -35,11 +30,17 @@ function makeWebSearchTool(maxUses: number): Anthropic.Tool {
   } as unknown as Anthropic.Tool;
 }
 
+/** Build cacheable system parts: preamble (cached) + operator inputs (cached) + instructions (uncached). */
+function buildSystemParts(preamble: string, filledTemplate: string, instructions: string): SystemPart[] {
+  return [
+    { text: preamble, cache: true },
+    { text: `Operator inputs:\n\n${filledTemplate}`, cache: true },
+    { text: instructions },
+  ];
+}
+
 /**
  * Shared helper for criterion sub-blocks (C1-C7).
- * Each criterion call follows the same shape: system prompt built from the
- * preamble + the sub-block definition, user content that includes operator
- * inputs and any prior block outputs needed as context.
  */
 async function runCriterionBlock(options: {
   subBlockId: string;
@@ -53,20 +54,18 @@ async function runCriterionBlock(options: {
   const { subBlockId, label, filledTemplate, priorContext, emitter, tools, maxTokens } = options;
   const blockDef = getDossierSubBlock(subBlockId);
 
-  const systemPrompt = `${PREAMBLE_RESEARCH}
-
-You are producing ONLY Sub-Block ${subBlockId} (${label}) of the research dossier.
+  const instructions = `You are producing ONLY Sub-Block ${subBlockId} (${label}) of the research dossier.
 
 ${blockDef}
 
 Produce ${subBlockId} in full. Do NOT produce any other blocks.`;
 
   const userContent = priorContext
-    ? `Operator inputs:\n\n${filledTemplate}\n\nPrior research context:\n\n${priorContext}\n\nProduce Sub-Block ${subBlockId} only.`
-    : `Operator inputs:\n\n${filledTemplate}\n\nProduce Sub-Block ${subBlockId} only.`;
+    ? `Prior research context:\n\n${priorContext}\n\nProduce Sub-Block ${subBlockId} only.`
+    : `Produce Sub-Block ${subBlockId} only.`;
 
   return callOpus({
-    systemPrompt,
+    systemParts: buildSystemParts(PREAMBLE_RESEARCH, filledTemplate, instructions),
     userContent,
     emitter,
     step: 'dossier',
@@ -85,17 +84,14 @@ export async function runR0(
 ): Promise<string> {
   const blockDef = getDossierOutputBlock('R0');
 
-  const systemPrompt = `${PREAMBLE_MINIMAL}
-
-You are producing ONLY Block R0 (Research Plan) of the research dossier.
+  return callOpus({
+    systemParts: buildSystemParts(PREAMBLE_MINIMAL, filledTemplate,
+      `You are producing ONLY Block R0 (Research Plan) of the research dossier.
 
 ${blockDef}
 
-Produce R0 in full. Do NOT produce any other blocks.`;
-
-  return callOpus({
-    systemPrompt,
-    userContent: `Operator inputs:\n\n${filledTemplate}\n\nProduce Block R0 only.`,
+Produce R0 in full. Do NOT produce any other blocks.`),
+    userContent: 'Produce Block R0 only.',
     emitter,
     step: 'dossier',
     maxTokens: 4096,
@@ -113,17 +109,14 @@ export async function runR1(
 ): Promise<string> {
   const blockDef = getDossierOutputBlock('R1');
 
-  const systemPrompt = `${PREAMBLE_RESEARCH}
-
-You are producing ONLY Block R1 (Entity Identification) of the research dossier.
+  return callOpus({
+    systemParts: buildSystemParts(PREAMBLE_RESEARCH, filledTemplate,
+      `You are producing ONLY Block R1 (Entity Identification) of the research dossier.
 
 ${blockDef}
 
-Produce R1 in full. Do NOT produce any other blocks.`;
-
-  return callOpus({
-    systemPrompt,
-    userContent: `Operator inputs:\n\n${filledTemplate}\n\nPrior research context:\n\n${r0}\n\nProduce Block R1 only.`,
+Produce R1 in full. Do NOT produce any other blocks.`),
+    userContent: `Prior research context:\n\n${r0}\n\nProduce Block R1 only.`,
     emitter,
     step: 'dossier',
     tools: [makeWebSearchTool(10)],
@@ -142,17 +135,14 @@ export async function runR2(
 ): Promise<string> {
   const blockDef = getDossierOutputBlock('R2');
 
-  const systemPrompt = `${PREAMBLE_ROUTING}
-
-You are producing ONLY Block R2 (Capital Position) of the research dossier.
+  return callOpus({
+    systemParts: buildSystemParts(PREAMBLE_ROUTING, filledTemplate,
+      `You are producing ONLY Block R2 (Capital Position) of the research dossier.
 
 ${blockDef}
 
-Produce R2 in full. Do NOT produce any other blocks.`;
-
-  return callOpus({
-    systemPrompt,
-    userContent: `Operator inputs:\n\n${filledTemplate}\n\nPrior research context:\n\n${r0}\n\nProduce Block R2 only.`,
+Produce R2 in full. Do NOT produce any other blocks.`),
+    userContent: `Prior research context:\n\n${r0}\n\nProduce Block R2 only.`,
     emitter,
     step: 'dossier',
     tools: [makeWebSearchTool(15)],
@@ -171,17 +161,14 @@ export async function runR4a(
 ): Promise<string> {
   const blockDef = getDossierOutputBlock('R4a');
 
-  const systemPrompt = `${PREAMBLE_RESEARCH}
-
-You are producing ONLY Block R4a (Per-Founder Profiles) of the research dossier.
+  return callOpus({
+    systemParts: buildSystemParts(PREAMBLE_RESEARCH, filledTemplate,
+      `You are producing ONLY Block R4a (Per-Founder Profiles) of the research dossier.
 
 ${blockDef}
 
-Produce R4a in full. Do NOT produce any other blocks.`;
-
-  return callOpus({
-    systemPrompt,
-    userContent: `Operator inputs:\n\n${filledTemplate}\n\nPrior research context:\n\n${r0}\n\nProduce Block R4a only.`,
+Produce R4a in full. Do NOT produce any other blocks.`),
+    userContent: `Prior research context:\n\n${r0}\n\nProduce Block R4a only.`,
     emitter,
     step: 'dossier',
     tools: [makeWebSearchTool(30)],
@@ -202,9 +189,9 @@ export async function runR3(
   const blockDef = getDossierOutputBlock('R3');
   const disqualifierSchema = getDossierDisqualifierSchema();
 
-  const systemPrompt = `${PREAMBLE_RESEARCH}
-
-You are producing ONLY Block R3 (Disqualifier Screen) of the research dossier.
+  return callOpus({
+    systemParts: buildSystemParts(PREAMBLE_RESEARCH, filledTemplate,
+      `You are producing ONLY Block R3 (Disqualifier Screen) of the research dossier.
 
 ${blockDef}
 
@@ -212,11 +199,8 @@ Reference the disqualifier schema below when evaluating disqualifiers:
 
 ${disqualifierSchema}
 
-Produce R3 in full. Do NOT produce any other blocks.`;
-
-  return callOpus({
-    systemPrompt,
-    userContent: `Operator inputs:\n\n${filledTemplate}\n\nPrior research context:\n\n${r0}\n\n${r4a}\n\nProduce Block R3 only.`,
+Produce R3 in full. Do NOT produce any other blocks.`),
+    userContent: `Prior research context:\n\n${r0}\n\n${r4a}\n\nProduce Block R3 only.`,
     emitter,
     step: 'dossier',
     tools: [makeWebSearchTool(20)],
@@ -378,17 +362,14 @@ export async function runR5(
 ): Promise<string> {
   const blockDef = getDossierOutputBlock('R5');
 
-  const systemPrompt = `${PREAMBLE_RESEARCH}
-
-You are producing ONLY Block R5 (Cross-Validation) of the research dossier.
+  return callOpus({
+    systemParts: buildSystemParts(PREAMBLE_RESEARCH, filledTemplate,
+      `You are producing ONLY Block R5 (Cross-Validation) of the research dossier.
 
 ${blockDef}
 
-Produce R5 in full. Do NOT produce any other blocks.`;
-
-  return callOpus({
-    systemPrompt,
-    userContent: `Operator inputs:\n\n${filledTemplate}\n\nPrior research context:\n\n${r3}\n\n${r4a}\n\n${r4b}\n\nProduce Block R5 only.`,
+Produce R5 in full. Do NOT produce any other blocks.`),
+    userContent: `Prior research context:\n\n${r3}\n\n${r4a}\n\n${r4b}\n\nProduce Block R5 only.`,
     emitter,
     step: 'dossier',
     tools: [makeWebSearchTool(15)],
@@ -409,9 +390,9 @@ export async function runR6R7R8(
   const r7Def = getDossierOutputBlock('R7');
   const r8Def = getDossierOutputBlock('R8');
 
-  const systemPrompt = `${PREAMBLE_MINIMAL}
-
-You are producing Blocks R6 (Assembly), R7 (Completion Gate), and R8 (Handoff) of the research dossier.
+  return callOpus({
+    systemParts: buildSystemParts(PREAMBLE_MINIMAL, filledTemplate,
+      `You are producing Blocks R6 (Assembly), R7 (Completion Gate), and R8 (Handoff) of the research dossier.
 
 ${r6Def}
 
@@ -419,11 +400,8 @@ ${r7Def}
 
 ${r8Def}
 
-Produce R6, R7, and R8 in full. Do NOT produce any other blocks.`;
-
-  return callOpus({
-    systemPrompt,
-    userContent: `Operator inputs:\n\n${filledTemplate}\n\nAll prior dossier blocks:\n\n${allPriorBlocks}\n\nProduce Blocks R6, R7, and R8.`,
+Produce R6, R7, and R8 in full. Do NOT produce any other blocks.`),
+    userContent: `All prior dossier blocks:\n\n${allPriorBlocks}\n\nProduce Blocks R6, R7, and R8.`,
     emitter,
     step: 'dossier',
     maxTokens: 16384,

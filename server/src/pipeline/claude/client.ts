@@ -14,13 +14,32 @@ function getClient(): Anthropic {
   return client;
 }
 
+export interface SystemPart {
+  text: string;
+  cache?: boolean;
+}
+
 export interface ClaudeCallOptions {
-  systemPrompt: string;
+  /** Simple string system prompt (no caching). */
+  systemPrompt?: string;
+  /** Structured system prompt with per-part cache control. Takes precedence over systemPrompt. */
+  systemParts?: SystemPart[];
   userContent: Anthropic.MessageCreateParams['messages'][0]['content'];
   emitter: PipelineEmitter;
   step: PipelineStepName;
   tools?: Anthropic.Tool[];
   maxTokens?: number;
+}
+
+function buildSystemParam(options: ClaudeCallOptions): string | Anthropic.TextBlockParam[] {
+  if (options.systemParts) {
+    return options.systemParts.map((part) => ({
+      type: 'text' as const,
+      text: part.text,
+      ...(part.cache ? { cache_control: { type: 'ephemeral' as const } } : {}),
+    }));
+  }
+  return options.systemPrompt ?? '';
 }
 
 export async function callSonnet(options: ClaudeCallOptions): Promise<string> {
@@ -32,8 +51,9 @@ export async function callOpus(options: ClaudeCallOptions): Promise<string> {
 }
 
 async function callModel(model: string, options: ClaudeCallOptions): Promise<string> {
-  const { systemPrompt, userContent, emitter, step, tools, maxTokens = 16384 } = options;
+  const { userContent, emitter, step, tools, maxTokens = 16384 } = options;
   const anthropic = getClient();
+  const system = buildSystemParam(options);
 
   const messages: Anthropic.MessageParam[] = [
     { role: 'user', content: userContent },
@@ -45,7 +65,7 @@ async function callModel(model: string, options: ClaudeCallOptions): Promise<str
     const stream = anthropic.messages.stream({
       model,
       max_tokens: maxTokens,
-      system: systemPrompt,
+      system,
       messages,
       ...(tools && tools.length > 0 ? { tools } : {}),
     });
