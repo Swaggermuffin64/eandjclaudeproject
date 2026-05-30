@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TECHNOLOGY COMPANY FUNDRAISING ICP EVALUATION INSTRUMENT
+  Version 1.0 — Shared Sections (Evaluation Context, Routing Logic, Output Format)
+  These sections apply to both Profile A and Profile B.
+  Profile-specific criteria are in separate files:
+    - Technology Rubric - Profile A.xml
+    - Technology Rubric - Profile B.xml
+-->
+
+<rubric
+  version="1.0"
+  revision_date="2026-05-12"
+  evaluation_target="Fundraising Velocity and Investor Appetite"
+  scope="Private technology companies raising $500K-$15M (with tolerance band to $16.5M)"
+  not_for="Due diligence, portfolio management, technical merit evaluation">
+
+
+<block id="1.1" name="Instrument Purpose">
+This is a two-profile Ideal Company Profile (ICP) scoring instrument built for a fundraiser to use as a top-of-funnel qualification and prioritization tool. Its purpose is to evaluate private technology companies (software, AI/ML, developer tools, cybersecurity, defense/dual-use, fintech, health tech, climate tech) that are actively seeking capital in the $500K–$15M range and produce a structured, scored assessment of each company's probability of successfully closing a funding round.
+This instrument is not a due diligence tool and was not designed for technical merit evaluation or investment decision-making. It scores fundraising velocity and investor appetite, not product quality, code quality, architectural elegance, or engineering merit.
+</block>
+
+<block id="1.2" name="Defining Objective">
+The rubric is explicitly built to identify companies that can raise money most easily — not companies with the best technology or most promising products. Technical promise and fundraising ease diverge meaningfully in practice. The evaluation target is investor psychology, deal velocity, and capital market dynamics. Every criterion, weight, and scoring band is calibrated against this objective.
+STANDING INSTRUCTION: The objective is fundraising velocity and investor appetite — not technical promise. Score accordingly.
+</block>
+
+<block id="1.3" name="Client Specifications">
+<spec name="Funding Stage Fit">Series A (100%), Seed/Pre-Seed+ (85%), Pre-Seed below $500K with no institutional participation (excluded)</spec>
+<spec name="Fundraising Target Range">$500K–$15M</spec>
+<spec name="Team Priority">Single most important criterion at Profile B (Seed/Pre-Seed+). Strong preference for halo-employer alumni, repeat founders, and technical founders with research-lab or frontier-lab pedigree. Solo founders accepted with profile-specific penalty per A1/B1 solo-founder protocol.</spec>
+<spec name="Cap Table">Sporadic or messy cap tables are a hard disqualifier across both profiles. Founder ownership below 10% post-Seed, stacked SAFEs above $3M with no priced round in 24+ months, and IP not assigned to the company are additional hard disqualifiers per Section 2.3.</spec>
+<spec name="Geography">No restrictions; globally applicable.</spec>
+<spec name="Partnerships">Preferred but not a hard requirement.</spec>
+<spec name="IP">Software-appropriate IP expectations: patents weighted at zero or slight-negative for pure software companies (research convergence: Feld, Wilson, Lemley; post-Alice empirical evidence). Patents and trade secrets weighted heavily for hardware, deep-tech, defense, and biotools companies via application notes. Moat-buildability trajectory replaces moat existence as the primary Profile B signal.</spec>
+</block>
+
+<block id="1.4" name="Two-Profile Structure">
+The $500K–$15M range is split into Profile A ($3M–$15M) and Profile B ($500K–$3M) to create meaningful separation between two genuinely different fundraising environments. Because no universal regulatory stage applies across technology companies, the rubric uses three routing inputs simultaneously: (1) raise size, (2) development stage selected from the enumerated taxonomy in Section 2.1, and (3) investor composition characterized by the four-tier classification in Section 5 Block 1. The development stage taxonomy serves the dual function that FDA regulatory stage serves in LS v5.1 (anchor for routing logic plus primary product viability signal context); it is operationalized in Section 2.1 and applied through the Product/Traction Evidence criterion (A3/B3).
+</block>
+
+<block id="1.5" name="Information Scarcity Protocol" status="Revised — Tech v1.0 R1">
+
+When information for a criterion is insufficient to produce a confident score, assign the midpoint of the applicable scoring band and flag the score with [INSUFFICIENT DATA]. Do not penalize companies for missing information below the midpoint. This protocol applies to all criteria in both profiles. The Data Confidence indicator in Section 5 aggregates these flags to provide an overall assessment of score reliability.
+
+MIDPOINT-DEFAULT JUSTIFICATION STANDARD: When the midpoint-default is applied to a criterion, the Justification field must do more than cite protocol application. The evaluator must articulate why the midpoint — rather than a score above or below midpoint within the band — is appropriate given whatever partial evidence exists. If partial evidence supports a score above or below the midpoint, score accordingly and document the partial evidence. Reserve the exact midpoint for situations where evidence is genuinely absent and no directional signal is available.
+
+<two_track_classification>
+INFORMATION-SCARCE vs. INFORMATION-ABSENT CLASSIFICATION:
+
+Before applying the midpoint-default to any criterion, the evaluator must classify the missing information as one of two types:
+
+INFORMATION-SCARCE: Evidence exists that the company has engaged in the activity measured by this criterion, but the details are not publicly disclosed. The existence of the underlying activity is supported by some observable signal, even if specifics are not available. When information is SCARCE: apply the midpoint-default. Flag as [INSUFFICIENT DATA — INFORMATION-SCARCE]. In the Justification field, state the observable signal that confirms the underlying activity exists.
+
+INFORMATION-ABSENT: No evidence exists that the company has engaged in the activity measured by this criterion. The absence is not caused by non-disclosure of existing information but by the non-existence of the things the information would describe. When information is ABSENT: score in the lowest applicable band per the band definitions. The midpoint-default does not apply. Flag as [INSUFFICIENT DATA — INFORMATION-ABSENT] and document in the Justification field: (a) what evidence was searched for, (b) why the absence is classified as information-absent rather than information-scarce, and (c) the specific band assigned and its justification.
+
+AMBIGUOUS CASES: When partial evidence exists but it is ambiguous whether the underlying activity has occurred, default to INFORMATION-SCARCE and document the ambiguity. The INFORMATION-ABSENT classification should only be applied when the evaluator has actively searched for evidence of the underlying activity across available sources and found none.
+
+TECH-SPECIFIC OBSERVABLE SIGNALS — INFORMATION-SCARCE (activity exists but details not disclosed):
+A1/B1 Team Quality: Founder has confirmed employment history with any halo or relevant employer; LinkedIn profile shows active history; product was shipped (implying a team built it).
+A2/B2 Market and Sector: Company has a website; product addresses an identifiable market; sector classification can be assigned from product description.
+A3/B3 Product/Traction Evidence: Product is live (website, app store presence, GitHub repo); customers exist (logos, case studies, testimonials); fundraising has occurred (round announcements, Crunchbase data).
+A4/B4 Capital Efficiency: Round size disclosed; employee count observable (LinkedIn); time since last round known.
+A5/B5 Cap Table: Investor names disclosed; accelerator membership disclosed; lead investor identifiable; some terms inferable from round structure.
+A6/B6 Moat: Product is live and addressable; competitive landscape inferable; moat claims may or may not be articulated publicly.
+A7/B7 Exit Pathway: Sector inferable; acquirer universe assessable from named strategic acquirers in past M&amp;A activity (independent of company).
+
+TECH-SPECIFIC TRIGGER CONDITIONS — INFORMATION-ABSENT (underlying activity does not exist):
+A1/B1 Team Quality: No employees confirmed on LinkedIn; founder LinkedIn profile non-existent or unverifiable; founder identity uncorroborated by third-party sources.
+A2/B2 Market and Sector: No website or website does not describe a product or sector; pre-product status confirmed by absence of any product description.
+A3/B3 Product/Traction Evidence: No GitHub activity (no code shipped) for software companies; no app store presence for consumer; no website with product page; zero customer references in any source; zero press coverage.
+A4/B4 Capital Efficiency: No fundraising disclosed and no documented capital history (founder cannot attest to capital raised because none has been raised).
+A5/B5 Cap Table: No investor names disclosed and no founder attestation possible (company has no investors).
+A6/B6 Moat: No product live and no articulated moat thesis (pre-product company with no public materials).
+A7/B7 Exit Pathway: Sector is so novel that no acquirer universe can be defined (extremely rare).
+</two_track_classification>
+
+<founder_attestation_protocol>
+FOUNDER ATTESTATION PROTOCOL FOR HIGHEST-PREDICTIVE, LOWEST-OBSERVABLE SUB-COMPONENTS:
+
+Certain sub-components of the highest predictive value are structurally non-public in technology companies (Net Revenue Retention, Burn Multiple, founder ownership percentage, SAFE stack total). The rubric accepts founder attestation by band as a valid scoring input for these sub-components, subject to the following protocol:
+
+NRR (A3 Profile A): Founder attestation by band (≥120%, 110–120%, 100–110%, &lt;100%) accepted as primary scoring input. Refusal to attest moves the score to the lower portion of the applicable band, not midpoint. Founder attestation flagged INFORMATION-SCARCE in Data Confidence.
+
+BURN MULTIPLE (A4/B4 when revenue exists): Founder attestation by band (&lt;1×, 1–1.5×, 1.5–2×, 2–3×, &gt;3×) accepted. Refusal triggers INFORMATION-SCARCE flag.
+
+CAP TABLE SPECIFICS (A5/B5 — founder ownership, SAFE stack total): Founder attestation by band (founder ownership: &gt;50%, 30–50%, 15–30%, &lt;15%) accepted. Refusal to attest at A5/B5 is itself a negative signal moving score to the lower portion of band and is also a contributing condition to the cap table integrity disqualifier when refusal is paired with other ambiguity signals.
+
+DATA CONFIDENCE AGGREGATION: When two or more criteria carry INFORMATION-SCARCE flags driven by founder-attestation-only signals, the aggregate Data Confidence rating moves to MODERATE. When four or more criteria carry such flags, the rating moves to LOW. This calibration matches LS v5.1 §5 Block 4 Data Confidence rating definitions and applies in parallel to those definitions: an evaluation may carry MODERATE Data Confidence via the founder-attestation aggregation rule even when total INSUFFICIENT DATA flag count would otherwise suggest HIGH.
+
+DOCUMENTATION REQUIREMENT: When founder attestation is the primary scoring source for any criterion, the Justification field must state explicitly: "Founder attestation by band [stated band]; INFORMATION-SCARCE flag invoked." Silent reliance on founder attestation without disclosure is not permitted.
+</founder_attestation_protocol>
+</block>
+
+<block id="1.6" name="Market Context Note Protocol">
+Any deviation from the client's original specifications in the scoring criteria, weights, or band definitions must be documented in a Market Context Note at the point of deviation. The evaluator has latitude to adjust, reorder, replace, or add criteria relative to the original specifications, provided deviations are disclosed.
+</block>
+
+<block id="1.7" name="Scoring Architecture">
+Both profiles score on a base scale of 100 points. The combined AI Modifier and Market-Evidence (M&amp;A) Modifier on the Sector criterion (A2/B2) can adjust the total by up to ±2 points, producing a scoring range of 98–102 points. Fundability tier thresholds are defined in absolute point values and apply across the full scoring range. The 96–102 envelope of LS v5.1 is preserved in form; in tech v1.0, the operative envelope is 98–102 because the combined-modifier cap of ±2 governs all sector-criterion adjustments. See Section 3 A2 and Section 4 B2 for the cap mechanism and Section 5 Block 3 modifier sub-block for output documentation.
+
+DESIGN CONSTRAINT: This instrument uses an additive, independent-criterion scoring architecture. When a single development (such as a strategic pivot, key person departure, or regulatory event) affects multiple criteria simultaneously, the independent scoring structure cannot express the correlated risk quantitatively. Evaluators should describe cross-criterion risk correlations qualitatively in the Top 3 Fundability Risks (Block 5) and Fundraising Outlook (Block 5) sections of the output. The quantitative scores for each criterion remain independently assessed per their respective band definitions.
+
+CROSS-CRITERION SYMMETRY: When a single risk affects multiple criteria and appears in multiple Top 3 Fundability Risk entries in Block 5, each risk entry must note the correlation to the other affected criteria. A cross-criterion risk described from only one direction understates its aggregate impact on the evaluation.
+</block>
+
+</section>
+
+<!-- ============================================================
+     SECTION 2 — ROUTING LOGIC
+     ============================================================ -->
+
+<section id="2" name="Routing Logic">
+
+<block id="2.1" name="Profile Assignment Rules">
+Every company evaluated under this instrument must first be routed to Profile A or Profile B. Routing is based on three required inputs: (1) the company's target raise size; (2) the company's development stage selected from the enumerated taxonomy below; and (3) the company's investor composition characterized by the four-tier classification defined in Section 5 Block 1. The routing decision is made before any criterion is scored. Omission of any routing input is a format error.
+
+<enumerated_stages>
+DEVELOPMENT STAGE ENUMERATED LIST (Software/Software-AI primary):
+Pre-Product — research, prototype, or demo only; no shippable product.
+Pre-Revenue Closed Beta — live product with limited access (alpha or closed beta); no commercialization motion.
+Pre-Revenue Public Beta or Public Release — product live and accessible; no paying customers.
+Commercial Pre-Revenue — product live with design partners or LOIs; no booked ARR.
+Commercial Early Revenue — booked ARR present but below $500K, or below $1M for AI-native applied.
+Commercial Scaling Revenue — ARR between $500K and $3M (or $1M–$3M for AI-native applied).
+Commercial Series A+ Revenue — ARR above $3M, structurally aligned with Series A graduation thresholds.
+Growth Stage — ARR above $10M; structurally above the upper ceiling of this instrument.
+
+HARDWARE / DEEP-TECH / DEFENSE / SPACE SUPPLEMENTARY STAGES (applied in parentheses when relevant, with application notes on affected criteria per Section 2.2):
+Pre-Hardware — concept, IP only.
+Prototype — working hardware, uncertified.
+Pre-Certification — production-grade hardware awaiting certification.
+Certified, Pre-Revenue — certified, no contracts booked.
+Contracted Revenue — active government, DoD, or strategic contracts (for defense/dual-use).
+</enumerated_stages>
+
+<profile_route id="A" name="Profile A — $3M–$15M Raise Environment">
+Assign to Profile A if the company's target raise is $3M–$15M inclusive. Profile A companies are typically at Commercial Early Revenue through Commercial Series A+ Revenue stage with institutional Series A lead engagement and formal board governance. Profile A expects evidence of unit economics, named institutional lead investor, experienced operating teams with halo-employer pedigree or prior founding experience, and institutional-quality cap tables. Where development stage and investor composition suggest Series A regardless of disclosed raise size (e.g., bridge round at $3M off a prior Series A), Profile A applies.
+</profile_route>
+
+<profile_route id="B" name="Profile B — $500K–$3M Raise Environment">
+Assign to Profile B if the company's target raise is $500K to under $3M. Profile B companies are typically at Pre-Product through Commercial Scaling Revenue stage with Seed-stage micro-VC lead, accelerator-anchored, or angel-syndicate composition. Profile B expects strong team and founder-market fit signals, emerging traction or design-partner validation, accelerator tier signals as anchor lead-investor proxies, and clean SAFE-based or priced-seed cap table structure.
+</profile_route>
+
+<profile_route id="GAP" name="Gap Range — $2.5M–$3.5M">
+Companies targeting $2.5M–$3.5M fall in the gap between profiles. Resolve routing using the secondary inputs: if development stage is Commercial Scaling Revenue or above ($500K+ ARR, or AI-native applied equivalent) AND investor composition reflects institutional Series A lead engagement → Profile A. If development stage is Commercial Pre-Revenue, Commercial Early Revenue (below $500K ARR), Pre-Product, or earlier AND investor composition is Seed-stage micro-VC, accelerator-anchored, or angel syndicate → Profile B. If routing is ambiguous within the gap range (e.g., bridge round with mixed signals), conduct a split evaluation under both profiles and report the score range, mirroring LS v5.1 §2.1 gap protocol.
+</profile_route>
+
+<profile_route id="PRE_SEED" name="Pre-Seed Below $500K With Institutional Participation">
+Companies with target raise below $500K but with at least one institutional participant (named VC fund or Tier 1/2 accelerator per Section 3 A5 / Section 4 B5 accelerator tier classification) are routed to Profile B with an information-scarce flag. Companies with total raised under $275K and no institutional participation are classified Out of Scope — Pre-Seed Exclusion per Section 2.2.
+</profile_route>
+</block>
+
+<block id="2.2" name="Scope Boundaries" status="Revised — Tech v1.0 R2; HD-Tech-1a">
+
+The instrument is calibrated for private capital markets. Publicly traded companies and pre-seed companies (total raised under $275K with no institutional participation) are OUT OF SCOPE. An OUT OF SCOPE flag is a scope/instrument mismatch, not a disqualifying deficiency. Out-of-scope companies may be evaluated as benchmark exercises if clearly flagged.
+
+<scope_boundary name="Upper Ceiling and Tolerance Band">
+Companies whose target raise is $15M or below are IN SCOPE. Companies whose target raise exceeds $15M but is at or below $16.5M (10% above the $15M ceiling) are classified as GRAY ZONE. Gray Zone companies are evaluated under Profile A with a mandatory Gray Zone scope flag in the output. The evaluator must note the overshoot in the Routing Rationale and acknowledge that the instrument's calibration may be less precise for raises above $15M. Companies whose target raise exceeds $16.5M are OUT OF SCOPE and may only be evaluated as benchmark exercises with an Out of Scope — Benchmark flag.
+</scope_boundary>
+
+<scope_boundary name="Lower Floor and Pre-Seed Exclusion">
+Companies with target raise of $500K or above are IN SCOPE under Profile B. Companies with target raise below $500K but with at least one institutional participant (named VC fund or Tier 1/2 accelerator) are IN SCOPE with information-scarce flag, routed to Profile B. Companies with total raised under $275K (Carta 2025 median post-money SAFE) AND no institutional participation are classified OUT OF SCOPE — Pre-Seed Exclusion. Pre-Seed Exclusion evaluations may proceed as benchmark exercises with an Out of Scope — Benchmark flag.
+</scope_boundary>
+
+<scope_boundary name="Hardware/Deep-Tech/Defense/Space Profile Limitation">
+The instrument is calibrated for software-primary and software-AI-primary technology companies with revenue-stage, user-growth, or open-source community signals as the dominant product viability anchors. Hardware-intensive companies — including pure hardware, robotics, physical AI with hardware dependence, deep-tech with capex requirements, defense/dual-use with government contract revenue, and space/aerospace — are within the general scope of the instrument but produce persistent band language friction, most notably on A3/B3 (Product/Traction Evidence, where certification milestones and government contract revenue replace ARR), A4/B4 (Capital Efficiency, where Burn Multiple tolerance is relaxed and capex/grants/debt funding replaces pure equity), A6/B6 (Competitive Moat, where patents and ITAR/EAR-protected IP function as practical patent equivalents), and A2/B2 (Market Opportunity, where Defense/Dual-Use, Robotics/Physical AI, and Space/Aerospace tier classifications apply).
+
+The v1.0 hardware application notes embedded within A2/B2, A3/B3, A4/B4, and A6/B6 collectively provide an analog framework for evaluating hardware-intensive companies. This framework is a documented boundary condition of the instrument, not a rubric deficiency. Evaluations of hardware-intensive companies conducted under this framework remain valid but carry lower rubric fit than evaluations of software-primary companies. Evaluators must document the hardware classification in the Block 1 Market Context Note field, identify which criteria required analog application via application notes, and note that rubric fit limitations apply.
+
+Clients whose target pipeline exceeds approximately 20% hardware/deep-tech/defense/space companies should consider commissioning a dedicated Profile C track calibrated to hardware fundability signals — including certification milestones, government contract revenue, capex/grants/debt funding structures, manufacturing-process power as moat, and 7–12 year exit timelines. See Future Revisions entry FV-tech-1 for the deferred Profile C design direction. Until such a track is developed, hardware-intensive companies continue to be evaluated under the analog framework with the boundary condition flagged in the Market Context Note.
+</scope_boundary>
+
+<scope_boundary name="AI-Native Frontier Fund-Mandate-Fit Limitation">
+Companies classified AI-Native Frontier per A2/B2 — research-lab pedigree (ex-OpenAI, ex-Anthropic, ex-DeepMind, ex-FAIR, ex-Meta AI, ex-Mistral, ex-Cohere senior research roles), proprietary training compute or training data, foundation-model-or-equivalent development, raising at $50M+ valuations — frequently operate at raise sizes ($50M–$2B+ seed rounds) that structurally exceed the primary audience's check-size range and check capacity even when the company's base scores are high. The evaluation proceeds under the appropriate profile (typically Profile A with a Gray Zone or Out of Scope — Benchmark flag depending on raise size), but a Fund-Mandate-Fit flag is invoked in Block 1 Market Context Note signaling that the appropriate investor archetype is Multi-Stage Series A Lead at $5M+ check size or out of audience scope entirely. The flag does not change tier assignment; it is documented for triage. Evaluators should not score the AI-Native Frontier classification as a fit problem under any criterion — the fit signal is captured at the scope-flag level.
+</scope_boundary>
+
+<scope_flag_definitions>
+<flag value="In Scope">Target raise falls within the $500K–$15M range. Standard evaluation applies.</flag>
+<flag value="Gray Zone">Target raise exceeds $15M but is at or below $16.5M (10% tolerance). Evaluation proceeds under Profile A with a mandatory acknowledgment that instrument calibration may be less precise.</flag>
+<flag value="Out of Scope — Benchmark">Target raise exceeds $16.5M, or company is publicly traded. Evaluation may proceed as a benchmark exercise if clearly flagged. Scores should not be compared directly to in-scope evaluations.</flag>
+<flag value="Out of Scope — Pre-Seed Exclusion">Total raised under $275K with no institutional participation. Evaluation may proceed as a benchmark exercise if clearly flagged.</flag>
+</scope_flag_definitions>
+</block>
+
+<block id="2.3" name="Automatic Disqualifiers" status="Revised — Tech v1.0 R3">
+
+The following conditions trigger automatic disqualification regardless of score. A disqualified company is classified as Out of Scope and does not receive a fundability tier assignment. If any disqualifier is triggered, the evaluation terminates after the Disqualifier Screen (Block 2 of the output format). No criterion scores, total score, or fundability tier are assigned. A score below 40 with no disqualifier triggered is classified as Tier 4 — Not Ready, not as Out of Scope. Out of Scope status is reserved for instrument scope mismatches and disqualifier triggers.
+
+The disqualifiers are organized in four categories below. Mark each as CLEAR, TRIGGERED with explanation, or NOT APPLICABLE where the non-applicability rule applies. Marking NOT APPLICABLE does not trigger disqualification.
+
+<disqualifier_category name="Cap Table and Deal Structure">
+<disqualifier id="a" name="Cap Table Integrity">
+Triggering condition: Sporadic, messy, or structurally compromised cap table with unresolved ownership disputes, missing documentation, or legal encumbrances. Refusal to provide a cap table summary by band (founder ownership, investor count, instrument types) when directly asked is itself a triggering condition.
+Observability: Founder attestation by band; Carta or equivalent cap-table-management tool inspection if disclosed; pattern of refusal across multiple direct questions.
+Non-applicability: None.
+</disqualifier>
+
+<disqualifier id="b" name="Founder Ownership Threshold">
+Triggering condition: Founder/CEO ownership below 10% post-Seed, or below 15% post-Series A standards. Excessive prior dilution that signals the founder is no longer aligned with the equity outcome.
+Observability: Founder attestation by band (founder ownership: &gt;50%, 30–50%, 15–30%, &lt;15%); LTSE or Carta benchmark comparison; cap table summary when available.
+Non-applicability: None.
+</disqualifier>
+
+<disqualifier id="c" name="SAFE Stack With No Priced Round">
+Triggering condition: Stacked SAFEs exceeding $3M total combined with no priced round in 24+ months. The stacked-SAFE-plus-stalled-pricing combination indicates material dilution risk and inability to attract a priced lead.
+Observability: Founder attestation; Crunchbase round history; Walker (Carta) framework for SAFE stack benchmarking; explicit absence of a priced round in the company's funding timeline.
+Non-applicability: None. SAFE stacks below $3M, or any SAFE stack with a priced round within 24 months, are handled as scored deductions within A5/B5 per the SAFE stack treatment sub-element, not as disqualifiers.
+</disqualifier>
+</disqualifier_category>
+
+<disqualifier_category name="Legal and IP">
+<disqualifier id="d" name="IP Not Assigned to Company">
+Triggering condition: Intellectual property underlying the company's product is not assigned to the company — for example, IP retained by individual founders without proper assignment agreements; IP retained by a university or prior employer without an exclusive license to the company; IP encumbered by competing claims. Refusal to confirm IP assignment when directly asked is itself a triggering condition.
+Observability: Founder attestation; standard institutional VC diligence question; refusal to confirm equals trigger.
+Non-applicability: None.
+</disqualifier>
+
+<disqualifier id="e" name="Pending Material Litigation">
+Triggering condition: Pending or unresolved material litigation that creates existential risk to the company's operations or IP position.
+Observability: Court records; founder disclosure; news coverage.
+Non-applicability: None.
+</disqualifier>
+
+<disqualifier id="f" name="Founder or Executive Misconduct">
+Triggering condition: Founder or C-suite executive subject to active SEC enforcement, regulatory enforcement (FTC, DOJ, equivalent), criminal proceedings related to securities fraud or technical misconduct, or equivalent.
+Observability: Public records (SEC EDGAR, court records, news coverage).
+Non-applicability: None.
+</disqualifier>
+</disqualifier_category>
+
+<disqualifier_category name="Team Integrity">
+<disqualifier id="g" name="Misrepresented Credentials">
+Triggering condition: Founder or executive credentials misrepresented in publicly disclosed materials — fabricated institutional affiliation, false employment history, false educational credentials. Differs from the Negative Credibility Signal Protocol (which applies scored deductions within A1/B1 for minor contradictions): this disqualifier applies only when material credentials are fabricated wholesale, not when claims are merely inflated.
+Observability: LinkedIn versus employer or university cross-check; reference checks; public records.
+Non-applicability: None.
+</disqualifier>
+
+<disqualifier id="h" name="Lack of Full-Time Founder Commitment">
+Triggering condition: Founder's LinkedIn or equivalent professional record shows current primary employer is not the company being evaluated, indicating part-time or side-project status.
+Observability: Direct LinkedIn observation; current-employer field.
+Non-applicability: Some specialized fields (e.g., professor-founders in deep-tech with documented sabbatical or transition timeline) may have legitimate dual-status arrangements at the earliest stages. Mark NOT APPLICABLE with documentation of the transition timeline if a clear path to full-time commitment is published or attested.
+</disqualifier>
+</disqualifier_category>
+
+<disqualifier_category name="Tech-Specific">
+<disqualifier id="i" name="Open-Source Signal Manipulation">
+Triggering condition: Documented evidence of open-source community-signal manipulation — purchased GitHub stars (CMU research documents $0.03–$0.85/star markets); anomalous star-acquisition velocity curves not matched by commit/issue/PR activity; fake contributor accounts; coordinated star campaigns. The triggering condition requires documented evidence of manipulation, not merely a high star count.
+Observability: Fork-to-star ratio analysis; star-acquisition velocity curve (star-history.com or equivalent); contributor count and authenticity check; issue/PR activity relative to star count.
+Non-applicability: Mark NOT APPLICABLE for closed-source companies or companies with no GitHub presence. Marking NOT APPLICABLE does not trigger disqualification.
+</disqualifier>
+
+<disqualifier id="j" name="Data Security Enforcement Action">
+Triggering condition: Active data security enforcement action — including a consent order, corrective action plan, or equivalent regulatory mandate from a data protection authority (HHS Office for Civil Rights under HIPAA, EU/UK data protection authorities under GDPR, FTC under consumer protection authorities, state attorneys general under state privacy law, or equivalent) — that materially impairs the company's ability to operate, retain customers, or handle regulated data.
+Observability: Regulatory database (HHS OCR Wall of Shame, FTC enforcement page, EU DPA decisions); public disclosure.
+Non-applicability: Mark NOT APPLICABLE for tech companies not handling protected health information, genomic data, regulated financial data, or other regulated data categories. Marking NOT APPLICABLE does not trigger disqualification. Mirrors LS v5.1 (b-alt) non-applicability rule.
+</disqualifier>
+</disqualifier_category>
+
+<scored_deductions>
+The following conditions are NOT automatic disqualifiers but produce scored deductions within their respective criteria. They are listed here for evaluator routing reference; documentation occurs at the criterion level.
+
+Stacked SAFEs $1M–$3M total without the 24-month no-priced-round combination: A5/B5 band deduction per the SAFE stack treatment sub-element (0.5–2 points depending on stack total).
+Co-founder departed without proper share repurchase, with departed founder retaining above 10% vested equity: A5/B5 band deduction (1–2 points); flag in Block 5.
+Missing 83(b) elections when confirmed: A5/B5 band deduction (1 point); cap table cleanup flagged.
+Non-standard preferred terms from prior rounds (greater-than-1× liquidation preference, participating preferred, super-pro-rata, full-ratchet) when discoverable from founder attestation: A5/B5 band deduction (1–2 points). When only discoverable through full legal diligence, flag in Block 5 only.
+Toxic prior investors (death-spiral notes, predatory venture debt with warrants, litigation-prone investors): A5/B5 band deduction.
+AI-Augmented Wrapper with no proprietary data, model work, or workflow lock-in, marketing as "AI-native": handled via A2/B2 AI Modifier (−1 to −2) and A6/B6 force-test deductions. Not a standalone disqualifier.
+Tier-1 multi-stage seed investor present but explicitly NOT leading the Series A when the round is in market: A5/B5 band deduction (1–2 points); Block 5 risk.
+Pure software startup with material founder time spent on patent prosecution at Seed: A6/B6 band deduction within Moat criterion (Software application note); not a disqualifier.
+</scored_deductions>
+</block>
+
+</section>
+
+<!-- ============================================================
+     SECTION 3 — PROFILE A EVALUATION RUBRIC
+     Target: Private technology companies raising $3M–$15M
+     Expected development stage: Commercial Early Revenue through Commercial Series A+ Revenue
+     WEIGHT CHECK: A1(24) + A2(16) + A3(30) + A4(10) + A5(8) + A6(6) + A7(6) = 100
+     NOTE: A2 base max = 16pts; with combined AI + M&A modifier capped at ±2 the criterion final range is 14–18 (scoring envelope 98–102)
+
+     BAND RANGE DERIVATION LOGIC (Profile A):
+     Bands follow the LS v5.1 proportional structure: top ~20–25%, upper-mid ~20–25%, lower-mid ~30%, lowest ~20–25%.
+     A1 (max 24): 19–24 top; 14–18 upper-mid; 7–13 lower-mid; 0–6 lowest.
+     A2 (max 16): 13–16 PEAK; 9–12 ACTIVE; 5–8 COOL; 0–4 COLD (per Design Brief C3a tier table).
+     A3 (max 30): 23–30 top; 16–22 upper-mid; 8–15 lower-mid; 0–7 lowest.
+     A4 (max 10): 8–10 top; 6–7 upper-mid; 3–5 lower-mid; 0–2 lowest.
+     A5 (max 8): 7–8 top; 5–6 upper-mid; 3–4 lower-mid; 0–2 lowest.
+     A6 (max 6): 5–6 top; 3–4 upper-mid; 1–2 lower-mid; 0 lowest.
+     A7 (max 6): 5–6 top; 3–4 upper-mid; 1–2 lower-mid; 0 lowest.
+     ============================================================ -->
+
+<section id="3" name="Profile A Evaluation Rubric">
+
+
+<block id="0" name="Evaluation Header">
+<instruction>Required for every evaluation. Provides traceability metadata.</instruction>
+<field name="Company Name">[Full legal name]</field>
+<field name="Company Address">[Primary office address]</field>
+<field name="Sector">[Primary Sector] / [Sub-Sector] / [AI Tier Classification] / [Business Model]. Primary Sector is one of: AI/ML, Cybersecurity, Fintech, Health Tech, Developer Tools, Defense/Dual-Use, Robotics, Consumer SaaS, Climate Tech, Vertical SaaS, or other classification per Section 3 A2 sector table. Sub-Sector identifies the specific sub-vertical (e.g., "AI-Coding," "Cyber-Identity," "Vertical-Legal"). AI Tier Classification is one of: AI-Native Frontier / AI-Native Applied / AI-Augmented Wrapper / Non-AI. Business Model is one of: Non-AI SaaS / AI-Native Applied SaaS / Pre-Product / Consumer / Developer Tools-Infrastructure / Hardware-Defense / Marketplace / Other. For multi-sector companies, choose the primary sector by use-of-proceeds focus and dominant revenue line; document cross-sector positioning in Block 1 Market Context Note.</field>
+<field name="Evaluation Date">[YYYY-MM-DD]</field>
+<field name="Rubric Version">[Version number and revision date]</field>
+<field name="Research Dossier Date">[YYYY-MM-DD]</field>
+<field name="Primary Sources">[List of primary source categories with numeric count or range. "Multiple" is not an acceptable count value. Use numeric counts or ranges for each category. Acceptable tech sources: founder interviews, product reviews (G2, ProductHunt, Capterra), app store rankings, GitHub activity metrics, LinkedIn headcount trends, accelerator membership, press coverage, Crunchbase/PitchBook data, Carta benchmark data, founder attestation by band, government contract data, patent filings, open-source community metrics.]</field>
+<field name="Evaluator">[Model identifier or human evaluator name]</field>
+</block>
+
+<block id="1" name="Routing Determination">
+<instruction>Establishes profile assignment and scope status before any scoring begins.</instruction>
+<field name="Profile Assigned">[Profile A / Profile B / Out of Scope — Benchmark / Out of Scope — Pre-Seed Exclusion]</field>
+<field name="Target Raise">[$X.XM]</field>
+<field name="Total Raised to Date">[$X.XM]</field>
+<field name="Development Stage">[Select from enumerated list: Pre-Product / Pre-Revenue Closed Beta / Pre-Revenue Public Beta or Public Release / Commercial Pre-Revenue / Commercial Early Revenue / Commercial Scaling Revenue / Commercial Series A+ Revenue / Growth Stage. For hardware-intensive companies, append supplementary stage in parentheses: (Pre-Hardware) / (Prototype) / (Pre-Certification) / (Certified, Pre-Revenue) / (Contracted Revenue). Select the single most accurate value.]</field>
+<field name="Investor Composition">[Select from four-tier classification: Institutional Series A Lead / Seed-Stage Micro-VC Lead / Accelerator-Anchored / Angel Syndicate-Party Round-No Real Lead. See routing_input_definitions below.]</field>
+<field name="Routing Rationale">[1–3 sentences explicitly citing all three required inputs: (1) RAISE SIZE — state the target raise amount or note if unconfirmed; (2) DEVELOPMENT STAGE — state the development stage value assigned in the field above; (3) INVESTOR COMPOSITION — state the tier from the routing_input_definitions classification. All three inputs are required. Omission of any input is a format error.]</field>
+<field name="Split Evaluation">[No / Yes — if Yes, indicate both profiles per Section 2.1 gap range protocol]</field>
+<field name="Scope Flag">[In Scope / Gray Zone / Out of Scope — Benchmark / Out of Scope — Pre-Seed Exclusion — see rationale]</field>
+
+<routing_input_definitions>
+INVESTOR COMPOSITION TIER DEFINITIONS:
+Institutional Series A Lead: Top-tier VC (per A5/B5 Tier 1 lead investor classification) writing ≥50% of round, setting price/terms, taking board seat. Examples: Sequoia, a16z, Founders Fund, Benchmark, Greylock, Conviction (for AI), Boldstart (for infra), YL Ventures (for cyber).
+Seed-Stage Micro-VC Lead: Recognized seed/early-stage VC (per A5/B5 Tier 2) leading the round. Examples: Hustle Fund, Precursor, Initialized, Floodgate, Cowboy, Forerunner, Uncork, Costanoa, Founder Collective.
+Accelerator-Anchored: Lead is the accelerator's own fund (YC, Techstars, Sequoia Arc) OR investor base is primarily accelerator-affiliated. Examples: YC SAFE rounds with primarily YC alumni angels; Techstars batch follow-on rounds.
+Angel Syndicate / Party Round / No Real Lead: No institutional lead per A5/B5 "No Real Lead" definition. Solo angel lead; 10+ angels with no &gt;25% participant; founder-led raise.
+</routing_input_definitions>
+
+<scope_flag_definitions>
+<flag value="In Scope">Target raise falls within the $500K–$15M range. Standard evaluation applies.</flag>
+<flag value="Gray Zone">Target raise exceeds $15M but is at or below $16.5M (10% tolerance). Evaluation proceeds under Profile A with mandatory acknowledgment that instrument calibration may be less precise.</flag>
+<flag value="Out of Scope — Benchmark">Target raise exceeds $16.5M, or company is publicly traded. Evaluation may proceed as a benchmark exercise if clearly flagged. Scores should not be compared directly to in-scope evaluations.</flag>
+<flag value="Out of Scope — Pre-Seed Exclusion">Total raised under $275K with no institutional participation. Evaluation may proceed as a benchmark exercise if clearly flagged.</flag>
+</scope_flag_definitions>
+
+<scope_flag_unknown_raise_protocol>
+<instruction>If the target raise amount is not publicly disclosed and cannot be confirmed through available sources, assign the Scope Flag as follows: assign "In Scope" with a conditional note if the company's development stage and total capital raised to date are consistent with the $500K–$15M range. Populate the Target Raise field with "[UNCONFIRMED — ROUTING SUBJECT TO REVISION]" and document the assumption explicitly in the Routing Rationale. If the raise target is subsequently confirmed to fall outside the $500K–$15M range or within the $15M–$16.5M Gray Zone, the Scope Flag and Routing Determination must be revised before the evaluation is used for client engagement decisions.</instruction>
+</scope_flag_unknown_raise_protocol>
+
+<field name="Market Context Note">[Optional. Document rubric-fit considerations, hardware classifications, AI Tier flags (Fund-Mandate-Fit, Wrapper-Risk), scope boundary conditions, profile assignment uncertainties, or non-software business model classifications that affect interpretation. Required format strings for flag invocations:
+
+For AI-Native Frontier Fund-Mandate-Fit flag: "Market Context Note: AI-Native Frontier classification — Fund-Mandate-Fit flag invoked. Company likely exceeds primary audience check capacity ($500K–$5M). Evaluation proceeds but readers should note that the appropriate investor archetype is Multi-Stage Series A Lead at $5M+ check size or out of audience scope entirely."
+
+For AI-Augmented Wrapper Wrapper-Risk flag: "Market Context Note: AI-Augmented Wrapper classification — Wrapper-Risk flag invoked. Company's AI capability is substantially supplied by third-party APIs. Force-test failure documented in A6/B6 Justification. See Top 3 Fundability Risks."
+
+For Hardware Profile flag: "Market Context Note: Hardware/Deep-Tech application notes applied to A3/B3 (traction certification milestones), A4/B4 (Burn Multiple relaxation), A6/B6 (patent weighting), A2/B2 (Defense/Robotics sector classification). See Future Revisions Log entry FV-tech-1 for deferred Profile C development."
+
+Leave blank if no notes are required.]</field>
+</block>
+
+<block id="2" name="Disqualifier Screen">
+<instruction>The disqualifier screen is a gate. If any disqualifier is TRIGGERED, the evaluation terminates here. The company is classified as Out of Scope. No criterion scores, total score, fundability tier, or fundraising readiness are assigned. Blocks 3–5 are populated with "N/A — Disqualified" and the basis for disqualification. Block 6 (Footer) is still completed.
+
+Disqualifiers are organized in four categories. Mark each as CLEAR, TRIGGERED with explanation, or NOT APPLICABLE where the non-applicability rule applies. Marking NOT APPLICABLE does not trigger disqualification.</instruction>
+
+<category name="Cap Table and Deal Structure">
+<field name="(a) Cap Table Integrity">[CLEAR / TRIGGERED — explanation]</field>
+<field name="(b) Founder Ownership Threshold">[CLEAR / TRIGGERED — explanation; founder ownership below 10% post-Seed or below 15% post-Series A]</field>
+<field name="(c) SAFE Stack With No Priced Round">[CLEAR / TRIGGERED — explanation; stacked SAFEs above $3M combined with no priced round in 24+ months]</field>
+</category>
+
+<category name="Legal and IP">
+<field name="(d) IP Not Assigned to Company">[CLEAR / TRIGGERED — explanation; refusal to confirm IP assignment = TRIGGERED]</field>
+<field name="(e) Pending Material Litigation">[CLEAR / TRIGGERED — explanation]</field>
+<field name="(f) Founder or Executive Misconduct">[CLEAR / TRIGGERED — explanation]</field>
+</category>
+
+<category name="Team Integrity">
+<field name="(g) Misrepresented Credentials">[CLEAR / TRIGGERED — explanation; material credentials fabricated wholesale]</field>
+<field name="(h) Full-Time Founder Commitment">[CLEAR / NOT APPLICABLE / TRIGGERED — explanation; mark NOT APPLICABLE for specialized cases with documented transition timeline]</field>
+</category>
+
+<category name="Tech-Specific">
+<field name="(i) Open-Source Signal Manipulation">[CLEAR / NOT APPLICABLE / TRIGGERED — explanation; require documented evidence of manipulation, not high star count alone; mark NOT APPLICABLE for closed-source companies or companies with no GitHub presence]</field>
+<field name="(j) Data Security Enforcement Action">[CLEAR / NOT APPLICABLE / TRIGGERED — explanation; mark NOT APPLICABLE for tech companies not handling protected health information, genomic data, regulated financial data, or other regulated data categories]</field>
+</category>
+
+<field name="Disqualifier Outcome">[ALL CLEAR / NOT APPLICABLE TRACK FOR (h), (i), and/or (j) WITH NO TRIGGER — proceed with evaluation / TRIGGERED — terminate evaluation; classify Out of Scope; populate Blocks 3 through 5 with "N/A — Disqualified" and basis for disqualification; complete Block 6]</field>
+</block>
+
+<block id="3" name="Criterion Scoring">
+<instruction>One entry per criterion. Use the criterion_score_template structure below for each of A1-A7 (Profile A) or B1-B7 (Profile B). For A2/B2, include the modifier_sub_block. For A2/B2 and A3/B3 (the OVC anchors), reference the Operational Viability Condition outcome. For A5/B5, reference the Strategic Coherence Assessment outcome. For A6/B6, reference the AI Wrapper Force-Test outcome where applicable.</instruction>
+
+<criterion_score_template>
+<field name="Criterion ID">[A1 / A2 / A3 / A4 / A5 / A6 / A7 OR B1 / B2 / B3 / B4 / B5 / B6 / B7]</field>
+<field name="Criterion Name">[Per Section 3 or Section 4 criterion name]</field>
+<field name="Weight">[Per Section 3 or Section 4 weight_pct]</field>
+<field name="Max Points">[Per Section 3 or Section 4 max_points]</field>
+<field name="Band Assigned">[Band label per Section 3 or Section 4 band element]</field>
+<field name="Score">[Numeric score within the assigned band range]</field>
+<field name="Justification">[2 to 6 sentences explaining the score with reference to observable evidence. Required documentation per criterion:
+- A1/B1: FMF signal assessment; solo-founder protocol outcome if applicable; NCSP outcome (one-sentence confirmation if no contradictions identified).
+- A2/B2: AI Tier classification; base tier score; M&amp;A modifier value; AI modifier value; combined modifier with cap notation; OVC outcome.
+- A3/B3: business model application note invoked; band positioning derivation; NRR sub-component outcome at Profile A (founder-attestation by band or INFORMATION-SCARCE flag); hardware application note if applicable.
+- A4/B4: runway band; Burn Multiple band or pre-revenue alternative scoring basis; hardware application note if applicable.
+- A5/B5: SCA outcome (one-sentence determination); SAFE stack deduction if applied; accelerator tier classification; lead investor tier and Real Lead test outcome.
+- A6/B6: Helmer Powers identified; moat-buildability signals identified; AI Wrapper Force-Test results for AI-classified companies; hand-wave deductions if applied.
+- A7/B7: acquirer universe density; comparable transaction availability; exit-timeline realism; AI reverse-acqui-hire note if applicable.
+Cite primary sources where possible (e.g., "Crunchbase round history confirms"; "LinkedIn employment history shows"; "founder attestation by band").]</field>
+<field name="Data Confidence Flag">[HIGH / MODERATE / LOW per Section 1.5 INFORMATION-SCARCE vs INFORMATION-ABSENT classification and per founder-attestation aggregation rule. Append [INSUFFICIENT DATA — INFORMATION-SCARCE] or [INSUFFICIENT DATA — INFORMATION-ABSENT] flag if applicable, with citation of the observable signal (SCARCE) or the absence search performed (ABSENT).]</field>
+</criterion_score_template>
+
+<modifier_sub_block applies_to="A2 / B2">
+<instruction>Apply this sub-block within the A2 or B2 criterion entry. Document every modifier component explicitly with cap notation when applicable. The combined modifier (AI + M&amp;A) is capped at ±2.</instruction>
+<field name="AI Tier Classification">[AI-Native Frontier / AI-Native Applied / Non-AI / AI-Augmented Wrapper — per A2/B2 Component 3 trigger criteria and force-tests]</field>
+<field name="AI Modifier Value">[+2 / +1 / 0 / -1 / -2 — per AI Tier Classification]</field>
+<field name="AI Modifier Justification">[1 to 3 sentences citing the force-test results, the trigger criteria satisfied, and any flag invocations (Fund-Mandate-Fit, Wrapper-Risk).]</field>
+<field name="M&amp;A Modifier Value">[+2 / +1 / 0 / -1 / -2 — per A2/B2 Component 2 thresholds]</field>
+<field name="M&amp;A Modifier Justification">[1 to 3 sentences citing documented sector-specific M&amp;A activity within 12 months, capital deployment trends, or sector contraction signals.]</field>
+<field name="Combined Modifier (with cap)">[Sum of AI Modifier and M&amp;A Modifier capped at ±2. Format: "AI: [value] + M&amp;A: [value] = [uncapped sum] -&gt; Applied: [capped value]". When cap is invoked, note explicitly: "Cap applied; uncapped sum would have been [value]".]</field>
+<field name="Combined Modifier Justification">[1 to 2 sentences explaining the combined modifier outcome including any cap invocation.]</field>
+<field name="Operational Viability Condition">[Triggered / Not Triggered — per A2/B2 OVC. If Triggered, document: (a) A1/B1 and A3/B3 scores that triggered the cap; (b) uncapped A2/B2 score that would have applied; (c) capped score recorded at 8 (Tier 3 COOL ceiling). If Not Triggered, one-sentence confirmation per "Operational Viability Condition not triggered — A1=[X] and/or A3=[X] above threshold."]</field>
+</modifier_sub_block>
+</block>
+
+<block id="4" name="Total Score and Tier Determination">
+<instruction>Aggregates criterion scores into total score, applies consistency check, assigns fundability tier, and reports operational viability summary.</instruction>
+
+<score_summary>
+<field name="Sum of Criterion Scores">[Numeric total across all seven criteria. For Profile A, sum A1 through A7. For Profile B, sum B1 through B7. Include modifier-adjusted A2/B2 score after combined modifier cap is applied.]</field>
+<field name="Base Score (pre-modifier)">[Sum of criterion scores using A2/B2 base tier score before combined modifier. Used for tier threshold reconciliation when combined modifier is non-zero.]</field>
+<field name="Modifier-Adjusted Total Score">[Base score plus applied combined modifier (capped at ±2). Maximum = 102; minimum = 0 for non-disqualified evaluations. Operative envelope = 98-102.]</field>
+</score_summary>
+
+<consistency_check>
+<instruction>Verify internal arithmetic. The Modifier-Adjusted Total Score must equal Base Score plus Combined Modifier. The Combined Modifier must equal AI Modifier plus M&amp;A Modifier capped at ±2. If arithmetic does not reconcile, the evaluation is a format error and must be revised before submission.</instruction>
+<field name="Arithmetic Check">[PASS / FAIL with explanation]</field>
+<field name="Weight Total Check">[Confirm sum of criterion weights = 100. PASS / FAIL with explanation. For Profile A: A1(24)+A2(16)+A3(30)+A4(10)+A5(8)+A6(6)+A7(6) = 100. For Profile B: B1(33)+B2(16)+B3(15)+B4(7)+B5(12)+B6(12)+B7(5) = 100.]</field>
+</consistency_check>
+
+<fundability_tier>
+<instruction>Assign tier based on Modifier-Adjusted Total Score per the threshold table below. Out of Scope is reserved for disqualifier triggers and scope mismatches per Sections 2.2 and 2.3, not for low scores.</instruction>
+<tier_thresholds>
+<tier label="Tier 1 — Strong Fit" range="80-102">High-velocity fundraising candidate; primary audience deploys; full institutional Series A or Seed path visible; recommended for active pipeline.</tier>
+<tier label="Tier 2 — Qualified Fit" range="60-79">Qualified fundraising candidate; secondary audience deploys; pipeline-eligible with documented risks in Top 3 Fundability Risks.</tier>
+<tier label="Tier 3 — Conditional Fit" range="40-59">Conditional fundraising candidate; specific risk mitigation required before active engagement; not in primary pipeline.</tier>
+<tier label="Tier 4 — Not Ready" range="below 40">Not fundraising-ready at current development stage; revisit on milestone achievement.</tier>
+<tier label="Out of Scope" range="N/A">Disqualifier triggered or scope mismatch per Sections 2.2 and 2.3. No tier assignment.</tier>
+</tier_thresholds>
+<field name="Tier Assigned">[Tier 1 / Tier 2 / Tier 3 / Tier 4 / Out of Scope — with score and basis]</field>
+</fundability_tier>
+
+<data_confidence>
+<instruction>Aggregate the per-criterion Data Confidence Flags into an overall rating. Apply the founder-attestation aggregation rule per Section 1.5: when two or more criteria carry INFORMATION-SCARCE flags driven by founder-attestation-only signals, rating moves to MODERATE; when four or more, rating moves to LOW. This rule applies in parallel to the total INSUFFICIENT DATA flag count below.</instruction>
+<rating value="HIGH">Two or fewer INSUFFICIENT DATA flags across all criteria; primary evidence is independently observable. Founder-attestation aggregation rule not triggered.</rating>
+<rating value="MODERATE">Three to five INSUFFICIENT DATA flags across criteria, OR the founder-attestation aggregation rule is triggered at the 2-criterion threshold. Some scores rest on midpoint-default or founder-attested bands; conclusions are directionally reliable but specific score points are less precise.</rating>
+<rating value="LOW">Six or more INSUFFICIENT DATA flags across criteria, OR the founder-attestation aggregation rule is triggered at the 4-criterion threshold. Many scores rest on midpoint-default or founder-attested bands; conclusions are directionally indicative but should be confirmed before client-engagement decisions.</rating>
+<field name="Overall Data Confidence">[HIGH / MODERATE / LOW with brief explanation citing the flag count and any founder-attestation aggregation rule invocation]</field>
+</data_confidence>
+
+<operational_viability_summary>
+<instruction>Summarize the operational viability of the company per the A1/A3 (Profile A) or B1/B3 (Profile B) score bands. This summary informs Block 5 Fundraising Outlook and applies regardless of whether the OVC was formally triggered (the OVC trigger is an extreme case of the broader operational viability profile assessment).</instruction>
+<mapping_rules>
+<mapping value="OPERATIONAL">Both A1/B1 and A3/B3 are in their respective top or upper-mid bands. The company has demonstrated both team viability and product validation. Fundraising path is unobstructed at the operational viability level; success depends on sector tier, market timing, and deal mechanics.</mapping>
+<mapping value="MARGINAL">A1/B1 OR A3/B3 (one of the two) is in the lowest band. The company has demonstrated one of the two operational viability dimensions but not the other. Fundraising path is conditional on remediation of the weak dimension. The OVC has not triggered (single condition); but the asymmetric profile is flagged in Top 3 Fundability Risks.</mapping>
+<mapping value="PRE-OPERATIONAL">Both A1/B1 AND A3/B3 are in their lowest defined bands. The Operational Viability Condition has triggered and A2/B2 is capped at 8 points (Tier 3 COOL ceiling). The company has not demonstrated minimum operating capacity OR minimum product validation; fundraising path is structurally obstructed regardless of sector tailwinds.</mapping>
+</mapping_rules>
+<field name="Operational Viability Status">[OPERATIONAL / MARGINAL / PRE-OPERATIONAL with citation of A1/B1 and A3/B3 band assignments]</field>
+</operational_viability_summary>
+
+<fundraising_readiness>
+<instruction>Mapping of fundability tier and operational viability status to a fundraising readiness narrative for the client engagement decision.</instruction>
+<mapping_rule>
+<mapping tier="Tier 1" viability="OPERATIONAL">Ready for active pipeline. Strong-fit candidate with operational viability confirmed. Engagement priority: high.</mapping>
+<mapping tier="Tier 2" viability="OPERATIONAL or MARGINAL">Pipeline-eligible with documented risks. Engagement priority: medium; risk mitigation discussed before client engagement.</mapping>
+<mapping tier="Tier 3" viability="OPERATIONAL or MARGINAL">Conditional engagement. Specific risk mitigation required; pipeline placement deferred pending milestone achievement.</mapping>
+<mapping tier="Tier 4 or any tier with PRE-OPERATIONAL viability">Not ready for active engagement. Revisit on documented milestone achievement (operational viability remediation or score band advancement).</mapping>
+<mapping tier="Out of Scope">No fundraising readiness assessment. Disqualifier or scope flag governs.</mapping>
+</mapping_rule>
+<field name="Fundraising Readiness Statement">[1 to 2 sentences citing the tier, the operational viability status, and the recommended engagement priority.]</field>
+</fundraising_readiness>
+</block>
+
+<block id="5" name="Qualitative Assessment">
+<instruction>Provides the qualitative complement to the quantitative scoring. Required for every non-disqualified evaluation. Each field must be populated with content specific to the evaluation; placeholder text is a format error.</instruction>
+
+<top_3_fundability_strengths>
+<instruction>Identify the three strongest fundraising signals from the evaluation. Each strength must cite the underlying criterion and observable evidence. Strengths are framed in terms of fundraising appeal to the target investor archetype, not product or technical merit.</instruction>
+<field name="Strength 1">[1 to 3 sentences naming the strength, citing the criterion (A1/B1 through A7/B7), and identifying the observable evidence.]</field>
+<field name="Strength 2">[1 to 3 sentences naming the strength, citing the criterion, and identifying the observable evidence.]</field>
+<field name="Strength 3">[1 to 3 sentences naming the strength, citing the criterion, and identifying the observable evidence.]</field>
+</top_3_fundability_strengths>
+
+<top_3_fundability_risks>
+<instruction>Identify the three most material fundraising risks from the evaluation. Each risk must cite the underlying criterion and observable evidence. Risks are framed in terms of investor concerns at deal velocity assessment, not product or technical risk. Cross-criterion risks (a single development affecting multiple criteria simultaneously per Section 1.7 cross-criterion symmetry) must be flagged here with the correlated criteria identified.</instruction>
+<field name="Risk 1">[1 to 3 sentences naming the risk, citing the criterion or criteria affected, and identifying the observable evidence. Cross-criterion correlations stated explicitly when applicable.]</field>
+<field name="Risk 2">[1 to 3 sentences naming the risk, citing the criterion or criteria affected, and identifying the observable evidence.]</field>
+<field name="Risk 3">[1 to 3 sentences naming the risk, citing the criterion or criteria affected, and identifying the observable evidence.]</field>
+</top_3_fundability_risks>
+
+<fundraising_outlook>
+<instruction>Synthesizes the evaluation into a forward-looking narrative covering: (a) the most likely investor archetype that will lead the round; (b) the expected timeline and process dynamics; (c) the key risks to closing. The Most Likely Investor Archetype field is populated by selecting from the seven-archetype taxonomy defined below. A primary archetype is required; a secondary archetype is optional when two distinct paths are visible.</instruction>
+
+<investor_archetypes>
+<archetype name="Sector-Specialist Micro-VC">Small-fund seed VC ($50M-$200M fund size) with deep sector specialization (e.g., YL Ventures for cybersecurity; Conviction for AI; Boldstart for infrastructure; Founders Fund for defense/deep-tech). Writes $1M-$5M Seed checks. Sector specialization and follow-on capacity within the target sector are the primary fit signals. Best fit: Profile B companies in PEAK or ACTIVE sectors with sector-aligned founder pedigree and credible moat-buildability trajectory.</archetype>
+<archetype name="Generalist Seed Fund">Generalist micro-VC ($50M-$300M fund size) without strict sector mandate (e.g., Hustle Fund, Precursor, Initialized, Floodgate, Forerunner, Founder Collective). Writes $500K-$3M Seed checks. Team quality and Founder-Market Fit clarity are the primary fit signals; sector tier is secondary. Best fit: Profile B companies with strong team signals across sectors.</archetype>
+<archetype name="AI-Focused Early-Stage VC">Specialist AI fund or AI-focused vertical ($100M-$500M fund size; e.g., Conviction, Radical Ventures, Air Street, AI Grant). Writes $2M-$10M checks at upper Seed through Series A. AI-Native classification (Frontier or Applied), proprietary model work or data flywheel, and frontier-lab founder pedigree are the primary fit signals. Best fit: AI-Native Applied or AI-Native Frontier companies at Profile A or upper Profile B with strong AI moat-buildability.</archetype>
+<archetype name="Multi-Stage Series A Lead">Top-tier multistage VC ($500M+ fund size; e.g., Sequoia, a16z, Founders Fund, Benchmark, Greylock, Kleiner, Accel). Writes $5M-$15M Series A checks with documented follow-on capacity through Series B and beyond. Board seat mandatory; price/term setting required. Best fit: Profile A companies with Tier 1 lead investor profile, $1M+ ARR for Non-AI SaaS or $500K+ ARR for AI-Native Applied, and strong moat existence. AI-Native Frontier companies raising at $50M+ valuations route to this archetype regardless of Block 1 raise size (per Section 2.2 Fund-Mandate-Fit scope boundary).</archetype>
+<archetype name="Defense/Dual-Use Specialist">Sector specialist fund focused on defense, dual-use, and national-security technology (e.g., Founders Fund defense vertical, Lux Capital, Shield Capital, America's Frontier Fund, In-Q-Tel via strategic vehicle). Writes $2M-$15M checks across Seed and Series A. Defense/dual-use sector classification, security-cleared founder pedigree, government contract revenue, and ITAR/EAR-protected IP are the primary fit signals. Best fit: defense or dual-use companies regardless of profile, including hardware-intensive companies under the Profile Limitation framework.</archetype>
+<archetype name="Accelerator-Fund">Accelerator's own fund participating in the post-accelerator round (Y Combinator continuity fund, Techstars continuity, Sequoia Arc, a16z Speedrun follow-on). Writes $250K-$2M checks at Seed. Tier 1 or Tier 2 accelerator membership is a structural prerequisite. Best fit: Profile B companies with active Tier 1 or Tier 2 accelerator participation and strong batch peer-fundraising momentum.</archetype>
+<archetype name="Angel Syndicate / Solo GP">Angel syndicate (AngelList syndicates, Sweetwater) or solo GP fund ($10M-$100M fund size). Writes $100K-$1M checks. Founder-Market Fit and personal-network endorsement are the primary fit signals; institutional rigor is lower. Best fit: Profile B companies at Pre-Product through Pre-Revenue Public Beta stages with strong founder credibility but limited institutional traction.</archetype>
+</investor_archetypes>
+
+<field name="Most Likely Investor Archetype (Primary)">[Select one from the seven-archetype taxonomy above. State the archetype name and one-sentence justification citing the criteria that anchor the fit (typically A1/B1 team, A2/B2 sector tier and AI Tier, A5/B5 lead investor quality).]</field>
+<field name="Most Likely Investor Archetype (Secondary, optional)">[Optional. Select one from the seven-archetype taxonomy when two distinct fundraising paths are visible (e.g., AI-Focused Early-Stage VC primary + Multi-Stage Series A Lead secondary for an AI-Native Applied company at the Profile A/B boundary). Leave blank if only one path is visible.]</field>
+<field name="Expected Process Timeline">[1 to 2 sentences describing expected fundraising timeline from active outreach to close, citing development stage, sector tier, AI tier, and any flags (Fund-Mandate-Fit, Wrapper-Risk) that compress or extend the timeline.]</field>
+<field name="Closing Risks">[1 to 3 sentences identifying the key risks to closing the round. Cross-reference Top 3 Fundability Risks and note any cross-criterion correlations per Section 1.7. SCA severe contradictions and PRE-OPERATIONAL viability status must be cited here when applicable.]</field>
+</fundraising_outlook>
+</block>
+
+<block id="6" name="Evaluation Footer">
+<instruction>Required for every evaluation including disqualified evaluations. Provides closure metadata and auditability anchors.</instruction>
+<field name="Evaluation Conclusion">[1 to 3 sentences summarizing the overall conclusion: tier assignment (or Out of Scope basis), operational viability status, primary investor archetype, and the recommended engagement decision.]</field>
+<field name="Rubric Version Confirmation">[Tech ICP v1.0, 2026-05-12]</field>
+<field name="Format Compliance Check">[PASS / FAIL with explanation. PASS confirms: (a) all required Block 0 through Block 6 fields populated; (b) routing rationale cites all three required inputs; (c) SCA documentation present in A5/B5 Justification; (d) NCSP documentation present in A1/B1 Justification; (e) modifier sub-block populated for A2/B2; (f) weight arithmetic reconciles per Block 4 consistency check; (g) midpoint-default justifications meet the standard in Section 1.5.]</field>
+<field name="Subsequent Audit Date">[YYYY-MM-DD — optional, populated if a post-engagement audit is scheduled]</field>
+</block>
+
+</section>
+
+  <!-- Sections 6-7 (Revision Log, Future Revisions) moved to:
+       Technology Rubric - Revision History.xml -->
+
+</rubric>

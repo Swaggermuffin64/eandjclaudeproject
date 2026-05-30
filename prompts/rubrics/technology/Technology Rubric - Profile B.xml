@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TECHNOLOGY COMPANY FUNDRAISING ICP EVALUATION INSTRUMENT
+  Version 1.0 — Profile B Criteria ($500K-$3M Raise Environment)
+  Shared sections (evaluation context, routing, output format) are in:
+    Technology Rubric - Shared.xml
+-->
+
+
+<weight_check profile="B">
+<criterion id="B1" weight_pct="33" max_points="33"/>
+<criterion id="B2" weight_pct="16" base_max_points="16" modifier_max_points="18"/>
+<criterion id="B3" weight_pct="15" max_points="15"/>
+<criterion id="B4" weight_pct="7" max_points="7"/>
+<criterion id="B5" weight_pct="12" max_points="12"/>
+<criterion id="B6" weight_pct="12" max_points="12"/>
+<criterion id="B7" weight_pct="5" max_points="5"/>
+<total_weight>100</total_weight>
+</weight_check>
+
+
+<criterion id="B1" name="Team Quality and Execution Credibility" weight_pct="33" max_points="33" status="Revised — Tech v1.0 R4">
+
+<purpose>Evaluates the founding team's credibility as a fundraising signal at the $500K–$3M Seed level. Emphasizes halo-employer pedigree, technical depth (research-lab or frontier-lab for AI-native and deep-tech), and Founder-Market Fit clarity. Prior exits are valuable but not required at this stage. Single most heavily weighted criterion in the rubric.</purpose>
+
+<band min="27" max="33" label="Exceptional Execution Credibility">
+At least one founder with confirmed prior exit above $500M (rare at Seed and indicative of a team that could credibly lead a Profile A raise), OR Tier 1 halo-employer pedigree (per A1 halo_employer_taxonomy) for one or more founders at relevant role and recency. Multiple co-founders with complementary roles. Technical depth confirmed via co-founder CV. For AI-native and deep-tech, research-lab or frontier-lab pedigree (ex-OpenAI, ex-Anthropic, ex-DeepMind, or equivalent senior research role). Founder-Market Fit signals present: prior published writing, talks, or direct employment exposure to the problem domain predating the venture by 12+ months. Top-tier accelerator membership (Y Combinator, Neo, AI Grant, South Park Commons, or equivalent per the accelerator tier classification in B5) when applicable. Lead investor is Tier 1 or strong Tier 2.
+</band>
+
+<band min="20" max="26" label="Strong Credibility with Halo-Employer Pedigree">
+Tier 1 halo-employer alumnus at one co-founder OR Tier 2 halo-employer alumni at multiple co-founders (unicorn-scale startups, top enterprise tech, top consultancies/banks in tech-coverage roles). Technical depth present (technical co-founder with relevant background). Founder-Market Fit signals present but may be limited to employment history without prior writing or talks. Accelerator membership at Tier 1 or Tier 2. Lead investor is Tier 2 seed VC, accelerator-fund, or equivalent. Co-founder configuration is 2–3 founders with documented complementary skills.
+</band>
+
+<band min="10" max="19" label="Developing Credibility">
+Team includes relevant tech experience but limited halo-employer pedigree (one Tier 2 founder, or all founders from sub-unicorn or non-enterprise-tech backgrounds). Technical co-founder may be present but pedigree is undistinguished. Founder-Market Fit signals partial or unclear. Solo-founder structure or co-founder configuration with documented gaps. Accelerator membership at Tier 3 or unclassified. Lead investor is angel syndicate or smaller fund.
+</band>
+
+<band min="0" max="9" label="Insufficient Team Signal">
+Team lacks relevant tech experience or halo-employer pedigree. No identifiable domain expert on the founding team. Technical depth unclear or absent. No Founder-Market Fit signals. No accelerator membership or only programs not meeting Tier 1/2/3 criteria. No institutional support or mentorship relationships.
+</band>
+
+<scored_sub_component name="Founder-Market Fit (FMF)">
+Founder-Market Fit is scored within the B1 band assignment as a sub-component rather than a standalone criterion. The signal is observable from desktop research through three converged framings (Rachleff founder-inflection-fit; Maples earned-secret or "what future are you living in"; Sequoia Arc "right to exist"). Operationalized as a single scoreable test: Does the founder articulate a non-obvious, lived-experience-derived insight about why-now and why-them?
+
+Strong FMF signals (supporting upper-mid to top band): prior published writing demonstrating non-obvious domain insight predating the venture by 12+ months; employment history showing direct exposure to the problem domain; GitHub history (for technical founders) showing contributions to the problem domain; talks or interviews articulating the earned secret; patent or research publications in the relevant domain.
+
+Information scarcity treatment per Section 1.5: INFORMATION-SCARCE for FMF — founder has documented employment or educational history in the relevant domain but no prior writing, talks, or public artifacts articulating the earned secret. Apply midpoint-default within the assigned B1 band. INFORMATION-ABSENT for FMF — founder has no documented domain exposure AND no public artifacts. Score in the lowest applicable B1 band; do not apply midpoint-default.
+
+The FMF sub-component does not generate a separate score number; it informs the position within the B1 band. The Justification field must explicitly state the FMF signal assessment.
+</scored_sub_component>
+
+<solo_founder_protocol>
+SOLO-FOUNDER TREATMENT (Profile B): Solo-founder structure is penalized within the assigned band by a 1-point deduction. The reduced Profile B penalty (compared to Profile A's 2–3 point deduction) reflects research finding that micro-VCs are more accepting of solo founders (Hudson, Yin, Calacanis documented practice). The deduction reflects the observed Carta 2025 fundraising disadvantage (14.7% of priced-equity capital despite 30% of companies) but acknowledges the upper-bound of solo-founder fundability in the micro-VC ecosystem.
+
+EXCEPTION: Solo founders with confirmed prior exit above $500M receive only a 0.5-point deduction (effectively neutral).
+
+DOCUMENTATION REQUIREMENT: When the solo-founder deduction is applied, the B1 Justification field must explicitly state the deduction magnitude and the resulting score position within the band.
+</solo_founder_protocol>
+
+<negative_credibility_protocol>
+NEGATIVE CREDIBILITY SIGNAL PROTOCOL: Identical to the A1 NCSP protocol. Apply within the B1 band assignment:
+
+SINGLE MINOR CONTRADICTION (1-point deduction; do not drop below band floor): Title inflation; modest contribution overstatement; unverifiable but plausible claims.
+
+MULTIPLE CONTRADICTIONS OR SINGLE MATERIAL CONTRADICTION (2–3 point deduction; permission to drop to next lower band if deduction would exceed band floor): Open-source signal manipulation; false AI-native positioning; misrepresented halo-employer affiliations; false competitive moat claims; co-founder conflict signals (flagged in Top 3 Fundability Risks regardless); misrepresented credentials below disqualifier threshold of (g).
+
+NO CONTRADICTIONS IDENTIFIED: No deduction. Score per band definitions on their merits.
+
+This protocol applies regardless of whether the midpoint-default is in effect.
+
+DOCUMENTATION REQUIREMENT: The Justification field must name each contradiction, identify the source that contradicts it, and state the deduction applied. When no contradictions are found, a one-sentence statement is sufficient: "Negative Credibility Signal Protocol applied — no contradicted claims identified."
+</negative_credibility_protocol>
+</criterion>
+
+
+<criterion id="B2" name="Market Opportunity and Sector Tier" weight_pct="16" base_max_points="16" modifier_max_points="18" status="Revised — Tech v1.0 R5">
+
+<purpose>Evaluates whether the company operates in a technology sector with active investor capital and downstream Series A appetite. Uses the same three-component structure as A2: base tier classification + AI Modifier + Market-Evidence (M&amp;A) Modifier, with combined AI + M&amp;A capped at ±2.</purpose>
+
+<component id="1" name="Base Tier Classification" points="0–16">
+
+<band min="13" max="16" label="Tier 1 PEAK Sector — Peak Investor Appetite">
+Identical to A2 Band 13–16. Company operates in a PEAK sector with peak-level capital deployment in 2025–2026 cycle. Refer to A2 PEAK sector list (AI/ML; Defense/Dual-Use; Robotics/Physical AI; AI Infrastructure; AI-Native Vertical SaaS). Series A downstream capital appetite is strong; primary audience deploys actively into sector.
+</band>
+
+<band min="9" max="12" label="Tier 2 ACTIVE Sector — Active Investor Interest">
+Identical to A2 Band 9–12. ACTIVE sectors (Cybersecurity; Space/Aerospace; Developer Tools; Health Tech AI-flavored; Fintech B2B/payments/AI-fintech; Climate Tech AI-tied). Downstream Series A capital available; primary audience selectively deploys.
+</band>
+
+<band min="5" max="8" label="Tier 3 COOL Sector — Selective Investor Interest">
+Identical to A2 Band 5–8. COOL sectors (Climate Tech non-AI; Vertical SaaS non-AI; Biotools/TechBio; Health Tech non-AI). Downstream capital path is plausible but narrow.
+</band>
+
+<band min="0" max="4" label="Tier 4 COLD Sector — Out-of-Favor or Unproven">
+Identical to A2 Band 0–4. COLD sectors (Consumer SaaS/D2C non-AI; Pure Crypto/Web3 excluding stablecoin rails and prediction markets; Legacy Enterprise SaaS without AI re-architecture). Downstream Series A path is unclear or dependent on sector rotation.
+</band>
+
+<default_tier_rule>Per A2 default-tier rule: when sector is unclassified, default to ACTIVE (Tier 2) and document the basis.</default_tier_rule>
+
+<hardware_application_note>Per A2 hardware application note: Defense/Dual-Use PEAK; Robotics/Physical AI PEAK; Space/Aerospace ACTIVE.</hardware_application_note>
+
+</component>
+
+<component id="2" name="Market-Evidence Modifier (M&amp;A Activity)" points="±2">
+<instruction>Identical mechanism to A2 Component 2. Apply M&amp;A modifier based on documented sector-specific M&amp;A activity within 12 months. Combined AI + M&amp;A capped at ±2.</instruction>
+
+<modifier value="+2" label="Exceptional Sector Activity">5+ acquisitions exceeding $1B in the sector within 12 months, OR 2+ exceeding $5B, OR sustained capital deployment growth above 50% YoY.</modifier>
+<modifier value="+1" label="Above-Baseline Sector Activity">2–4 acquisitions exceeding $1B within 12 months, OR 1 exceeding $5B; OR significant licensing/partnership deal flow.</modifier>
+<modifier value="0" label="Baseline Sector Activity">Consistent with base tier; no adjustment.</modifier>
+<modifier value="-1" label="Below-Baseline Sector Activity">Notable sector-wide funding contraction or major sector-specific failure within 12 months.</modifier>
+<modifier value="-2" label="Systemic Sector Contraction">Sector-wide capital withdrawal, regulatory headwinds, or pattern of failures.</modifier>
+</component>
+
+<component id="3" name="AI-Native Modifier" points="−2 to +2" status="Revised — Tech v1.0 R5">
+<instruction>Identical mechanism to A2 Component 3. AI Modifier and M&amp;A Modifier are both applied to the base tier score, BUT combined modifier (AI + M&amp;A) is capped at ±2.</instruction>
+
+<modifier value="+2" label="AI-Native Frontier" flag="Fund-Mandate-Fit">
+Per A2 AI-Native Frontier trigger criteria and force-tests. Fund-Mandate-Fit flag invoked per Section 2.2 AI-Native Frontier scope boundary. Note: at Profile B, AI-Native Frontier classification is rare because such companies typically raise above $15M; when invoked at Profile B, the company is likely in the lower-end of the Frontier category or is positioning toward Frontier but operating at Seed scale.
+</modifier>
+
+<modifier value="+1" label="AI-Native Applied">Per A2 AI-Native Applied trigger criteria and force-tests.</modifier>
+<modifier value="0" label="Non-AI">No modifier adjustment.</modifier>
+<modifier value="-1 to -2" label="AI-Augmented Wrapper" flag="Wrapper-Risk">Per A2 AI-Augmented Wrapper trigger criteria and force-tests.</modifier>
+</component>
+
+<operational_viability_condition>
+OPERATIONAL VIABILITY CONDITION: Before finalizing the B2 score, apply the following gate.
+
+TRIGGER: If the company scores in its lowest defined band on BOTH B1 (Team Quality and Execution Credibility, Band 0–9 "Insufficient Team Signal") AND B3 (Product/Traction Evidence, Band 0–2 "Minimal or No Traction Evidence"), the B2 final score (base tier score plus applied combined modifier) is capped at 8 points (Tier 3 COOL ceiling).
+
+RATIONALE: Per A2 OVC rationale, adapted for Profile B band thresholds. The cap prevents sector tailwinds from contributing a disproportionate fraction of total score for companies that have demonstrated neither minimum team viability nor minimum product validation. The AND condition prevents penalizing companies with strong team but absent traction (or vice versa).
+
+CAP VALUE: 8 points (the Tier 3 COOL band ceiling for B2).
+
+DOCUMENTATION REQUIREMENT: When triggered, document in B2 Justification: (a) B1 and B3 scores that triggered the cap; (b) uncapped B2 score that would have applied; (c) capped score recorded. When not triggered, one-sentence confirmation suffices: "Operational Viability Condition not triggered — B1=[X] and/or B3=[X] above threshold."
+</operational_viability_condition>
+</criterion>
+
+
+<criterion id="B3" name="Product / Traction Evidence" weight_pct="15" max_points="15" status="Revised — Tech v1.0 R6">
+
+<purpose>Evaluates the company's product progress and early traction signals at the $500K–$3M Seed level. Pre-revenue acceptability is materially higher at Profile B than at Profile A: design-partner LOIs, research-lab pedigree, technical demos, and accelerator acceptance can support top-band placement without revenue.</purpose>
+
+<band min="12" max="15" label="Exceptional Early Traction or Pre-Revenue Strength">
+Strong, observable traction or pre-revenue strength signals at Seed scale. Business-model-conditional thresholds:
+Non-AI SaaS: $250K–$500K ARR with strong growth, OR pre-revenue with 5+ design-partner LOIs.
+AI-Native Applied: $0–$500K ARR acceptable with strong design-partner LOIs from F500 or regulated-industry leaders.
+Pre-Product Seed (research-lab pedigree): research-lab pedigree + technical demo + 1+ named design partner.
+Consumer: pre-revenue acceptable with significant early traction (DAU/MAU above 25%; cohort retention curves flattening).
+Developer Tools/Infrastructure: open-source community signals (fork-to-star ratio above 0.05; contributor count above 25; downloads above 25K/month) with documented enterprise adoption or 3+ enterprise pilots.
+
+Top-tier accelerator acceptance (Y Combinator, Neo, AI Grant, South Park Commons, or equivalent per B5 accelerator tier classification) functions as a strong pre-revenue signal supporting upper-half top-band placement.
+</band>
+
+<band min="8" max="11" label="Strong Early Traction with Gaps">
+Sub-top-band traction or pre-revenue signal:
+Non-AI SaaS: $100K–$250K ARR with growth, OR pre-revenue with 2–4 design-partner LOIs.
+AI-Native Applied: $0–$250K ARR with growth, OR pre-revenue with 2+ named design partners but no F500 logos.
+Pre-Product Seed: research-lab pedigree + technical demo, design partners unnamed or smaller.
+Consumer: DAU/MAU 15–25%; cohort retention moderating.
+Developer Tools/Infrastructure: open-source community moderate; enterprise pilots 1–2.
+</band>
+
+<band min="3" max="7" label="Developing Early Traction">
+Early signals present but at sub-Seed scale or with material gaps:
+Non-AI SaaS: pre-revenue with single design partner or pilot.
+AI-Native Applied: pre-revenue with technical demo but no design partner.
+Pre-Product Seed: technical demo without research-lab pedigree, OR research-lab pedigree without demo.
+Consumer: DAU/MAU below 15%; retention declining.
+Developer Tools/Infrastructure: open-source community weak; no enterprise adoption.
+</band>
+
+<band min="0" max="2" label="Minimal or No Traction Evidence">
+Pre-product or very early product with no observable signals. No design-partner LOIs, no research-lab pedigree, no accelerator acceptance, no community traction, no enterprise pilots. Founder description of plans without demonstrable artifacts.
+</band>
+
+<application_note business_model="Non-AI SaaS">Per A3 Non-AI SaaS application note with Profile B thresholds substituted. NRR explicitly excluded at Profile B; forward-looking retention risk flagged in Block 5 if customer cohorts exist with no retention data.</application_note>
+
+<application_note business_model="AI-Native Applied">Per A3 AI-Native Applied application note with Profile B thresholds substituted.</application_note>
+
+<application_note business_model="Pre-Product Seed (Research-Lab Pedigree)">Per A3 Pre-Product Seed application note. At Profile B, this application note is more commonly invoked than at Profile A; the Harvey/Abridge/EvenUp precedent (research-lab founders, technical demos, named design partners pre-revenue raising at top of Seed band) is the canonical pattern.</application_note>
+
+<application_note business_model="Consumer">Per A3 Consumer application note with Profile B thresholds substituted.</application_note>
+
+<application_note business_model="Developer Tools / Infrastructure">Per A3 Developer Tools/Infrastructure application note with Profile B thresholds substituted. GitHub replacement metrics from A3 transfer identically; Band 1 thresholds at Profile B are reduced from A3 levels (fork-to-star ratio above 0.05; contributor count above 25; downloads above 25K/month).</application_note>
+
+<application_note business_model="Hardware/Deep-Tech/Defense/Space">Per A3 Hardware application note with Profile B thresholds. Certification milestones, government contract revenue, design-partner LOIs from prime contractors apply.</application_note>
+
+<replacement_metrics name="GitHub Star Replacement Metrics — Profile B Thresholds">
+Per A3 replacement_metrics sub-element with Band 1 thresholds at Profile B levels:
+Fork-to-star ratio: ≥0.05 (Profile B Band 1 threshold).
+Contributor count, 12-month: ≥25 unique external contributors.
+Issue and PR activity, 12-month combined: ≥150 issues + PRs combined.
+Downstream "used by" badges: ≥250 dependent repositories.
+Package download trends: ≥25K downloads/month with growth trajectory.
+Star-acquisition velocity curve: linear or accelerating growth without anomalous spikes. Anomalous spikes trigger NCSP review per B1 NCSP material-contradiction list and disqualifier (i).
+</replacement_metrics>
+
+<nrr_exclusion_note>
+NRR EXCLUSION AT PROFILE B: NRR is typically not observable at Seed because customer cohorts are too young to compute trailing-12-month retention. NRR is excluded from primary scoring at Profile B. If customer cohorts exist with absent retention data, the absence is flagged as a forward-looking risk in Block 5 (not as a B3 score deduction). When a Profile B company has unusually mature customer cohorts (e.g., a company at upper Seed boundary with $250K–$500K ARR and customers 12+ months old), NRR may be invoked as an optional sub-component using the A3 founder-attestation protocol; document the invocation explicitly.
+</nrr_exclusion_note>
+</criterion>
+
+
+<criterion id="B4" name="Capital Efficiency and Runway Discipline" weight_pct="7" max_points="7" status="Revised — Tech v1.0 R7">
+
+<purpose>Evaluates the company's capital efficiency and the quality of its runway planning at the $500K–$3M Seed level. At Seed, the criterion focuses on whether the use-of-proceeds plan extends runway to value-inflecting milestones, not on penalizing 12-month runway as concerning. Burn Multiple is typically inapplicable pre-revenue.</purpose>
+
+<band min="6" max="7" label="Exceptional Capital Efficiency for Stage">
+Runway extends 24+ months post-current-raise at projected burn rate. Use of proceeds mapped to specific value-inflecting milestones (ARR targets, design partner conversions, product launches, key hires). Burn Multiple in &lt;1× to 1–1.5× range if revenue present, OR efficient pre-revenue operations (absolute monthly burn under $200K for 5–7-person team; founder compensation discipline; non-dilutive funding supplementing equity). Prior round milestones (if applicable) achieved.
+</band>
+
+<band min="4" max="5" label="Strong Capital Efficiency">
+Runway extends 18–24 months. Use of proceeds directionally clear and aligned with next value-inflecting milestone. Burn Multiple 1–1.5× to 1.5–2× if revenue present, OR adequate pre-revenue operations. Capital efficiency adequate.
+</band>
+
+<band min="2" max="3" label="Adequate Capital Efficiency">
+Runway 12–18 months. Use of proceeds described in general terms. Burn Multiple 1.5–2× to 2–3× if revenue present (acceptable at Profile B for pre-revenue or early-revenue companies). Operations sized appropriately for stage but not demonstrably lean.
+</band>
+
+<band min="0" max="1" label="Insufficient Capital Efficiency for Stage">
+Runway under 12 months (concerning at Seed because the current raise should fund 18+ months at projected burn). Use of proceeds undisclosed or vague. Burn Multiple above 3× if revenue present, OR pre-revenue operations clearly oversized (absolute monthly burn above $400K for under-7-person team; high founder compensation; no non-dilutive funding).
+</band>
+
+<scored_sub_component name="Burn Multiple (Sacks Framework) — Profile B Application">
+Per A4 Burn Multiple sub-component. At Profile B, Burn Multiple is mathematically inapplicable to most pre-revenue companies and the pre-revenue alternative scoring basis dominates. When revenue is present at upper Profile B boundary, the Sacks five-tier mapping applies as in A4 (Burn Multiple of 1.5–2× is acceptable at Profile B given pre-revenue or early-revenue operations; above 3× is the lowest signal and flagged).
+
+PRE-REVENUE ALTERNATIVE SCORING BASIS: absolute monthly burn rate versus team size benchmark; founder compensation discipline; runway band; capital-efficiency narrative (non-dilutive funding, shared infrastructure).
+</scored_sub_component>
+
+<hardware_application_note>Per A4 Hardware application note. Burn Multiple acceptability bands relaxed for hardware/deep-tech/defense/space; $3M seed sizes normal; 24-month timelines between rounds normal; strategic CVCs on cap table neutral or positive.</hardware_application_note>
+
+<profile_b_interpretation_note>
+PROFILE B JUSTIFICATION INTERPRETATION: At Seed, 12-month runway is a normal operating reality, not a concerning signal. The B4 criterion focuses on whether the use-of-proceeds plan extends runway to value-inflecting milestones (not whether the absolute runway number exceeds 12 months). The Justification field at Profile B must explicitly state whether the planned use of proceeds reaches the next value-inflecting milestone (next funding round; key product/customer milestone), not just whether runway exceeds a threshold.
+</profile_b_interpretation_note>
+</criterion>
+
+
+<criterion id="B5" name="Cap Table and Deal Mechanics" weight_pct="12" max_points="12" status="Revised — Tech v1.0 R8">
+
+<purpose>Evaluates cap table structure, round mechanics, and investor base quality at the $500K–$3M Seed level. At Profile B, accelerator tier and Seed-stage lead investor quality function as the primary anchor signals. A clean SAFE-based or priced-seed structure with identifiable institutional anchors accelerates the path to Series A.</purpose>
+
+<strategic_coherence_assessment>
+<instruction>Identical instruction to A5 Strategic Coherence Assessment. Before scoring the band definitions below, the evaluator must assess whether any material post-pitch development has occurred that contradicts the company's stated use of proceeds, business model, or strategic direction. Tech-specific examples of material developments transfer from A5 verbatim (strategic pivot, layoffs, AI architecture change, co-founder departure during raise, pricing model change).</instruction>
+
+<scoring_impact>
+Identical 3-rule formulation to A5:
+
+SEVERE CONTRADICTION:
+(1) Default — score at the floor of the applicable band.
+(2) Drop to the top of the next lower band only when non-SCA deal mechanics signals independently warrant the lower band.
+(3) If non-SCA signals warrant a score below the lower band's top, score at the assessed position within that lower band.
+Severe contradiction flagged in Top 3 Fundability Risks; Justification states which rule was applied and why.
+
+MODERATE CONTRADICTION: 1–2 point deduction within applicable band.
+
+MINOR OR NO CONTRADICTION: No adjustment.
+</scoring_impact>
+
+<documentation_requirement>Documentation required regardless of outcome, per A5 documentation_requirement. The B5 Justification field must include a one-sentence statement of the Strategic Coherence Assessment determination for every evaluation.</documentation_requirement>
+</strategic_coherence_assessment>
+
+<band min="10" max="12" label="Institutional-Quality Cap Table for Seed">
+Cap table led by Tier 1 lead investor for Seed/Series A boundary (Conviction, Boldstart, YL Ventures, Felicis, BoxGroup, or equivalent for sector; "or equivalent" framing applies) OR Tier 1 accelerator anchor (Y Combinator, Neo, AI Grant, South Park Commons, or equivalent per accelerator_tier_scoring). Round structure is priced seed or well-structured SAFE with market-standard terms and reasonable valuation cap. Founder ownership majority post-round. Cap table clean: SAFE stack &lt;$1M; no unresolved instruments; IP assigned; 83(b) confirmed. Strategic Coherence Assessment: Minor or No Contradiction.
+</band>
+
+<band min="7" max="9" label="Acceptable Cap Table with Minor Complexity">
+Cap table led by Tier 2 seed VC (Hustle Fund, Precursor, Initialized, Floodgate, Cowboy, Forerunner, Uncork, Costanoa, Founder Collective, or equivalent), OR Tier 2 accelerator anchor (Techstars, Sequoia Arc, a16z Speedrun, IndieBio, or equivalent). Round structure acceptable: SAFE-based with market-standard terms. Entity count may exceed 15 — typical for accelerator-sourced rounds — but will require cleanup before priced Series A (apply 1–2 point deduction if more than 15 entities on a SAFE-stacked table). Founder ownership majority (founder-attestation by band: above 50% combined founders). SAFE stack $1M–$2M with 0.5–1 point deduction per SAFE stack treatment.
+</band>
+
+<band min="3" max="6" label="Early Cap Table with Gaps">
+Cap table led by Tier 3 lead or accelerator (Pioneer, On Deck/ODX, Antler, Entrepreneur First, smaller specialized funds; "or equivalent") OR has the "No Real Lead" pattern (party round, founder-led raise). Round structure SAFE-based without publicly confirmed terms. Entity count may be high (above 20) without identifiable institutional anchors. SAFE stack $2M–$3M (1–2 point deduction). Founder ownership 30–50% (concerning at Seed; flagged). Cap table will require significant cleanup before institutional Series A.
+</band>
+
+<band min="0" max="2" label="Weak or Problematic Cap Table">
+Cap table has structural issues that impair fundraising: missing documentation, unresolved convertible instruments, excessive dilution, no identifiable lead investor or accelerator anchor. Entity count is high with no institutional anchors. SAFE stack approaches $3M without priced-round timeline (approaching disqualifier threshold of (c)). Founder ownership below 30% (approaching disqualifier threshold of (b)). Score of 0 indicates a cap table that approaches the automatic disqualifier threshold of (a) but does not trigger.
+</band>
+
+<entity_count_benchmarks>
+ENTITY COUNT BENCHMARKS (transfers from LS v5.1 with tech adaptation):
+5–10 entities: Typical for institutional-only Seed rounds. Clean and efficient.
+10–20 entities: Typical for YC-affiliated or accelerator-sourced Seed rounds with angel participation. Normal for oversubscribed rounds. Does not warrant a deduction if institutional leads are present.
+20+ entities: Warrants a flag but is not inherently disqualifying if institutional leads with follow-on capacity are present. SAFE-stacked cap tables with more than 15 entities will require cleanup before a priced Series A round; reflect as a 1–2 point deduction within the applicable scoring band, not a structural disqualifier.
+</entity_count_benchmarks>
+
+<safe_stack_treatment>
+SAFE stack treatment is identical to A5. Refer to A5 safe_stack_treatment sub-element for deduction magnitudes by SAFE stack total. The disqualifier threshold ($3M+ WITHOUT priced round in 24+ months → automatic disqualifier per Section 2.3 disqualifier (c)) applies identically.
+</safe_stack_treatment>
+
+<accelerator_tier_scoring>
+Accelerator tier scoring is identical to A5. Refer to A5 accelerator_tier_scoring sub-element for tier classifications (Tier 1/2/3/Unclassified), qualifying criteria, and named examples with "or equivalent" framing. At Profile B, accelerator tier is one of the two primary anchor signals (alongside lead investor tier) that informs band assignment.
+</accelerator_tier_scoring>
+
+<lead_investor_quality_scoring>
+Lead investor quality scoring is identical to A5. Refer to A5 lead_investor_quality_scoring sub-element for tier classifications (Tier 1/2/3/No Real Lead) and the "Real Lead" test. At Profile B, the Tier 1 examples are the Seed-stage and Series A boundary VCs (Conviction, Boldstart, YL Ventures, Felicis, BoxGroup); Tier 2 examples are seed micro-VCs (Hustle Fund, Precursor, etc.). The "Real Lead" test is increasingly applied at Seed, with board seats becoming more common.
+</lead_investor_quality_scoring>
+</criterion>
+
+
+<criterion id="B6" name="Competitive Moat and Moat-Buildability" weight_pct="12" max_points="12" status="Revised — Tech v1.0 R9">
+
+<purpose>Evaluates the company's competitive differentiation and trajectory toward durable defensibility at the $500K–$3M Seed level. At Profile B, moat-buildability trajectory weighs equally with moat existence (50/50 split); the upper-mid to top band differentiator is whether multiple credible moat-buildability signals are present.</purpose>
+
+<band min="10" max="12" label="Established Moat or Multiple Moat-Buildability Signals">
+One Helmer Power in early evidence (e.g., switching costs forming via integration depth; brand emerging via search volume and community; scale economies starting in unit economics; cornered resource via exclusive partnership) AND multiple credible moat-buildability signals (engagement curves trending up; cohort retention not declining; workflow integration depth shipping; proprietary data accumulation rate observable; distribution lock-ins shipping). For AI-classified companies: AI wrapper force-test failure count of 0–1 (AI-Native Applied or stronger).
+</band>
+
+<band min="7" max="9" label="Single Power Emerging or Strong Trajectory">
+One Helmer Power in early evidence, OR no current Power but multiple credible moat-buildability signals. For AI-classified companies: AI wrapper force-test failure count of 2 (caps band). Software application note may apply; patents weighted at zero or slight-negative.
+</band>
+
+<band min="3" max="6" label="No Current Moat but Limited Trajectory">
+No current Helmer Power and limited moat-buildability trajectory (1–2 signals present, others absent or weak). At Profile B this band is common for early-stage companies still building product-market fit. AI wrapper force-test failure count of 2–3 supports this band.
+</band>
+
+<band min="0" max="2" label="No Moat, No Trajectory, or AI-Augmented Wrapper">
+No current moat AND no credible moat-buildability trajectory; OR AI-Augmented Wrapper classification with no proprietary data, no model work, no workflow lock-in. AI wrapper force-test failure count of 3+ supports this band with Wrapper-Risk flag. Hand-wave moat claims (data flywheel without mechanism; network effects for non-multi-player product; AI moat reducing to prompt engineering) result in this band when claims are central to positioning.
+</band>
+
+<helmer_nfx_taxonomy>Helmer 7 Powers + NFX 4 Defensibilities combined taxonomy identical to A6.</helmer_nfx_taxonomy>
+
+<software_application_note>Software application note identical to A6. Patents weighted at zero or slight-negative; moat-buildability signals carry primary scoring weight.</software_application_note>
+
+<hardware_application_note>Hardware application note identical to A6. Patents and trade secrets weighted heavily; ITAR/EAR-protected IP and classified workflows function as patent equivalents.</hardware_application_note>
+
+<force_test name="AI Wrapper Force-Test">AI wrapper force-test identical to A6 (5 force-test questions; 0–1/2/3+ failure threshold outcome integration).</force_test>
+
+<moat_buildability name="Moat-Buildability Sub-Component — 50/50 Split at Profile B">
+Moat-buildability is scored as a distinct sub-component within B6. At Profile B, the band assignment weighs 50% moat existence and 50% moat-buildability trajectory. This is the inverse of Profile A's 70/30 split; reflects that Seed companies have had less time to build moats and trajectory signals are more informative than existence signals at this stage.
+
+Observable moat-buildability signals identical to A6 (engagement curves trending up; hard-side recruitment articulated; cohort retention not declining; workflow integration depth shipping; proprietary data accumulation rate; distribution lock-ins shipping).
+
+HAND-WAVE INDICATOR DEDUCTIONS: Identical to A6 (data flywheel without mechanism; network effects for non-multi-player; AI moat reducing to prompt engineering). 1-point deduction for single hand-wave claim; escalating to 2–3 points and band drop for multiple.
+</moat_buildability>
+</criterion>
+
+
+<criterion id="B7" name="Exit Pathway and Acquirer Universe" weight_pct="5" max_points="5" status="Revised — Tech v1.0 R10">
+
+<purpose>Evaluates the visibility of the company's exit pathway through acquirer universe density and comparable transaction availability at the $500K–$3M Seed level. The criterion carries the floor of meaningful contribution (5 points) reflecting the rhetoric-vs-reality tension at Seed identified in research.</purpose>
+
+<band min="4" max="5" label="Clear Exit Pathway with Dense Acquirer Universe">
+5+ named active strategic acquirers in the company's sub-vertical with M&amp;A activity in the past 24 months. Healthy acquirer universe. Comparable transactions exist at sector-relevant scales. Founder articulates a reasonable exit timeline (5–7 year tech baseline; 7–12 year for hardware/deep-tech).
+</band>
+
+<band min="3" max="3" label="Solid Exit Pathway with Moderate Density">
+3–4 named active strategic acquirers in the sub-vertical with recent M&amp;A activity. Solid exit pathway; some monopsony risk. Comparable transactions exist. Exit-timeline reasonable.
+</band>
+
+<band min="1" max="2" label="Narrow Exit Pathway with Monopsony Risk">
+2 named active strategic acquirers in the sub-vertical with recent M&amp;A activity. Monopsony risk flagged. Comparable transactions limited.
+</band>
+
+<band min="0" max="0" label="No Visible Exit Pathway">
+0–1 named active strategic acquirers with recent M&amp;A activity. Severe monopsony risk; flagged in Top 3 Fundability Risks. No identifiable comparable transactions.
+</band>
+
+<supplementary_sub_components>
+Identical to A7: comparable transaction availability (±1 within band where data is robust); exit-timeline realism (1-point deduction for unrealistic timelines, scaled to B7 5-point max as a 0.5-point deduction at Profile B); fund-returnability sanity check as optional evaluator commentary.
+</supplementary_sub_components>
+
+<documentation_note>
+AI REVERSE-ACQUI-HIRE PATTERN: Per A7. For AI-Native Frontier companies at Profile B boundary, the reverse-acqui-hire is a documented exit pattern.
+
+RHETORIC-VS-REALITY TENSION AT SEED: At Profile B, exit pathway assessment is more rhetoric than reality. The B7 criterion carries the lowest weight in the rubric (5 points = 5% of total) reflecting this tension. The criterion is preserved because acquirer universe density varies sharply by sector and signals fund-returnability math at the institutional investor level.
+</documentation_note>
+</criterion>
+
+</section>
+
+<!-- ============================================================
+     SECTION 5 — STANDARDIZED SCORING OUTPUT FORMAT
+     Applies to both Profile A and Profile B evaluations.
+     All blocks are mandatory. Complete every field.
+
+     DESIGN CONSTRAINTS:
+       (a) Identical in structure for every evaluation regardless of
+           profile, company, or evaluator.
+       (b) Plain text with no markdown, no special characters, and
+           no rendering dependencies.
+       (c) Self-auditing: every score can be verified from the output
+           alone.
+       (d) Structurally enforcing of internal consistency between
+           criterion scores, total score, and fundability tier.
+     ============================================================ -->
+
+<section id="5" name="Standardized Scoring Output Format" status="Revised — Tech v1.0 R11">

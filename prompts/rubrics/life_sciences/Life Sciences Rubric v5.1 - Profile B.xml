@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  LIFE SCIENCE FUNDRAISING ICP EVALUATION INSTRUMENT
+  Version 5.1 — Profile B Criteria (M-M Raise Environment)
+  Shared sections (evaluation context, routing, output format) are in:
+    Life Sciences Rubric v5.1 - Shared.xml
+-->
+  <section id="4" name="Profile B Evaluation Rubric">
+
+    <weight_check profile="B">
+      <criterion id="B1" weight_pct="25" max_points="25"/>
+      <criterion id="B2" weight_pct="19" max_points="19"/>
+      <criterion id="B3" weight_pct="16" base_max_points="16" modifier_max_points="18"/>
+      <criterion id="B4" weight_pct="13" max_points="13"/>
+      <criterion id="B5" weight_pct="11" max_points="11"/>
+      <criterion id="B6" weight_pct="8"  max_points="8"/>
+      <criterion id="B7" weight_pct="8"  max_points="8"/>
+      <total_weight>100</total_weight>
+    </weight_check>
+
+
+    <criterion id="B1" name="Team Quality and Execution Credibility" weight_pct="25" max_points="25" status="Revised — V.5 R3; prior revisions retained">
+
+      <purpose>Evaluates the founding and executive team's credibility as a fundraising signal at the $1M–$15M level. Emphasizes scientific founder credibility, KOL network access, and early signals of commercial translation capability. Industry operating experience carries positive weight but is not expected at the same density as Profile A.</purpose>
+
+      <band min="21" max="25" label="Exceptional Execution Credibility">
+        At least one C-suite member with a confirmed life science exit above $500M. Domain-expert CSO or CMO with direct IND-or-later clinical development history in the company's therapeutic area. Industry CEO or COO with biotech operating experience at a company that reached clinical stage or later. Board includes at least one institutional VC with life science specialization. Formal Scientific Advisory Board with recognized KOLs. This band is rare at Profile B raise levels and indicates a team that could credibly lead a Profile A raise.
+      </band>
+
+      <band min="16" max="20" label="Strong Academic Credibility with Industry Gaps">
+        Scientific founder or co-founder with deep domain expertise and KOL network access. No confirmed prior exits among founders. No industry operating CEO with pharma/biotech commercial or regulatory leadership experience. Advisory board may be informal or undisclosed. The absence of industry operating experience is expected at this raise level but represents a gap that Series A investors at $30M+ will require to be filled.
+
+        <sub_band min="19" max="20" label="Upper Range — World-Class KOL Founders">
+          Academic founders who are world-class KOLs with major discovery contributions directly underlying the company's platform; hold leadership positions at tier-one research institutions (director-level or above); or have publications in top-tier journals (Science, Nature, Cell, NEJM, Lancet) on the foundational science. The originating discoverer of the core biology as a co-founder is a strong signal in this range.
+        </sub_band>
+
+        <sub_band min="16" max="18" label="Lower Range — Earlier-Career Academic Founders">
+          Academic founders at earlier career stages (postdoctoral to early assistant/associate professor level) without established KOL networks, without major independent discovery contributions, or without direct authorship of the company's foundational technology publications. Scientific credibility is present but the founder's personal reputation does not yet independently attract investor attention.
+        </sub_band>
+
+        <sub_band_note>COMMERCIAL FOUNDER APPLICATION: The Upper Range and Lower Range sub-band distinctions above apply primarily to academic founders. For commercial founders without academic KOL profiles — meaning founders whose primary credibility derives from industry operating experience, domain expertise, and commercial track record rather than from academic research or institutional affiliation — score within the 16–20 range based on: depth of domain-relevant industry experience (number of years, seniority of roles, relevance to the company's commercial challenge); demonstrated client relationship access or institutional network quality; and evidence of commercial translation capability (prior revenue-generating roles, business development track record, or documented customer acquisition at prior organizations). A commercial founder with 15 or more years of domain-relevant industry experience and documented access to the company's target customer segment may qualify for the upper portion of this range even without academic KOL credentials.</sub_band_note>
+      </band>
+
+      <band min="11" max="15" label="Developing Credibility">
+        Team includes relevant scientific training but limited independent research or publication track record. Founders may be graduate students, early postdocs, or industry professionals without prior biotech leadership. No institutional board members or formal advisory structure. The team represents early potential but has not yet demonstrated the credibility signals that accelerate fundraising.
+      </band>
+
+      <band min="0" max="10" label="Insufficient Team Signal">
+        Team lacks relevant scientific or industry expertise for the company's therapeutic area. No identifiable domain expert on the founding team. No advisory board. No institutional support or mentorship relationships. The team composition does not provide fundraising-relevant credibility signals.
+      </band>
+
+      <negative_credibility_protocol>
+        NEGATIVE CREDIBILITY SIGNAL PROTOCOL: Before finalizing the B1 score, the evaluator must assess whether any credibility claims made by the team — including titles, institutional affiliations, authorship or contribution claims, priority claims, and competitive positioning claims — are directly contradicted by verifiable evidence. Verifiable evidence includes: title records (LinkedIn, company website, filings); publication author lists (PubMed, bioRxiv, journal archives); public regulatory records (FDA, EMA, Companies House); and direct competitive existence data (competitor websites, press releases, third-party databases).
+
+        If one or more contradictions are identified, apply a deduction within the assigned band as follows:
+
+        SINGLE MINOR CONTRADICTION: A single instance of informal title inflation, modest overstatement of a contribution, or unverifiable but plausible claim. Apply a 1-point deduction within the assigned band. Do not drop below the band floor.
+
+        MULTIPLE CONTRADICTIONS OR SINGLE MATERIAL CONTRADICTION: Multiple contradicted claims, or a single materially false claim (fabricated institutional affiliation, false authorship claim, claimed contribution to a public law or regulatory process that is contradicted by the public record). Apply a 2–3 point deduction within the assigned band. The evaluator may drop to the next lower band if the deduction would exceed the band floor.
+
+        NO CONTRADICTIONS IDENTIFIED: No deduction. Score per band definitions on their merits.
+
+        This protocol applies regardless of whether the midpoint-default is in effect. A score at the band midpoint under the midpoint-default may still receive a deduction if contradicted claims are identified with verifiable evidence.
+
+        DOCUMENTATION REQUIREMENT: The Justification field must name each contradiction, identify the source that contradicts it, and state the deduction applied. When no contradictions are found, a one-sentence statement is sufficient: "Negative Credibility Signal Protocol applied — no contradicted claims identified."
+      </negative_credibility_protocol>
+    </criterion>
+
+
+    <criterion id="B2" name="Scientific Foundation and Data Package" weight_pct="19" max_points="19" status="Revised — 42 Genetics Finding C-3/S-2">
+      <purpose>Evaluates the quality of the company's scientific foundation and data package at the discovery-to-early-preclinical stage. Measures signals that seed-stage and early-venture investors use to evaluate scientific risk: publication quality, data reproducibility, translational readiness, and lead candidate status.</purpose>
+
+      <non_therapeutic_application_note criterion="B2">
+        NON-THERAPEUTIC COMPANY APPLICATION — SCIENTIFIC FOUNDATION AND DATA PACKAGE: The B2 band definitions are calibrated for therapeutic life science companies and reference in vivo efficacy data, lead candidate nomination, IND-enabling studies, and peer-reviewed publication tiers grounded in biological science. For non-therapeutic companies — including bioinformatics software, genomic data infrastructure, health IT platforms, diagnostic software, and life science tools — the following analog framework applies.
+
+        The evaluator must explicitly state in the B2 Justification field that an analog framework is being applied and identify which band elements are being mapped to software-appropriate equivalents. Silent application of this framework without disclosure is not permitted.
+
+        SOFTWARE-APPROPRIATE EVIDENCE HIERARCHY (maps to B2 band definitions):
+        Band 16–19 equivalent: Independent benchmarking study published in a peer-reviewed journal with IF above 10, conducted by a credible third-party institution on standardized datasets, demonstrating performance superiority across multiple metrics against named competitors. Company-generated validation data confirming platform reproducibility across multiple deployment environments. Clear commercial deployment pathway with documented customer validation (signed contracts, LOIs from named institutions).
+        Band 11–15 equivalent: Peer-reviewed publication in a high-quality journal (IF above 10) validating the core algorithmic approach, even if published by academic collaborators rather than the company. Independent benchmarking data from a credible third party, even if unpublished or in pre-release form. Multiple performance metrics documented against named competitors with a defined methodology. Commercial pathway is plausible but customer validation is limited to LOIs or pilot engagement without executed contracts.
+        Band 6–10 equivalent: Peer-reviewed publication in lower-tier journals or conference proceedings. Self-reported performance benchmarks without independent validation. Single performance metric documented. Platform is functional but commercial validation is absent or preliminary.
+        Band 0–5 equivalent: No peer-reviewed publication. No independent benchmarking. Performance claims are unvalidated. Platform is in development without documented external validation.
+
+        When applying this analog framework, note that band elements referencing IND timelines, FDA designations, and clinical trial data are structurally inapplicable to software companies and should be excluded from the scoring basis. Score on the elements that do apply.
+      </non_therapeutic_application_note>
+
+      <band min="16" max="19" label="Exceptional Scientific Foundation">
+        Foundational science published in a top-tier peer-reviewed journal (Science, Nature, Cell, or equivalent with IF >30). In vivo efficacy data demonstrated in validated animal models with dose-response relationships. Lead candidate nominated with defined mechanism of action. Company-generated data (not solely academic lab data) confirms platform translatability. Multiple follow-up publications or independent replication of core findings. Clear path from current data to IND-enabling studies.
+      </band>
+
+      <band min="11" max="15" label="Strong Foundation with Translational Gaps">
+        Foundational science published in high-quality journals (Nature Communications, PNAS, Cell Reports, or equivalent with IF >10). In vitro efficacy data demonstrated across multiple disease models or cell types. In vivo data may be from academic labs rather than company-generated. Lead candidate not yet formally nominated but therapeutic modality is defined. Core patent filed with composition-of-matter claims. Translational pathway from academic science to therapeutic development is plausible but unvalidated.
+      </band>
+
+      <band min="6" max="10" label="Developing Scientific Package">
+        Scientific foundation is published but in lower-tier journals or as conference abstracts only. Data is limited to a single model system or cell type. No in vivo data available. Lead candidate selection is in progress but not finalized. Core IP may be provisional or narrow. The science is promising but the data package does not yet support confident investor assessment of translational risk.
+      </band>
+
+      <band min="0" max="5" label="Early or Insufficient Scientific Evidence">
+        Scientific concept is unpublished or published only as a preprint. No efficacy data of any kind (in vitro or in vivo). No lead candidate identified. IP position is absent or based solely on trade secrets. The scientific foundation is insufficient to evaluate translational potential.
+      </band>
+    </criterion>
+
+
+    <criterion id="B3" name="Sector and Downstream Capital Alignment" weight_pct="16" base_max_points="16" modifier_max_points="18" status="Revised — V.5 R2; prior revisions retained">
+
+      <purpose>Evaluates whether the company operates in a sector that aligns with current investor appetite and whether the downstream capital environment (Series A and beyond) is receptive to the company's therapeutic area and modality. Uses the same two-component scoring structure as A3.</purpose>
+
+      <component id="1" name="Base Tier Classification" points="0–16">
+
+        <band min="13" max="16" label="Tier 1 Sector — Peak Downstream Capital">
+          Company operates in a sector with strong downstream Series A/B appetite. Tier 1 sectors for 2025–2026: obesity/GLP-1 and metabolic therapies; antibody-drug conjugates (ADCs) and targeted oncology payloads; radiopharmaceuticals; immunology/inflammation; AI-native drug discovery platforms. Platform technology with multi-indication optionality. Lead investor has demonstrated follow-on capacity for the anticipated Series A size. Delivery platforms in Tier 1 therapeutic areas receive Tier 1 classification.
+        </band>
+
+        <band min="9" max="12" label="Tier 2 Sector — Active Downstream Interest">
+          Company operates in a sector with active but not peak-level downstream capital availability. Tier 2 sectors for 2025–2026: neuroscience/CNS; rare disease; gene therapy and cell therapy; cardiovascular; precision oncology (non-ADC). Series A investors in the sector are identifiable and actively deploying capital. Platform optionality may extend into Tier 1 areas.
+        </band>
+
+        <sector_addition profile="B" tier="Tier 2">
+          HEALTH IT / GENOMICS INFRASTRUCTURE / LIFE SCIENCE TOOLS — TIER 2 DEFAULT: Same classification and rationale as A3. Companies providing software platforms, data infrastructure, analytical tools, or enabling technologies to the life science industry are classified as Tier 2 by default. At the Profile B raise level, the downstream capital environment (Series A and beyond) for life science tools companies is active, with a defined investor universe of specialized health IT and life science tools funds in addition to generalist life science VCs. The Tier 1 upgrade and Tier 3 downgrade conditions defined in A3 apply equally here.
+        </sector_addition>
+
+        <band min="5" max="8" label="Tier 3 Sector — Selective Downstream Path">
+          Company operates in a sector with limited downstream capital options. Series A may require specialized investors. The path to $30M+ follow-on rounds is plausible but narrow.
+        </band>
+
+        <band min="0" max="4" label="Out-of-Favor or Unproven Sector">
+          Company operates in a sector with minimal current downstream capital interest. The path to a Series A above $15M is unclear or dependent on sector rotation.
+        </band>
+
+      </component>
+
+      <component id="2" name="Market-Evidence Modifier" points="±2">
+        <instruction>Apply the same modifier thresholds as A3. After assigning the base tier score, adjust by ±2 points based on documented sector-specific M&amp;A and capital deployment activity within the 12 months preceding the evaluation date.</instruction>
+
+        <modifier value="+2" label="Exceptional Sector Activity">3 or more acquisitions exceeding $1B in the sector within the past 12 months.</modifier>
+        <modifier value="+1" label="Above-Baseline Activity">1–2 acquisitions exceeding $1B in the sector within the past 12 months.</modifier>
+        <modifier value="0"  label="Baseline Activity">Consistent with tier classification. No adjustment.</modifier>
+        <modifier value="-1" label="Below-Baseline Activity">Funding contraction or major pipeline failures within the past 12 months.</modifier>
+        <modifier value="-2" label="Systemic Contraction">Capital withdrawal, regulatory headwinds, or pattern of clinical failures across the sector.</modifier>
+      </component>
+
+      <operational_viability_condition>
+        OPERATIONAL VIABILITY CONDITION: Before finalizing the B3 score, apply the following gate.
+
+        TRIGGER: If the company scores 5 points or below on BOTH B2 (Scientific Foundation and Data Package) AND B5 (Validation Signals and Early Traction), the B3 final score (base tier score plus any market-evidence modifier) is capped at 8 points.
+
+        RATIONALE: A score of 5 or below on B2 falls within Band 0–5 ("Early or Insufficient Scientific Evidence") — the rubric's definition of no verified scientific output. A score of 5 or below on B5 spans the lowest scoring bands — the rubric's definition of minimal to developing external validation. When both conditions are met simultaneously, the company has demonstrated neither minimum scientific output nor minimum external validation, and the structural reality is that sector conditions cannot be monetized regardless of how favorable they are. The cap prevents sector tailwinds from contributing a disproportionate fraction of the total score for companies that have not demonstrated capacity to compete for sector capital.
+
+        CAP VALUE: 8 points (the Tier 3 band ceiling for B3).
+
+        AND CONDITION: The cap applies only when BOTH B2 AND B5 are at or below the trigger threshold. If the company scores above 5 on EITHER B2 OR B5, the cap does not apply and B3 is scored on its merits. This prevents penalizing companies with strong scientific output that have not yet achieved external validation (or vice versa).
+
+        DOCUMENTATION REQUIREMENT: When the Operational Viability Condition is triggered, document in the B3 Justification field: (a) the B2 and B5 scores that triggered the cap, (b) the uncapped B3 score that would have applied, and (c) the capped score that is recorded. When the condition is not triggered, a one-sentence confirmation is sufficient: "Operational Viability Condition not triggered — B2=[X] and/or B5=[X] above threshold."
+      </operational_viability_condition>
+    </criterion>
+
+
+    <criterion id="B4" name="Capital Efficiency and Milestone Plan" weight_pct="13" max_points="13" status="Revised — V.5 R1">
+
+      <purpose>Evaluates the company's capital efficiency and the quality of its milestone plan. Measures whether the company is using capital wisely, whether milestones are aligned with use-of-proceeds, and whether runway is sufficient to reach value-inflecting catalysts.</purpose>
+
+      <milestone_scoring_guidance>
+        <instruction>Seed-stage and pre-IND companies commonly do not publicly disclose formal milestone plans. Absence of disclosure at these stages should be treated as Scenario A by default.</instruction>
+
+        <scenario id="A" name="No Milestone Plan Disclosed — Information Gap">
+          Treat as an information gap. Assign a midpoint score within the relevant scoring band and flag as [INSUFFICIENT DATA]. Do not score below the midpoint for this scenario alone. The absence of a publicly disclosed plan at the seed stage does not indicate poor planning; it reflects normal information constraints. (See Section 1.5 Two-Track Classification — this scenario is a specialized application of INFORMATION-SCARCE. If the evaluator has reason to believe the company has no milestone plan because the company appears pre-operational across multiple criteria, the INFORMATION-ABSENT classification may be applied with documentation.)
+        </scenario>
+
+        <scenario id="B" name="Milestone Plan Disclosed but Deficient — Planning Quality Gap">
+          If a milestone plan is publicly disclosed but is vague, misaligned with stated use-of-proceeds, contains unrealistic timelines, or lacks connection to value-inflecting catalysts, treat as a planning quality gap. Score in the lower portion of the relevant band based on the severity of the disclosed plan's weaknesses.
+        </scenario>
+      </milestone_scoring_guidance>
+
+      <band min="10" max="13" label="Exceptional Capital Efficiency">
+        Lean operations with below-market infrastructure costs (shared lab, incubator, university facilities, or outsourced R&amp;D model). Runway of 2+ years from current funding at projected burn rate. Use of proceeds clearly mapped to specific, identifiable milestones that are value-inflecting for the next round (in vivo data, lead candidate nomination, IND-enabling studies). Original raise target was achieved or exceeded (oversubscription). Non-dilutive grants (NIH, SBIR/STTR, Innovate UK, ERC) supplement equity funding.
+      </band>
+
+      <band min="7" max="9" label="Strong Capital Efficiency">
+        Operations are lean relative to stage. Runway of 18–24 months from current funding. Use of proceeds is directionally clear and aligned with the next value-inflecting milestone, even if specific dates are not disclosed. Capital raised is proportional to the company's development stage. Some non-dilutive funding or cost-efficient infrastructure is present.
+      </band>
+
+      <band min="4" max="6" label="Adequate Capital Efficiency">
+        Operations appear appropriately sized but capital efficiency signals are limited. Runway of 12–18 months. Use of proceeds is described in general terms without specific milestone mapping. No non-dilutive funding identified. Burn rate is reasonable for stage but not demonstrably lean.
+      </band>
+
+      <band min="0" max="3" label="Insufficient Capital Efficiency">
+        Operations appear oversized relative to development stage, or burn rate is high without clear milestone justification. Runway is under 12 months. Use of proceeds is undisclosed or vague. No evidence of capital-efficient infrastructure or non-dilutive funding. Company may be in a distressed capital position.
+      </band>
+    </criterion>
+
+
+    <criterion id="B5" name="Validation Signals and Early Traction" weight_pct="11" max_points="11" status="Revised — V.5 R1; v5.1 R2; prior revisions retained">
+
+      <purpose>Evaluates early-stage validation signals that predict fundraising velocity at the $1M–$15M level. Validation at this stage comes from accelerator acceptance, oversubscription signals, investor quality, founder recognition, strategic pharma engagement, and publication quality — not from clinical data or FDA milestones.</purpose>
+
+      <band min="9" max="11" label="Exceptional Early Validation">
+        Acceptance into a top-tier accelerator. The named programs —
+        Y Combinator, IndieBio, SOSV, Petri — are examples, not an
+        exhaustive list. Any accelerator meeting all of the following
+        criteria qualifies: (a) acceptance rate below 5%; (b) demonstrated
+        alumni fundraising outcomes at or above the company's target raise
+        level; (c) active investor network with documented follow-on capital
+        pipeline to the relevant sector. The evaluator must document the
+        basis for top-tier classification in the B5 Justification field.
+        An accelerator meeting the acceptance rate criterion but lacking
+        documented investor network depth in the relevant sector may be
+        scored in the band 6-8 range with a one-sentence explanation.
+        Oversubscribed seed round (1.5x or more above original target) with
+        rapid close (under 30 days). Lead investor is a top-tier VC with
+        demonstrated biotech follow-on track record and significant fund
+        size. Founder recognition from competitive programs (Schmidt Science
+        Fellow, Forbes 30 Under 30, etc.). Strategic pharma engagement
+        (mentoring program, Exchange program, CVC interest) at the seed
+        stage. Foundational publication in a top-tier journal.
+
+        CEILING CONDITIONING: When all or nearly all of the qualifying
+        signals listed above are backward-looking (accelerator acceptance,
+        prior oversubscription, founder recognition programs, foundational
+        publication, awards), the evaluator must assess whether any
+        forward-transferable signal also supports the band assignment.
+        Forward-transferable signals include: documented institutional
+        investor follow-on capacity specifically committed to the company;
+        named Series A lead engagement with term sheet discussions underway;
+        active strategic pharma partnership conversations with documented
+        timeline; or a recent (within 6 months) external validation milestone
+        tied to the next funding catalyst. If at least one forward-
+        transferable signal is present, score within the 9-11 band on merit.
+        If no forward-transferable signal is present and all qualifying
+        signals are backward-looking, cap the B5 score at 9 (band floor)
+        and document the cap in the Justification field. Companies with
+        saturated backward-looking validation but no forward-transferable
+        signal cannot exceed B5 = 9 under this band.
+      </band>
+
+      <band min="6" max="8" label="Strong Early Validation">
+        Acceptance into a recognized accelerator or incubator. Seed round closed at or near target with institutional lead. Lead investor has biotech portfolio experience. Founder has received notable recognition or awards. Publications in high-quality journals. Conference presentations or poster acceptances at relevant scientific meetings.
+      </band>
+
+      <band min="3" max="5" label="Developing Validation">
+        Some accelerator or incubator participation but not necessarily top-tier. Seed round closed but may have been difficult or below target. Lead investor is a smaller fund or angel syndicate. Limited external recognition. Publications exist but in lower-impact venues. No significant strategic engagement.
+      </band>
+
+      <band min="0" max="2" label="Minimal Validation">
+        No accelerator acceptance. Seed round is in progress or not closed. No institutional investor participation. No founder recognition programs. No strategic pharma engagement. Limited or no publication record.
+      </band>
+    </criterion>
+
+
+    <criterion id="B6" name="Cap Table and Deal Structure" weight_pct="8" max_points="8" status="Revised — Concerto Finding C1; 42 Genetics Finding C-9/C-NF1; v5.1 R1">
+      <purpose>Evaluates cap table structure, round mechanics, and investor composition at the seed stage. A clean, well-structured cap table with identifiable institutional leads accelerates Series A fundraising.</purpose>
+
+      <strategic_coherence_assessment>
+        <instruction>Before scoring the band definitions below, the evaluator must assess whether any material post-pitch development has occurred that contradicts the company's stated use of proceeds, business model, or strategic direction as presented in its pitch materials or most recent investor communications. Material post-pitch developments include but are not limited to: strategic pivots to a different business model or market; significant layoffs affecting key functions (clinical, regulatory, CMC); discontinuation or deprioritization of the lead program referenced in the use of proceeds; announced changes to the company's core technology platform or therapeutic focus.</instruction>
+
+        <scoring_impact>
+          If a material post-pitch development is identified that directly contradicts the stated use of proceeds, the evaluator must apply a scoring penalty within the B6 band assignment. The severity of the penalty depends on the degree of contradiction:
+
+          SEVERE CONTRADICTION — The company's observable strategic direction is fundamentally inconsistent with its stated use of proceeds (e.g., pivot away from the therapeutic area or development stage that the raise is designed to fund). Apply the scoring rule as follows:
+          (1) Default — score at the floor of the applicable band.
+          (2) Drop to the top of the next lower band only when the non-SCA
+              deal mechanics signals (round structure, use-of-proceeds mapping
+              before the contradiction, prior capital efficiency, runway)
+              independently warrant the lower band.
+          (3) If the non-SCA signals warrant a score below the lower band's
+              top, score at the assessed position within that lower band.
+          A severe contradiction must always be flagged as a Top 3 Fundability
+          Risk in Block 5 of the output, and the Justification field must
+          explicitly state which rule (1, 2, or 3) was applied and why.
+
+          MODERATE CONTRADICTION — The company has made material changes to
+          its strategy or operations that partially undermine confidence in
+          the stated use of proceeds but do not fundamentally invalidate the
+          fundraising thesis (e.g., reprioritization of pipeline assets,
+          organizational restructuring that delays but does not cancel the
+          stated milestones). Apply a 1-2 point deduction within the
+          applicable band.
+
+          MINOR OR NO CONTRADICTION — The company's observable behavior is
+          consistent with its stated use of proceeds, or any operational
+          changes are immaterial to the fundraising thesis. No adjustment.
+          Score the band definitions below on their merits.
+        </scoring_impact>
+
+        <documentation_requirement>DOCUMENTATION REQUIRED REGARDLESS OF OUTCOME: The Strategic Coherence Assessment must be documented in the A6/B6 Justification field for every evaluation, regardless of whether a contradiction is found. When the determination is Minor or No Contradiction, include a one-sentence statement in the following form: "Strategic Coherence Assessment: [brief description of what was reviewed — e.g., pitch materials, press releases, website, post-pitch announcements]. Determination: Minor or No Contradiction — no adjustment applied." Silent omission of the assessment is not permitted. An undocumented assessment cannot be verified and will be flagged as a format violation in any subsequent performance audit.</documentation_requirement>
+      </strategic_coherence_assessment>
+
+      <entity_count_benchmarks>
+        <benchmark entities="5–10">Typical for institutional-only seed rounds. Clean and efficient.</benchmark>
+        <benchmark entities="10–20">Typical for YC-affiliated or accelerator-sourced seed rounds with angel participation. Normal for oversubscribed rounds. Does not warrant a deduction if institutional leads are present.</benchmark>
+        <benchmark entities="20+">Warrants a flag but is not inherently disqualifying if institutional leads with follow-on capacity are present. SAFE-stacked cap tables with more than 15 entities will require cleanup before a priced Series A round; reflect as a 1–2 point deduction within the applicable scoring band, not a structural disqualifier.</benchmark>
+      </entity_count_benchmarks>
+
+      <band min="7" max="8" label="Institutional-Quality Cap Table">
+        Cap table led by recognized institutional VCs or seed-stage life science funds with demonstrated follow-on capacity. Round structure is a priced round with standard preferred stock terms, or a SAFE with market-standard terms and a reasonable valuation cap. Founder ownership is majority (estimated 60%+ pre-option-pool). Entity count is consistent with stage benchmarks. No structural cap table issues.
+      </band>
+
+      <band min="5" max="6" label="Acceptable Cap Table with Minor Complexity">
+        Cap table includes at least one identifiable institutional lead positioned for follow-on. Round structure may be SAFE-based without publicly confirmed terms. Entity count may exceed 15, which is typical for accelerator-sourced rounds but will require cleanup before a priced Series A (apply 1–2 point deduction if more than 15 entities on a SAFE-stacked table). Founder ownership is not publicly disclosed but estimated to be majority. No disqualifying structural issues.
+      </band>
+
+      <band min="3" max="4" label="Early Cap Table with Gaps">
+        Cap table is primarily angel-funded with limited or no institutional lead. Round structure terms are nonstandard or undisclosed. Entity count may be high (more than 20) without identifiable institutional anchors. Founder ownership dilution may be above normal for stage. Cap table will require significant cleanup before an institutional Series A.
+      </band>
+
+      <band min="0" max="2" label="Weak or Problematic Cap Table">
+        Cap table has structural issues that impair fundraising: missing documentation, unresolved convertible instruments, excessive dilution, or no identifiable lead investor. Entity count is high with no institutional anchors. Score of 0 indicates a cap table that approaches the automatic disqualifier threshold.
+      </band>
+    </criterion>
+
+
+    <criterion id="B7" name="IP and Technology Defensibility" weight_pct="8" max_points="8" status="Revised — V.5 R1; prior revisions retained">
+
+      <purpose>Evaluates the company's intellectual property position and technology defensibility at the seed stage. At this development level, IP expectations are lower than Profile A: licensed or developing IP is more acceptable, and the emphasis is on whether the IP estate provides a credible barrier to competition and supports the fundraising narrative.</purpose>
+
+      <non_therapeutic_application_note criterion="B7">
+        NON-THERAPEUTIC COMPANY APPLICATION — IP AND TECHNOLOGY DEFENSIBILITY: The B7 band definitions reference composition-of-matter patents and IP structures common in therapeutic development. For non-therapeutic companies — including bioinformatics software, genomic data platforms, and life science tools — the following application guidance applies.
+
+        The evaluator must explicitly state in the B7 Justification field that non-therapeutic IP application guidance is being used.
+
+        SOFTWARE AND ALGORITHM IP MAPPING:
+        The composition-of-matter patent standard in the B7 bands maps to method patents and algorithm patents for software companies. A granted method patent with broad claims covering the core algorithmic approach is the software equivalent of a granted composition-of-matter patent. A filed but not yet granted patent application is treated equivalently under the band definitions regardless of claim type.
+
+        TRADE SECRETS AND PROPRIETARY DATA: For software companies, trade secrets, proprietary data formats, and proprietary training datasets that are not disclosed in patent filings may provide meaningful defensibility if they create switching costs or are not easily replicable. Score this dimension under the same band as a narrow patent (band 4–5 range) unless the trade secret provides substantially stronger protection.
+
+        CONDITIONAL IP OWNERSHIP: When the operating company holds an exclusive license to IP owned by a separate entity (e.g., a parent company, university, or foreign holding entity) rather than owning the IP directly, score the band as if the IP were owned, then apply a 1-point deduction within the band to reflect the additional investor risk of a conditional or licensed IP position. If the license contains a revenue-conditional ownership transfer (i.e., ownership transfers only upon reaching a revenue milestone), note this explicitly as it may be treated as a deal structure risk by institutional investors.
+
+        PRIORITY DATE ADVANTAGE: A long development history predating newer competitors' patent filings may provide priority date advantages in contested IP landscapes. Document the earliest known priority date and note any competitors' filing dates that postdate it as a defensibility signal.
+      </non_therapeutic_application_note>
+
+      <band min="6" max="8" label="Strong IP Position for Stage">
+        Granted patent with broad composition-of-matter claims covering the lead therapeutic approach. IP is company-owned or exclusively licensed from a university with confirmed favorable terms. Freedom-to-operate analysis completed or in progress. IP estate includes multiple patent families or a platform patent with broad coverage. Genuinely novel modality with limited prior art providing natural first-mover advantage.
+      </band>
+
+      <band min="4" max="5" label="Developing IP with Identified Risks">
+        Core patent filed (pending, not granted) with broad claims. IP may be university-owned with a presumed but unconfirmed exclusive license. No additional proprietary IP filings by the company. Novelty of the underlying science provides some natural defensibility. Freedom-to-operate is untested. IP estate is narrow (single patent family) but covers the core platform.
+      </band>
+
+      <band min="2" max="3" label="Early IP">
+        Provisional patent filed or PCT application in progress. IP ownership or licensing terms are unclear. Prior art landscape has not been assessed. IP provides minimal barrier to competition. The company's defensibility depends primarily on trade secrets or know-how rather than formal IP protection.
+      </band>
+
+      <band min="0" max="1" label="No IP or Weak IP">
+        No patent filings identified. IP position is based solely on trade secrets. Freedom-to-operate risk is unassessed and potentially high. No evidence of IP strategy. The company's technology may be easily replicable.
+      </band>
+    </criterion>
+
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 5 — STANDARDIZED SCORING OUTPUT FORMAT
+       Applies to both Profile A and Profile B evaluations.
+       All blocks are mandatory. Complete every field.
+

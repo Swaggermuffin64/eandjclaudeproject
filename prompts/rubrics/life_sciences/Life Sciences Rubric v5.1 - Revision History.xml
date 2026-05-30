@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  LIFE SCIENCE FUNDRAISING ICP EVALUATION INSTRUMENT
+  Version 5.1 — Revision History and Future Revisions
+  Extracted from the main rubric file for reference.
+  This file is NOT sent to the scoring engine.
+-->
+
+  <!-- ============================================================
+       SECTION 6 — REVISION LOG
+       Documents all changes across all versions.
+       ============================================================ -->
+  <section id="6" name="Revision Log">
+
+    <!-- ===== VERSION 3.0 REVISIONS (Concerto Biosciences Audit, March 25, 2026) ===== -->
+
+    <note>All changes in Version 3.0 are mapped to findings of the Concerto Biosciences Performance Audit dated March 25, 2026, or to the Standardized Output Format Specification produced in the same session.</note>
+
+    <revision version="3.0" source="Concerto Audit Finding C1" criteria_affected="A6" change_type="Structural Addition">
+      Added Strategic Coherence Assessment instruction to A6 (Deal Structure and Fundraising Mechanics). The instruction requires evaluators to assess whether any material post-pitch development contradicts the company's stated use of proceeds or strategic direction before scoring A6 band definitions, and defines three severity levels (Severe Contradiction, Moderate Contradiction, Minor or No Contradiction) with corresponding scoring impact guidance. This addresses the rubric's inability to score strategic pivots — the most material fundability signal in the Concerto evaluation — which could only be absorbed informally into A6's deal mechanics bands.
+    </revision>
+
+    <revision version="3.0" source="Concerto Audit Finding C2" criteria_affected="Section 2.2" change_type="Structural Addition">
+      Added a 10% tolerance band above the $52M ceiling ($52M–$57.2M classified as Gray Zone) and defined a three-value Scope Flag protocol (In Scope, Gray Zone, Out of Scope — Benchmark). This resolves the procedural ambiguity created by the v2.0 binary scope boundary, which forced the evaluator to either classify Concerto's $55M raise as out of scope or absorb the overshoot without procedural acknowledgment.
+    </revision>
+
+    <revision version="3.0" source="Concerto Audit Finding C3" criteria_affected="A4, A5" change_type="Scoring Logic">
+      Added CVC signal routing instruction to A4 with cross-reference in A5. CVC strategic validation (implied endorsement of science/platform by CVC parent) is scored under A4; CVC financial participation (cap table presence, follow-on capacity, syndicate quality) is scored under A5. This resolves the evaluator-dependent signal routing exposed when M Ventures' board seat could be scored under either criterion.
+    </revision>
+
+    <revision version="3.0" source="Concerto Audit Finding S3" criteria_affected="Section 1.7" change_type="Documentation">
+      Added explicit acknowledgment of cross-criterion risk correlation as a design constraint of the additive scoring architecture, with instruction to describe correlated risks qualitatively in Blocks 5 of the output format.
+    </revision>
+
+    <revision version="3.0" source="Output Format Specification" criteria_affected="Section 5" change_type="Structural Replacement">
+      Replaced the entire v2.0 Scoring Output Template (Section 5) with the Standardized Scoring Output Format. The new format addresses five output consistency issues from the Concerto audit: disqualifier duplication (resolved by Block 2 gate placement), modifier reporting ambiguity (resolved by A3/B3 modifier sub-block), score-to-tier consistency gap (resolved by three embedded PASS/FAIL checks), undefined Fundraising Readiness mapping (resolved by fixed tier-to-label rule), and unstandardized metadata (resolved by Block 0 Evaluation Header). Format also incorporates Scope Flag field, increased justification length standard (2-4 sentences with minimum evidence requirement), and Evaluation Footer.
+    </revision>
+
+    <revision version="3.0" source="Concerto Audit Finding C2 + Output Format Specification" criteria_affected="Section 2.3" change_type="Documentation">
+      Added explicit statement that disqualifier termination means no criterion scores, total score, or fundability tier are assigned, aligning Section 2.3 with the Block 2 gate-termination protocol in the new output format.
+    </revision>
+
+    <!-- ===== VERSION 4.0 REVISIONS (42 Genetics Ltd Audit, April 10, 2026) ===== -->
+
+    <note>All changes in Version 4.0 are mapped to findings of the 42 Genetics Ltd Performance Audit dated April 10, 2026. No criterion weights were changed in v4.0. Profile A weight check total = 100; Profile B weight check total = 100.</note>
+
+    <revision version="4.0" id="R4-01" source="O-1" severity="Minor" criteria_affected="Section 5, Block 0, Primary Sources field" change_type="Field Instruction Addition">
+      Added numeric count requirement to the Primary Sources field description, prohibiting "multiple" as a count value and requiring numeric counts or ranges. This prevents non-numeric source counts that impair auditability of the evaluator's research base.
+    </revision>
+
+    <revision version="4.0" id="R4-02" source="O-2" severity="Minor" criteria_affected="Section 5, Block 0, Sector field" change_type="Field Label Amendment">
+      Broadened the Sector field label from "[Therapeutic area / modality classification]" to include technology classification, with a note permitting non-therapeutic sector classifications. This prevents evaluators from silently deviating when classifying software, bioinformatics, or health IT companies.
+    </revision>
+
+    <revision version="4.0" id="R4-03" source="O-3" severity="Minor" criteria_affected="Section 5, Block 1, Scope Flag" change_type="Protocol Addition">
+      Added a fourth handling instruction to the Scope Flag field for unknown raise targets. When the raise amount is not publicly disclosed, the evaluator assigns "In Scope" with a conditional note if stage and capital history are consistent with the $1M–$52M range, and marks the Target Raise as "[UNCONFIRMED — ROUTING SUBJECT TO REVISION]." This prevents unsanctioned improvisation when evaluating information-scarce private companies.
+    </revision>
+
+    <revision version="4.0" id="R4-04" source="O-4" severity="Significant" criteria_affected="Section 5, Block 1, Development Stage field" change_type="Enumerated Value Extension">
+      Extended the Development Stage enumerated list to include non-therapeutic values (Pre-Revenue — Research Tool / Pre-Revenue — Beta / Commercial — Pre-Revenue / Commercial — Revenue Generating / Growth Stage). This prevents non-standard field values when evaluating software and tools companies that have no therapeutic regulatory stage.
+    </revision>
+
+    <revision version="4.0" id="R4-05" source="O-5" severity="Minor" criteria_affected="Section 5, Block 1, Routing Rationale field" change_type="Field Description Amendment">
+      Strengthened the Routing Rationale field description to explicitly enumerate and label the three required inputs (RAISE SIZE, DEVELOPMENT STAGE, INVESTOR COMPOSITION) and declare omission of any input a format error. This prevents incomplete routing rationales that omit one or more required inputs.
+    </revision>
+
+    <revision version="4.0" id="R4-06" source="O-6" severity="Minor" criteria_affected="Section 5, Block 1" change_type="Optional Field Addition">
+      Added an optional Market Context Note field at the end of Block 1 for documenting rubric-fit considerations, non-therapeutic company classifications, scope boundary conditions, or profile assignment uncertainties. This provides a sanctioned location for contextual notes that evaluators were adding without authorization.
+    </revision>
+
+    <revision version="4.0" id="R4-07" source="O-8" severity="Minor" criteria_affected="Section 5, Block 3, criterion_score_template" change_type="Format Clarification">
+      Added a format note clarifying that merged "ID — Name" section headers are an acceptable alternative to separate Criterion ID and Name fields, provided both elements are present and unambiguous. This legitimizes a common evaluator formatting pattern that was technically non-compliant under the v3.0 template.
+    </revision>
+
+    <revision version="4.0" id="R4-08" source="O-11" severity="Significant" criteria_affected="Section 1.5" change_type="Protocol Strengthening">
+      Added a midpoint-default justification standard requiring evaluators to articulate why the midpoint — rather than a higher or lower score within the band — is appropriate given partial evidence. This prevents rote citation of protocol application without engagement with available evidence.
+    </revision>
+
+    <revision version="4.0" id="R4-09" source="O-12" severity="Minor" criteria_affected="Section 1.7" change_type="Instruction Addition">
+      Added a cross-criterion symmetry instruction requiring that when a single risk appears in multiple Top 3 Fundability Risk entries, each entry must note the correlation to the other affected criteria. This prevents one-directional risk descriptions that understate aggregate impact.
+    </revision>
+
+    <revision version="4.0" id="R4-10" source="C-1" severity="Minor" criteria_affected="B1" change_type="Sub-Band Note Addition">
+      Added a commercial founder application note to the B1 16–20 band, defining how to score commercial founders without academic KOL profiles based on industry operating experience, domain expertise, and commercial track record. This resolves scoring ambiguity for companies led by commercial rather than academic founders.
+    </revision>
+
+    <revision version="4.0" id="R4-11" source="C-3/S-2" severity="Significant" criteria_affected="B2" change_type="Non-Therapeutic Application Note Addition">
+      Added a Non-Therapeutic Application Note to B2 defining a software-appropriate evidence hierarchy that maps to the existing band definitions. The analog framework covers independent benchmarking, peer-reviewed validation, performance metrics, and commercial deployment pathway as equivalents to in vivo data, lead candidate nomination, and IND-enabling studies. This addresses the structural gap exposed when applying therapeutic-calibrated criteria to software companies.
+    </revision>
+
+    <revision version="4.0" id="R4-12" source="C-5/S-3" severity="Significant" criteria_affected="A3" change_type="Sector Category Addition">
+      Added "Health IT / Genomics Infrastructure / Life Science Tools" as a Tier 2 default sector classification to A3, with defined conditions for Tier 1 upgrade and Tier 3 downgrade. This provides a defined classification path for non-therapeutic companies that are not classifiable under the existing therapeutic sector tiers.
+    </revision>
+
+    <revision version="4.0" id="R4-13" source="C-5/S-3" severity="Significant" criteria_affected="B3" change_type="Sector Category Addition">
+      Added "Health IT / Genomics Infrastructure / Life Science Tools" as a Tier 2 default sector classification to B3, with cross-reference to A3 conditions. This provides the same defined classification path at the Profile B raise level.
+    </revision>
+
+    <revision version="4.0" id="R4-14" source="C-7" severity="Significant" criteria_affected="B5" change_type="Band Definition Clarification">
+      Clarified that the named accelerators in the B5 band 9–10 definition are examples, not an exhaustive list, and defined three qualifying criteria (acceptance rate below 5%, demonstrated alumni fundraising outcomes, active investor network with follow-on capital pipeline). This prevents evaluators from reading the named programs as exhaustive and failing to credit equivalent programs that meet the same standards.
+    </revision>
+
+    <revision version="4.0" id="R4-15" source="C-9/C-NF1" severity="Significant" criteria_affected="A6, B6" change_type="Instruction Strengthening">
+      Added a documentation requirement to the Strategic Coherence Assessment mandating explicit documentation of the assessment outcome in the A6/B6 Justification field regardless of whether a contradiction is found. Silent omission of the assessment — even when the determination is "Minor or No Contradiction" — is no longer permitted. This ensures auditability of a v3.0 feature on its first live run.
+    </revision>
+
+    <revision version="4.0" id="R4-16" source="S-1" severity="Significant" criteria_affected="Section 2.3, Section 5 Block 2" change_type="Disqualifier Amendment and Addition">
+      Amended the FDA Enforcement disqualifier with a non-applicability clause for non-therapeutic companies, and added a new data security enforcement disqualifier (b-alt) for companies handling protected health information or genomic data. This resolves the gap where non-therapeutic companies had no applicable regulatory enforcement disqualifier and the FDA disqualifier could only be marked "Not applicable" without authorization.
+    </revision>
+
+    <revision version="4.0" id="R4-17" source="S-4" severity="Minor" criteria_affected="B7" change_type="Non-Therapeutic Application Note Addition">
+      Added a Non-Therapeutic Application Note to B7 defining how band definitions apply to software and algorithm IP, including method patent mapping, trade secret scoring, conditional IP ownership deduction, and priority date advantage documentation. This provides structured guidance for evaluating non-therapeutic IP positions that do not fit the composition-of-matter patent framework.
+    </revision>
+
+    <!-- ===== VERSION 5.0 REVISIONS (V.5 Five-Company Corpus Analysis, April 16, 2026) ===== -->
+
+    <note>All changes in Version 5.0 are mapped to findings of the V.5 Five-Company Corpus Review dated April 16, 2026. Corpus comprised Rapport Therapeutics, Granza Bio, Concerto Biosciences, 42 Genetics Ltd, and NEXI Biotech. Weight changes: B8/A8 eliminated with 3 points redistributed to B4/B5/B7 (Profile B) and A4/A6/A7 (Profile A). Profile A weight check total = 100; Profile B weight check total = 100. Revisions R6 and R7 deferred to v5.1.</note>
+
+    <revision version="5.0" id="R1" source="V.5 Analysis — R1" severity="Significant" criteria_affected="A4, A6, A7, A8, B4, B5, B7, B8" change_type="Weight Redistribution and Criterion Elimination">
+      Eliminated B8 and A8 (AI and Platform Premium) and redistributed the 3-point weight. Profile B: B4 increased from 12 to 13; B5 from 10 to 11; B7 from 7 to 8. Profile A: A4 increased from 12 to 13; A6 from 8 to 9; A7 from 5 to 6. Top-band ceilings extended by 1 point on each affected criterion; all other bands unchanged. Weight-check comments in Section 3 and Section 4 headers updated. Rationale: B8/A8 contributed approximately 4 points of 500 possible (0.8% effective vs. 3% nominal) across five evaluations with zero tier-movement impact. AI integration is increasingly expected rather than premium-worthy in the 2025–2026 fundraising environment. Unintended consequence: Concerto Biosciences' Profile A score drops from 56 to 54 (A8=2 contribution lost); no tier change. If AI-native companies become a significant pipeline segment, a future revision may reintroduce a premium mechanism with higher weight and sharper criteria.
+    </revision>
+
+    <revision version="5.0" id="R2" source="V.5 Analysis — R2" severity="Significant" criteria_affected="A3, B3" change_type="New Mechanism — Operational Viability Gate">
+      Added an Operational Viability Condition to A3 and B3 that caps the sector score at 8 points (Tier 3 band ceiling) when the company scores in its lowest defined band on both the anchor scientific/regulatory criterion (A2 Band 0–7 for Profile A; B2 score 5 or below for Profile B) AND the anchor external-validation criterion (A4 Band 0–3 for Profile A; B5 score 5 or below for Profile B). The AND condition prevents penalizing companies with strong scientific output but weak external validation (or vice versa) while capping sector score inflation for companies that cannot capitalize on sector conditions. Rationale: NEXI Biotech B3=11/16 (69% of max for a pre-operational company with zero verified output); 42 Genetics B3=6/16 (correctly downgraded via evaluator judgment but without formal mechanism); Granza Bio B3=12/15 (correctly full-credit, company has demonstrated viability). Three companies cited — evidence threshold met for non-tentative implementation.
+    </revision>
+
+    <revision version="5.0" id="R3" source="V.5 Analysis — R3" severity="Significant" criteria_affected="A1, B1" change_type="New Mechanism — Negative Credibility Signal Protocol">
+      Added a Negative Credibility Signal Protocol to A1 and B1. When team credibility claims (titles, institutional affiliations, authorship or contribution claims, priority claims, competitive positioning claims) are directly contradicted by verifiable evidence, the evaluator applies a deduction within the assigned band: 1 point for a single minor contradiction; 2–3 points for multiple contradictions or a single material contradiction (with permission to drop to next lower band if deduction exceeds band floor). The protocol applies regardless of whether the midpoint-default is in effect. Rationale: NEXI Biotech B1=13/25 with three documented contradicted claims (founder title inflation contradicted by title records; contribution-to-FDA-Modernization-Act-2.0 claim contradicted by public record; "First Commercial Brain-on-Chip" positioning contradicted by 6+ established competitors). Evaluator documented contradictions correctly but had no rubric mechanism to score below band midpoint. EVIDENCE BASE IS TENTATIVE — single company. Additional validation cases will refine calibration in future versions.
+    </revision>
+
+    <revision version="5.0" id="R4" source="V.5 Analysis — R4" severity="Significant" criteria_affected="Section 1.5 (cascades to all midpoint-default applications)" change_type="Scoring Logic Change — Two-Track Classification">
+      Added INFORMATION-SCARCE vs. INFORMATION-ABSENT classification to the midpoint-default protocol in Section 1.5. INFORMATION-SCARCE: evidence exists that the underlying activity has occurred but details are not publicly disclosed — apply midpoint-default as before. INFORMATION-ABSENT: no evidence exists that the underlying activity has occurred — score in the lowest applicable band, not at midpoint. Ambiguous cases default to INFORMATION-SCARCE. B4 Scenario A (no milestone plan disclosed) is explicitly identified as a specialized application of INFORMATION-SCARCE, with INFORMATION-ABSENT permitted if the evaluator has reason to believe the company has no plan at all. Rationale: NEXI Biotech had four INSUFFICIENT DATA criteria (B1, B4, B6, B7) contributing approximately 22 points through midpoint defaults for a company with zero verified output; 42 Genetics had one INSUFFICIENT DATA criterion (B4) with defensible midpoint treatment for a company that exists and operates. The v4.0 protocol produced correct behavior for 42 Genetics and inflated behavior for NEXI because it treated "information-scarce because not disclosed" identically to "information-absent because not produced." EVIDENCE BASE IS TENTATIVE — two companies. Calibration will be refined with additional validation cases.
+    </revision>
+
+    <revision version="5.0" id="R5" source="V.5 Analysis — R5" severity="Minor" criteria_affected="Section 2.3, Section 5 Block 4 tier_thresholds, fundraising_readiness, fundability_tier" change_type="Threshold Change — Tier 4 Formalization">
+      Formalized Tier 4 ("Not Ready") at scores below 40 with no disqualifier triggered. Amended Out of Scope tier definition to clarify that OOS is reserved for disqualifier triggers and instrument scope mismatches (publicly traded, pre-seed, raise above $57.2M), not low scores alone. Expanded fundraising_readiness mapping_rule to five values: Tier 1 = Strong Prospect, Tier 2 = Fundable, Tier 3 = Conditional, Tier 4 = Not Ready, Out of Scope (Disqualified or Scope Mismatch) = Out of Scope. Expanded Tier Assigned, Tier Label, and Fundraising Readiness Label fields to include Tier 4 / Not Ready. Added clarifying sentence to Section 2.3 distinguishing Tier 4 from OOS. Rationale: NEXI Biotech scored 38 and received an informal "Out of Scope / Not Ready" designation — evaluator improvised a correct label but had no rubric authority. EVIDENCE BASE IS TENTATIVE — single company.
+    </revision>
+
+    <revision version="5.0" id="R6" source="V.5 Analysis — R6" severity="Deferred to v5.1" criteria_affected="B5" change_type="Deferred — Criterion Language Change">
+      B5 Band 9–10 Ceiling Conditioning (forward-looking conditioning note for companies scoring at band maximum where the top signals are backward-looking rather than forward-transferable). DEFERRED TO V.5.1. Exclusion rationale: evidence base is a single company (Granza Bio); the conditioning note adds evaluator judgment burden without changing the Granza outcome. Deferred pending additional validation cases where B5=maximum occurs in conjunction with unproven forward-transferability.
+    </revision>
+
+    <revision version="5.0" id="R7" source="V.5 Analysis — R7" severity="Deferred to v5.1" criteria_affected="Section 5 Block 4" change_type="Deferred — Output Format Change">
+      Operational Viability Summary Flag in Block 4 (dedicated output field summarizing operational viability status across criteria). DEFERRED TO V.5.1. Exclusion rationale: R2 already requires documentation of the Operational Viability Condition in the A3/B3 Justification field, and R4 requires explicit INFORMATION-ABSENT flagging in each affected criterion's Justification field. Together, these produce the substance of the operational viability signal without adding a new output field. A dedicated Block 4 flag will be reconsidered in v5.1 after v5.0 mechanisms have been validated across additional evaluation runs.
+    </revision>
+
+    <!-- ===== VERSION 5.1 REVISIONS (v5.0 Performance Review, April 18, 2026) ===== -->
+
+    <note>All changes in Version 5.1 are mapped to findings of the v5.0
+Performance Review dated April 18, 2026, conducted against the five-
+company corpus (Rapport Therapeutics, Concerto Biosciences, Granza
+Bio, 42 Genetics Ltd, NEXI Biotech). v5.1 is a minor revision: no
+criterion weights change, no new scoring mechanisms are introduced,
+and all changes are either contained within existing rubric elements,
+additive to the revision log, or added as a new Future Revisions Log
+section. Profile A weight check total = 100; Profile B weight check
+total = 100.</note>
+
+    <revision version="5.1" id="R1" source="v5.0 Performance Review — R1"
+      severity="Significant" criteria_affected="A6, B6"
+      change_type="Language Change — SCA Severity Path Disambiguation">
+      Revised the SEVERE CONTRADICTION scoring rule within the Strategic
+      Coherence Assessment of A6 and B6 from a two-path formulation to an
+      ordered three-rule formulation: (1) default — score at the floor of
+      the applicable band; (2) drop to the top of the next lower band only
+      when non-SCA deal mechanics signals independently warrant the lower
+      band; (3) score at the assessed position within the lower band when
+      non-SCA signals warrant below the lower band's top. Added a mandatory
+      documentation requirement that the Justification field state which
+      rule was applied and why.
+    </revision>
+
+    <revision version="5.1" id="R2"
+      source="v5.0 Performance Review — R2 (implements v5.0-deferred R6)"
+      severity="Significant" criteria_affected="B5"
+      change_type="Scoring Band Revision — Forward-Transferability Conditioning">
+      Added a CEILING CONDITIONING paragraph to B5 Band 9-11 "Exceptional
+      Early Validation." When all or nearly all qualifying signals are
+      backward-looking, the evaluator must assess whether at least one
+      forward-transferable signal supports the band assignment. When no
+      forward-transferable signal is present, B5 is capped at 9 (band floor).
+    </revision>
+
+    <revision version="5.1" id="R3"
+      source="v5.0 Performance Review — R3 (implements v5.0-deferred R7)"
+      severity="Minor" criteria_affected="Section 5 Block 4"
+      change_type="Structural Addition — Operational Viability Summary Flag">
+      Added a new operational_viability_summary element to Section 5
+      Block 4 with OPERATIONAL / MARGINAL / PRE-OPERATIONAL rating.
+    </revision>
+
+    <revision version="5.1" id="HD-1a"
+      source="v5.0 Performance Review — Q5.1 / Human Decision HD-1 Option A"
+      severity="Minor" criteria_affected="Section 2.2"
+      change_type="Language Addition — Therapeutic Scope Boundary Note">
+      Added Therapeutic Focus and Non-Therapeutic Fit Limitation scope boundary.
+    </revision>
+
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 7 — FUTURE REVISIONS LOG
+       Documents approved design directions deferred to future versions.
+       ============================================================ -->
+  <section id="7" name="Future Revisions Log">
+
+    <header_note>This section documents design changes that were
+    analyzed during rubric development cycles, found analytically
+    credible, and deliberately deferred to a future version.</header_note>
+
+    <entry id="FV-1" target="v6.0"
+           title="Cross-Criterion Risk Correlation Mechanism"
+           source="v5.0 Performance Review Q5.3 / HD-3">
+      PROBLEM: The additive scoring model cannot express cross-criterion
+      risk correlation. A single material event affects multiple criteria
+      simultaneously but each criterion scores independently.
+      PROPOSED DIRECTION: Introduce a structured modifier in v6.0.
+      DEFERRAL REASON: Architectural change exceeds v5.1 scope.
+    </entry>
+
+    <entry id="FV-2" target="v5.2 or v6.0"
+           title="NCSP Band-Drop Rule Calibration"
+           source="v5.0 Performance Review Q5.4 / HD-4">
+      PROBLEM: NCSP introduced in v5.0 with single empirical case.
+      PROPOSED DIRECTION: Calibration review after 3-5 additional cases.
+      DEFERRAL REASON: Insufficient empirical cases.
+    </entry>
+
+    <entry id="FV-3" target="v6.0"
+           title="Non-Therapeutic Life Science Company Track (Profile C)"
+           source="v5.0 Performance Review Q5.1 / HD-1">
+      PROBLEM: Instrument calibrated for therapeutic companies.
+      PROPOSED DIRECTION: Develop Profile C if pipeline exceeds 20% non-therapeutic.
+      DEFERRAL REASON: Client pipeline predominantly therapeutic.
+    </entry>
+
+  </section>

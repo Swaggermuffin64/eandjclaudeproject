@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  LIFE SCIENCE FUNDRAISING ICP EVALUATION INSTRUMENT
+  Version 5.1 — Shared Sections (Evaluation Context, Routing Logic, Output Format)
+  These sections apply to both Profile A and Profile B.
+  Profile-specific criteria are in separate files:
+    - Life Sciences Rubric v5.1 - Profile A.xml
+    - Life Sciences Rubric v5.1 - Profile B.xml
+-->
+<rubric
+  version="5.1"
+  revision_date="2026-04-19"
+  evaluation_target="Fundraising Velocity and Investor Appetite"
+  scope="Private life science companies raising $1M–$52M (with tolerance band to $57M)"
+  not_for="Due diligence, portfolio management, scientific merit evaluation">
+
+  <!-- ============================================================
+       SECTION 1 — EVALUATION CONTEXT
+       ============================================================ -->
+  <section id="1" name="Evaluation Context">
+
+    <block id="1.1" name="Instrument Purpose">
+      This is a two-profile Ideal Company Profile (ICP) scoring instrument built for a fundraiser to use as a top-of-funnel qualification and prioritization tool. Its purpose is to evaluate private life science companies (biotech, medtech, diagnostics, pharma) that are actively seeking capital in the $1M–$52M range and produce a structured, scored assessment of each company's probability of successfully closing a funding round.
+      This instrument is not a due diligence tool and was not designed for portfolio management, scientific merit evaluation, or investment decision-making.
+    </block>
+
+    <block id="1.2" name="Defining Objective">
+      The rubric is explicitly built to identify companies that can raise money most easily — not companies with the best science or most promising products. Scientific promise and fundraising ease diverge meaningfully in practice. The evaluation target is investor psychology, deal velocity, and capital market dynamics. Every criterion, weight, and scoring band is calibrated against this objective.
+      STANDING INSTRUCTION: The objective is fundraising velocity and investor appetite — not scientific promise. Score accordingly.
+    </block>
+
+    <block id="1.3" name="Client Specifications">
+      <spec name="Funding Stage Fit">Series B (100%), Series A (95%), Seed (40%), Pre-Seed (excluded at 90%)</spec>
+      <spec name="Fundraising Target Range">$1M–$52M</spec>
+      <spec name="Team Priority">Single most important criterion. Strong preference for industry veterans and serial entrepreneurs. Academic spinouts deprioritized (negative signal, not automatic disqualifier).</spec>
+      <spec name="Cap Table">Sporadic or messy cap tables are a hard disqualifier across both profiles.</spec>
+      <spec name="Geography">No restrictions; globally applicable.</spec>
+      <spec name="Partnerships">Preferred but not a hard requirement.</spec>
+      <spec name="IP">No hard requirements specified; rubric applies best-practice expectations appropriate to each profile's development stage.</spec>
+    </block>
+
+    <block id="1.4" name="Two-Profile Structure">
+      The $1M–$52M range is split into Profile A ($30M–$52M) and Profile B ($1M–$15M) to create meaningful separation between two genuinely different fundraising environments. FDA regulatory pathway stage and clinical development phase serve as the product viability anchor for both profiles because they are verifiable, stage-specific, and directly correlated with investor risk tolerance at each funding level.
+    </block>
+
+    <block id="1.5" name="Information Scarcity Protocol" status="Revised — V.5 R4">
+
+      When information for a criterion is insufficient to produce a confident score, assign the midpoint of the applicable scoring band and flag the score with [INSUFFICIENT DATA]. Do not penalize companies for missing information below the midpoint. This protocol applies to all criteria in both profiles. The Data Confidence indicator in Section 5 aggregates these flags to provide an overall assessment of score reliability.
+
+      MIDPOINT-DEFAULT JUSTIFICATION STANDARD: When the midpoint-default is applied to a criterion, the Justification field must do more than cite protocol application. The evaluator must articulate why the midpoint — rather than a score above or below midpoint within the band — is appropriate given whatever partial evidence exists. If partial evidence supports a score above or below the midpoint, score accordingly and document the partial evidence. Reserve the exact midpoint for situations where evidence is genuinely absent and no directional signal is available.
+
+      <two_track_classification>
+        INFORMATION-SCARCE vs. INFORMATION-ABSENT CLASSIFICATION:
+
+        Before applying the midpoint-default to any criterion, the evaluator must classify the missing information as one of two types:
+
+        INFORMATION-SCARCE: Evidence exists that the company has engaged in the activity measured by this criterion — for example, the company has employees but their backgrounds are not publicly detailed; the company has raised capital but terms are undisclosed; the company has filed IP but the filings are not yet public; the company has conducted experiments but results are not released. The existence of the underlying activity is supported by some observable signal, even if the details are not available. When information is SCARCE: apply the midpoint-default as specified in this section. Flag as [INSUFFICIENT DATA — INFORMATION-SCARCE]. In the Justification field, state the observable signal that confirms the underlying activity exists.
+
+        INFORMATION-ABSENT: No evidence exists that the company has engaged in the activity measured by this criterion — for example, no publications because no science has been produced; no patents because no IP has been generated; no grants because none have been applied for or received; no confirmed employees because none may exist; no product demonstrations because no product has been built. The absence is not caused by non-disclosure of existing information but by the non-existence of the things the information would describe. When information is ABSENT: score in the lowest applicable band per the band definitions. The midpoint-default does not apply. Flag as [INSUFFICIENT DATA — INFORMATION-ABSENT] and document in the Justification field: (a) what evidence was searched for, (b) why the absence is classified as information-absent rather than information-scarce, and (c) the specific band assigned and its justification.
+
+        AMBIGUOUS CASES: When partial evidence exists but it is ambiguous whether the underlying activity has occurred, default to INFORMATION-SCARCE and document the ambiguity. The INFORMATION-ABSENT classification should only be applied when the evaluator has actively searched for evidence of the underlying activity across available sources and found none.
+
+        INTERACTION WITH B4 MILESTONE SCORING GUIDANCE: The B4 milestone scoring guidance (Scenario A — no milestone plan disclosed) is a specialized application of the INFORMATION-SCARCE classification. Seed-stage companies commonly do not publicly disclose milestone plans; the absence of a disclosed plan is presumed to be non-disclosure of an existing plan unless evidence indicates otherwise. If the evaluator has reason to believe the company has no milestone plan (e.g., the company appears pre-operational across multiple criteria), the INFORMATION-ABSENT classification may be applied to B4 with documentation of the basis.
+      </two_track_classification>
+    </block>
+
+    <block id="1.6" name="Market Context Note Protocol">
+      Any deviation from the client's original specifications in the scoring criteria, weights, or band definitions must be documented in a Market Context Note at the point of deviation. The evaluator has latitude to adjust, reorder, replace, or add criteria relative to the original specifications, provided deviations are disclosed.
+    </block>
+
+    <block id="1.7" name="Scoring Architecture">
+      Both profiles score on a base scale of 100 points. The Market-Evidence Modifier on the Sector criterion (A3/B3) can adjust the total by up to ±2 points, producing a scoring range of 96–102 points. Fundability tier thresholds are defined in absolute point values and apply across the full scoring range.
+
+      DESIGN CONSTRAINT: This instrument uses an additive, independent-criterion scoring architecture. When a single development (such as a strategic pivot or regulatory event) affects multiple criteria simultaneously, the independent scoring structure cannot express the correlated risk quantitatively. Evaluators should describe cross-criterion risk correlations qualitatively in the Top 3 Fundability Risks (Block 5) and Fundraising Outlook (Block 5) sections of the output. The quantitative scores for each criterion remain independently assessed per their respective band definitions.
+
+      CROSS-CRITERION SYMMETRY: When a single risk affects multiple criteria and appears in multiple Top 3 Fundability Risk entries in Block 5, each risk entry must note the correlation to the other affected criteria. A cross-criterion risk described from only one direction understates its aggregate impact on the evaluation.
+    </block>
+
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 2 — ROUTING LOGIC
+       ============================================================ -->
+  <section id="2" name="Routing Logic">
+
+    <block id="2.1" name="Profile Assignment Rules">
+      Every company evaluated under this instrument must first be routed to Profile A or Profile B. Routing is based on the company's most recent completed funding round size, its current fundraising target (if known), and its clinical/regulatory development stage. The routing decision is made before any criterion is scored.
+
+      <profile_route id="A" name="Profile A — $30M–$52M Raise Environment">
+        Assign to Profile A if the company's target raise is $30M–$52M, or if the most recent completed round was $20M or above and the current raise is expected to be at or above $30M. Profile A companies are typically at IND-filed, Phase 1, or Phase 2 stage with institutional venture syndicate involvement and formal board governance. Profile A expects more advanced regulatory and clinical maturity, experienced management teams with prior exits, and institutional-quality cap tables.
+      </profile_route>
+
+      <profile_route id="B" name="Profile B — $1M–$15M Raise Environment">
+        Assign to Profile B if the company's target raise is $1M–$15M, or if total capital raised to date is under $20M and the company is at discovery, preclinical, or early IND-enabling stage. Profile B companies may include seed-stage, accelerator-graduated, or early institutional-round companies. Profile B expects earlier-stage positioning with upside potential, scientific founder credibility, and emerging validation signals.
+      </profile_route>
+
+      <profile_route id="GAP" name="Gap Range — $15M–$30M">
+        Companies targeting $15M–$30M fall in the gap between profiles. Route to Profile A if the company has IND-filed or later-stage clinical assets, institutional VC leads, and an experienced management team. Route to Profile B if the company is at preclinical or early IND-enabling stage with a scientific founder team and limited institutional infrastructure. If the routing is ambiguous, conduct a split evaluation under both profiles and report the score range.
+      </profile_route>
+    </block>
+
+    <block id="2.2" name="Scope Boundaries" status="Revised — Concerto Finding C2; HD-1a (v5.1)">
+
+      The instrument is calibrated for private capital markets. Publicly traded companies and pre-seed companies (total raised under $500K with no institutional participation) are OUT OF SCOPE. An OUT OF SCOPE flag is a scope/instrument mismatch, not a disqualifying deficiency. Out-of-scope companies may be evaluated as benchmark exercises if clearly flagged.
+
+      <scope_boundary name="Upper Ceiling and Tolerance Band">
+        Companies whose target raise is $52M or below are IN SCOPE. Companies whose target raise exceeds $52M but is at or below $57.2M (10% above the $52M ceiling) are classified as GRAY ZONE. Gray Zone companies are evaluated under the appropriate profile with a mandatory Gray Zone scope flag in the output. The evaluator must note the overshoot in the Routing Rationale and acknowledge that the instrument's calibration may be less precise for raises above $52M. Companies whose target raise exceeds $57.2M are OUT OF SCOPE and may only be evaluated as benchmark exercises with an Out of Scope — Benchmark flag.
+      </scope_boundary>
+
+      <scope_boundary name="Therapeutic Focus and Non-Therapeutic Fit Limitation">
+        The instrument is calibrated for therapeutic life science companies with clinical and regulatory development pathways (biotech, pharma, medtech, diagnostics with therapeutic intent). Non-therapeutic life science companies — including bioinformatics software, genomic data infrastructure, health IT platforms, life science tools, and diagnostic software without a companion therapeutic — are within the general life science scope of the instrument but produce persistent band language friction, most notably on B2 (Scientific Foundation and Data Package) and B7 (IP and Technology Defensibility), and require sector classification via the Health IT / Genomics Infrastructure / Life Science Tools addition in A3/B3.
+
+        The v4.0 non-therapeutic application notes on B1, B2, and B7, and the Health IT / Genomics Infrastructure / Life Science Tools sector addition on A3/B3, collectively provide an analog framework for evaluating non-therapeutic companies. This framework is a documented boundary condition of the instrument, not a rubric deficiency. Evaluations of non-therapeutic companies conducted under this framework remain valid but carry lower rubric fit than evaluations of therapeutic companies. Evaluators must document the non-therapeutic classification in the Block 1 Market Context Note field, identify which criteria required analog application, and note that rubric fit limitations apply.
+
+        Clients whose target pipeline exceeds approximately 20% non-therapeutic companies should consider commissioning a dedicated Profile C track calibrated to non-therapeutic fundability signals — including ARR, customer concentration, sales cycle compression, platform defensibility, category leadership, and applicable regulatory pathway (510k, De Novo, LDT). See Future Revisions entry FV-3 for the deferred Profile C design direction. Until such a track is developed, non-therapeutic companies continue to be evaluated under the analog framework with the boundary condition flagged in the Market Context Note.
+      </scope_boundary>
+
+      <scope_flag_definitions>
+        <flag value="In Scope">Target raise falls within the $1M–$52M range. Standard evaluation applies.</flag>
+        <flag value="Gray Zone">Target raise exceeds $52M but is at or below $57.2M (10% tolerance). Evaluation proceeds under the appropriate profile with a mandatory acknowledgment that instrument calibration may be less precise.</flag>
+        <flag value="Out of Scope — Benchmark">Target raise exceeds $57.2M, or company is publicly traded, or company is pre-seed. Evaluation may proceed as a benchmark exercise if clearly flagged. Scores should not be compared directly to in-scope evaluations.</flag>
+      </scope_flag_definitions>
+    </block>
+
+    <block id="2.3" name="Automatic Disqualifiers" status="Revised — V.5 R5">
+
+      The following conditions trigger automatic disqualification regardless of score. A disqualified company is classified as Out of Scope and does not receive a fundability tier assignment. If any disqualifier is triggered, the evaluation terminates after the Disqualifier Screen (Block 2 of the output format). No criterion scores, total score, or fundability tier are assigned. A score below 40 with no disqualifier triggered is classified as Tier 4 — Not Ready, not as Out of Scope. Out of Scope status is reserved for instrument scope mismatches and disqualifier triggers.
+      <disqualifier id="a">Sporadic, messy, or structurally compromised cap table with unresolved ownership disputes, missing documentation, or legal encumbrances (applies to both profiles).</disqualifier>
+      <disqualifier id="b">Active FDA enforcement action (Warning Letter, clinical hold without resolution pathway, consent decree) that materially impairs the lead program's development timeline. NOT APPLICABLE TO NON-THERAPEUTIC COMPANIES: This disqualifier applies only to companies with FDA-regulated therapeutic assets, medical devices, or diagnostics. For non-therapeutic companies (bioinformatics software, health IT, life science tools, genomic data platforms), mark this disqualifier as "NOT APPLICABLE" rather than "CLEAR." Marking NOT APPLICABLE does not trigger disqualification. See the alternative disqualifier below for non-therapeutic companies.</disqualifier>
+      <disqualifier id="b-alt">Active data security enforcement action — including a consent order, corrective action plan, or equivalent regulatory mandate from a data protection authority (HHS Office for Civil Rights under HIPAA, EU/UK data protection authorities under GDPR, or equivalent) — that materially impairs the company's ability to operate, retain customers, or handle protected health information or genomic data. Applies to non-therapeutic companies handling protected health information, genomic data, or other regulated data categories. NOT APPLICABLE TO THERAPEUTIC COMPANIES with no data handling regulatory exposure; mark as "NOT APPLICABLE" for such companies.</disqualifier>
+      <disqualifier id="c">Pending or unresolved material litigation that creates existential risk to the company's operations or IP position.</disqualifier>
+      <disqualifier id="d">Founder or C-suite executive subject to active SEC enforcement, FDA debarment, or criminal proceedings related to securities fraud or scientific misconduct.</disqualifier>
+    </block>
+
+  </section>
+
+
+       DESIGN CONSTRAINTS:
+       (a) Identical in structure for every evaluation regardless of
+           profile, company, or evaluator.
+       (b) Plain text with no markdown, no special characters, and
+           no rendering dependencies.
+       (c) Self-auditing: every score can be verified from the output
+           alone.
+       (d) Structurally enforcing of internal consistency between
+           criterion scores, total score, and fundability tier.
+       ============================================================ -->
+  <section id="5" name="Standardized Scoring Output Format" status="Revised — V.5 R5; v5.1 R3; prior revisions retained">
+
+    <block id="0" name="Evaluation Header">
+      <instruction>Required for every evaluation. Provides traceability metadata.</instruction>
+      <field name="Company Name">[Full legal name]</field>
+      <field name="Company Address">[Primary office address]</field>
+      <field name="Sector">[Therapeutic area / modality / technology classification. For non-therapeutic companies (bioinformatics, health IT, life science tools, diagnostics software), use a technology or market classification rather than a therapeutic area. Document the non-therapeutic classification as a Market Context Note in Block 1.]</field>
+      <field name="Evaluation Date">[YYYY-MM-DD]</field>
+      <field name="Rubric Version">[Version number and revision date]</field>
+      <field name="Research Dossier Date">[YYYY-MM-DD]</field>
+      <field name="Primary Sources">[List of primary source categories with numeric count or range. "Multiple" is not an acceptable count value. Use numeric counts (e.g., "Companies House filings (3)") or ranges (e.g., "LinkedIn profiles (5–10)") for each category.]</field>
+      <field name="Evaluator">[Model identifier or human evaluator name]</field>
+    </block>
+
+    <block id="1" name="Routing Determination">
+      <instruction>Establishes profile assignment and scope status before any scoring begins.</instruction>
+      <field name="Profile Assigned">[Profile A / Profile B / Out of Scope — Benchmark]</field>
+      <field name="Target Raise">[$XX.XM]</field>
+      <field name="Total Raised to Date">[$XX.XM]</field>
+      <field name="Development Stage">[Therapeutic companies: Discovery / Preclinical / IND-enabling / IND filed / Phase 1 / Phase 1b / Phase 2 / Phase 3. Non-therapeutic companies (software, bioinformatics, health IT, life science tools): Pre-Revenue — Research Tool / Pre-Revenue — Beta / Commercial — Pre-Revenue / Commercial — Revenue Generating / Growth Stage. Select the single most accurate value from the appropriate list. Do not apply therapeutic stage values to non-therapeutic companies.]</field>
+      <field name="Routing Rationale">[1-3 sentences explicitly citing all three required inputs: (1) RAISE SIZE — state the target raise amount or note if unconfirmed; (2) DEVELOPMENT STAGE — state the development stage value assigned in the field above; (3) INVESTOR COMPOSITION — characterize the lead investor type and institutional depth. All three inputs are required. Omission of any input is a format error.]</field>
+      <field name="Split Evaluation">[No / Yes — if Yes, indicate both profiles]</field>
+      <field name="Scope Flag">[In Scope / Out of Scope — Benchmark / Gray Zone — see rationale]</field>
+      <scope_flag_definitions>
+        <flag value="In Scope">Target raise falls within the $1M–$52M range. Standard evaluation applies.</flag>
+        <flag value="Gray Zone">Target raise exceeds $52M but is at or below $57.2M (10% tolerance). Evaluation proceeds with mandatory acknowledgment that instrument calibration may be less precise.</flag>
+        <flag value="Out of Scope — Benchmark">Target raise exceeds $57.2M, or company is publicly traded, or company is pre-seed. Evaluation may proceed as a benchmark exercise if clearly flagged. Scores should not be compared directly to in-scope evaluations.</flag>
+      </scope_flag_definitions>
+      <scope_flag_unknown_raise_protocol>
+        <instruction>If the target raise amount is not publicly disclosed and cannot be confirmed through available sources, assign the Scope Flag as follows: assign "In Scope" with a conditional note if the company's development stage and total capital raised to date are consistent with the $1M–$52M range. Populate the Target Raise field with "[UNCONFIRMED — ROUTING SUBJECT TO REVISION]" and document the assumption explicitly in the Routing Rationale. If the raise target is subsequently confirmed to fall outside the $1M–$52M range or within the $52M–$57.2M Gray Zone, the Scope Flag and Routing Determination must be revised before the evaluation is used for client engagement decisions.</instruction>
+      </scope_flag_unknown_raise_protocol>
+      <field name="Market Context Note">[Optional. Document rubric-fit considerations, non-therapeutic company classifications, scope boundary conditions, or profile assignment uncertainties that affect interpretation of this evaluation. If the company is non-therapeutic, document the sector classification and note which criteria required adaptation. Leave blank if no notes are required.]</field>
+    </block>
+
+    <block id="2" name="Disqualifier Screen">
+      <instruction>The disqualifier screen is a gate. If any disqualifier is TRIGGERED, the evaluation terminates here. The company is classified as Out of Scope. No criterion scores, total score, fundability tier, or fundraising readiness are assigned. Blocks 3–5 are populated with "N/A — Disqualified" and the basis for disqualification. Block 6 (Footer) is still completed.</instruction>
+      <field name="(a) Cap Table Integrity">[CLEAR / TRIGGERED — explanation]</field>
+      <field name="(b) FDA Enforcement">[CLEAR / NOT APPLICABLE / TRIGGERED — explanation. Mark NOT APPLICABLE for non-therapeutic companies per Section 2.3.]</field>
+      <field name="(b-alt) Data Security Enforcement">[CLEAR / NOT APPLICABLE / TRIGGERED — explanation. Mark NOT APPLICABLE for therapeutic companies with no data handling regulatory exposure per Section 2.3.]</field>
+      <field name="(c) Material Litigation">[CLEAR / TRIGGERED — explanation]</field>
+      <field name="(d) Executive Misconduct">[CLEAR / TRIGGERED — explanation]</field>
+      <field name="Disqualifier Outcome">[NONE TRIGGERED / DISQUALIFIED — cite specific disqualifier(s)]</field>
+    </block>
+
+    <block id="3" name="Criterion Scores">
+      <instruction>The following block repeats once for each criterion. Profile A evaluations use A1-A7. Profile B evaluations use B1-B7. The block structure is identical regardless of criterion. Note: v5.0 eliminates A8/B8 (AI and Platform Premium) and redistributes 3 points across A4/A6/A7 (Profile A) and B4/B5/B7 (Profile B).</instruction>
+
+      <criterion_score_template>
+        <field name="Criterion ID">[A1-A7 or B1-B7]</field>
+        <format_note>Criterion ID and Name may be presented as separate fields or as a merged section header in the format "ID — Name" (e.g., "B1 — Team Quality and Execution Credibility"). Merged headers are acceptable provided both the ID and Name are unambiguous. All other fields in the criterion block must be populated as discrete fields regardless of header format.</format_note>
+        <field name="Name">[Criterion name from rubric]</field>
+        <field name="Weight">[XX]%</field>
+        <field name="Maximum Points">[XX] (base) [or XX with modifier, if A3/B3]</field>
+        <field name="Score Assigned">[XX] / [base maximum]</field>
+        <field name="Band Applied">[Band label from rubric] ([min]-[max] points)</field>
+        <field name="Data Flag">[SCORED / INSUFFICIENT DATA — INFORMATION-SCARCE — description / INSUFFICIENT DATA — INFORMATION-ABSENT — description]</field>
+        <field name="Justification">[2-4 sentences citing specific observable signals from the research dossier that justify the score and band assignment. Must include at least one named source, data point, or verifiable fact. Must explain why the score falls at its position within the band — not just why the band was selected. Where the V.5 protocols apply (Negative Credibility Signal Protocol for A1/B1; Operational Viability Condition for A3/B3; Two-Track Classification for any midpoint-default criterion), document the protocol outcome per the protocol's documentation requirement.]</field>
+      </criterion_score_template>
+
+      <modifier_sub_block>
+        <instruction>For criterion A3/B3 only, add immediately after the standard criterion block.</instruction>
+        <field name="Base Tier Score">[XX] / 16</field>
+        <field name="Base Tier Band">[Tier label] ([min]-[max] points)</field>
+        <field name="Market-Evidence Modifier">[+2 / +1 / 0 / -1 / -2]</field>
+        <field name="Modifier Justification">[1-2 sentences citing specific M&amp;A transactions, sector events, or capital deployment data within the 12-month lookback window]</field>
+        <field name="A3/B3 Uncapped Score">[base + modifier] / 16 (if Operational Viability Condition was evaluated)</field>
+        <field name="Operational Viability Condition">[NOT TRIGGERED — one-sentence confirmation / TRIGGERED — cite A2/A4 or B2/B5 scores and cap applied]</field>
+        <field name="A3/B3 Final Score">[uncapped score or capped score if triggered] / 16</field>
+        <field name="Modifier Impact on Total Maximum">[100 adjusted to XX]</field>
+      </modifier_sub_block>
+    </block>
+
+    <block id="4" name="Score Summary and Consistency Check">
+
+      <score_summary>
+        <field name="Criterion Subtotal (before modifier)">[Sum of all criterion scores using base A3/B3] / 100</field>
+        <field name="Market-Evidence Modifier">[+2 / +1 / 0 / -1 / -2]</field>
+        <field name="TOTAL SCORE">[Subtotal + modifier] / [100 + modifier]</field>
+      </score_summary>
+
+      <consistency_check>
+        <field name="Score Arithmetic">[PASS / FAIL — state sum if FAIL]</field>
+        <field name="Sum of criterion scores">[A1+A2+...+A7 or B1+B2+...+B7] = [computed sum]</field>
+        <field name="Reported Subtotal">[reported subtotal]</field>
+        <field name="Match">[Yes / No]</field>
+      </consistency_check>
+
+      <fundability_tier>
+        <field name="Tier Assigned">[Tier 1 / Tier 2 / Tier 3 / Tier 4 / Out of Scope]</field>
+        <field name="Tier Label">[Strong Fit / Qualified Fit — Fundable / Conditional Fundability / Not Ready / Out of Scope]</field>
+        <field name="Tier Score Range">[XX-XX]</field>
+        <tier_thresholds>
+          <tier id="1" label="Strong Fit" range="80–102"/>
+          <tier id="2" label="Qualified Fit — Fundable" range="60–79"/>
+          <tier id="3" label="Conditional Fundability" range="40–59"/>
+          <tier id="4" label="Not Ready" range="Below 40"/>
+          <tier id="OOS" label="Out of Scope" range="Disqualifier triggered, or instrument scope mismatch (publicly traded, pre-seed, raise above $57.2M). Not assigned for low scores alone."/>
+        </tier_thresholds>
+        <field name="Total Score">[XX]</field>
+        <field name="Tier Check">[PASS / FAIL — score falls within assigned tier range: Yes / No]</field>
+        <field name="Tier Rationale">[2-3 sentences summarizing the primary factors that place the company in this tier]</field>
+      </fundability_tier>
+
+      <data_confidence>
+        <field name="Rating">[HIGH / MODERATE / LOW]</field>
+        <field name="Criteria with INSUFFICIENT DATA">[Count: X of 7]</field>
+        <field name="Weight of flagged criteria">[XX]% of total</field>
+        <definition level="HIGH">0–1 criteria scored with INSUFFICIENT DATA flags, representing 7% or less of total weight.</definition>
+        <definition level="MODERATE">2–3 criteria with INSUFFICIENT DATA flags, representing 8–20% of total weight.</definition>
+        <definition level="LOW">4 or more criteria with INSUFFICIENT DATA flags, or more than 20% of total weight scored at midpoint with flags.</definition>
+        <field name="Confidence Check">[PASS / FAIL — rating matches definition above]</field>
+        <instruction>A MODERATE or LOW Data Confidence rating signals that the fundability tier should be interpreted with caution and that additional research is recommended before engagement. The Data Confidence rating does not change the tier assignment; it provides a reliability assessment of the score that produced the assignment.</instruction>
+      </data_confidence>
+
+      <operational_viability_summary>
+        <field name="OVC Status">[NOT TRIGGERED / TRIGGERED — cite A2/A4
+          or B2/B5 scores that triggered the cap]</field>
+        <field name="NCSP Status">[NO CONTRADICTIONS IDENTIFIED /
+          CONTRADICTIONS IDENTIFIED — X-point deduction applied; cite
+          specific contradictions]</field>
+        <field name="Information-Absent Criteria">[None / Count: X —
+          criterion IDs]</field>
+        <field name="Overall Operational Viability">[OPERATIONAL /
+          MARGINAL / PRE-OPERATIONAL — one-sentence rationale]</field>
+        <instruction>
+          This summary aggregates the outputs of the three v5.0 operational
+          viability mechanisms (A3/B3 Operational Viability Condition;
+          A1/B1 Negative Credibility Signal Protocol; Section 1.5
+          INFORMATION-ABSENT designations) at the score-summary level for
+          fast client engagement triage. All component outcomes are also
+          documented in the relevant criterion Justification fields; this
+          element does not replace those per-criterion entries.
+          OPERATIONAL indicates the company has demonstrated minimum
+          scientific or clinical output, minimum external validation, and
+          no credibility contradictions. MARGINAL indicates one of these
+          conditions is weak or partially satisfied. PRE-OPERATIONAL
+          indicates the company has not demonstrated minimum viability
+          signals across multiple criteria and is typically associated with
+          Tier 4 or OVC-triggered evaluations. This element introduces no
+          score impact; it is an output-format aggregation only.
+        </instruction>
+      </operational_viability_summary>
+
+      <fundraising_readiness>
+        <field name="Label">[Strong Prospect / Fundable / Conditional / Not Ready / Out of Scope]</field>
+        <mapping_rule>Tier 1 = Strong Prospect, Tier 2 = Fundable, Tier 3 = Conditional, Tier 4 = Not Ready, Out of Scope (Disqualified or Scope Mismatch) = Out of Scope</mapping_rule>
+        <field name="Readiness Check">[PASS / FAIL — label matches tier per mapping rule above]</field>
+      </fundraising_readiness>
+
+    </block>
+
+    <block id="5" name="Qualitative Assessment">
+
+      <top_3_fundability_strengths>
+        <instruction>List the three strongest signals supporting the company's ability to close a funding round. Each strength must cite specific, observable evidence from the research dossier in 2-3 sentences.</instruction>
+        <strength_template>
+          <field name="Title">[One phrase]</field>
+          <field name="Evidence">[2-3 sentences citing specific observable signals from the research dossier]</field>
+        </strength_template>
+      </top_3_fundability_strengths>
+
+      <top_3_fundability_risks>
+        <instruction>List the three most significant risks or gaps that could impair fundraising velocity. Each risk must identify a specific deficiency and its scoring impact in 2-3 sentences.</instruction>
+        <risk_template>
+          <field name="Title">[One phrase]</field>
+          <field name="Evidence">[2-3 sentences citing specific deficiency and scoring impact]</field>
+        </risk_template>
+      </top_3_fundability_risks>
+
+      <fundraising_outlook>
+        <instruction>Must identify all four elements below. Written from the investor perspective.</instruction>
+        <field name="Most Likely Investor Archetype">[1-2 sentences]</field>
+        <field name="Estimated Closing Timeline">[X-X months from engagement]</field>
+        <field name="Primary Risk Bearing on Raise">[1-2 sentences]</field>
+        <field name="Highest-Impact Action">[1-2 sentences describing the single most impactful action the company can take to improve its fundability score]</field>
+      </fundraising_outlook>
+
+    </block>
+
+    <block id="6" name="Evaluation Footer">
+      <instruction>Summary line completing the evaluation. Must be consistent with all fields above.</instruction>
+      <field name="Footer Line">END OF EVALUATION — [COMPANY NAME]</field>
+      <field name="Profile">[Profile A / Profile B]</field>
+      <field name="Total Score">[XX / XX]</field>
+      <field name="Tier">[Tier X — Label]</field>
+      <field name="Data Confidence">[HIGH / MODERATE / LOW]</field>
+      <field name="Fundraising Readiness">[Label]</field>
+    </block>
+
+  </section>
+
+</rubric>

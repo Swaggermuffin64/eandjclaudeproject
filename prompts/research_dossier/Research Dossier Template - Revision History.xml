@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  RESEARCH DOSSIER PRODUCTION TEMPLATE
+  Version 1.1 — Revision History and Deferred Revisions
+  Extracted from the main template file for reference.
+  This file is NOT sent to the dossier production engine.
+-->
+
+<revision_history>
+
+<build_notes>
+Built from:
+  - v1.0 (research_dossier_template_v1.0.xml)
+  - Template Review and Optimization document (template_review_output.md)
+  - Operator Build Prompt for v1.1
+
+Two operator decisions govern v1.1 and supersede review recommendations
+where they conflict:
+
+  DECISION 1 — Routing profile assignment is removed from the research
+  template. The template is rubric-agnostic. It collects three routing
+  inputs (target raise, development stage, investor composition) and a
+  routing confidence assessment. The evaluator — operating in a separate
+  context with the relevant scoring rubric — assigns the profile.
+
+  DECISION 2 — The template is a pure research document. It produces
+  evidence only. No scoring language, profile assignment, tier labels,
+  fundraising readiness assessments, or rubric-specific vocabulary
+  appear anywhere in the dossier. A separate evaluation engine consumes
+  the evidence and produces scores. This template does not know which
+  rubric will consume its output.
+</build_notes>
+
+<version_history>
+v1.0 — Initial research dossier template; tightly coupled to the
+  Technology ICP Evaluation Instrument; phase-based structure
+  (Phase 1 through Phase 5).
+v1.1 — Rubric-agnostic block-based structure (R0 through R8);
+  six-tag classification system formalized; 12-disqualifier schema
+  with applicability pre-assessment; Sonnet Entity Manifest
+  incorporated verbatim as OI-3; Routing Ambiguity Protocol added;
+  A6/B6-equivalent force-test and Helmer Powers research mandated
+  in C2 and C6; per-criterion call floors with C7 elevated to ≥4
+  calls; classification system expanded from two tags (INFORMATION-
+  SCARCE / INFORMATION-ABSENT) to six (CONFIRMED, COMPANY-CLAIMED,
+  PARTIALLY CONFIRMED, INFORMATION-SCARCE, INFORMATION-ABSENT,
+  REQUIRES-FOUNDER-ATTESTATION); routing profile assignment removed;
+  Phase 2 rubric attachment removed from operator inputs (former OI-4
+  eliminated); ten-condition Completion Gate (CG-1 through CG-10);
+  Surfaced Individuals Log and Ambiguous Attribution Flag mechanisms
+  formalized.
+</version_history>
+
+<deferred_revisions>
+
+<entry id="FV-r-1" target="v1.2 or v2.0" title="Investor Composition Tier Vocabulary Formalization">
+The investor composition disambiguation table (R2.3) records vehicle type and participation type but does not assign a named tier. A future revision may add a generic descriptive tier vocabulary compatible across rubrics.
+</entry>
+
+<entry id="FV-r-2" target="v1.2 or v2.0" title="Industry-Specific Stage Vocabulary Extension">
+The R2.5 enumerated development stage list is generic. A future revision may add a more formal industry-specific stage schema with explicit cross-walks to the generic list.
+</entry>
+
+<entry id="FV-r-3" target="v1.2" title="Per-Criterion Floor Recalibration After Initial Corpus">
+The minimum-call floors per criterion (RP-6) reflect v1.1 design judgments. After 5-10 dossiers, floors should be recalibrated based on observed under/over-coverage patterns.
+</entry>
+
+<entry id="FV-r-4" target="v2.0" title="Output Format Specification for Scoring Engine Consumption">
+The current R8 handoff block is human-readable. A future revision may produce a structured JSON or XML handoff payload for programmatic scoring engine consumption.
+</entry>
+
+<entry id="FV-r-5" target="v1.2 or v2.0" title="Cross-Border / Multi-Jurisdiction Research Brief Extension">
+DQ-k addresses OFAC SDN counterparty connections. Additional briefs may be added for ITAR, EAR, FARA, CFIUS, and non-US equivalents.
+</entry>
+
+</deferred_revisions>
+
+</revision_history>

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  LIFE SCIENCE FUNDRAISING ICP EVALUATION INSTRUMENT
+  Version 5.1 — Profile A Criteria (M-M Raise Environment)
+  Shared sections (evaluation context, routing, output format) are in:
+    Life Sciences Rubric v5.1 - Shared.xml
+-->
+
+  <!-- ============================================================
+       SECTION 3 — PROFILE A EVALUATION RUBRIC
+       Target: Private life science companies raising $30M–$52M
+       Expected development stage: IND-filed through Phase 2/3
+       WEIGHT CHECK: A1(25) + A2(21) + A3(16) + A4(13) + A5(10) + A6(9) + A7(6) = 100
+       NOTE: A3 base max = 16pts; with +2 modifier max = 18pts (scoring range 96–102)
+       ============================================================ -->
+  <section id="3" name="Profile A Evaluation Rubric">
+
+    <weight_check profile="A">
+      <criterion id="A1" weight_pct="25" max_points="25"/>
+      <criterion id="A2" weight_pct="21" max_points="21"/>
+      <criterion id="A3" weight_pct="16" base_max_points="16" modifier_max_points="18"/>
+      <criterion id="A4" weight_pct="13" max_points="13"/>
+      <criterion id="A5" weight_pct="10" max_points="10"/>
+      <criterion id="A6" weight_pct="9"  max_points="9"/>
+      <criterion id="A7" weight_pct="6"  max_points="6"/>
+      <total_weight>100</total_weight>
+    </weight_check>
+
+
+    <criterion id="A1" name="Team Quality and Execution Credibility" weight_pct="25" max_points="25" status="Revised — V.5 R3">
+
+      <purpose>Evaluates the founding and executive team's demonstrated ability to build, advance, and exit life science companies. Measures direct signals of fundraising credibility: prior exit experience, domain expertise at the relevant development stage, board-level VC representation, and KOL advisory network density. Single most heavily weighted criterion per client specification.</purpose>
+
+      <band min="21" max="25" label="Exceptional Execution Credibility">
+        At least one C-suite member (CEO, CSO, CMO, or CFO) with a confirmed exit above $500M in the life sciences sector. Domain-expert CSO or CMO with direct IND-or-later clinical development history in the company's therapeutic area. At least one top-tier life science VC partner (Third Rock, ARCH, Flagship, Sofinnova, OrbiMed, 5AM, Versant, or equivalent) on the board of directors. Scientific Advisory Board includes recognized KOLs from leading academic medical centers or research institutions. CEO with prior experience as a biotech C-suite executive (not first-time founder at this raise level).
+      </band>
+
+      <band min="16" max="20" label="Strong Credibility with Gaps">
+        C-suite includes executives with prior biotech operating experience but no confirmed exits above $500M. Domain expertise present but may not include direct IND+ clinical development in the specific therapeutic area. Board includes institutional VC representation but not necessarily top-tier life science specialists. Advisory board exists with relevant scientific or clinical experts. CEO may be a first-time biotech CEO with strong prior functional leadership roles.
+      </band>
+
+      <band min="11" max="15" label="Developing Credibility">
+        Team includes relevant scientific or clinical expertise but limited biotech operating experience. No confirmed exits among leadership. Board representation is present but lacks institutional VC with life science specialization. Advisory board is informal or undisclosed. CEO may be an academic founder or first-time operator without prior C-suite experience.
+      </band>
+
+      <band min="0" max="10" label="Early or Insufficient Team">
+        Team is primarily academic with no biotech operating or commercial experience. No institutional board members. No formal advisory board. No confirmed fundraising track record among leadership. Academic spinout with undisclosed or non-existent governance structure.
+      </band>
+
+      <negative_credibility_protocol>
+        NEGATIVE CREDIBILITY SIGNAL PROTOCOL: Before finalizing the A1 score, the evaluator must assess whether any credibility claims made by the team — including titles, institutional affiliations, authorship or contribution claims, priority claims, and competitive positioning claims — are directly contradicted by verifiable evidence. Verifiable evidence includes: title records (LinkedIn, company website, filings); publication author lists (PubMed, bioRxiv, journal archives); public regulatory records (FDA, EMA, Companies House); and direct competitive existence data (competitor websites, press releases, third-party databases).
+
+        If one or more contradictions are identified, apply a deduction within the assigned band as follows:
+
+        SINGLE MINOR CONTRADICTION: A single instance of informal title inflation, modest overstatement of a contribution, or unverifiable but plausible claim. Apply a 1-point deduction within the assigned band. Do not drop below the band floor.
+
+        MULTIPLE CONTRADICTIONS OR SINGLE MATERIAL CONTRADICTION: Multiple contradicted claims, or a single materially false claim (fabricated institutional affiliation, false authorship claim, claimed contribution to a public law or regulatory process that is contradicted by the public record). Apply a 2–3 point deduction within the assigned band. The evaluator may drop to the next lower band if the deduction would exceed the band floor.
+
+        NO CONTRADICTIONS IDENTIFIED: No deduction. Score per band definitions on their merits.
+
+        This protocol applies regardless of whether the midpoint-default is in effect. A score at the band midpoint under the midpoint-default may still receive a deduction if contradicted claims are identified with verifiable evidence.
+
+        DOCUMENTATION REQUIREMENT: The Justification field must name each contradiction, identify the source that contradicts it, and state the deduction applied. When no contradictions are found, a one-sentence statement is sufficient: "Negative Credibility Signal Protocol applied — no contradicted claims identified."
+      </negative_credibility_protocol>
+    </criterion>
+
+
+    <criterion id="A2" name="Clinical/Regulatory Stage and Data Quality" weight_pct="21" max_points="21" status="Unchanged">
+      <purpose>Evaluates the maturity of the company's lead clinical program based on regulatory stage progression and the quality of available clinical or preclinical data. Measures development milestones that directly correlate with investor risk tolerance. Does NOT score FDA designations — see A4.</purpose>
+
+      <band min="18" max="21" label="Advanced Clinical Stage with Strong Data">
+        Lead asset is in Phase 2 or later with topline efficacy data in hand. Data demonstrates statistically significant primary endpoint results (p&lt;0.05) in a well-powered or signal-generating study. End-of-Phase 2 meeting completed or Phase 3 design aligned with FDA. No unresolved clinical holds on the lead program. Safety profile is clean or manageable with no serious adverse event signals that would impair regulatory path. Multiple clinical trials completed or in progress (Phase 1 safety, PK/PD, and efficacy studies).
+      </band>
+
+      <band min="13" max="17" label="Mid-Clinical Stage or Early Efficacy Signals">
+        Lead asset is in Phase 1b/2a or Phase 2 with preliminary efficacy signals but topline data not yet in hand, or data is from a small open-label study requiring confirmation. IND is filed and accepted. At least one Phase 1 trial completed with acceptable safety. Pre-IND or IND meeting with FDA completed with documented alignment on development plan. Clinical hold history, if any, has been resolved.
+      </band>
+
+      <band min="8" max="12" label="IND-Stage or Late Preclinical with Regulatory Engagement">
+        IND filed or IND-enabling studies substantially complete. Pre-IND meeting held or scheduled with FDA. Preclinical efficacy data in validated animal models with dose-response relationships. Safety/toxicology package in preparation or completed. No clinical data yet available. Development path to Phase 1 is defined with estimated timelines.
+      </band>
+
+      <band min="0" max="7" label="Early Preclinical or Pre-IND">
+        Discovery or early preclinical stage. In vitro data only, or animal model data without regulatory-grade toxicology. No FDA engagement. IND filing timeline is undefined or more than 18 months away. Lead candidate selection may not be finalized.
+      </band>
+    </criterion>
+
+
+    <criterion id="A3" name="Sector and Market Alignment" weight_pct="16" base_max_points="16" modifier_max_points="18" status="Revised — V.5 R2">
+
+      <purpose>Evaluates whether the company operates in a therapeutic sector currently attracting active investor capital and M&amp;A interest. Uses a two-component structure: base tier classification (general investor appetite) plus market-evidence modifier (recent documented deal activity).</purpose>
+
+      <component id="1" name="Base Tier Classification" points="0–16">
+
+        <band min="13" max="16" label="Tier 1 Sector — Peak Investor Appetite">
+          Company operates in a sector with demonstrated peak-level capital deployment in the current fundraising cycle. Tier 1 sectors for 2025–2026: obesity/GLP-1 and metabolic therapies; antibody-drug conjugates (ADCs) and targeted oncology payloads; radiopharmaceuticals; immunology/inflammation; AI-native drug discovery platforms. Company's addressable market exceeds $2B in the primary indication. Platform technology with multi-indication optionality in Tier 1 therapeutic areas.
+        </band>
+
+        <band min="9" max="12" label="Tier 2 Sector — Active Investor Interest">
+          Company operates in a sector with active but not peak-level investor interest. Tier 2 sectors for 2025–2026: neuroscience/CNS; rare disease; gene therapy and cell therapy; cardiovascular; precision oncology (non-ADC). Addressable market exceeds $1B. First-in-class or differentiated mechanism within the Tier 2 sector. Multiple potential acquirers identifiable.
+        </band>
+
+        <sector_addition profile="A" tier="Tier 2">
+          HEALTH IT / GENOMICS INFRASTRUCTURE / LIFE SCIENCE TOOLS — TIER 2 DEFAULT: Companies providing software platforms, data infrastructure, analytical tools, or enabling technologies to the life science industry — including but not limited to: bioinformatics software; genomic data management and compression platforms; laboratory information management systems (LIMS); clinical trial management software; drug discovery computational platforms; regulatory affairs software; and diagnostic decision-support tools — are classified as Tier 2 by default unless specific market evidence supports a different classification. Tier 2 classification for health IT and life science tools companies reflects active but not peak-level investor interest in this category for the 2025–2026 cycle. A Tier 1 upgrade may be applied if the platform is explicitly positioned as an AI-native drug discovery tool (which falls under the Tier 1 AI-native platform definition) or if documented exceptional sector M&amp;A activity in the specific tools category supports the upgrade. A Tier 3 downgrade may be applied if the investor universe for the specific tool category is demonstrably narrow or if the platform competes primarily against free, open-source, or bundled alternatives with no clear path to premium monetization.
+        </sector_addition>
+
+        <band min="5" max="8" label="Tier 3 Sector — Selective Investor Interest">
+          Company operates in a sector with limited or specialized investor interest. Includes: anti-infectives/antibiotics; women's health; diagnostics without companion therapeutic; agricultural biotech. Addressable market below $1B or market size uncertain. Investor universe is narrow and may require specialized fund targeting.
+        </band>
+
+        <band min="0" max="4" label="Out-of-Favor or Unproven Sector">
+          Company operates in a sector with minimal current investor appetite, or the sector category is too early or undefined to classify. No identifiable recent M&amp;A or IPO activity in the sector.
+        </band>
+
+      </component>
+
+      <component id="2" name="Market-Evidence Modifier" points="±2">
+        <instruction>After assigning the base tier score, apply the following modifier based on documented sector-specific M&amp;A activity, capital deployment, and deal flow within the 12 months preceding the evaluation date. The modifier adjusts the base score and may cause the final A3 score to exceed the base tier ceiling or fall below the base tier floor.</instruction>
+
+        <modifier value="+2" label="Exceptional Sector Activity">
+          Three or more acquisitions exceeding $1B occurred in the company's specific sector within the past 12 months. Sector is attracting capital at historically elevated levels. Multiple large pharma companies actively deploying capital through M&amp;A, licensing, or CVC investment.
+        </modifier>
+
+        <modifier value="+1" label="Above-Baseline Sector Activity">
+          One to two acquisitions exceeding $1B occurred in the sector within the past 12 months, or significant licensing/partnership deal flow demonstrates rising investor interest. Sector activity is above its historical baseline but not at peak levels.
+        </modifier>
+
+        <modifier value="0" label="Baseline Sector Activity">
+          Sector M&amp;A and capital deployment activity is consistent with the base tier classification. No significant deviation from expected deal flow. The base tier score stands without adjustment.
+        </modifier>
+
+        <modifier value="-1" label="Below-Baseline Sector Activity">
+          Sector has experienced notable funding contraction, major pipeline failures, or clinical trial setbacks within the past 12 months that have dampened investor appetite. One or more high-profile failures in the sector have increased perceived risk.
+        </modifier>
+
+        <modifier value="-2" label="Systemic Sector Contraction">
+          Sector has experienced systemic capital withdrawal, regulatory headwinds affecting the entire therapeutic class, or a pattern of clinical failures that has materially reduced investor willingness to deploy capital. Fund allocation to the sector has declined measurably.
+        </modifier>
+      </component>
+
+      <operational_viability_condition>
+        OPERATIONAL VIABILITY CONDITION: Before finalizing the A3 score, apply the following gate.
+
+        TRIGGER: If the company scores in its lowest defined band on BOTH A2 (Clinical/Regulatory Stage and Data Quality, Band 0–7) AND A4 (Validation Signals and Partnerships, Band 0–3), the A3 final score (base tier score plus any market-evidence modifier) is capped at 8 points.
+
+        RATIONALE: At the Profile A raise level, Band 0–7 on A2 ("Early Preclinical or Pre-IND") indicates the company has not yet entered clinical development; Band 0–3 on A4 ("Minimal or No External Validation") indicates no pharma partnerships, no conference presence, no FDA designation activity, and no grants. When both conditions are met simultaneously, the company has demonstrated neither minimum clinical/regulatory maturity nor minimum external endorsement, and the structural reality is that sector conditions cannot be monetized. The AND condition prevents penalizing companies with genuine clinical-stage progress that lack external validation signals (or vice versa).
+
+        CAP VALUE: 8 points (the Tier 3 band ceiling for A3).
+
+        DOCUMENTATION REQUIREMENT: When the Operational Viability Condition is triggered, document in the A3 Justification field: (a) the A2 and A4 scores that triggered the cap, (b) the uncapped A3 score that would have applied, and (c) the capped score that is recorded. When the condition is not triggered, a one-sentence confirmation is sufficient: "Operational Viability Condition not triggered — A2=[X] and/or A4=[X] above threshold."
+      </operational_viability_condition>
+    </criterion>
+
+
+    <criterion id="A4" name="Validation Signals and Partnerships" weight_pct="13" max_points="13" status="Revised — V.5 R1; prior revisions retained">
+
+      <purpose>Evaluates external validation signals that independently confirm the company's fundraising attractiveness: partnership quality, conference presence, FDA designations, and pharma commercial engagement. These signals reduce perceived risk and accelerate due diligence timelines. This is the sole criterion that scores FDA special designations.</purpose>
+
+      <cvc_routing_instruction>
+        When a corporate venture capital (CVC) arm of a pharma or strategic company has invested in the company and/or taken a board seat, the signal should be routed as follows: The strategic validation dimension of the CVC relationship — meaning the implied endorsement of the company's science, platform, or therapeutic approach by the CVC's parent company — is scored under A4. The financial participation dimension — meaning the CVC's presence on the cap table, its follow-on capacity, and its contribution to syndicate quality — is scored under A5. If the CVC has both invested and taken a board seat, both A4 and A5 may reflect the CVC signal, but for different aspects. The evaluator must not double-count the same dimension of the signal across both criteria.
+      </cvc_routing_instruction>
+
+      <band min="10" max="13" label="Comprehensive Validation">
+        Active pharma commercial validation evidenced by one or more of: executed licensing deals with upfront payments, co-development agreements, CVC investment with documented strategic rationale, or formal strategic partnership engagement with a large pharma counterparty. A single high-quality commercial validation signal is sufficient for this band. Top-tier medical or investor conference presentations (JPM Healthcare, ASCO, AAN, ASH, AACR, or equivalent sector-specific venue) at two or more events. FDA special designation received or publicly announced (Fast Track, Breakthrough Therapy, Orphan Drug, or Accelerated Approval pathway) for the lead program. Sell-side analyst coverage initiated by two or more banks.
+      </band>
+
+      <band min="7" max="9" label="Strong Validation with Gaps">
+        At least one executed pharma partnership or licensing deal (may lack upfront payment or may be at the CRO/co-development level rather than full commercial license). Conference presentations at recognized but not necessarily top-tier venues, or a single top-tier presentation. FDA pre-designation engagement (pre-IND meeting with designation discussion) or designation application filed but not yet received. Some sell-side or investor awareness but limited formal coverage.
+      </band>
+
+      <band min="4" max="6" label="Emerging Validation">
+        Informal pharma engagement or documented strategic interest without executed deals. Conference poster presentations or accepted abstracts. No FDA designation received or filed. Non-dilutive grant funding (NIH, BARDA, SBIR/STTR) received as an alternative validation signal. Media coverage or industry recognition without formal institutional endorsement.
+      </band>
+
+      <band min="0" max="3" label="Minimal or No External Validation">
+        No pharma partnerships, no conference presentations at recognized venues, no FDA designation activity, no non-dilutive grants, and no institutional recognition signals. Company is operating in stealth or has not yet engaged with the broader pharma and investor ecosystem.
+      </band>
+    </criterion>
+
+
+    <criterion id="A5" name="Cap Table and Investor Base Quality" weight_pct="10" max_points="10" status="Revised — Concerto Finding C3">
+      <purpose>Evaluates the quality, structure, and institutional depth of the company's existing investor base. A strong cap table reduces re-syndication risk, signals insider conviction, and accelerates new investor due diligence. A messy or structurally compromised cap table is a hard disqualifier (see Section 2.3). For CVC signal routing, see A4's CVC routing instruction — A5 captures the financial participation dimension of CVC investment.</purpose>
+
+      <band min="9" max="10" label="Institutional Blue-Chip Syndicate">
+        Cap table led by top-tier life science VCs (Third Rock, ARCH, Flagship, Sofinnova, OrbiMed, Versant, 5AM, or equivalent). Strategic CVC participation from a relevant large pharma company. Crossover investors present or committed (Perceptive, RA Capital, Cormorant, Foresite, Fidelity, T. Rowe Price, or equivalent). Existing investors committed pro-rata in subsequent rounds, demonstrating insider conviction. Cap table is clean with no structural complexity, no outstanding convertible instruments with adverse terms, and no unresolved ownership disputes.
+      </band>
+
+      <band min="7" max="8" label="Strong Institutional Base">
+        Cap table includes recognized life science VCs but not necessarily top-tier names. At least one institutional lead with demonstrated follow-on capacity. Pro-rata participation from existing investors in prior rounds. No structural cap table issues. CVC participation may be absent.
+      </band>
+
+      <band min="4" max="6" label="Mixed or Early Institutional Base">
+        Cap table includes a mix of institutional and angel investors. Lead investor may be a generalist VC or a smaller life science fund. Follow-on capacity of existing investors is uncertain. Cap table structure is acceptable but may have minor complexity (multiple SAFE instruments, convertible notes with varying terms). No disqualifying issues.
+      </band>
+
+      <band min="0" max="3" label="Weak or Problematic Cap Table">
+        Cap table is primarily angel or friends-and-family with no institutional participation. Lead investor is absent or unidentifiable. Cap table may have structural issues that require cleanup before an institutional round. Score of 0 indicates a cap table that approaches but does not trigger the automatic disqualifier.
+      </band>
+    </criterion>
+
+
+    <criterion id="A6" name="Deal Structure and Fundraising Mechanics" weight_pct="9" max_points="9" status="Revised — V.5 R1; v5.1 R1; prior revisions retained">
+
+      <purpose>Evaluates the mechanics of the company's fundraising: round structure, use-of-proceeds clarity, runway sufficiency, and the quality of capital raise execution. Also evaluates strategic coherence between the company's pitch materials and its observable behavior. Measures operational signals that investors evaluate during term sheet negotiation and closing.</purpose>
+
+      <strategic_coherence_assessment>
+        <instruction>Before scoring the band definitions below, the evaluator must assess whether any material post-pitch development has occurred that contradicts the company's stated use of proceeds, business model, or strategic direction as presented in its pitch materials or most recent investor communications. Material post-pitch developments include but are not limited to: strategic pivots to a different business model or market; significant layoffs affecting key functions (clinical, regulatory, CMC); discontinuation or deprioritization of the lead program referenced in the use of proceeds; announced changes to the company's core technology platform or therapeutic focus.</instruction>
+
+        <scoring_impact>
+          If a material post-pitch development is identified that directly contradicts the stated use of proceeds, the evaluator must apply a scoring penalty within the A6 band assignment. The severity of the penalty depends on the degree of contradiction:
+
+          SEVERE CONTRADICTION — The company's observable strategic direction is fundamentally inconsistent with its stated use of proceeds (e.g., pivot away from the therapeutic area or development stage that the raise is designed to fund). Apply the scoring rule as follows:
+          (1) Default — score at the floor of the applicable band.
+          (2) Drop to the top of the next lower band only when the non-SCA
+              deal mechanics signals (round structure, use-of-proceeds mapping
+              before the contradiction, prior capital efficiency, runway)
+              independently warrant the lower band.
+          (3) If the non-SCA signals warrant a score below the lower band's
+              top, score at the assessed position within that lower band.
+          A severe contradiction must always be flagged as a Top 3 Fundability
+          Risk in Block 5 of the output, and the Justification field must
+          explicitly state which rule (1, 2, or 3) was applied and why.
+
+          MODERATE CONTRADICTION — The company has made material changes to
+          its strategy or operations that partially undermine confidence in
+          the stated use of proceeds but do not fundamentally invalidate the
+          fundraising thesis (e.g., reprioritization of pipeline assets,
+          organizational restructuring that delays but does not cancel the
+          stated milestones). Apply a 1-2 point deduction within the
+          applicable band.
+
+          MINOR OR NO CONTRADICTION — The company's observable behavior is
+          consistent with its stated use of proceeds, or any operational
+          changes are immaterial to the fundraising thesis. No adjustment.
+          Score the band definitions below on their merits.
+        </scoring_impact>
+
+        <documentation_requirement>DOCUMENTATION REQUIRED REGARDLESS OF OUTCOME: The Strategic Coherence Assessment must be documented in the A6/B6 Justification field for every evaluation, regardless of whether a contradiction is found. When the determination is Minor or No Contradiction, include a one-sentence statement in the following form: "Strategic Coherence Assessment: [brief description of what was reviewed — e.g., pitch materials, press releases, website, post-pitch announcements]. Determination: Minor or No Contradiction — no adjustment applied." Silent omission of the assessment is not permitted. An undocumented assessment cannot be verified and will be flagged as a format violation in any subsequent performance audit.</documentation_requirement>
+      </strategic_coherence_assessment>
+
+      <band min="7" max="9" label="Institutional-Grade Execution">
+        Current or most recent round was cleanly structured (priced equity round or well-structured convertible with standard terms). Use of proceeds is mapped to specific, identifiable milestones (clinical trial milestones, regulatory submissions, key hires). Cash runway extends at least 18–24 months past the current raise at projected burn rate. Prior rounds demonstrated capital efficiency (milestones achieved relative to capital deployed). Bookrunner or placement agent of institutional quality is engaged, if applicable.
+      </band>
+
+      <band min="5" max="6" label="Solid Mechanics with Minor Gaps">
+        Round structure is acceptable but may lack full institutional polish (e.g., convertible note without a cap, or SAFE terms that are nonstandard). Use of proceeds is directionally clear but not mapped to specific milestones. Runway extends 12–18 months. Prior capital efficiency is adequate but not exceptional.
+      </band>
+
+      <band min="3" max="4" label="Adequate but Concerning Mechanics">
+        Round structure has notable complexity or nonstandard terms that may slow institutional investor participation. Use of proceeds is vague or overly general. Runway is under 12 months or dependent on the current raise closing quickly. Capital efficiency in prior rounds is unclear.
+      </band>
+
+      <band min="0" max="2" label="Weak or Undeveloped Mechanics">
+        No identifiable round structure or terms. Use of proceeds is undisclosed. Runway is critically short (under 6 months). No evidence of prior fundraising execution quality. Company may be in a distressed capital position.
+      </band>
+    </criterion>
+
+
+    <criterion id="A7" name="Competitive Positioning and Exit Pathway" weight_pct="6" max_points="6" status="Revised — V.5 R1">
+
+      <purpose>Evaluates the company's competitive differentiation and the visibility of its exit pathway. Measures whether identifiable acquirers exist, whether comparable transactions support the company's implied valuation, and whether competitive positioning enhances or impairs attractiveness to exit-oriented investors.</purpose>
+
+      <band min="6" max="6" label="Clear First-in-Class with Visible Exit">
+        Company has a first-in-class or best-in-class asset with no approved mechanism competition. At least one comparable M&amp;A transaction above $1B at a similar development stage has occurred within the past 3 years. Multiple identifiable acquirers exist based on sector fit, pipeline gaps, and disclosed BD priorities. Company is already on acquirer watch lists or has received documented inbound interest.
+      </band>
+
+      <band min="3" max="4" label="Differentiated with Plausible Exit">
+        Company has a differentiated mechanism or approach but faces competition from 1–2 programs at similar or more advanced stages. Comparable transactions exist but may not be at the same development stage or valuation range. Potential acquirers are identifiable but the exit pathway is not as clear. Competitive dynamics add risk but do not block the path.
+      </band>
+
+      <band min="1" max="2" label="Competitive or Crowded Space">
+        Company operates in a crowded therapeutic space with multiple competitors at similar or more advanced stages. Comparable exits exist but at lower valuations or earlier stages. Exit pathway is uncertain or dependent on competitive outcomes. Differentiation from existing programs is limited.
+      </band>
+
+      <band min="0" max="0" label="Undifferentiated or No Visible Exit">
+        Company's mechanism is not clearly differentiated from existing approved therapies or advanced competitors. No comparable exit transactions identified. Acquirer universe is narrow or non-existent. The company does not present a compelling exit thesis to investors.
+      </band>
+    </criterion>
+
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 4 — PROFILE B EVALUATION RUBRIC
+       Target: Private life science companies raising $1M–$15M
+       Expected development stage: Discovery through early IND-enabling
+       WEIGHT CHECK: B1(25) + B2(19) + B3(16) + B4(13) + B5(11) + B6(8) + B7(8) = 100
+       NOTE: B3 base max = 16pts; with +2 modifier max = 18pts (scoring range 96–102)
+       ============================================================ -->

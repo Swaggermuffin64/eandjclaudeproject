@@ -6,16 +6,24 @@ const PROMPTS_DIR = resolve(import.meta.dirname, '../../../../prompts');
 
 let cachedPrompts: {
   researchDossierTemplate: string;
-  lifeSciencesRubric: string;
-  technologyRubric: string;
+  lifeSciencesShared: string;
+  lifeSciencesProfileA: string;
+  lifeSciencesProfileB: string;
+  technologyShared: string;
+  technologyProfileA: string;
+  technologyProfileB: string;
 } | null = null;
 
 function loadAll() {
   if (cachedPrompts) return cachedPrompts;
   cachedPrompts = {
-    researchDossierTemplate: readFileSync(resolve(PROMPTS_DIR, 'Research Dossier Template.txt'), 'utf-8'),
-    lifeSciencesRubric: readFileSync(resolve(PROMPTS_DIR, 'Life Sciences Rubric v5.1.txt'), 'utf-8'),
-    technologyRubric: readFileSync(resolve(PROMPTS_DIR, 'Technology Rubric.txt'), 'utf-8'),
+    researchDossierTemplate: readFileSync(resolve(PROMPTS_DIR, 'rubrics/research_dossier/Research Dossier Template.xml'), 'utf-8'),
+    lifeSciencesShared: readFileSync(resolve(PROMPTS_DIR, 'rubrics/life_sciences/Life Sciences Rubric v5.1 - Shared.xml'), 'utf-8'),
+    lifeSciencesProfileA: readFileSync(resolve(PROMPTS_DIR, 'rubrics/life_sciences/Life Sciences Rubric v5.1 - Profile A.xml'), 'utf-8'),
+    lifeSciencesProfileB: readFileSync(resolve(PROMPTS_DIR, 'rubrics/life_sciences/Life Sciences Rubric v5.1 - Profile B.xml'), 'utf-8'),
+    technologyShared: readFileSync(resolve(PROMPTS_DIR, 'rubrics/technology/Technology Rubric - Shared.xml'), 'utf-8'),
+    technologyProfileA: readFileSync(resolve(PROMPTS_DIR, 'rubrics/technology/Technology Rubric - Profile A.xml'), 'utf-8'),
+    technologyProfileB: readFileSync(resolve(PROMPTS_DIR, 'rubrics/technology/Technology Rubric - Profile B.xml'), 'utf-8'),
   };
   return cachedPrompts;
 }
@@ -24,9 +32,36 @@ export function getResearchDossierTemplate(): string {
   return loadAll().researchDossierTemplate;
 }
 
+/**
+ * Returns the full rubric (shared + both profiles concatenated).
+ * Use getRubricShared/getRubricProfile for profile-specific access.
+ */
 export function getRubricPrompt(rubric: RubricType): string {
   const prompts = loadAll();
-  return rubric === 'life-sciences' ? prompts.lifeSciencesRubric : prompts.technologyRubric;
+  if (rubric === 'life-sciences') {
+    return prompts.lifeSciencesShared + '\n' + prompts.lifeSciencesProfileA + '\n' + prompts.lifeSciencesProfileB;
+  }
+  return prompts.technologyShared + '\n' + prompts.technologyProfileA + '\n' + prompts.technologyProfileB;
+}
+
+/**
+ * Returns shared rubric sections (evaluation context, routing, output format).
+ * This content is the same for both profiles and can be cached.
+ */
+export function getRubricShared(rubric: RubricType): string {
+  const prompts = loadAll();
+  return rubric === 'life-sciences' ? prompts.lifeSciencesShared : prompts.technologyShared;
+}
+
+/**
+ * Returns profile-specific criterion definitions only.
+ */
+export function getRubricProfile(rubric: RubricType, profile: 'A' | 'B'): string {
+  const prompts = loadAll();
+  if (rubric === 'life-sciences') {
+    return profile === 'A' ? prompts.lifeSciencesProfileA : prompts.lifeSciencesProfileB;
+  }
+  return profile === 'A' ? prompts.technologyProfileA : prompts.technologyProfileB;
 }
 
 // ---------------------------------------------------------------------------
