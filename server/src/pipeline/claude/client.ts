@@ -29,6 +29,7 @@ export interface ClaudeCallOptions {
   step: PipelineStepName;
   tools?: Anthropic.Tool[];
   maxTokens?: number;
+  subcall?: string;
 }
 
 function buildSystemParam(options: ClaudeCallOptions): string | Anthropic.TextBlockParam[] {
@@ -51,7 +52,7 @@ export async function callOpus(options: ClaudeCallOptions): Promise<string> {
 }
 
 async function callModel(model: string, options: ClaudeCallOptions): Promise<string> {
-  const { userContent, emitter, step, tools, maxTokens = 16384 } = options;
+  const { userContent, emitter, step, tools, maxTokens = 16384, subcall } = options;
   const anthropic = getClient();
   const system = buildSystemParam(options);
 
@@ -77,7 +78,7 @@ async function callModel(model: string, options: ClaudeCallOptions): Promise<str
       if (event.type === 'content_block_delta') {
         if (event.delta.type === 'text_delta') {
           currentText += event.delta.text;
-          emitTextDelta(emitter, step, event.delta.text);
+          emitTextDelta(emitter, step, event.delta.text, subcall);
         }
       } else if (event.type === 'content_block_start') {
         if (event.content_block.type === 'tool_use') {
@@ -111,13 +112,13 @@ async function callModel(model: string, options: ClaudeCallOptions): Promise<str
       const inputStr = typeof toolBlock.input === 'string'
         ? toolBlock.input
         : JSON.stringify(toolBlock.input);
-      emitToolCall(emitter, step, toolBlock.name, inputStr);
+      emitToolCall(emitter, step, toolBlock.name, inputStr, subcall);
 
       // For server-side tools like web_search, the API handles them internally.
       // For tools that need client-side execution, we'd handle them here.
       // Currently we rely on Claude's built-in web_search tool which is server-side.
       const resultContent = `Tool ${toolBlock.name} executed by API`;
-      emitToolResult(emitter, step, toolBlock.name, resultContent);
+      emitToolResult(emitter, step, toolBlock.name, resultContent, subcall);
 
       toolResults.push({
         type: 'tool_result',
