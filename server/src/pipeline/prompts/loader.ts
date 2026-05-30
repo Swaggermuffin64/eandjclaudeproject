@@ -76,11 +76,34 @@ export function extractSections(source: string, sectionIds: string[]): string {
 }
 
 /**
- * Extracts Sections 1-5 from the dossier template (the preamble before the
- * disqualifier schema and output blocks).
+ * Extracts Sections 1-5 from the dossier template (the full preamble).
  */
 export function getDossierPreamble(): string {
   return extractSections(getResearchDossierTemplate(), ['1', '2', '3', '4', '5']);
+}
+
+/**
+ * Minimal preamble: Section 1 only (role definition + prohibited outputs).
+ * For blocks that don't do research or classify evidence: R0, R6, R7, R8.
+ */
+export function getDossierPreambleMinimal(): string {
+  return extractSections(getResearchDossierTemplate(), ['1']);
+}
+
+/**
+ * Research preamble: Sections 1-3 (role + classification tags + scarcity rules).
+ * For blocks that research and classify evidence: R1, R3, R4a, C1-C7, R5.
+ */
+export function getDossierPreambleResearch(): string {
+  return extractSections(getResearchDossierTemplate(), ['1', '2', '3']);
+}
+
+/**
+ * Routing preamble: Sections 1-4 (research preamble + routing ambiguity protocol).
+ * For R2 only, which resolves raise amount ambiguity.
+ */
+export function getDossierPreambleRouting(): string {
+  return extractSections(getResearchDossierTemplate(), ['1', '2', '3', '4']);
 }
 
 /**

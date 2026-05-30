@@ -2,17 +2,26 @@ import type Anthropic from '@anthropic-ai/sdk';
 import type { PipelineEmitter } from '../../types.js';
 import { callOpus } from '../../claude/client.js';
 import {
-  getDossierPreamble,
+  getDossierPreambleMinimal,
+  getDossierPreambleResearch,
+  getDossierPreambleRouting,
   getDossierOutputBlock,
   getDossierSubBlock,
   getDossierDisqualifierSchema,
 } from '../../prompts/loader.js';
 
 // ---------------------------------------------------------------------------
-// Module-level cached preamble (Sections 1-5 of the dossier template)
+// Module-level cached preambles — tailored per sub-step type to reduce tokens
 // ---------------------------------------------------------------------------
 
-const PREAMBLE = getDossierPreamble();
+/** Section 1 only (role + prohibited outputs). For R0, R6-R8. */
+const PREAMBLE_MINIMAL = getDossierPreambleMinimal();
+
+/** Sections 1-3 (role + classification tags + scarcity rules). For research blocks. */
+const PREAMBLE_RESEARCH = getDossierPreambleResearch();
+
+/** Sections 1-4 (research + routing ambiguity protocol). For R2 only. */
+const PREAMBLE_ROUTING = getDossierPreambleRouting();
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -44,7 +53,7 @@ async function runCriterionBlock(options: {
   const { subBlockId, label, filledTemplate, priorContext, emitter, tools, maxTokens } = options;
   const blockDef = getDossierSubBlock(subBlockId);
 
-  const systemPrompt = `${PREAMBLE}
+  const systemPrompt = `${PREAMBLE_RESEARCH}
 
 You are producing ONLY Sub-Block ${subBlockId} (${label}) of the research dossier.
 
@@ -76,7 +85,7 @@ export async function runR0(
 ): Promise<string> {
   const blockDef = getDossierOutputBlock('R0');
 
-  const systemPrompt = `${PREAMBLE}
+  const systemPrompt = `${PREAMBLE_MINIMAL}
 
 You are producing ONLY Block R0 (Research Plan) of the research dossier.
 
@@ -104,7 +113,7 @@ export async function runR1(
 ): Promise<string> {
   const blockDef = getDossierOutputBlock('R1');
 
-  const systemPrompt = `${PREAMBLE}
+  const systemPrompt = `${PREAMBLE_RESEARCH}
 
 You are producing ONLY Block R1 (Entity Identification) of the research dossier.
 
@@ -133,7 +142,7 @@ export async function runR2(
 ): Promise<string> {
   const blockDef = getDossierOutputBlock('R2');
 
-  const systemPrompt = `${PREAMBLE}
+  const systemPrompt = `${PREAMBLE_ROUTING}
 
 You are producing ONLY Block R2 (Capital Position) of the research dossier.
 
@@ -162,7 +171,7 @@ export async function runR4a(
 ): Promise<string> {
   const blockDef = getDossierOutputBlock('R4a');
 
-  const systemPrompt = `${PREAMBLE}
+  const systemPrompt = `${PREAMBLE_RESEARCH}
 
 You are producing ONLY Block R4a (Per-Founder Profiles) of the research dossier.
 
@@ -193,7 +202,7 @@ export async function runR3(
   const blockDef = getDossierOutputBlock('R3');
   const disqualifierSchema = getDossierDisqualifierSchema();
 
-  const systemPrompt = `${PREAMBLE}
+  const systemPrompt = `${PREAMBLE_RESEARCH}
 
 You are producing ONLY Block R3 (Disqualifier Screen) of the research dossier.
 
@@ -369,7 +378,7 @@ export async function runR5(
 ): Promise<string> {
   const blockDef = getDossierOutputBlock('R5');
 
-  const systemPrompt = `${PREAMBLE}
+  const systemPrompt = `${PREAMBLE_RESEARCH}
 
 You are producing ONLY Block R5 (Cross-Validation) of the research dossier.
 
@@ -400,7 +409,7 @@ export async function runR6R7R8(
   const r7Def = getDossierOutputBlock('R7');
   const r8Def = getDossierOutputBlock('R8');
 
-  const systemPrompt = `${PREAMBLE}
+  const systemPrompt = `${PREAMBLE_MINIMAL}
 
 You are producing Blocks R6 (Assembly), R7 (Completion Gate), and R8 (Handoff) of the research dossier.
 
