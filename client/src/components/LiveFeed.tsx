@@ -1,8 +1,11 @@
 import { useEffect, useRef } from 'react';
+import type { PipelineStepName } from '@shared/types/pipeline';
 import type { FeedEvent } from '../hooks/usePipeline';
 
 interface LiveFeedProps {
   events: FeedEvent[];
+  selectedStep?: PipelineStepName | null;
+  selectedSubcall?: string | null;
 }
 
 function eventColor(type: string): string {
@@ -11,6 +14,9 @@ function eventColor(type: string): string {
     case 'step:complete':
     case 'pipeline:complete':
       return 'text-green-400';
+    case 'subcall:start':
+    case 'subcall:complete':
+      return 'text-cyan-400';
     case 'tool:call':
       return 'text-gray-400';
     case 'tool:result':
@@ -33,6 +39,10 @@ function eventPrefix(type: string): string {
       return '▶ ';
     case 'step:complete':
       return '✓ ';
+    case 'subcall:start':
+      return '  ▸ ';
+    case 'subcall:complete':
+      return '  ✓ ';
     case 'tool:call':
       return '🔍 ';
     case 'tool:result':
@@ -49,25 +59,33 @@ function eventPrefix(type: string): string {
   }
 }
 
-export default function LiveFeed({ events }: LiveFeedProps) {
+export default function LiveFeed({ events, selectedStep, selectedSubcall }: LiveFeedProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const filtered = selectedSubcall
+    ? events.filter((e) => e.subcall === selectedSubcall)
+    : selectedStep
+      ? events.filter((e) => e.step === selectedStep)
+      : events;
 
   useEffect(() => {
     const el = containerRef.current;
     if (el) {
       el.scrollTop = el.scrollHeight;
     }
-  }, [events]);
+  }, [filtered]);
 
   return (
     <div
       ref={containerRef}
       className="flex-1 overflow-y-auto font-mono text-xs leading-relaxed p-4"
     >
-      {events.length === 0 && (
-        <p className="text-gray-600">Waiting for pipeline to start...</p>
+      {filtered.length === 0 && (
+        <p className="text-gray-600">
+          {events.length === 0 ? 'Waiting for pipeline to start...' : 'No events for this selection.'}
+        </p>
       )}
-      {events.map((event) => (
+      {filtered.map((event) => (
         <div
           key={event.id}
           className={`${eventColor(event.type)} ${event.type === 'pipeline:complete' ? 'font-bold' : ''} whitespace-pre-wrap break-words`}
