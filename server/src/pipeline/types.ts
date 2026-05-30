@@ -57,14 +57,22 @@ export function emitStepComplete(emitter: PipelineEmitter, step: PipelineStepNam
   emitEvent(emitter, { type: 'step:complete', step, timestamp: new Date().toISOString() });
 }
 
-export function emitToolCall(emitter: PipelineEmitter, step: PipelineStepName, tool: string, input: string): void {
-  emitEvent(emitter, { type: 'tool:call', step, tool, input, timestamp: new Date().toISOString() });
+export function emitToolCall(emitter: PipelineEmitter, step: PipelineStepName, tool: string, input: string, subcall?: string): void {
+  emitEvent(emitter, { type: 'tool:call', step, tool, input, ...(subcall ? { subcall } : {}), timestamp: new Date().toISOString() });
 }
 
-export function emitToolResult(emitter: PipelineEmitter, step: PipelineStepName, tool: string, summary: string): void {
-  emitEvent(emitter, { type: 'tool:result', step, tool, summary, timestamp: new Date().toISOString() });
+export function emitToolResult(emitter: PipelineEmitter, step: PipelineStepName, tool: string, summary: string, subcall?: string): void {
+  emitEvent(emitter, { type: 'tool:result', step, tool, summary, ...(subcall ? { subcall } : {}), timestamp: new Date().toISOString() });
 }
 
-export function emitTextDelta(emitter: PipelineEmitter, step: PipelineStepName, content: string): void {
-  emitEvent(emitter, { type: 'text:delta', step, content, timestamp: new Date().toISOString() });
+export function emitTextDelta(emitter: PipelineEmitter, step: PipelineStepName, content: string, subcall?: string): void {
+  emitEvent(emitter, { type: 'text:delta', step, content, ...(subcall ? { subcall } : {}), timestamp: new Date().toISOString() });
+}
+
+export function emitSubcallStart(emitter: PipelineEmitter, step: PipelineStepName, subcall: string): void {
+  emitEvent(emitter, { type: 'subcall:start', step, subcall, timestamp: new Date().toISOString() });
+}
+
+export function emitSubcallComplete(emitter: PipelineEmitter, step: PipelineStepName, subcall: string): void {
+  emitEvent(emitter, { type: 'subcall:complete', step, subcall, timestamp: new Date().toISOString() });
 }
