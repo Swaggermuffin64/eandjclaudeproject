@@ -28,7 +28,11 @@ export async function runScore(
   if (routing.disqualified) {
     emitPhase(emitter, 'Disqualified — Skipping Criteria');
 
-    const abbreviatedCriteria = 'Block 3: N/A — Disqualified';
+    const abbreviatedBlocks = [
+      'Block 3 (Criterion Scoring): N/A — Disqualified',
+      'Block 4 (Total Score and Tier): N/A — Disqualified',
+      'Block 5 (Qualitative Assessment): N/A — Disqualified',
+    ].join('\n\n');
 
     // Still produce footer (Block 6) via assembly
     const assembly = await runScoreAssembly(
@@ -40,7 +44,7 @@ export async function runScore(
       emitter,
     );
 
-    const score = [routing.text, abbreviatedCriteria, assembly].join('\n\n');
+    const score = [routing.text, abbreviatedBlocks, assembly].join('\n\n');
     return { score };
   }
 
