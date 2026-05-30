@@ -11,10 +11,16 @@ export type PipelineUIStatus = 'idle' | 'running' | 'complete' | 'error';
 
 export type StepState = 'pending' | 'running' | 'done' | 'error';
 
+export interface SubcallInfo {
+  step: PipelineStepName;
+  state: StepState;
+}
+
 export interface FeedEvent {
   id: number;
   type: string;
   step?: string;
+  subcall?: string;
   message: string;
   timestamp: string;
 }
@@ -35,6 +41,10 @@ export function usePipeline() {
   const [dossierContent, setDossierContent] = useState<string | null>(null);
   const [scoreContent, setScoreContent] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+
+  const [subcallStates, setSubcallStates] = useState<Record<string, SubcallInfo>>({});
+  const [selectedStep, setSelectedStep] = useState<PipelineStepName | null>(null);
+  const [selectedSubcall, setSelectedSubcall] = useState<string | null>(null);
 
   const abortRef = useRef<AbortController | null>(null);
   const eventIdRef = useRef(0);
@@ -71,6 +81,27 @@ export function usePipeline() {
     });
   }, []);
 
+  const selectStep = useCallback((step: PipelineStepName | null) => {
+    if (step === null) {
+      setSelectedStep(null);
+      setSelectedSubcall(null);
+      return;
+    }
+    setSelectedStep((prev) => {
+      if (prev === step && !selectedSubcall) return null;
+      return step;
+    });
+    setSelectedSubcall(null);
+  }, [selectedSubcall]);
+
+  const selectSubcall = useCallback((subcall: string, step: PipelineStepName) => {
+    setSelectedSubcall((prev) => prev === subcall ? null : subcall);
+    setSelectedStep((prev) => {
+      if (selectedSubcall === subcall) return null;
+      return step;
+    });
+  }, [selectedSubcall]);
+
   const handleEvent = useCallback((event: PipelineEvent) => {
     switch (event.type) {
       case 'step:start':
@@ -84,24 +115,56 @@ export function usePipeline() {
         addFeedEvent(event.type, `Step: ${event.step} complete`, event.step);
         break;
 
-      case 'tool:call':
-        addFeedEvent(event.type, `${event.tool}: ${event.input}`, event.step);
+      case 'tool:call': {
+        const id = eventIdRef.current++;
+        setFeedEvents((prev) => [...prev, {
+          id, type: event.type, step: event.step,
+          subcall: event.subcall,
+          message: `${event.tool}: ${event.input}`,
+          timestamp: event.timestamp,
+        }]);
         break;
+      }
 
-      case 'tool:result':
-        addFeedEvent(event.type, `  → ${event.summary}`, event.step);
+      case 'tool:result': {
+        const id = eventIdRef.current++;
+        setFeedEvents((prev) => [...prev, {
+          id, type: event.type, step: event.step,
+          subcall: event.subcall,
+          message: `  → ${event.summary}`,
+          timestamp: event.timestamp,
+        }]);
         break;
+      }
 
-      case 'text:delta':
+      case 'text:delta': {
+        const subcall = event.subcall;
         setFeedEvents((prev) => {
           const last = prev[prev.length - 1];
-          if (last && last.type === 'text:delta' && last.step === event.step) {
+          if (last && last.type === 'text:delta' && last.step === event.step && last.subcall === subcall) {
             const updated = { ...last, message: last.message + event.content };
             return [...prev.slice(0, -1), updated];
           }
           const id = eventIdRef.current++;
-          return [...prev, { id, type: 'text:delta', step: event.step, message: event.content, timestamp: event.timestamp }];
+          return [...prev, { id, type: 'text:delta', step: event.step, subcall, message: event.content, timestamp: event.timestamp }];
         });
+        break;
+      }
+
+      case 'subcall:start':
+        setSubcallStates((prev) => ({
+          ...prev,
+          [event.subcall]: { step: event.step, state: 'running' },
+        }));
+        addFeedEvent(event.type, `${event.subcall} started`, event.step);
+        break;
+
+      case 'subcall:complete':
+        setSubcallStates((prev) => ({
+          ...prev,
+          [event.subcall]: { step: event.step, state: 'done' },
+        }));
+        addFeedEvent(event.type, `${event.subcall} complete`, event.step);
         break;
 
       case 'result:dossier':
@@ -159,11 +222,16 @@ export function usePipeline() {
     setDossierContent(null);
     setScoreContent(null);
     setError(null);
+    setSubcallStates({});
+    setSelectedStep(null);
+    setSelectedSubcall(null);
   }, []);
 
   return {
     files, rubric, status, currentStep, stepStates, feedEvents,
     dossierContent, scoreContent, error,
+    subcallStates, selectedStep, selectedSubcall,
     addFiles, setPrimary, removeFile, setRubric, start, reset,
+    selectStep, selectSubcall,
   };
 }
