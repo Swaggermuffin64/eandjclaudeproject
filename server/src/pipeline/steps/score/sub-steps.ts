@@ -48,6 +48,7 @@ export async function runRouting(
     userContent: 'Produce Blocks 0-2 (Evaluation Header, Routing Determination, Disqualifier Screen) according to the rubric. End with the <routing_result .../> tag.',
     emitter,
     step: 'score',
+    subcall: 'Routing',
     maxTokens: 4096,
   });
 
@@ -93,6 +94,7 @@ export async function runCriterionScore(
     userContent: `Score criterion ${criterionId} according to the rubric. Produce the Block 3 output for this single criterion only.`,
     emitter,
     step: 'score',
+    subcall: criterionId,
     maxTokens: 4096,
   });
 }
@@ -137,6 +139,7 @@ The routing assigned profile ${profile}. Using all of the above, produce Blocks 
     userContent,
     emitter,
     step: 'score',
+    subcall: 'Assembly',
     maxTokens: 8192,
   });
 }
