@@ -1,14 +1,6 @@
 import type { PipelineEmitter, ScoreInput, ScoreOutput } from '../../types.js';
-import { emitTextDelta } from '../../types.js';
+import { emitSubcallStart, emitSubcallComplete } from '../../types.js';
 import { runRouting, runCriterionScore, runScoreAssembly } from './sub-steps.js';
-
-// ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
-
-function emitPhase(emitter: PipelineEmitter, label: string): void {
-  emitTextDelta(emitter, 'score', `\n\n========== ${label} ==========\n\n`);
-}
 
 function timed<T>(label: string, fn: () => Promise<T>): Promise<T> {
   const start = Date.now();
@@ -30,13 +22,12 @@ export async function runScore(
   const { dossier, rubric } = input;
 
   // Phase 1: Routing + Disqualifier Screen (Blocks 0-2)
-  emitPhase(emitter, 'Phase 1: Routing + Disqualifier Screen');
+  emitSubcallStart(emitter, 'score', 'Routing');
   const routing = await timed('Routing', () => runRouting(dossier, rubric, emitter));
+  emitSubcallComplete(emitter, 'score', 'Routing');
 
   // Early exit if disqualified
   if (routing.disqualified) {
-    emitPhase(emitter, 'Disqualified — Skipping Criteria');
-
     const abbreviatedBlocks = [
       'Block 3 (Criterion Scoring): N/A — Disqualified',
       'Block 4 (Total Score and Tier): N/A — Disqualified',
@@ -44,6 +35,7 @@ export async function runScore(
     ].join('\n\n');
 
     // Still produce footer (Block 6) via assembly
+    emitSubcallStart(emitter, 'score', 'Assembly');
     const assembly = await runScoreAssembly(
       dossier,
       rubric,
@@ -52,21 +44,23 @@ export async function runScore(
       [],
       emitter,
     );
+    emitSubcallComplete(emitter, 'score', 'Assembly');
 
     const score = [routing.text, abbreviatedBlocks, assembly].join('\n\n');
     return { score };
   }
 
   // Phase 2: Score all 7 criteria in parallel
-  emitPhase(emitter, 'Phase 2: Scoring Criteria 1-7');
+  [1, 2, 3, 4, 5, 6, 7].forEach((n) => emitSubcallStart(emitter, 'score', `${routing.profile}${n}`));
   const criterionScores = await Promise.all(
     [1, 2, 3, 4, 5, 6, 7].map((n) =>
-      timed(`${routing.profile}${n}`, () => runCriterionScore(dossier, rubric, routing.profile, n, emitter)),
+      timed(`${routing.profile}${n}`, () => runCriterionScore(dossier, rubric, routing.profile, n, emitter))
+        .then(r => { emitSubcallComplete(emitter, 'score', `${routing.profile}${n}`); return r; }),
     ),
   );
 
   // Phase 3: Assembly (Blocks 4-6)
-  emitPhase(emitter, 'Phase 3: Assembly');
+  emitSubcallStart(emitter, 'score', 'Assembly');
   const assembly = await timed('Assembly', () => runScoreAssembly(
     dossier,
     rubric,
@@ -75,6 +69,7 @@ export async function runScore(
     criterionScores,
     emitter,
   ));
+  emitSubcallComplete(emitter, 'score', 'Assembly');
 
   const score = [routing.text, ...criterionScores, assembly].join('\n\n');
   return { score };
