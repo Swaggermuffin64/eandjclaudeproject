@@ -9,7 +9,9 @@ export default function App() {
   const {
     files, rubric, status, stepStates, feedEvents,
     dossierContent, scoreContent, error,
+    subcallStates, selectedStep, selectedSubcall,
     addFiles, setPrimary, removeFile, setRubric, start, reset,
+    selectStep, selectSubcall,
   } = usePipeline();
 
   const isRunning = status === 'running';
@@ -62,7 +64,16 @@ export default function App() {
           </button>
         )}
 
-        {status !== 'idle' && <StepStatus stepStates={stepStates} />}
+        {status !== 'idle' && (
+          <StepStatus
+            stepStates={stepStates}
+            subcallStates={subcallStates}
+            selectedStep={selectedStep}
+            selectedSubcall={selectedSubcall}
+            onSelectStep={selectStep}
+            onSelectSubcall={selectSubcall}
+          />
+        )}
 
         {error && (
           <div className="bg-red-50 border border-red-200 rounded-lg p-3">
@@ -77,7 +88,11 @@ export default function App() {
           <span className="text-sm font-semibold text-gray-300">Live Output</span>
           <DownloadButtons dossierContent={dossierContent} scoreContent={scoreContent} />
         </div>
-        <LiveFeed events={feedEvents} />
+        <LiveFeed
+          events={feedEvents}
+          selectedStep={selectedStep}
+          selectedSubcall={selectedSubcall}
+        />
       </div>
     </div>
   );
