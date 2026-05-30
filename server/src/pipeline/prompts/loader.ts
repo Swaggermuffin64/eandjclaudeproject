@@ -17,13 +17,13 @@ let cachedPrompts: {
 function loadAll() {
   if (cachedPrompts) return cachedPrompts;
   cachedPrompts = {
-    researchDossierTemplate: readFileSync(resolve(PROMPTS_DIR, 'rubrics/research_dossier/Research Dossier Template.xml'), 'utf-8'),
-    lifeSciencesShared: readFileSync(resolve(PROMPTS_DIR, 'rubrics/life_sciences/Life Sciences Rubric v5.1 - Shared.xml'), 'utf-8'),
-    lifeSciencesProfileA: readFileSync(resolve(PROMPTS_DIR, 'rubrics/life_sciences/Life Sciences Rubric v5.1 - Profile A.xml'), 'utf-8'),
-    lifeSciencesProfileB: readFileSync(resolve(PROMPTS_DIR, 'rubrics/life_sciences/Life Sciences Rubric v5.1 - Profile B.xml'), 'utf-8'),
-    technologyShared: readFileSync(resolve(PROMPTS_DIR, 'rubrics/technology/Technology Rubric - Shared.xml'), 'utf-8'),
-    technologyProfileA: readFileSync(resolve(PROMPTS_DIR, 'rubrics/technology/Technology Rubric - Profile A.xml'), 'utf-8'),
-    technologyProfileB: readFileSync(resolve(PROMPTS_DIR, 'rubrics/technology/Technology Rubric - Profile B.xml'), 'utf-8'),
+    researchDossierTemplate: readFileSync(resolve(PROMPTS_DIR, 'research_dossier/research-dossier-template.xml'), 'utf-8'),
+    lifeSciencesShared: readFileSync(resolve(PROMPTS_DIR, 'rubrics/life_sciences/life-sciences-rubric-v5.1-shared.xml'), 'utf-8'),
+    lifeSciencesProfileA: readFileSync(resolve(PROMPTS_DIR, 'rubrics/life_sciences/life-sciences-rubric-v5.1-profile-a.xml'), 'utf-8'),
+    lifeSciencesProfileB: readFileSync(resolve(PROMPTS_DIR, 'rubrics/life_sciences/life-sciences-rubric-v5.1-profile-b.xml'), 'utf-8'),
+    technologyShared: readFileSync(resolve(PROMPTS_DIR, 'rubrics/technology/technology-rubric-shared.xml'), 'utf-8'),
+    technologyProfileA: readFileSync(resolve(PROMPTS_DIR, 'rubrics/technology/technology-rubric-profile-a.xml'), 'utf-8'),
+    technologyProfileB: readFileSync(resolve(PROMPTS_DIR, 'rubrics/technology/technology-rubric-profile-b.xml'), 'utf-8'),
   };
   return cachedPrompts;
 }
