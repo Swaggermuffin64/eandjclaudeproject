@@ -30,6 +30,7 @@ export interface ToolCallEvent {
   step: PipelineStepName;
   tool: string;
   input: string;
+  subcall?: string;
   timestamp: string;
 }
 
@@ -38,6 +39,7 @@ export interface ToolResultEvent {
   step: PipelineStepName;
   tool: string;
   summary: string;
+  subcall?: string;
   timestamp: string;
 }
 
@@ -45,6 +47,21 @@ export interface TextDeltaEvent {
   type: 'text:delta';
   step: PipelineStepName;
   content: string;
+  subcall?: string;
+  timestamp: string;
+}
+
+export interface SubcallStartEvent {
+  type: 'subcall:start';
+  step: PipelineStepName;
+  subcall: string;
+  timestamp: string;
+}
+
+export interface SubcallCompleteEvent {
+  type: 'subcall:complete';
+  step: PipelineStepName;
+  subcall: string;
   timestamp: string;
 }
 
@@ -78,6 +95,8 @@ export type PipelineEvent =
   | ToolCallEvent
   | ToolResultEvent
   | TextDeltaEvent
+  | SubcallStartEvent
+  | SubcallCompleteEvent
   | ResultDossierEvent
   | ResultScoreEvent
   | PipelineCompleteEvent
