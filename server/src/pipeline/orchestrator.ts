@@ -3,8 +3,8 @@ import type { PipelineRunInput, PipelineEmitter } from './types.js';
 import { emitStepStart, emitStepComplete, emitEvent } from './types.js';
 import { runIngest } from './steps/ingest.js';
 import { runTemplate } from './steps/template.js';
-import { runDossier } from './steps/dossier.js';
-import { runScore } from './steps/score.js';
+import { runDossier } from './steps/dossier/index.js';
+import { runScore } from './steps/score/index.js';
 
 let pipelineLocked = false;
 
