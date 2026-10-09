@@ -1,11 +1,13 @@
 import { useState, useCallback, useRef } from 'react';
 import type { PipelineStepName, RubricType, PipelineEvent } from '@shared/types/pipeline';
-import { startPipeline } from '../api/client';
+import { startPipeline, startScoreOnly } from '../api/client';
 
 export interface UploadedFile {
   file: File;
   isPrimary: boolean;
 }
+
+export type PipelineMode = 'full' | 'score-only';
 
 export type PipelineUIStatus = 'idle' | 'running' | 'complete' | 'error';
 
@@ -32,7 +34,9 @@ function initialStepStates(): Record<PipelineStepName, StepState> {
 }
 
 export function usePipeline() {
+  const [mode, setMode] = useState<PipelineMode>('full');
   const [files, setFiles] = useState<UploadedFile[]>([]);
+  const [dossierFile, setDossierFile] = useState<File | null>(null);
   const [rubric, setRubric] = useState<RubricType>('technology');
   const [status, setStatus] = useState<PipelineUIStatus>('idle');
   const [currentStep, setCurrentStep] = useState<PipelineStepName | null>(null);
@@ -211,9 +215,28 @@ export function usePipeline() {
     abortRef.current = startPipeline(primary.file, supplementary, rubric, handleEvent);
   }, [files, rubric, handleEvent]);
 
+  const startScore = useCallback(() => {
+    if (!dossierFile) return;
+
+    setStatus('running');
+    setError(null);
+    setStepStates({ ingest: 'done', template: 'done', dossier: 'done', score: 'pending' });
+    setFeedEvents([]);
+    setDossierContent(null);
+    setScoreContent(null);
+    setCurrentStep(null);
+    setSubcallStates({});
+    setSelectedStep(null);
+    setSelectedSubcall(null);
+
+    abortRef.current = startScoreOnly(dossierFile, rubric, handleEvent);
+  }, [dossierFile, rubric, handleEvent]);
+
   const reset = useCallback(() => {
     abortRef.current?.abort();
+    setMode('full');
     setFiles([]);
+    setDossierFile(null);
     setRubric('technology');
     setStatus('idle');
     setCurrentStep(null);
@@ -228,10 +251,11 @@ export function usePipeline() {
   }, []);
 
   return {
-    files, rubric, status, currentStep, stepStates, feedEvents,
+    mode, files, dossierFile, rubric, status, currentStep, stepStates, feedEvents,
     dossierContent, scoreContent, error,
     subcallStates, selectedStep, selectedSubcall,
-    addFiles, setPrimary, removeFile, setRubric, start, reset,
+    setMode, addFiles, setPrimary, removeFile, setDossierFile, setRubric,
+    start, startScore, reset,
     selectStep, selectSubcall,
   };
 }

@@ -86,8 +86,10 @@ export function extractBlock(source: string, tagName: string, id: string): strin
   if (tagName === 'criterion') {
     // Match opening <criterion> tag with the given id that also has a name= attribute
     // and is NOT self-closing (no /> before the >). Then capture up to </criterion>.
+    // Uses a negative lookahead for /> instead of [^/>]* so that forward slashes
+    // inside quoted attribute values (e.g. status="C-3/S-2") don't break the match.
     pattern = new RegExp(
-      `(<${tagName}\\s+id="${escapedId}"[^>]*?\\bname="[^"]*"[^/>]*>)([\\s\\S]*?</${tagName}>)`,
+      `(<${tagName}\\s+id="${escapedId}"[^>]*?\\bname="[^"]*"(?:(?!\\/>)[^>])*>)([\\s\\S]*?</${tagName}>)`,
     );
   } else {
     // Match opening tag with the given id, then capture up to the closing tag.

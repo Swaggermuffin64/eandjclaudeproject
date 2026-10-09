@@ -12,12 +12,20 @@ export function isPipelineLocked(): boolean {
   return pipelineLocked;
 }
 
+export function acquirePipelineLock(): boolean {
+  if (pipelineLocked) return false;
+  pipelineLocked = true;
+  return true;
+}
+
+export function releasePipelineLock(): void {
+  pipelineLocked = false;
+}
+
 export async function runPipeline(input: PipelineRunInput, emitter: PipelineEmitter): Promise<void> {
-  if (pipelineLocked) {
+  if (!acquirePipelineLock()) {
     throw new Error('Pipeline is already running');
   }
-
-  pipelineLocked = true;
 
   try {
     // Step 1: Ingest
@@ -80,6 +88,6 @@ export async function runPipeline(input: PipelineRunInput, emitter: PipelineEmit
       timestamp: new Date().toISOString(),
     });
   } finally {
-    pipelineLocked = false;
+    releasePipelineLock();
   }
 }

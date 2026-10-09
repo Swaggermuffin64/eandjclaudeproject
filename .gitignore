@@ -5,3 +5,6 @@ dist/
 *.log
 .DS_Store
 .superpowers/
+
+# Generated pipeline output (company research data)
+prompts/*_output.txt
