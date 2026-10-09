@@ -9,8 +9,13 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
-      "@shared/*": ["../shared/*"]
-    }
+      "@shared/*": [
+        "../shared/*"
+      ]
+    },
+    "noEmit": true
   },
-  "include": ["src/**/*"]
+  "include": [
+    "src/**/*"
+  ]
 }

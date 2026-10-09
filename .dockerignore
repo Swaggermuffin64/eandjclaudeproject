@@ -1,0 +1,10 @@
+# Keeps the Fly.io build context small and free of secrets.
+.git
+**/node_modules
+**/dist
+**/.env
+**/.env.*
+client
+docs
+.superpowers
+prompts/*_output.txt

@@ -1,6 +1,7 @@
 import type { PipelineEvent, RubricType } from '@shared/types/pipeline';
+import { resolveApiBaseUrl } from './api-base-url';
 
-const BASE_URL = 'http://localhost:3001/api';
+const BASE_URL = resolveApiBaseUrl(import.meta.env.VITE_API_ORIGIN);
 
 export function startPipeline(
   primaryPdf: File,

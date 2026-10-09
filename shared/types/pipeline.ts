@@ -85,7 +85,8 @@ export interface PipelineCompleteEvent {
 export interface PipelineErrorEvent {
   type: 'pipeline:error';
   error: string;
-  step: PipelineStepName;
+  /** 'unknown' when the orchestrator catches an error it can't attribute to a step. */
+  step: PipelineStepName | 'unknown';
   timestamp: string;
 }
 

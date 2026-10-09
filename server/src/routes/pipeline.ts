@@ -4,6 +4,7 @@ import type { RubricType } from '@shared/types/pipeline.js';
 import { runPipeline, isPipelineLocked, acquirePipelineLock, releasePipelineLock } from '../pipeline/orchestrator.js';
 import { runScore } from '../pipeline/steps/score/index.js';
 import { emitStepStart, emitStepComplete, emitEvent } from '../pipeline/types.js';
+import { openSseStream } from './sse-stream.js';
 
 const VALID_RUBRICS: RubricType[] = ['life-sciences', 'technology'];
 
@@ -50,17 +51,11 @@ export async function pipelineRoutes(app: FastifyInstance) {
     }
 
     // Set up SSE
-    reply.raw.writeHead(200, {
-      'Content-Type': 'text/event-stream',
-      'Cache-Control': 'no-cache',
-      'Connection': 'keep-alive',
-      'Access-Control-Allow-Origin': 'http://localhost:3000',
-    });
-
+    const stream = openSseStream(reply);
     const emitter = new EventEmitter();
 
     emitter.on('pipeline-event', (event: Record<string, unknown>) => {
-      reply.raw.write(`data: ${JSON.stringify(event)}\n\n`);
+      stream.send(event);
     });
 
     // Run pipeline (don't await — let it stream)
@@ -68,7 +63,7 @@ export async function pipelineRoutes(app: FastifyInstance) {
       { primaryPdf, supplementaryPdfs, rubric },
       emitter,
     ).finally(() => {
-      reply.raw.end();
+      stream.close();
     });
 
     // Prevent Fastify from sending its own response
@@ -114,17 +109,11 @@ export async function pipelineRoutes(app: FastifyInstance) {
       return reply.code(409).send({ error: 'Pipeline is already running' });
     }
 
-    reply.raw.writeHead(200, {
-      'Content-Type': 'text/event-stream',
-      'Cache-Control': 'no-cache',
-      'Connection': 'keep-alive',
-      'Access-Control-Allow-Origin': 'http://localhost:3000',
-    });
-
+    const stream = openSseStream(reply);
     const emitter = new EventEmitter();
 
     emitter.on('pipeline-event', (event: Record<string, unknown>) => {
-      reply.raw.write(`data: ${JSON.stringify(event)}\n\n`);
+      stream.send(event);
     });
 
     const scoreRun = async () => {
@@ -160,7 +149,7 @@ export async function pipelineRoutes(app: FastifyInstance) {
     };
 
     scoreRun().finally(() => {
-      reply.raw.end();
+      stream.close();
     });
 
     return reply;
