@@ -1,5 +1,6 @@
 import type { PipelineEvent, RubricType } from '@shared/types/pipeline';
 import { resolveApiBaseUrl } from './api-base-url';
+import { demoPasskeyHeaders, loadDemoPasskey } from './demo-passkey';
 
 const BASE_URL = resolveApiBaseUrl(import.meta.env.VITE_API_ORIGIN);
 
@@ -20,6 +21,7 @@ export function startPipeline(
 
   fetch(`${BASE_URL}/pipeline/run`, {
     method: 'POST',
+    headers: demoPasskeyHeaders(loadDemoPasskey()),
     body: formData,
     signal: controller.signal,
   })
@@ -86,6 +88,7 @@ export function startScoreOnly(
 
   fetch(`${BASE_URL}/pipeline/score`, {
     method: 'POST',
+    headers: demoPasskeyHeaders(loadDemoPasskey()),
     body: formData,
     signal: controller.signal,
   })

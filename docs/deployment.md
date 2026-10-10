@@ -12,6 +12,7 @@ Vercel gets the Fly URL (`VITE_API_ORIGIN`), Fly gets the Vercel URL (`CORS_ORIG
 |---|---|---|---|
 | Fly (secret) | `ANTHROPIC_API_KEY` | `sk-ant-...` | Required. |
 | Fly (secret) | `CORS_ORIGINS` | `https://your-app.vercel.app` | Comma-separated. Defaults to `http://localhost:3000`. |
+| Fly (secret) | `DEMO_PASSKEY` | `some-shared-word` | Optional. When set, the pipeline routes need this passkey (entered on the page). |
 | Fly (`fly.toml`) | `PORT` | `8080` | Already set. Defaults to `3001` locally. |
 | Vercel | `VITE_API_ORIGIN` | `https://eandj-pipeline-api.fly.dev` | No `/api` suffix. Baked in at build time — redeploy after changing. |
 

@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { usePipeline } from './hooks/usePipeline';
+import { loadDemoPasskey, saveDemoPasskey } from './api/demo-passkey';
 import FileUpload from './components/FileUpload';
 import StepStatus from './components/StepStatus';
 import LiveFeed from './components/LiveFeed';
@@ -15,6 +17,7 @@ export default function App() {
     start, startScore, reset,
     selectStep, selectSubcall,
   } = usePipeline();
+  const [passkey, setPasskey] = useState(loadDemoPasskey);
 
   const isRunning = status === 'running';
   const canRunFull = files.some((f) => f.isPrimary) && !isRunning;
@@ -97,6 +100,20 @@ export default function App() {
             )}
           </div>
         )}
+
+        <div>
+          <label className="block text-xs font-semibold text-gray-500 uppercase mb-2">Demo Passkey</label>
+          <input
+            type="password"
+            value={passkey}
+            onChange={(e) => {
+              setPasskey(e.target.value);
+              saveDemoPasskey(e.target.value);
+            }}
+            disabled={isRunning}
+            className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm bg-white disabled:opacity-50"
+          />
+        </div>
 
         <div>
           <label className="block text-xs font-semibold text-gray-500 uppercase mb-2">Rubric</label>

@@ -1,36 +1,33 @@
-# Fly.io config for the API server (server/). The frontend (client/) is on Vercel.
-# See docs/deployment.md for the full setup steps.
+# fly.toml app configuration file generated for eandj-pipeline-api on 2026-10-09T19:28:28-04:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
 
-# Fly app names are global — change this if it's taken (fly launch will offer to).
-app = "eandj-pipeline-api"
-primary_region = "iad"
+app = 'eandj-pipeline-api'
+primary_region = 'iad'
 
 [build]
-  dockerfile = "server/Dockerfile"
+  dockerfile = 'server/Dockerfile'
 
 [env]
-  PORT = "8080"
-  # CORS_ORIGINS is set with `fly secrets set` once the Vercel URL is known.
+  PORT = '8080'
 
 [http_service]
   internal_port = 8080
   force_https = true
-  # Stop the machine when idle to save money; it starts on the next request
-  # (a few seconds of cold start). In-progress pipeline streams keep it running.
-  auto_stop_machines = "stop"
+  auto_stop_machines = 'stop'
   auto_start_machines = true
-  # The pipeline lock lives in memory, so run exactly ONE machine.
-  # Deploy with `fly deploy --ha=false` so Fly doesn't create a second one.
   min_machines_running = 0
 
   [[http_service.checks]]
-    method = "GET"
-    path = "/api/health"
-    interval = "30s"
-    timeout = "5s"
-    grace_period = "10s"
+    interval = '30s'
+    timeout = '5s'
+    grace_period = '10s'
+    method = 'GET'
+    path = '/api/health'
 
 [[vm]]
-  memory = "512mb"
-  cpu_kind = "shared"
+  memory = '512mb'
+  cpu_kind = 'shared'
   cpus = 1
+  memory_mb = 512

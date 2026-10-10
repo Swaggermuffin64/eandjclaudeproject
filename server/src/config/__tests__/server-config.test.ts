@@ -8,6 +8,7 @@ describe('readServerConfig', () => {
     expect(readServerConfig({})).toEqual({
       port: 3001,
       allowedOrigins: ['http://localhost:3000'],
+      demoPasskey: undefined,
     });
   });
 
@@ -39,5 +40,10 @@ describe('readServerConfig', () => {
     expect(readServerConfig({ CORS_ORIGINS: ' , ' }).allowedOrigins).toEqual([
       'http://localhost:3000',
     ]);
+  });
+
+  it('reads DEMO_PASSKEY and treats a blank one as unset', () => {
+    expect(readServerConfig({ DEMO_PASSKEY: 'secret' }).demoPasskey).toBe('secret');
+    expect(readServerConfig({ DEMO_PASSKEY: '  ' }).demoPasskey).toBeUndefined();
   });
 });
