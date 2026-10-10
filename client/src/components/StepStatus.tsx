@@ -11,10 +11,9 @@ interface StepStatusProps {
 }
 
 const STEPS: { key: PipelineStepName; label: string }[] = [
-  { key: 'ingest', label: '1. Ingest' },
-  { key: 'template', label: '2. Template' },
-  { key: 'dossier', label: '3. Dossier' },
-  { key: 'score', label: '4. Score' },
+  { key: 'template', label: '1. Template' },
+  { key: 'dossier', label: '2. Dossier' },
+  { key: 'score', label: '3. Score' },
 ];
 
 const stateConfig: Record<StepState, { icon: string; color: string }> = {

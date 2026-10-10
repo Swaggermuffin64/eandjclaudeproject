@@ -58,7 +58,7 @@ export default function App() {
           </div>
         )}
 
-        {/* Full Pipeline: PDF uploads */}
+        {/* Full Pipeline: source document uploads */}
         {mode === 'full' && status === 'idle' && (
           <FileUpload
             files={files}

@@ -1,5 +1,6 @@
 import { useCallback, useRef } from 'react';
 import type { UploadedFile } from '../hooks/usePipeline';
+import { keepAcceptedSourceDocuments, SOURCE_DOCUMENT_ACCEPT_ATTRIBUTE } from './accepted-source-documents';
 
 interface FileUploadProps {
   files: UploadedFile[];
@@ -16,8 +17,8 @@ export default function FileUpload({ files, onAddFiles, onSetPrimary, onRemoveFi
     (e: React.DragEvent) => {
       e.preventDefault();
       if (disabled) return;
-      const pdfFiles = Array.from(e.dataTransfer.files).filter((f) => f.type === 'application/pdf');
-      if (pdfFiles.length > 0) onAddFiles(pdfFiles);
+      const acceptedFiles = keepAcceptedSourceDocuments(Array.from(e.dataTransfer.files));
+      if (acceptedFiles.length > 0) onAddFiles(acceptedFiles);
     },
     [disabled, onAddFiles],
   );
@@ -32,8 +33,8 @@ export default function FileUpload({ files, onAddFiles, onSetPrimary, onRemoveFi
 
   const handleInputChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
-      const pdfFiles = Array.from(e.target.files || []).filter((f) => f.type === 'application/pdf');
-      if (pdfFiles.length > 0) onAddFiles(pdfFiles);
+      const acceptedFiles = keepAcceptedSourceDocuments(Array.from(e.target.files || []));
+      if (acceptedFiles.length > 0) onAddFiles(acceptedFiles);
       e.target.value = '';
     },
     [onAddFiles],
@@ -50,12 +51,13 @@ export default function FileUpload({ files, onAddFiles, onSetPrimary, onRemoveFi
           onClick={handleBrowse}
           className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center cursor-pointer hover:border-blue-400 transition-colors mb-3"
         >
-          <p className="text-sm font-medium text-gray-600">Drop PDFs here or click to browse</p>
+          <p className="text-sm font-medium text-gray-600">Drop documents here or click to browse</p>
           <p className="text-xs text-gray-400 mt-1">Primary deck + supplementary docs</p>
+          <p className="text-xs text-gray-400 mt-1">PDF, images, text, CSV, Markdown, Word, Excel, PowerPoint</p>
           <input
             ref={inputRef}
             type="file"
-            accept=".pdf"
+            accept={SOURCE_DOCUMENT_ACCEPT_ATTRIBUTE}
             multiple
             onChange={handleInputChange}
             className="hidden"

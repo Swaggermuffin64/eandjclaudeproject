@@ -77,7 +77,7 @@ describe('appendTextDeltaToFeed', () => {
   });
 
   it('does not merge text from different steps that have no subcall', () => {
-    const before = [{ ...feedEvent(0, 'text:delta', undefined, 'Ingest text'), step: 'ingest' }];
+    const before = [{ ...feedEvent(0, 'text:delta', undefined, 'Template text'), step: 'template' }];
 
     const feed = appendTextDeltaToFeed(before, textDelta(undefined, 'Dossier text'), createIdCounter());
 
