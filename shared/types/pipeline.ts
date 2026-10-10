@@ -1,4 +1,4 @@
-export type PipelineStepName = 'ingest' | 'template' | 'dossier' | 'score';
+export type PipelineStepName = 'template' | 'dossier' | 'score';
 
 export type PipelineStatus = 'pending' | 'processing' | 'completed' | 'error';
 

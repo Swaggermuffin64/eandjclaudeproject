@@ -28,10 +28,10 @@ export interface FeedEvent {
   timestamp: string;
 }
 
-const STEPS: PipelineStepName[] = ['ingest', 'template', 'dossier', 'score'];
+const STEPS: PipelineStepName[] = ['template', 'dossier', 'score'];
 
 function initialStepStates(): Record<PipelineStepName, StepState> {
-  return { ingest: 'pending', template: 'pending', dossier: 'pending', score: 'pending' };
+  return { template: 'pending', dossier: 'pending', score: 'pending' };
 }
 
 export function usePipeline() {
@@ -211,7 +211,7 @@ export function usePipeline() {
 
     setStatus('running');
     setError(null);
-    setStepStates({ ingest: 'done', template: 'done', dossier: 'done', score: 'pending' });
+    setStepStates({ template: 'done', dossier: 'done', score: 'pending' });
     setFeedEvents([]);
     setDossierContent(null);
     setScoreContent(null);

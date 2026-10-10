@@ -7,7 +7,8 @@ const OPUS_MODEL = 'claude-opus-4-6';
 
 let client: Anthropic | null = null;
 
-function getClient(): Anthropic {
+/** Returns the one Anthropic client shared by every Claude call and Files API call. */
+export function getClient(): Anthropic {
   if (!client) {
     client = new Anthropic();
   }
@@ -133,15 +134,4 @@ async function callModel(model: string, options: ClaudeCallOptions): Promise<str
   }
 
   return fullResponse;
-}
-
-export function buildPdfContentBlock(pdfBuffer: Buffer): Anthropic.DocumentBlockParam {
-  return {
-    type: 'document',
-    source: {
-      type: 'base64',
-      media_type: 'application/pdf',
-      data: pdfBuffer.toString('base64'),
-    },
-  };
 }

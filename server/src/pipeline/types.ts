@@ -1,19 +1,27 @@
 import { EventEmitter } from 'node:events';
 import type { PipelineStepName, RubricType } from '@shared/types/pipeline.js';
+import type { SourceDocumentKind } from '@shared/types/source-document-formats.js';
 
-export interface IngestInput {
-  primaryPdf: Buffer;
-  supplementaryPdfs: Buffer[];
+/** A source document as uploaded by the user: its original filename and raw bytes. */
+export interface SourceDocument {
+  filename: string;
+  content: Buffer;
 }
 
-export interface IngestOutput {
-  extractedText: string;
-  entityManifest: string;
+/**
+ * A source document after it has been uploaded to the Anthropic Files API.
+ * Steps reference it by `fileId` instead of resending its bytes.
+ */
+export interface UploadedSourceDocument {
+  fileId: string;
+  /** The original filename, used to label the document for the model. */
+  filename: string;
+  kind: SourceDocumentKind;
 }
 
 export interface TemplateInput {
-  extractedText: string;
-  entityManifest: string;
+  primaryDocument: UploadedSourceDocument;
+  supplementaryDocuments: UploadedSourceDocument[];
 }
 
 export interface TemplateOutput {
@@ -38,8 +46,8 @@ export interface ScoreOutput {
 }
 
 export interface PipelineRunInput {
-  primaryPdf: Buffer;
-  supplementaryPdfs: Buffer[];
+  primaryDocument: SourceDocument;
+  supplementaryDocuments: SourceDocument[];
   rubric: RubricType;
 }
 

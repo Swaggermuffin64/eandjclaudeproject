@@ -5,17 +5,17 @@ import { demoPasskeyHeaders, loadDemoPasskey } from './demo-passkey';
 const BASE_URL = resolveApiBaseUrl(import.meta.env.VITE_API_ORIGIN);
 
 export function startPipeline(
-  primaryPdf: File,
-  supplementaryPdfs: File[],
+  primaryDocument: File,
+  supplementaryDocuments: File[],
   rubric: RubricType,
   onEvent: (event: PipelineEvent) => void,
 ): AbortController {
   const controller = new AbortController();
 
   const formData = new FormData();
-  formData.append('primaryPdf', primaryPdf);
-  for (const file of supplementaryPdfs) {
-    formData.append('supplementaryPdfs', file);
+  formData.append('primaryDocument', primaryDocument);
+  for (const file of supplementaryDocuments) {
+    formData.append('supplementaryDocuments', file);
   }
   formData.append('rubric', rubric);
 
@@ -31,7 +31,7 @@ export function startPipeline(
         onEvent({
           type: 'pipeline:error',
           error: body.error || `HTTP ${response.status}`,
-          step: 'ingest',
+          step: 'template',
           timestamp: new Date().toISOString(),
         });
         return;
@@ -66,7 +66,7 @@ export function startPipeline(
         onEvent({
           type: 'pipeline:error',
           error: err.message || 'Network error',
-          step: 'ingest',
+          step: 'template',
           timestamp: new Date().toISOString(),
         });
       }

@@ -33,7 +33,7 @@ describe('openSseStream', () => {
 
   it('streams events as data lines with SSE headers', async () => {
     app = await buildStreamingApp((stream) => {
-      stream.send({ type: 'step:start', step: 'ingest' });
+      stream.send({ type: 'step:start', step: 'template' });
       stream.send({ type: 'pipeline:complete' });
     });
 
@@ -43,7 +43,7 @@ describe('openSseStream', () => {
     expect(response.headers['content-type']).toBe('text/event-stream');
     expect(response.headers['cache-control']).toBe('no-cache');
     expect(response.body).toBe(
-      'data: {"type":"step:start","step":"ingest"}\n\n' +
+      'data: {"type":"step:start","step":"template"}\n\n' +
         'data: {"type":"pipeline:complete"}\n\n',
     );
   });

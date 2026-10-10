@@ -1,13 +1,23 @@
 import { EventEmitter } from 'node:events';
 import { FastifyInstance } from 'fastify';
 import type { RubricType } from '@shared/types/pipeline.js';
+import {
+  findSourceDocumentFormat,
+  ACCEPTED_SOURCE_DOCUMENT_EXTENSIONS,
+} from '@shared/types/source-document-formats.js';
 import { runPipeline, isPipelineLocked, acquirePipelineLock, releasePipelineLock } from '../pipeline/orchestrator.js';
 import { runScore } from '../pipeline/steps/score/index.js';
 import { emitStepStart, emitStepComplete, emitEvent } from '../pipeline/types.js';
+import type { SourceDocument } from '../pipeline/types.js';
 import { openSseStream } from './sse-stream.js';
 
 const VALID_RUBRICS: RubricType[] = ['life-sciences', 'technology', 'defense'];
 const INVALID_RUBRIC_ERROR = `rubric must be one of: ${VALID_RUBRICS.map((r) => `"${r}"`).join(', ')}`;
+
+/** The 400 message for an uploaded file whose format the pipeline cannot read. */
+function unsupportedFormatError(filename: string): string {
+  return `"${filename}" is not a supported file format. Accepted formats: ${ACCEPTED_SOURCE_DOCUMENT_EXTENSIONS.join(', ')}`;
+}
 
 export async function pipelineRoutes(app: FastifyInstance) {
   app.post('/api/pipeline/run', async (request, reply) => {
@@ -18,17 +28,20 @@ export async function pipelineRoutes(app: FastifyInstance) {
 
     // Parse multipart data
     const parts = request.parts();
-    let primaryPdf: Buffer | null = null;
-    const supplementaryPdfs: Buffer[] = [];
+    let primaryDocument: SourceDocument | null = null;
+    const supplementaryDocuments: SourceDocument[] = [];
+    const unsupportedFilenames: string[] = [];
     let rubric: RubricType | null = null;
 
     for await (const part of parts) {
       if (part.type === 'file') {
-        const buffer = await part.toBuffer();
-        if (part.fieldname === 'primaryPdf') {
-          primaryPdf = buffer;
-        } else if (part.fieldname === 'supplementaryPdfs') {
-          supplementaryPdfs.push(buffer);
+        const document: SourceDocument = { filename: part.filename, content: await part.toBuffer() };
+        if (!findSourceDocumentFormat(document.filename)) {
+          unsupportedFilenames.push(document.filename);
+        } else if (part.fieldname === 'primaryDocument') {
+          primaryDocument = document;
+        } else if (part.fieldname === 'supplementaryDocuments') {
+          supplementaryDocuments.push(document);
         }
       } else if (part.type === 'field') {
         if (part.fieldname === 'rubric' && typeof part.value === 'string') {
@@ -38,8 +51,11 @@ export async function pipelineRoutes(app: FastifyInstance) {
     }
 
     // Validate inputs
-    if (!primaryPdf) {
-      return reply.code(400).send({ error: 'primaryPdf is required' });
+    if (unsupportedFilenames.length > 0) {
+      return reply.code(400).send({ error: unsupportedFormatError(unsupportedFilenames[0]) });
+    }
+    if (!primaryDocument) {
+      return reply.code(400).send({ error: 'primaryDocument is required' });
     }
     if (!rubric || !VALID_RUBRICS.includes(rubric)) {
       return reply.code(400).send({ error: INVALID_RUBRIC_ERROR });
@@ -61,7 +77,7 @@ export async function pipelineRoutes(app: FastifyInstance) {
 
     // Run pipeline (don't await — let it stream)
     runPipeline(
-      { primaryPdf, supplementaryPdfs, rubric },
+      { primaryDocument, supplementaryDocuments, rubric },
       emitter,
     ).finally(() => {
       stream.close();
