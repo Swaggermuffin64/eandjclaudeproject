@@ -1,6 +1,7 @@
 import { useState, useCallback, useRef } from 'react';
 import type { PipelineStepName, RubricType, PipelineEvent } from '@shared/types/pipeline';
 import { startPipeline, startScoreOnly } from '../api/client';
+import { appendTextDeltaToFeed } from './append-text-delta-to-feed';
 
 export interface UploadedFile {
   file: File;
@@ -141,19 +142,9 @@ export function usePipeline() {
         break;
       }
 
-      case 'text:delta': {
-        const subcall = event.subcall;
-        setFeedEvents((prev) => {
-          const last = prev[prev.length - 1];
-          if (last && last.type === 'text:delta' && last.step === event.step && last.subcall === subcall) {
-            const updated = { ...last, message: last.message + event.content };
-            return [...prev.slice(0, -1), updated];
-          }
-          const id = eventIdRef.current++;
-          return [...prev, { id, type: 'text:delta', step: event.step, subcall, message: event.content, timestamp: event.timestamp }];
-        });
+      case 'text:delta':
+        setFeedEvents((prev) => appendTextDeltaToFeed(prev, event, () => eventIdRef.current++));
         break;
-      }
 
       case 'subcall:start':
         setSubcallStates((prev) => ({

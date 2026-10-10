@@ -109,6 +109,15 @@ describe('POST /api/pipeline/score', () => {
     expect(runScoreMock).not.toHaveBeenCalled();
   });
 
+  it.each(['technology', 'life-sciences', 'defense'])('accepts the %s rubric', async (rubric) => {
+    runScoreMock.mockResolvedValue({ score: 'score text' });
+
+    const res = await postScore(app, { dossier: 'dossier text', rubric });
+
+    expect(res.statusCode).toBe(200);
+    expect(runScoreMock).toHaveBeenCalledWith({ dossier: 'dossier text', rubric }, expect.anything());
+  });
+
   it('rejects an unknown rubric', async () => {
     const res = await postScore(app, { dossier: 'dossier text', rubric: 'astrology' });
 

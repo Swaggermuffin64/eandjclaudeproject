@@ -1,9 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   TECHNOLOGY COMPANY FUNDRAISING ICP EVALUATION INSTRUMENT
-  Version 1.0 - Revision History and Future Revisions
+  Version 2.0 — Revision History and Future Revisions
   Extracted from the main rubric file for reference.
   This file is NOT sent to the scoring engine.
+
+  Original file header (includes the version history summary):
+
+  
+  TECHNOLOGY COMPANY FUNDRAISING ICP EVALUATION INSTRUMENT
+  Version 2.0 — XML Format Optimized for Claude Opus
+  Constructed, June 17, 2026
+  Weight Check: Profile A = 100% | Profile B = 100%
+  
+  Version History:
+  v1.0 — Initial construction. Built from the Technology ICP Pre-Construction
+  Design Brief v1.0 and structurally inherited from Life Science Fundraising ICP
+  Evaluation Instrument v5.1. All mechanisms in v1.0 carry tentative-calibration
+  status except those transferred directly from LS v5.1 with multi-case validation
+  heritage (SCA 3-rule formulation, Information Scarcity Protocol mechanism, NCSP
+  mechanism form, midpoint-default justification standard, cross-criterion
+  symmetry instruction, 100-point additive scoring architecture, seven-block
+  output format).
+  
+  v2.0 - Judgment-surface-reduction and honesty pass (2026-06-16). Applied seven
+  approved changes (revisions R1-R8 across modified blocks): a Section 1.3 consistency
+  rider (R1); two terminal disqualifiers, (k) Sanctioned Jurisdiction / OFAC-SDN
+  Exposure and (l) Fabricated or Undisclosed Related-Party Customer, at the existing
+  wholesale bar (R2, mirrored in output Block 2 as R8); operationalization of the
+  A1/B1 "or equivalent" non-traditional-founder equivalences and an FMF within-band
+  note (R3); operationalization of the A1/B1 NCSP minor/material distinction (R4); an
+  A3/B3 revenue-recognition standard plus a government/sovereign-procurement
+  equivalence note (R5); operationalization of the A6/B6 moat hand-wave deductions
+  (R6); and a Section 5 Block 1 Archetype-Misfit flag (R7). NO weights, tier
+  thresholds, deduction magnitudes, or architecture were changed; the Information
+  Scarcity two-track logic and Data Confidence aggregation (Section 1.5), the additive
+  scoring architecture (Section 1.7), and the AI Wrapper Force-Test are untouched. All
+  newly added mechanisms (DQ-k, DQ-l, the Archetype-Misfit flag) and all clarified
+  mechanisms carry tentative-calibration status pending the first 5-10 evaluations.
+  Deferred items (graduated cap-table severity, AI-Native taxonomy expansion, Profile C,
+  token/crypto treatment, cross-criterion correlation, and tier-threshold and
+  NCSP-magnitude recalibration) remain in the Future Revisions Log.
 -->
 
 <!-- ============================================================
@@ -18,7 +55,15 @@ Mechanisms transferred from LS v5.1 with multi-case validation heritage and carr
 
 Mechanisms newly constructed for the tech context and carrying tentative-calibration status: the tech-specific Information Scarcity Protocol signal lists per criterion; the Founder Attestation Protocol for highest-predictive lowest-observable sub-components (NRR, Burn Multiple, cap table specifics); the 10-disqualifier four-category structure replacing LS v5.1's 4-disqualifier structure; the AI-Native Modifier with +2/+1/0/-1/-2 magnitudes and Frontier/Applied/Wrapper classifications; the M&amp;A Modifier with tech-recalibrated thresholds; the combined modifier cap of ±2; the Operational Viability Condition anchored on A1/A3 (Team + Traction) replacing LS v5.1's A2/A4 (Clinical Stage + Validation) anchors; the four-tier base sector classification (PEAK/ACTIVE/COOL/COLD) replacing LS v5.1's three-tier structure; the halo-employer Tier 1 and Tier 2 taxonomy with named examples and qualifying criteria; the solo-founder profile-differentiated protocol; the tech-specific NCSP contradiction types (purchased GitHub stars, false AI-native positioning, halo-employer misrepresentation, false competitive moat claims); the Founder-Market Fit scored sub-component operationalized via Rachleff/Maples/Sequoia Arc tests; the five business-model application notes on A3/B3 (Non-AI SaaS, AI-Native Applied, Pre-Product Seed, Consumer, Developer Tools/Infrastructure) with hardware application note as sixth; the GitHub star replacement metrics (six replacement metrics with Band 1 thresholds by profile); the SAFE stack treatment deduction table; the four-tier accelerator and lead investor classifications with named examples; the AI Wrapper Force-Test (five force-test questions with outcome integration table); the Moat-Buildability sub-component with 70/30 split at Profile A and 50/50 split at Profile B; the Helmer 7 Powers + NFX 4 Defensibilities combined taxonomy; the Hardware/Deep-Tech/Defense/Space Profile Limitation scope boundary; the AI-Native Frontier Fund-Mandate-Fit scope boundary; the Pre-Seed Exclusion floor at $275K total raised with no institutional participation; the development stage enumerated list with software-primary and hardware-supplementary taxonomies; the four-tier investor composition classification.
 
-All newly constructed mechanisms carry the phrase "EVIDENCE BASE IS TENTATIVE" in the relevant revision_note element. Additional cases are needed to validate calibration. The first three to five evaluations conducted under v1.0 will be reviewed against the LS v5.1 performance audit framework to identify miscalibrations and inform v1.1 revisions.
+All newly constructed mechanisms carry the phrase "EVIDENCE BASE IS TENTATIVE" in the relevant revision_note element. Additional cases are needed to validate calibration. The first three to five evaluations conducted under v1.0 will be reviewed against the LS v5.1 performance audit framework to identify miscalibrations and inform v2.0 revisions.
+</note>
+
+<note>
+v2.0 JUDGMENT-SURFACE-REDUCTION AND HONESTY PASS (2026-06-16): The Technology Company Fundraising ICP Evaluation Instrument v2.0 was produced from v1.0 by applying exactly the seven changes approved in the Step 5 Change Prioritization, executed as the Step 6 Production Brief. v2.0 is deliberately not a recalibration: no criterion weight, no fundability tier threshold (80/60/40), no deduction magnitude, and no element of the additive scoring architecture was changed, because the ground-truth follow-up data needed to recalibrate (close, velocity, and valuation outcomes across the first 5-10 evaluations) does not yet exist. The Information Scarcity two-track classification and the Data Confidence aggregation thresholds (Section 1.5), the additive 100-point architecture and cross-criterion symmetry instruction (Section 1.7), and the AI Wrapper Force-Test (the five questions and the 0-1/2/3+ outcome table) were reproduced byte-for-byte.
+
+The seven changes, by revision number: R1 (Section 1.3) — a one-clause consistency rider acknowledging the A1/B1 non-traditional-founder equivalences so the Team Priority spec no longer reads as halo-employer-only. R2 (Section 2.3) — two new terminal disqualifiers in a new fifth category (Regulatory and Customer Integrity): (k) Sanctioned Jurisdiction / OFAC-SDN Exposure and (l) Fabricated or Undisclosed Related-Party Customer, the latter scoped to the wholesale-fabrication bar with inflation explicitly routed to scored deductions; mirrored in output Block 2 as R8. R3 (A1/B1) — operationalization of the halo_employer_taxonomy "or equivalent" framing via three Non-Traditional Founder Equivalence categories (deep vertical-domain operator experience; academic/research standing; authentic open-source leadership) plus an FMF within-band note, with the "clearly weak" floor preserved. R4 (A1/B1 NCSP) — an operational definition of the minor-versus-material contradiction line by source and type, with deduction magnitudes unchanged. R5 (A3/B3) — a revenue-recognition standard classifying which revenue figures qualify against the existing thresholds, plus a government/sovereign-procurement equivalence note available independent of the hardware tag. R6 (A6/B6) — operationalization of the moat hand-wave deductions into per-category checklists with an overlap rule, magnitudes unchanged. R7 (Section 5 Block 1) — an Archetype-Misfit flag disclosing when a company falls outside the reliable scoring range, with a trigger list defined after R3 and R5 so it fires only on still-uncovered archetypes.
+
+Tentative-calibration status: every clarified mechanism (the NCSP minor/material definition, the revenue-recognition tiers, the hand-wave checklists, the non-traditional-founder equivalence thresholds) and every newly added mechanism (DQ-k, DQ-l, the Archetype-Misfit flag) carries tentative status. The DQ-l wholesale-fabrication scoping in particular is doing load-bearing work and should be re-examined against the first two to three cases that sit on the inflation-versus-fabrication boundary; if the terminal gate cannot be held binary in practice, DQ-l should be reconsidered as a scored NCSP contradiction type with only DQ-k retained. Items deferred to later versions (graduated cap-table severity / secondary OVC per FV-tech-7; AI-Native taxonomy expansion and an AI-adjacent force-test variant; Profile C per FV-tech-1; token/crypto-adjacent native treatment; the cross-criterion risk correlation mechanism per FV-tech-3; tier-threshold recalibration per FV-tech-4; NCSP magnitude recalibration per FV-tech-2; FMF decoupling per FV-tech-5; multi-track traction per FV-tech-6) remain in the Future Revisions Log and were not foreclosed by any v2.0 edit.
 </note>
 </section>
 
@@ -32,7 +77,7 @@ All newly constructed mechanisms carry the phrase "EVIDENCE BASE IS TENTATIVE" i
 This log records issues identified during construction or use of the instrument that have been deliberately deferred to a future revision. Entries are not commitments to make the listed changes; they are commitments to review the listed issues before declaring the instrument complete. Each entry documents the problem, a proposed direction, and the reason for deferral. The header note structure transfers from LS v5.1 Section 7 verbatim. Deferral reasons include: insufficient case data to calibrate the proposed change; pending validation of the v1.0 construction across additional cases; structural change scope larger than a point revision; downstream dependencies on LS v5.1 v5.2 or v6.0 revisions that have not yet been completed.
 </header_note>
 
-<entry id="FV-tech-1" target="v2.0" title="Profile C — Hardware/Deep-Tech/Defense/Space Track" source="Design Brief Section H1">
+<entry id="FV-tech-1" target="v2.9" title="Profile C — Hardware/Deep-Tech/Defense/Space Track" source="Design Brief Section H1">
 PROBLEM: The v1.0 instrument is calibrated for software-primary and software-AI-primary technology companies. Hardware-intensive companies — including pure hardware, robotics, physical AI with hardware dependence, deep-tech with capex requirements, defense/dual-use with government contract revenue, and space/aerospace — are within the general scope of the instrument but produce persistent band language friction on A3/B3, A4/B4, A6/B6, and A2/B2 per Section 2.2 Hardware Profile Limitation. Application notes in v1.0 provide an analog framework but are not a substitute for a dedicated track calibrated to hardware fundability signals.
 
 PROPOSED DIRECTION: Construct a Profile C track in v2.0 calibrated to hardware fundability signals: certification milestones as the primary product viability anchor (FCC, FAA, ITAR/EAR, defense-prime qualifications) replacing ARR; government contract revenue (SAM.gov, usaspending.gov, DoD contract IDs) as a separate scored sub-component; capex, grants, and debt funding structures as alternate capital-efficiency anchors with Burn Multiple replaced by capex-to-milestone mapping; manufacturing-process power and supply-chain depth as moat sources weighted at top-band parity with software network effects; 7-12 year exit timeline as baseline replacing 5-7 year software baseline; Defense/Dual-Use Specialist investor archetype as primary fit; strategic CVCs (Lockheed, Northrop, RTX, equivalent) on cap table as neutral or positive rather than negative.
@@ -40,15 +85,16 @@ PROPOSED DIRECTION: Construct a Profile C track in v2.0 calibrated to hardware f
 DEFERRAL REASON: Profile C construction is a structural addition of similar scope to the v1.0 construction itself. Hardware-intensive evaluations in v1.0 proceed under the application-note framework with Hardware Profile flag invocation per Block 1 Market Context Note. Clients whose target pipeline exceeds approximately 20% hardware/deep-tech/defense/space companies should commission Profile C development before broad use. The 20% pipeline threshold is the operational trigger.
 </entry>
 
-<entry id="FV-tech-2" target="v5.2 or v6.0" title="NCSP Calibration Refinement for Tech-Specific Contradiction Types" source="Design Brief Section H2">
+<entry id="FV-tech-2" target="v6.1 or v6.9" title="NCSP Calibration Refinement for Tech-Specific Contradiction Types" source="Design Brief Section H2">
 PROBLEM: The Negative Credibility Signal Protocol in v1.0 carries tech-specific contradiction types (purchased GitHub stars, false AI-native positioning, halo-employer misrepresentation, false competitive moat claims, co-founder conflict signals) but the deduction magnitudes (1 point for minor; 2-3 points for material with permission to drop to next lower band) are inherited from the LS v5.1 NCSP which has single-case validation heritage (NEXI Biotech "First Brain-on-Chip" case). The tech-specific contradiction types have not been empirically calibrated against tech evaluation outcomes.
 
 PROPOSED DIRECTION: After three to five tech evaluations have been completed and at least two have surfaced NCSP-triggering contradictions, review the deduction magnitudes and band-drop rule for empirical alignment with tech investor responses to the documented contradictions. Specifically: (a) whether 2-3 points is the correct material-contradiction magnitude or whether tech contexts warrant a higher deduction (e.g., 3-5 points) given the higher density of credibility-signal manipulation in tech; (b) whether the band-drop rule should be more or less liberal in tech given the structural prevalence of inflated claims; (c) whether co-founder conflict signals should be elevated to a category-level treatment given the documented frequency of co-founder disputes affecting Series A close.
 
 DEFERRAL REASON: Insufficient case data to calibrate. Inherited LS v5.1 NCSP heritage is functional but tentative for tech. Three to five cases needed before refinement.
+v2.0 PARTIAL ADVANCE (2026-06-16): v2.0 operationalized the minor-versus-material distinction in the NCSP by source and type (Change D / R4 in Sections 3 A1 and 4 B1), removing the un-operationalized classification call; the magnitude recalibration described above (whether 2-3 points is correct for tech, or whether 3-5 is warranted) remains deferred pending the case data named in the deferral reason.
 </entry>
 
-<entry id="FV-tech-3" target="v6.0" title="Cross-Criterion Risk Correlation Mechanism" source="Design Brief Section H3; LS v5.1 FV-1">
+<entry id="FV-tech-3" target="v6.9" title="Cross-Criterion Risk Correlation Mechanism" source="Design Brief Section H3; LS v5.1 FV-1">
 PROBLEM: The v1.0 instrument uses an additive, independent-criterion scoring architecture (per Section 1.7 Scoring Architecture). When a single development affects multiple criteria simultaneously (e.g., a strategic pivot affecting A2/B2 sector classification, A3/B3 traction interpretation, A5/B5 SCA outcome, and A6/B6 moat trajectory), the independent scoring structure cannot express the correlated risk quantitatively. Cross-criterion correlations are described qualitatively in Block 5 per the cross-criterion symmetry instruction, but the quantitative scoring envelope under-represents the aggregate risk.
 
 PROPOSED DIRECTION: Develop a cross-criterion risk correlation mechanism that adjusts the total score when multiple criteria are affected by a single underlying development. Candidate mechanisms: (a) a multi-criterion penalty applied at Block 4 (e.g., -2 to -5 points when three or more criteria are affected by a single development); (b) a risk-correlation co-factor multiplied into the modifier-adjusted total score; (c) a qualitative tier override permitting tier drop when cross-criterion correlations exceed a threshold. Mechanism design must preserve the additive scoring architecture's auditability while addressing the correlation gap.
@@ -56,7 +102,7 @@ PROPOSED DIRECTION: Develop a cross-criterion risk correlation mechanism that ad
 DEFERRAL REASON: Mirrors LS v5.1 FV-1 which is also deferred to v6.0. Structural change scope larger than a point revision; requires alignment with LS v5.1 v6.0 to maintain cross-instrument parity. Insufficient case data in tech to inform candidate mechanism selection.
 </entry>
 
-<entry id="FV-tech-4" target="v1.1 or v1.2" title="Tier Threshold Recalibration After Initial Evaluation Corpus" source="Design Brief Section H4">
+<entry id="FV-tech-4" target="v2.1" title="Tier Threshold Recalibration After Initial Evaluation Corpus" source="Design Brief Section H4">
 PROBLEM: The v1.0 fundability tier thresholds (Tier 1: 80-102; Tier 2: 60-79; Tier 3: 40-59; Tier 4: below 40) transfer from LS v5.1 with the operative envelope adjusted from 96-102 to 98-102. The thresholds have not been validated empirically against tech evaluation outcomes; the false-positive rate (Tier 1 companies that fail to close) and false-negative rate (Tier 2 or Tier 3 companies that close at high velocity) are unknown.
 
 PROPOSED DIRECTION: After the first 5-10 tech evaluations have been completed and follow-up data is available (whether the evaluated companies closed their stated raise, at what velocity, and at what valuation), conduct a tier threshold recalibration review. Specifically: (a) whether the 80-point Tier 1 floor is the correct cutoff or whether tech thresholds should be higher (e.g., 85) given the higher dispersion of tech scoring outcomes; (b) whether the 40-point Tier 4 floor is the correct cutoff or whether tech thresholds should be lower (e.g., 35) given the asymmetric impact of disqualifier-adjacent cap-table issues; (c) whether the 60-point Tier 2 floor warrants subdivision (e.g., Tier 2a 70-79 vs Tier 2b 60-69) to capture meaningful differentiation in the middle band.
@@ -64,7 +110,7 @@ PROPOSED DIRECTION: After the first 5-10 tech evaluations have been completed an
 DEFERRAL REASON: Pending case data. The first 5-10 evaluations under v1.0 will inform the recalibration.
 </entry>
 
-<entry id="FV-tech-5" target="v1.2 or v2.0" title="Founder-Market Fit Decoupling from Team Quality" source="Design Brief Section H5">
+<entry id="FV-tech-5" target="v2.1 or v2.9" title="Founder-Market Fit Decoupling from Team Quality" source="Design Brief Section H5">
 PROBLEM: The v1.0 instrument folds Founder-Market Fit into the Team Quality criterion (A1/B1) as a scored sub-component per Design Brief B1 parsimony decision. FMF carries significant signal weight in research (Rachleff, Maples, Sequoia Arc converged framings) but is operationalized within the A1/B1 band positioning rather than as a standalone criterion. The single-criterion treatment may under-represent FMF's predictive value when FMF is exceptionally strong but other Team Quality signals are mid-band.
 
 PROPOSED DIRECTION: After validation of the v1.0 single-criterion treatment across 5-10 evaluations, review whether FMF warrants decoupling into a standalone criterion at weight 5-8 points (with Team Quality reduced to 18-25 points at Profile A and 25-28 points at Profile B). The decoupling would permit independent scoring of FMF and Team Quality where they diverge (e.g., strong FMF with weak halo-employer pedigree; strong halo-employer pedigree with weak FMF).
@@ -72,15 +118,16 @@ PROPOSED DIRECTION: After validation of the v1.0 single-criterion treatment acro
 DEFERRAL REASON: Pending validation of single-criterion treatment. Parsimony decision in v1.0 deferred standalone-criterion consideration to a future revision after corpus data is available.
 </entry>
 
-<entry id="FV-tech-6" target="v1.2 or v2.0" title="Multi-Track Traction Scoring for Business Model Variance" source="Design Brief Section H6">
+<entry id="FV-tech-6" target="v2.1 or v2.9" title="Multi-Track Traction Scoring for Business Model Variance" source="Design Brief Section H6">
 PROBLEM: The v1.0 instrument uses five business-model application notes within a single A3/B3 criterion (Non-AI SaaS, AI-Native Applied, Pre-Product Seed, Consumer, Developer Tools/Infrastructure) per Design Brief C4a parsimony decision. The application-note approach maintains rubric simplicity but may obscure business-model-specific calibration friction when application-note thresholds differ significantly in magnitude or in observable signal availability.
 
 PROPOSED DIRECTION: After validation of the application-note framework across 5-10 evaluations covering multiple business models, review whether the application-note variance is large enough to warrant formal multi-track traction scoring. Candidate structure: A3/B3 split into A3a/B3a (Revenue-Stage Traction; Non-AI SaaS and AI-Native Applied with revenue) and A3b/B3b (Pre-Revenue Traction; Pre-Product Seed and Consumer engagement and Developer Tools community), each weighted appropriately and applied based on the company's primary traction signal type. The multi-track structure would permit independent calibration of revenue-stage and pre-revenue thresholds without the application-note friction.
 
 DEFERRAL REASON: Pending validation of application-note variance. The five business-model application notes are tested in v1.0 and will inform whether formal multi-track scoring is needed.
+v2.0 PARTIAL ADVANCE (2026-06-16): v2.0 added a revenue-recognition standard to A3/B3 (Change E / R5) that classifies which revenue figures qualify against the existing thresholds (recognized ARR, bookings, LOI/pilot, company-claimed), capturing the acute reproducibility benefit; the structural multi-track traction split (A3a/B3a revenue-stage versus A3b/B3b pre-revenue) described above remains deferred pending the application-note variance validation named in the deferral reason.
 </entry>
 
-<entry id="FV-tech-7" target="v1.2 or v2.0" title="Secondary Operational Viability Condition for Capital Structure" source="Design Brief Section H7">
+<entry id="FV-tech-7" target="v2.1 or v2.9" title="Secondary Operational Viability Condition for Capital Structure" source="Design Brief Section H7">
 PROBLEM: The v1.0 Operational Viability Condition anchors on A1/A3 and B1/B3 (Team + Traction). Capital-structure failures — specifically the SAFE stack approaching $3M with stalled priced-round timeline (approaching but not triggering disqualifier (c)) combined with founder ownership approaching the disqualifier (b) threshold — produce a fundability profile structurally similar to the OVC-triggered profile but are not captured by the OVC because A5/B5 is not an OVC anchor criterion. The asymmetric treatment may under-represent capital-structure operational viability risk at Profile A where SAFE stack and founder ownership are particularly material.
 
 PROPOSED DIRECTION: After validation of the v1.0 OVC across 5-10 evaluations, review whether a secondary Operational Viability Condition should be added anchored on A5/B5 capital-structure signals. Candidate trigger: when A5/B5 is in its lowest band ("Weak or Problematic Cap Table") AND a second criterion is in its lowest band, cap the A5/B5 final score at the Tier 3 ceiling. The secondary OVC would parallel the primary OVC mechanism but address the capital-structure dimension of operational viability.
@@ -89,5 +136,3 @@ DEFERRAL REASON: Pending validation of primary OVC. Secondary mechanism design i
 </entry>
 
 </section>
-
-</rubric>

@@ -6,7 +6,8 @@ import { runScore } from '../pipeline/steps/score/index.js';
 import { emitStepStart, emitStepComplete, emitEvent } from '../pipeline/types.js';
 import { openSseStream } from './sse-stream.js';
 
-const VALID_RUBRICS: RubricType[] = ['life-sciences', 'technology'];
+const VALID_RUBRICS: RubricType[] = ['life-sciences', 'technology', 'defense'];
+const INVALID_RUBRIC_ERROR = `rubric must be one of: ${VALID_RUBRICS.map((r) => `"${r}"`).join(', ')}`;
 
 export async function pipelineRoutes(app: FastifyInstance) {
   app.post('/api/pipeline/run', async (request, reply) => {
@@ -41,7 +42,7 @@ export async function pipelineRoutes(app: FastifyInstance) {
       return reply.code(400).send({ error: 'primaryPdf is required' });
     }
     if (!rubric || !VALID_RUBRICS.includes(rubric)) {
-      return reply.code(400).send({ error: 'rubric must be "life-sciences" or "technology"' });
+      return reply.code(400).send({ error: INVALID_RUBRIC_ERROR });
     }
 
     // Re-check after parsing: another run may have started while we awaited the
@@ -99,7 +100,7 @@ export async function pipelineRoutes(app: FastifyInstance) {
       return reply.code(400).send({ error: 'dossier file is required' });
     }
     if (!rubric || !VALID_RUBRICS.includes(rubric)) {
-      return reply.code(400).send({ error: 'rubric must be "life-sciences" or "technology"' });
+      return reply.code(400).send({ error: INVALID_RUBRIC_ERROR });
     }
 
     // Take the lock now, after the upload is parsed. The isPipelineLocked() check

@@ -40,6 +40,24 @@ function buildSystemParts(preamble: string, filledTemplate: string, instructions
 }
 
 /**
+ * Signature shared by every dossier block runner, so the orchestrator can schedule them
+ * from one dependency table. `priorContext` is the finished text of the blocks this block
+ * depends on (see DOSSIER_BLOCKS in blocks.ts), already joined in dependency order.
+ */
+export type DossierBlockRunner = (
+  filledTemplate: string,
+  priorContext: string,
+  emitter: PipelineEmitter,
+) => Promise<string>;
+
+/** Builds the user message: the prior blocks this block builds on, then the instruction. */
+function buildUserContent(priorContext: string, instruction: string): string {
+  return priorContext
+    ? `Prior research context:\n\n${priorContext}\n\n${instruction}`
+    : instruction;
+}
+
+/**
  * Shared helper for criterion sub-blocks (C1-C7).
  */
 async function runCriterionBlock(options: {
@@ -60,13 +78,9 @@ ${blockDef}
 
 Produce ${subBlockId} in full. Do NOT produce any other blocks.`;
 
-  const userContent = priorContext
-    ? `Prior research context:\n\n${priorContext}\n\nProduce Sub-Block ${subBlockId} only.`
-    : `Produce Sub-Block ${subBlockId} only.`;
-
   return callOpus({
     systemParts: buildSystemParts(PREAMBLE_RESEARCH, filledTemplate, instructions),
-    userContent,
+    userContent: buildUserContent(priorContext, `Produce Sub-Block ${subBlockId} only.`),
     emitter,
     step: 'dossier',
     subcall: subBlockId,
@@ -79,10 +93,7 @@ Produce ${subBlockId} in full. Do NOT produce any other blocks.`;
 // R0 - Research Plan
 // ---------------------------------------------------------------------------
 
-export async function runR0(
-  filledTemplate: string,
-  emitter: PipelineEmitter,
-): Promise<string> {
+export const runR0: DossierBlockRunner = async (filledTemplate, _priorContext, emitter) => {
   const blockDef = getDossierOutputBlock('R0');
 
   return callOpus({
@@ -98,17 +109,13 @@ Produce R0 in full. Do NOT produce any other blocks.`),
     subcall: 'R0',
     maxTokens: 4096,
   });
-}
+};
 
 // ---------------------------------------------------------------------------
 // R1 - Entity Identification
 // ---------------------------------------------------------------------------
 
-export async function runR1(
-  filledTemplate: string,
-  r0: string,
-  emitter: PipelineEmitter,
-): Promise<string> {
+export const runR1: DossierBlockRunner = async (filledTemplate, priorContext, emitter) => {
   const blockDef = getDossierOutputBlock('R1');
 
   return callOpus({
@@ -118,24 +125,20 @@ export async function runR1(
 ${blockDef}
 
 Produce R1 in full. Do NOT produce any other blocks.`),
-    userContent: `Prior research context:\n\n${r0}\n\nProduce Block R1 only.`,
+    userContent: buildUserContent(priorContext, 'Produce Block R1 only.'),
     emitter,
     step: 'dossier',
     subcall: 'R1',
     tools: [makeWebSearchTool(10)],
     maxTokens: 4096,
   });
-}
+};
 
 // ---------------------------------------------------------------------------
 // R2 - Capital Position
 // ---------------------------------------------------------------------------
 
-export async function runR2(
-  filledTemplate: string,
-  r0: string,
-  emitter: PipelineEmitter,
-): Promise<string> {
+export const runR2: DossierBlockRunner = async (filledTemplate, priorContext, emitter) => {
   const blockDef = getDossierOutputBlock('R2');
 
   return callOpus({
@@ -145,24 +148,20 @@ export async function runR2(
 ${blockDef}
 
 Produce R2 in full. Do NOT produce any other blocks.`),
-    userContent: `Prior research context:\n\n${r0}\n\nProduce Block R2 only.`,
+    userContent: buildUserContent(priorContext, 'Produce Block R2 only.'),
     emitter,
     step: 'dossier',
     subcall: 'R2',
     tools: [makeWebSearchTool(15)],
     maxTokens: 8192,
   });
-}
+};
 
 // ---------------------------------------------------------------------------
 // R4a - Per-Founder Profiles (most research-intensive)
 // ---------------------------------------------------------------------------
 
-export async function runR4a(
-  filledTemplate: string,
-  r0: string,
-  emitter: PipelineEmitter,
-): Promise<string> {
+export const runR4a: DossierBlockRunner = async (filledTemplate, priorContext, emitter) => {
   const blockDef = getDossierOutputBlock('R4a');
 
   return callOpus({
@@ -172,25 +171,20 @@ export async function runR4a(
 ${blockDef}
 
 Produce R4a in full. Do NOT produce any other blocks.`),
-    userContent: `Prior research context:\n\n${r0}\n\nProduce Block R4a only.`,
+    userContent: buildUserContent(priorContext, 'Produce Block R4a only.'),
     emitter,
     step: 'dossier',
     subcall: 'R4a',
     tools: [makeWebSearchTool(30)],
     maxTokens: 16384,
   });
-}
+};
 
 // ---------------------------------------------------------------------------
 // R3 - Disqualifier Screen (depends on R4a for identity-dependent DQs)
 // ---------------------------------------------------------------------------
 
-export async function runR3(
-  filledTemplate: string,
-  r0: string,
-  r4a: string,
-  emitter: PipelineEmitter,
-): Promise<string> {
+export const runR3: DossierBlockRunner = async (filledTemplate, priorContext, emitter) => {
   const blockDef = getDossierOutputBlock('R3');
   const disqualifierSchema = getDossierDisqualifierSchema();
 
@@ -205,167 +199,131 @@ Reference the disqualifier schema below when evaluating disqualifiers:
 ${disqualifierSchema}
 
 Produce R3 in full. Do NOT produce any other blocks.`),
-    userContent: `Prior research context:\n\n${r0}\n\n${r4a}\n\nProduce Block R3 only.`,
+    userContent: buildUserContent(priorContext, 'Produce Block R3 only.'),
     emitter,
     step: 'dossier',
     subcall: 'R3',
     tools: [makeWebSearchTool(20)],
     maxTokens: 8192,
   });
-}
+};
 
 // ---------------------------------------------------------------------------
 // C1 - Team Quality (no web search; evidence comes from R4a)
 // ---------------------------------------------------------------------------
 
-export async function runC1(
-  filledTemplate: string,
-  r4a: string,
-  emitter: PipelineEmitter,
-): Promise<string> {
+export const runC1: DossierBlockRunner = async (filledTemplate, priorContext, emitter) => {
   return runCriterionBlock({
     subBlockId: 'C1',
     label: 'Team Quality',
     filledTemplate,
-    priorContext: r4a,
+    priorContext,
     emitter,
     maxTokens: 8192,
   });
-}
+};
 
 // ---------------------------------------------------------------------------
 // C2 - Market Opportunity (runs 5 force tests)
 // ---------------------------------------------------------------------------
 
-export async function runC2(
-  filledTemplate: string,
-  r0: string,
-  emitter: PipelineEmitter,
-): Promise<string> {
+export const runC2: DossierBlockRunner = async (filledTemplate, priorContext, emitter) => {
   return runCriterionBlock({
     subBlockId: 'C2',
     label: 'Market Opportunity',
     filledTemplate,
-    priorContext: r0,
+    priorContext,
     emitter,
     tools: [makeWebSearchTool(15)],
     maxTokens: 8192,
   });
-}
+};
 
 // ---------------------------------------------------------------------------
 // C3 - Product / Traction
 // ---------------------------------------------------------------------------
 
-export async function runC3(
-  filledTemplate: string,
-  r3: string,
-  emitter: PipelineEmitter,
-): Promise<string> {
+export const runC3: DossierBlockRunner = async (filledTemplate, priorContext, emitter) => {
   return runCriterionBlock({
     subBlockId: 'C3',
     label: 'Product/Traction',
     filledTemplate,
-    priorContext: r3,
+    priorContext,
     emitter,
     tools: [makeWebSearchTool(10)],
     maxTokens: 8192,
   });
-}
+};
 
 // ---------------------------------------------------------------------------
 // C4 - Capital Efficiency
 // ---------------------------------------------------------------------------
 
-export async function runC4(
-  filledTemplate: string,
-  r2: string,
-  emitter: PipelineEmitter,
-): Promise<string> {
+export const runC4: DossierBlockRunner = async (filledTemplate, priorContext, emitter) => {
   return runCriterionBlock({
     subBlockId: 'C4',
     label: 'Capital Efficiency',
     filledTemplate,
-    priorContext: r2,
+    priorContext,
     emitter,
     tools: [makeWebSearchTool(10)],
     maxTokens: 8192,
   });
-}
+};
 
 // ---------------------------------------------------------------------------
 // C5 - Cap Table
 // ---------------------------------------------------------------------------
 
-export async function runC5(
-  filledTemplate: string,
-  r2: string,
-  r3: string,
-  emitter: PipelineEmitter,
-): Promise<string> {
+export const runC5: DossierBlockRunner = async (filledTemplate, priorContext, emitter) => {
   return runCriterionBlock({
     subBlockId: 'C5',
     label: 'Cap Table',
     filledTemplate,
-    priorContext: `${r2}\n\n${r3}`,
+    priorContext,
     emitter,
     tools: [makeWebSearchTool(10)],
     maxTokens: 8192,
   });
-}
+};
 
 // ---------------------------------------------------------------------------
 // C6 - Competitive Moat (needs R4a + C2 force test results)
 // ---------------------------------------------------------------------------
 
-export async function runC6(
-  filledTemplate: string,
-  r4a: string,
-  c2: string,
-  emitter: PipelineEmitter,
-): Promise<string> {
+export const runC6: DossierBlockRunner = async (filledTemplate, priorContext, emitter) => {
   return runCriterionBlock({
     subBlockId: 'C6',
     label: 'Competitive Moat',
     filledTemplate,
-    priorContext: `${r4a}\n\n${c2}`,
+    priorContext,
     emitter,
     tools: [makeWebSearchTool(15)],
     maxTokens: 8192,
   });
-}
+};
 
 // ---------------------------------------------------------------------------
 // C7 - Exit Pathway
 // ---------------------------------------------------------------------------
 
-export async function runC7(
-  filledTemplate: string,
-  r0: string,
-  emitter: PipelineEmitter,
-): Promise<string> {
+export const runC7: DossierBlockRunner = async (filledTemplate, priorContext, emitter) => {
   return runCriterionBlock({
     subBlockId: 'C7',
     label: 'Exit Pathway',
     filledTemplate,
-    priorContext: r0,
+    priorContext,
     emitter,
     tools: [makeWebSearchTool(10)],
     maxTokens: 8192,
   });
-}
+};
 
 // ---------------------------------------------------------------------------
 // R5 - Cross-Validation
 // ---------------------------------------------------------------------------
 
-export async function runR5(
-  filledTemplate: string,
-  r3: string,
-  r4a: string,
-  r4b: string,
-  emitter: PipelineEmitter,
-): Promise<string> {
+export const runR5: DossierBlockRunner = async (filledTemplate, priorContext, emitter) => {
   const blockDef = getDossierOutputBlock('R5');
 
   return callOpus({
@@ -375,24 +333,20 @@ export async function runR5(
 ${blockDef}
 
 Produce R5 in full. Do NOT produce any other blocks.`),
-    userContent: `Prior research context:\n\n${r3}\n\n${r4a}\n\n${r4b}\n\nProduce Block R5 only.`,
+    userContent: buildUserContent(priorContext, 'Produce Block R5 only.'),
     emitter,
     step: 'dossier',
     subcall: 'R5',
     tools: [makeWebSearchTool(15)],
     maxTokens: 8192,
   });
-}
+};
 
 // ---------------------------------------------------------------------------
 // R6 + R7 + R8 - Assembly, Completion Gate & Handoff
 // ---------------------------------------------------------------------------
 
-export async function runR6R7R8(
-  filledTemplate: string,
-  allPriorBlocks: string,
-  emitter: PipelineEmitter,
-): Promise<string> {
+export const runR6R7R8: DossierBlockRunner = async (filledTemplate, priorContext, emitter) => {
   const r6Def = getDossierOutputBlock('R6');
   const r7Def = getDossierOutputBlock('R7');
   const r8Def = getDossierOutputBlock('R8');
@@ -408,10 +362,10 @@ ${r7Def}
 ${r8Def}
 
 Produce R6, R7, and R8 in full. Do NOT produce any other blocks.`),
-    userContent: `All prior dossier blocks:\n\n${allPriorBlocks}\n\nProduce Blocks R6, R7, and R8.`,
+    userContent: `All prior dossier blocks:\n\n${priorContext}\n\nProduce Blocks R6, R7, and R8.`,
     emitter,
     step: 'dossier',
     subcall: 'R6-R8',
     maxTokens: 16384,
   });
-}
+};

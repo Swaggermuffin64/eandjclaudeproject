@@ -2,7 +2,7 @@ export type PipelineStepName = 'ingest' | 'template' | 'dossier' | 'score';
 
 export type PipelineStatus = 'pending' | 'processing' | 'completed' | 'error';
 
-export type RubricType = 'life-sciences' | 'technology';
+export type RubricType = 'life-sciences' | 'technology' | 'defense';
 
 export interface PipelineStepResponse {
   step: PipelineStepName;

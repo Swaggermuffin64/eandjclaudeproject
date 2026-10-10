@@ -59,6 +59,13 @@ describe('getRubricPrompt', () => {
     expect(rubric).toContain('id="A1"');
     expect(rubric).toContain('id="B1"');
   });
+
+  it('returns defense rubric containing shared + both profiles', () => {
+    const rubric = getRubricPrompt('defense');
+    expect(rubric).toContain('<section id="1"');
+    expect(rubric).toContain('id="A1"');
+    expect(rubric).toContain('id="B1"');
+  });
 });
 
 describe('getRubricShared', () => {
@@ -77,7 +84,78 @@ describe('getRubricShared', () => {
   it('returns different content for different rubric types', () => {
     const ls = getRubricShared('life-sciences');
     const tech = getRubricShared('technology');
+    const defense = getRubricShared('defense');
     expect(ls).not.toBe(tech);
+    expect(defense).not.toBe(tech);
+    expect(defense).not.toBe(ls);
+  });
+
+  it('returns the v2.0 technology rubric', () => {
+    const shared = getRubricShared('technology');
+    expect(shared).toContain('version="2.0"');
+    expect(shared).toContain('Private technology companies');
+  });
+
+  it('returns the v2.0 defense rubric', () => {
+    const shared = getRubricShared('defense');
+    expect(shared).toContain('version="2.0"');
+    expect(shared).toContain('Private defense technology companies');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Rubric chunking — every rubric is split the same way
+// ---------------------------------------------------------------------------
+
+describe('rubric chunk layout', () => {
+  const RUBRICS = ['life-sciences', 'technology', 'defense'] as const;
+  const FULL_CRITERION_DEFINITION = /<criterion\s+id="[AB]\d"[^>]*\bname="/g;
+
+  it.each(RUBRICS)('%s shared chunk holds Sections 1, 2 and 5 only', (rubric) => {
+    const shared = getRubricShared(rubric);
+    expect(shared).toContain('<section id="1" name="Evaluation Context"');
+    expect(shared).toContain('<section id="2" name="Routing Logic"');
+    expect(shared).toContain('<section id="5" name="Standardized Scoring Output Format"');
+    expect(shared).not.toContain('<section id="6"');
+    expect(shared).not.toContain('<section id="7"');
+  });
+
+  // Regression: the v1.0 technology split left a stray Section 3 opening tag in the shared
+  // chunk, so the output format (Section 5) was mislabeled as the Profile A rubric.
+  it.each(RUBRICS)('%s shared chunk contains no profile sections or criterion definitions', (rubric) => {
+    const shared = getRubricShared(rubric);
+    expect(shared).not.toContain('<section id="3"');
+    expect(shared).not.toContain('<section id="4"');
+    expect(shared.match(FULL_CRITERION_DEFINITION)).toBeNull();
+  });
+
+  it.each(RUBRICS)('%s shared chunk has balanced section, block and rubric tags', (rubric) => {
+    const shared = getRubricShared(rubric);
+    expect(shared.match(/<section\s/g)).toHaveLength(3);
+    expect(shared.match(/<\/section>/g)).toHaveLength(3);
+    expect(shared.match(/<block\s/g)?.length).toBe(shared.match(/<\/block>/g)?.length);
+    expect(shared.match(/<rubric\s/g)).toHaveLength(1);
+    expect(shared.match(/<\/rubric>/g)).toHaveLength(1);
+  });
+
+  it.each(RUBRICS)('%s shared chunk includes all seven output format blocks', (rubric) => {
+    const shared = getRubricShared(rubric);
+    for (const blockId of ['0', '1', '2', '3', '4', '5', '6']) {
+      expect(shared).toContain(`<block id="${blockId}" `);
+    }
+  });
+
+  it.each(
+    RUBRICS.flatMap((rubric) => [[rubric, 'A', '3'], [rubric, 'B', '4']] as const),
+  )('%s profile %s chunk holds exactly its own section and seven criteria', (rubric, profile, sectionId) => {
+    const content = getRubricProfile(rubric, profile);
+    const definedIds = (content.match(FULL_CRITERION_DEFINITION) ?? []).map((tag) => tag.match(/id="([AB]\d)"/)![1]);
+
+    expect(content.match(/<section\s/g)).toHaveLength(1);
+    expect(content).toContain(`<section id="${sectionId}"`);
+    expect(content.match(/<\/section>/g)).toHaveLength(1);
+    expect(definedIds).toEqual([1, 2, 3, 4, 5, 6, 7].map((n) => `${profile}${n}`));
+    expect(content.match(/<\/criterion>/g)).toHaveLength(7);
   });
 });
 
@@ -87,6 +165,8 @@ describe('getRubricProfile', () => {
     ['life-sciences', 'B'] as const,
     ['technology', 'A'] as const,
     ['technology', 'B'] as const,
+    ['defense', 'A'] as const,
+    ['defense', 'B'] as const,
   ])('returns non-empty content for %s profile %s', (rubric, profile) => {
     const content = getRubricProfile(rubric, profile);
     expect(content.length).toBeGreaterThan(0);
@@ -202,6 +282,12 @@ describe('getRubricSection', () => {
     const section = getRubricSection('technology', '2');
     expect(section).toContain('<section id="2"');
   });
+
+  it('extracts a section from defense rubric', () => {
+    const section = getRubricSection('defense', '2');
+    expect(section).toContain('<section id="2"');
+    expect(section).toContain('</section>');
+  });
 });
 
 describe('getRubricCriterion', () => {
@@ -240,6 +326,18 @@ describe('getRubricCriterion', () => {
       const crit = getRubricCriterion('technology', id);
       expect(crit).toContain(`id="${id}"`);
       expect(crit).toContain('</criterion>');
+    },
+  );
+
+  it.each(['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7'])(
+    'extracts defense criterion %s',
+    (id) => {
+      const crit = getRubricCriterion('defense', id);
+      expect(crit).toContain(`id="${id}"`);
+      expect(crit).toContain('name=');
+      expect(crit).toContain('</criterion>');
+      // The match must stop at this criterion's own closing tag.
+      expect(crit.match(/<\/criterion>/g)).toHaveLength(1);
     },
   );
 });

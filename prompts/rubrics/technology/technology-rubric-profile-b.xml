@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   TECHNOLOGY COMPANY FUNDRAISING ICP EVALUATION INSTRUMENT
-  Version 1.0 — Profile B Criteria ($500K-$3M Raise Environment)
+  Version 2.0 — Profile B Criteria
   Shared sections (evaluation context, routing, output format) are in:
-    Technology Rubric - Shared.xml
+    technology-rubric-shared.xml
 -->
 
+<!-- ============================================================
+     SECTION 4 — PROFILE B EVALUATION RUBRIC
+     Target: Private technology companies raising $500K–$3M
+     Expected development stage: Pre-Product through Commercial Scaling Revenue
+     WEIGHT CHECK: B1(33) + B2(16) + B3(15) + B4(7) + B5(12) + B6(12) + B7(5) = 100
+     NOTE: B2 base max = 16pts; with combined AI + M&A modifier capped at ±2 the criterion final range is 14–18 (scoring envelope 98–102)
+
+     BAND RANGE DERIVATION LOGIC (Profile B):
+     Bands follow the LS v5.1 proportional structure: top ~20–25%, upper-mid ~20–25%, lower-mid ~30%, lowest ~20–25%.
+     B1 (max 33): 27–33 top; 20–26 upper-mid; 10–19 lower-mid; 0–9 lowest.
+     B2 (max 16): 13–16 PEAK; 9–12 ACTIVE; 5–8 COOL; 0–4 COLD (per Design Brief C3a tier table).
+     B3 (max 15): 12–15 top; 8–11 upper-mid; 3–7 lower-mid; 0–2 lowest.
+     B4 (max 7): 6–7 top; 4–5 upper-mid; 2–3 lower-mid; 0–1 lowest.
+     B5 (max 12): 10–12 top; 7–9 upper-mid; 3–6 lower-mid; 0–2 lowest.
+     B6 (max 12): 10–12 top; 7–9 upper-mid; 3–6 lower-mid; 0–2 lowest.
+     B7 (max 5): 4–5 top; 3 upper-mid; 1–2 lower-mid; 0 lowest.
+     ============================================================ -->
+
+<section id="4" name="Profile B Evaluation Rubric">
 
 <weight_check profile="B">
 <criterion id="B1" weight_pct="33" max_points="33"/>
@@ -19,7 +38,10 @@
 </weight_check>
 
 
-<criterion id="B1" name="Team Quality and Execution Credibility" weight_pct="33" max_points="33" status="Revised — Tech v1.0 R4">
+<criterion id="B1" name="Team Quality and Execution Credibility" weight_pct="33" max_points="33" status="Revised — Tech v1.0 R4; Tech v2.0 R3; Tech v2.0 R4">
+<revision_note>Tech v1.0 R4: Team Quality is the single most important criterion at Profile B (33 percentage points, the highest weight in the rubric), reflecting research finding that team weighting at Seed sits at 35–45% in practitioner consensus. At Seed, exceptional teams often lack prior exits; the top band signal is weighted toward halo-employer pedigree, technical depth, and Founder-Market Fit clarity rather than $500M+ exits. Solo-founder penalty is 1 point at Profile B (versus 2–3 points at Profile A) reflecting research finding that micro-VCs are more accepting of solo founders. FMF INFORMATION-SCARCE/INFORMATION-ABSENT treatment is identical to A1. NCSP tech-specific trigger types apply identically. EVIDENCE BASE IS TENTATIVE for NCSP calibration in tech per A1 revision_note.</revision_note>
+<revision_note>Tech v2.0 R3: Parallel to A1. The non-traditional-founder equivalences operationalized in the A1 halo_employer_taxonomy apply to B1 directly via B1's "per A1 halo_employer_taxonomy" references in the top and strong bands; added an FMF within-band note permitting strong Founder-Market Fit to support upper-band placement when named pedigree is absent, within the existing single-criterion B1 structure. The "clearly weak" floor is preserved. No band point ranges, the 33% weight, or the solo-founder protocol were changed.</revision_note>
+<revision_note>Tech v2.0 R4: Parallel to A1. Added the operational definition of the NCSP minor-versus-material distinction by source and type, identical to the A1 definition. Deduction magnitudes (1 point minor; 2-3 points material with band-drop permission), the cross-check directive, and the verify-before-crediting posture are unchanged. Definitional clarification only.</revision_note>
 
 <purpose>Evaluates the founding team's credibility as a fundraising signal at the $500K–$3M Seed level. Emphasizes halo-employer pedigree, technical depth (research-lab or frontier-lab for AI-native and deep-tech), and Founder-Market Fit clarity. Prior exits are valuable but not required at this stage. Single most heavily weighted criterion in the rubric.</purpose>
 
@@ -47,6 +69,8 @@ Strong FMF signals (supporting upper-mid to top band): prior published writing d
 Information scarcity treatment per Section 1.5: INFORMATION-SCARCE for FMF — founder has documented employment or educational history in the relevant domain but no prior writing, talks, or public artifacts articulating the earned secret. Apply midpoint-default within the assigned B1 band. INFORMATION-ABSENT for FMF — founder has no documented domain exposure AND no public artifacts. Score in the lowest applicable B1 band; do not apply midpoint-default.
 
 The FMF sub-component does not generate a separate score number; it informs the position within the B1 band. The Justification field must explicitly state the FMF signal assessment.
+
+FMF AND NON-NAMED PEDIGREE (Tech v2.0 R3): Strong Founder-Market Fit (per the Rachleff/Maples/Sequoia Arc tests above) can support placement at the upper portion of the assigned B1 band even when named-lab or named-employer pedigree is absent. This operates within the existing single-criterion B1 structure: FMF still does not generate a separate score and does not create a new criterion; it informs position within the band that the team's other signals establish.
 </scored_sub_component>
 
 <solo_founder_protocol>
@@ -59,6 +83,8 @@ DOCUMENTATION REQUIREMENT: When the solo-founder deduction is applied, the B1 Ju
 
 <negative_credibility_protocol>
 NEGATIVE CREDIBILITY SIGNAL PROTOCOL: Identical to the A1 NCSP protocol. Apply within the B1 band assignment:
+
+MATERIAL VERSUS MINOR — OPERATIONAL DEFINITION (Tech v2.0 R4): Identical to the A1 NCSP operational definition. A contradiction is MATERIAL when it involves (i) a co-founder/C-suite member's directly verifiable credential, title, affiliation, or metric contradicted by an independent source, or (ii) the company's own reported primary traction signal (flagship ARR, lead-customer claim, stated GitHub star count) contradicted by a source at least as credible as the primary claim. It is MINOR when it involves (i) a peripheral (non-co-founder/C-suite) team member's credential or affiliation, or (ii) an imprecision in a secondary claim that does not alter the overall credibility picture. Magnitudes are unchanged (1 point minor; 2-3 points material with band-drop permission); the cross-check directive and the verify-before-crediting posture are unchanged.
 
 SINGLE MINOR CONTRADICTION (1-point deduction; do not drop below band floor): Title inflation; modest contribution overstatement; unverifiable but plausible claims.
 
@@ -74,6 +100,7 @@ DOCUMENTATION REQUIREMENT: The Justification field must name each contradiction,
 
 
 <criterion id="B2" name="Market Opportunity and Sector Tier" weight_pct="16" base_max_points="16" modifier_max_points="18" status="Revised — Tech v1.0 R5">
+<revision_note>Tech v1.0 R5: Sector criterion structure mirrors A2 exactly with identical 4-tier base taxonomy (PEAK/ACTIVE/COOL/COLD), identical AI-Native Modifier (+2/+1/0/−1 to −2), identical M&amp;A Modifier (recalibrated for tech volume), and identical combined-modifier cap of ±2. Operational Viability Condition trigger anchors on B1 + B3 (Team + Traction). EVIDENCE BASE IS TENTATIVE per A2 revision_note (AI Modifier values; OVC anchor specification).</revision_note>
 
 <purpose>Evaluates whether the company operates in a technology sector with active investor capital and downstream Series A appetite. Uses the same three-component structure as A2: base tier classification + AI Modifier + Market-Evidence (M&amp;A) Modifier, with combined AI + M&amp;A capped at ±2.</purpose>
 
@@ -137,7 +164,9 @@ DOCUMENTATION REQUIREMENT: When triggered, document in B2 Justification: (a) B1 
 </criterion>
 
 
-<criterion id="B3" name="Product / Traction Evidence" weight_pct="15" max_points="15" status="Revised — Tech v1.0 R6">
+<criterion id="B3" name="Product / Traction Evidence" weight_pct="15" max_points="15" status="Revised — Tech v1.0 R6; Tech v2.0 R5">
+<revision_note>Tech v1.0 R6: Profile B Product/Traction Evidence uses Profile B thresholds — pre-revenue acceptability with strong design-partner LOIs, research-lab pedigree, or YC acceptance supports top-band placement. NRR is excluded from primary scoring at Profile B because customer cohorts are typically too young to compute retention; explicitly flagged as a forward-looking risk if customer cohorts exist with absent retention data. Five business-model application notes mirror A3 exactly with Profile B thresholds substituted. GitHub replacement metrics from A3 transfer identically. EVIDENCE BASE IS TENTATIVE per A3 revision_note.</revision_note>
+<revision_note>Tech v2.0 R5: Added the revenue-recognition standard (per A3, with B3 Seed thresholds) and the government/sovereign-procurement equivalence note (per A3, available independent of the hardware tag) to Profile B. The recognition standard classifies which figures qualify against the existing B3 thresholds; the government note scores government anchor customers at parity rather than against commercial "F500" language and supplies the B3 basis for the Block 5 Defense/Dual-Use archetype. No B3 thresholds, weights, or band definitions were changed; NRR remains excluded at Profile B per the existing nrr_exclusion_note.</revision_note>
 
 <purpose>Evaluates the company's product progress and early traction signals at the $500K–$3M Seed level. Pre-revenue acceptability is materially higher at Profile B than at Profile A: design-partner LOIs, research-lab pedigree, technical demos, and accelerator acceptance can support top-band placement without revenue.</purpose>
 
@@ -174,6 +203,10 @@ Developer Tools/Infrastructure: open-source community weak; no enterprise adopti
 Pre-product or very early product with no observable signals. No design-partner LOIs, no research-lab pedigree, no accelerator acceptance, no community traction, no enterprise pilots. Founder description of plans without demonstrable artifacts.
 </band>
 
+<revenue_recognition_standard>
+REVENUE-RECOGNITION STANDARD (Tech v2.0 R5): Applies identically to the A3 revenue-recognition standard, with the B3 (Seed) band thresholds substituted. Classify the figure first, then position the classified figure against the existing B3 bands: recognized ARR (recurring, invoiced, in collection) scores at full credit; bookings / contracted-but-not-yet-invoiced score at 70–80% of the same-dollar ARR credit (lower portion of the band the full amount would support, unless invoicing is confirmed within 90 days); LOI / pilot / design-partner figures presented as revenue score at 40–60% (lower half of the supported band, or one band below if the close path is unverified) — note that named design-partner LOIs remain independently creditable under the B3 pre-revenue bands and application notes, which already accept LOIs as a top-band signal at Seed; company-claimed metrics without contract documentation are flagged INFORMATION-SCARCE and take the midpoint-default per Section 1.5. This classification reduces judgment surface and does not alter the existing B3 thresholds or band definitions.
+</revenue_recognition_standard>
+
 <application_note business_model="Non-AI SaaS">Per A3 Non-AI SaaS application note with Profile B thresholds substituted. NRR explicitly excluded at Profile B; forward-looking retention risk flagged in Block 5 if customer cohorts exist with no retention data.</application_note>
 
 <application_note business_model="AI-Native Applied">Per A3 AI-Native Applied application note with Profile B thresholds substituted.</application_note>
@@ -185,6 +218,10 @@ Pre-product or very early product with no observable signals. No design-partner 
 <application_note business_model="Developer Tools / Infrastructure">Per A3 Developer Tools/Infrastructure application note with Profile B thresholds substituted. GitHub replacement metrics from A3 transfer identically; Band 1 thresholds at Profile B are reduced from A3 levels (fork-to-star ratio above 0.05; contributor count above 25; downloads above 25K/month).</application_note>
 
 <application_note business_model="Hardware/Deep-Tech/Defense/Space">Per A3 Hardware application note with Profile B thresholds. Certification milestones, government contract revenue, design-partner LOIs from prime contractors apply.</application_note>
+
+<government_procurement_equivalence_note>
+GOVERNMENT / SOVEREIGN-PROCUREMENT EQUIVALENCE (Tech v2.0 R5; applicable regardless of hardware classification): Applies the same equivalences as the A3 government-procurement equivalence note, available to non-hardware-tagged software govtech, software defense, and sovereign-customer companies at Profile B. An executed government contract or DoD subcontract with a verifiable contract ID maps to a "strong design-partner LOI from a regulated-industry leader"; a government-agency LOI or pilot maps to a "design-partner LOI"; government-procurement certification milestones (FedRAMP, StateRAMP, CMMC, or equivalent) without a revenue contract map to "pre-revenue with demonstrated regulatory pathway" at the lower mid-band. This supplies the B3 scoring support for the Block 5 Defense/Dual-Use archetype and does not create a Profile C or alter any threshold. Cite explicitly in the B3 Justification field when invoked.
+</government_procurement_equivalence_note>
 
 <replacement_metrics name="GitHub Star Replacement Metrics — Profile B Thresholds">
 Per A3 replacement_metrics sub-element with Band 1 thresholds at Profile B levels:
@@ -203,6 +240,7 @@ NRR EXCLUSION AT PROFILE B: NRR is typically not observable at Seed because cust
 
 
 <criterion id="B4" name="Capital Efficiency and Runway Discipline" weight_pct="7" max_points="7" status="Revised — Tech v1.0 R7">
+<revision_note>Tech v1.0 R7: Runway bands use identical breakpoints to A4 (24/18/12 months) with Profile-B-specific Justification interpretation: at Seed, 12-month runway is normal and the criterion focuses on whether use-of-proceeds plan extends runway to value-inflecting milestones rather than penalizing 12-month runway as concerning. Burn Multiple typically inapplicable pre-revenue at Profile B; pre-revenue alternative scoring basis is the dominant scoring path. Hardware application note transfers identically.</revision_note>
 
 <purpose>Evaluates the company's capital efficiency and the quality of its runway planning at the $500K–$3M Seed level. At Seed, the criterion focuses on whether the use-of-proceeds plan extends runway to value-inflecting milestones, not on penalizing 12-month runway as concerning. Burn Multiple is typically inapplicable pre-revenue.</purpose>
 
@@ -237,6 +275,7 @@ PROFILE B JUSTIFICATION INTERPRETATION: At Seed, 12-month runway is a normal ope
 
 
 <criterion id="B5" name="Cap Table and Deal Mechanics" weight_pct="12" max_points="12" status="Revised — Tech v1.0 R8">
+<revision_note>Tech v1.0 R8: SCA, SAFE stack treatment, accelerator tier scoring, and lead investor quality scoring all transfer identically from A5 to B5 with Profile-B-specific anchor signals. At Profile B, Tier 1 accelerator membership and Seed-stage micro-VC lead are the primary anchor signals rather than Series A institutional lead quality. EVIDENCE BASE IS TENTATIVE per A5 revision_note for accelerator and lead investor tier thresholds.</revision_note>
 
 <purpose>Evaluates cap table structure, round mechanics, and investor base quality at the $500K–$3M Seed level. At Profile B, accelerator tier and Seed-stage lead investor quality function as the primary anchor signals. A clean SAFE-based or priced-seed structure with identifiable institutional anchors accelerates the path to Series A.</purpose>
 
@@ -297,7 +336,9 @@ Lead investor quality scoring is identical to A5. Refer to A5 lead_investor_qual
 </criterion>
 
 
-<criterion id="B6" name="Competitive Moat and Moat-Buildability" weight_pct="12" max_points="12" status="Revised — Tech v1.0 R9">
+<criterion id="B6" name="Competitive Moat and Moat-Buildability" weight_pct="12" max_points="12" status="Revised — Tech v1.0 R9; Tech v2.0 R6">
+<revision_note>Tech v1.0 R9: Moat criterion structure mirrors A6 exactly (unified bands with Software and Hardware application notes; Helmer/NFX combined taxonomy; AI wrapper force-test with identical 0–1/2/3+ failure thresholds). At Profile B, the moat existence versus moat-buildability trajectory split is 50/50 (versus 70/30 at Profile A). Moat-buildability trajectory is the primary differentiator between top and upper-mid bands at Profile B because Seed companies have had less time to build moats. EVIDENCE BASE IS TENTATIVE per A6 revision_note.</revision_note>
+<revision_note>Tech v2.0 R6: Updated the HAND-WAVE INDICATOR DEDUCTIONS to invoke the operationalized A6 checklist (the four named categories each qualify only when all of that category's conditions are met; overlapping same-source claims count once). The operational criteria are present in both profiles by reference, consistent with B6's inheritance from A6. Magnitudes and the 50/50 existence/buildability split are unchanged.</revision_note>
 
 <purpose>Evaluates the company's competitive differentiation and trajectory toward durable defensibility at the $500K–$3M Seed level. At Profile B, moat-buildability trajectory weighs equally with moat existence (50/50 split); the upper-mid to top band differentiator is whether multiple credible moat-buildability signals are present.</purpose>
 
@@ -330,12 +371,13 @@ Moat-buildability is scored as a distinct sub-component within B6. At Profile B,
 
 Observable moat-buildability signals identical to A6 (engagement curves trending up; hard-side recruitment articulated; cohort retention not declining; workflow integration depth shipping; proprietary data accumulation rate; distribution lock-ins shipping).
 
-HAND-WAVE INDICATOR DEDUCTIONS: Identical to A6 (data flywheel without mechanism; network effects for non-multi-player; AI moat reducing to prompt engineering). 1-point deduction for single hand-wave claim; escalating to 2–3 points and band drop for multiple.
+HAND-WAVE INDICATOR DEDUCTIONS: Operationalized identically to A6 (Tech v2.0 R6). The four named categories — data flywheel; network effects; AI moat / proprietary model; workflow embedding / switching costs — each qualify as a hand-wave only when ALL of that category's conditions in the A6 checklist are met, and overlapping claims resting on the same Helmer Power or NFX Defensibility source count as one. 1-point deduction for a single hand-wave claim; escalating to 2–3 points and a band drop for multiple distinct claims (after the overlap rule). Magnitudes and the 50/50 existence/buildability split at Profile B are unchanged.
 </moat_buildability>
 </criterion>
 
 
 <criterion id="B7" name="Exit Pathway and Acquirer Universe" weight_pct="5" max_points="5" status="Revised — Tech v1.0 R10">
+<revision_note>Tech v1.0 R10: Exit Pathway is included at Profile B at the floor of meaningful contribution (5 points) per Design Brief C8a decision. The lower weight reflects research finding that "most investors don't think about exits at Seed — that's rhetoric not reality" while preserving the criterion's signal value because acquirer universe density and comparable transaction availability are increasingly assessable at Seed in technology sectors with high M&amp;A volume. Bands scaled proportionally to 5-point maximum.</revision_note>
 
 <purpose>Evaluates the visibility of the company's exit pathway through acquirer universe density and comparable transaction availability at the $500K–$3M Seed level. The criterion carries the floor of meaningful contribution (5 points) reflecting the rhetoric-vs-reality tension at Seed identified in research.</purpose>
 
@@ -367,21 +409,3 @@ RHETORIC-VS-REALITY TENSION AT SEED: At Profile B, exit pathway assessment is mo
 </criterion>
 
 </section>
-
-<!-- ============================================================
-     SECTION 5 — STANDARDIZED SCORING OUTPUT FORMAT
-     Applies to both Profile A and Profile B evaluations.
-     All blocks are mandatory. Complete every field.
-
-     DESIGN CONSTRAINTS:
-       (a) Identical in structure for every evaluation regardless of
-           profile, company, or evaluator.
-       (b) Plain text with no markdown, no special characters, and
-           no rendering dependencies.
-       (c) Self-auditing: every score can be verified from the output
-           alone.
-       (d) Structurally enforcing of internal consistency between
-           criterion scores, total score, and fundability tier.
-     ============================================================ -->
-
-<section id="5" name="Standardized Scoring Output Format" status="Revised — Tech v1.0 R11">

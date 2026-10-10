@@ -125,6 +125,7 @@ export default function App() {
           >
             <option value="technology">Technology</option>
             <option value="life-sciences">Life Sciences</option>
+            <option value="defense">Defense</option>
           </select>
         </div>
 

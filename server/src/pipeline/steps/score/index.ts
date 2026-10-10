@@ -1,5 +1,7 @@
 import type { PipelineEmitter, ScoreInput, ScoreOutput } from '../../types.js';
 import { emitSubcallStart, emitSubcallComplete } from '../../types.js';
+import { runTasksInDependencyOrder } from '../../dependency-scheduler.js';
+import { getCriterionScoringTasks } from './criterion-dependencies.js';
 import { runRouting, runCriterionScore, runScoreAssembly } from './sub-steps.js';
 
 function timed<T>(label: string, fn: () => Promise<T>): Promise<T> {
@@ -15,6 +17,10 @@ function timed<T>(label: string, fn: () => Promise<T>): Promise<T> {
 // Score Orchestrator
 // ---------------------------------------------------------------------------
 
+/**
+ * Scores a dossier against a rubric: routing and disqualifier screen first, then the seven
+ * criteria of the assigned profile, then the total, tier and qualitative assessment.
+ */
 export async function runScore(
   input: ScoreInput,
   emitter: PipelineEmitter,
@@ -50,14 +56,20 @@ export async function runScore(
     return { score };
   }
 
-  // Phase 2: Score all 7 criteria in parallel
-  [1, 2, 3, 4, 5, 6, 7].forEach((n) => emitSubcallStart(emitter, 'score', `${routing.profile}${n}`));
-  const criterionScores = await Promise.all(
-    [1, 2, 3, 4, 5, 6, 7].map((n) =>
-      timed(`${routing.profile}${n}`, () => runCriterionScore(dossier, rubric, routing.profile, n, emitter))
-        .then(r => { emitSubcallComplete(emitter, 'score', `${routing.profile}${n}`); return r; }),
-    ),
+  // Phase 2: Score all 7 criteria. Independent criteria run in parallel; a criterion that
+  // consumes another's result waits for it and is given its output.
+  const scoresByCriterion = await runTasksInDependencyOrder(
+    getCriterionScoringTasks(rubric, routing.profile),
+    async (criterion, dependencyScores: ReadonlyMap<string, string>): Promise<string> => {
+      emitSubcallStart(emitter, 'score', criterion.id);
+      const criterionScore = await timed(criterion.id, () =>
+        runCriterionScore(dossier, rubric, criterion.id, dependencyScores, emitter),
+      );
+      emitSubcallComplete(emitter, 'score', criterion.id);
+      return criterionScore;
+    },
   );
+  const criterionScores = [...scoresByCriterion.values()];
 
   // Phase 3: Assembly (Blocks 4-6)
   emitSubcallStart(emitter, 'score', 'Assembly');

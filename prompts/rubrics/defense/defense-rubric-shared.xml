@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  DEFENSE COMPANY FUNDRAISING ICP EVALUATION INSTRUMENT
+  Version 2.0 — Shared Sections (Evaluation Context, Routing Logic, Output Format)
+  These sections apply to both Profile A and Profile B.
+  Profile-specific criteria are in separate files:
+    - defense-rubric-profile-a.xml
+    - defense-rubric-profile-b.xml
+-->
+
+<rubric
+  version="2.0"
+  revision_date="2026-07-06"
+  evaluation_target="Fundraising Velocity and Investor Appetite"
+  scope="Private defense technology companies raising $500K-$15M (with tolerance band to $16.5M)"
+  not_for="Due diligence, portfolio management, technical merit evaluation">
+
+  <!-- ============================================================
+       SECTION 1 - EVALUATION CONTEXT
+       ============================================================ -->
+  <section id="1" name="Evaluation Context">
+
+    <block id="1.1" name="Instrument Purpose">
+      This is a two-profile Ideal Company Profile (ICP) scoring instrument built for a fundraiser to use as a top-of-funnel qualification and prioritization tool. Its purpose is to evaluate private defense technology companies (defense-AI, autonomous systems, cybersecurity, counter-UAS, space/ISR, maritime autonomy, hypersonics/directed energy, defense electronics, and dual-use technology) that are actively seeking capital in the $500K-$15M range and produce a structured, scored assessment of each company's probability of successfully closing a funding round.
+      This instrument is not a due diligence tool and was not designed for technical merit evaluation or investment decision-making. It scores fundraising velocity and investor appetite, not technical promise, mission importance, national-security relevance, or engineering merit.
+    </block>
+
+    <block id="1.2" name="Defining Objective">
+      The rubric is explicitly built to identify companies that can raise money most easily - not companies with the best technology, the most important mission, or the greatest national-security value. Technical promise and fundraising ease diverge meaningfully in practice. The evaluation target is investor psychology, deal velocity, and capital market dynamics. Every criterion, weight, and scoring band is calibrated against this objective.
+      STANDING INSTRUCTION: The objective is fundraising velocity and investor appetite - not technical promise, mission importance, or national-security relevance. Score accordingly.
+    </block>
+
+    <block id="1.3" name="Client Specifications">
+      <spec name="Funding Stage Fit">Series A (100%), Seed/Pre-Seed+ (85%), Pre-Seed below $500K with no institutional participation (excluded)</spec>
+      <spec name="Fundraising Target Range">$500K-$15M</spec>
+      <spec name="Team Priority">Single most important criterion at Profile B. Strong preference for defense halo-employer alumni (Anduril, Palantir, SpaceX, Shield AI, DARPA, DIU, IC/SOF pedigree), complementary technical-plus-operational founding pairs, and demonstrated development capacity. Solo founders accepted with profile-specific protocol per C1. Advisor-heavy / engineering-light teams ("Fool's Gold") are penalized.</spec>
+      <spec name="Cap Table">Sporadic, messy, or structurally compromised cap tables are a hard disqualifier. Unmitigated CFIUS/FOCI exposure, IP not assigned, stacked SAFEs above $3M with no priced round, and founder ownership below threshold are additional hard disqualifiers per Section 2.3.</spec>
+      <spec name="Geography">US-primary (DoD, CFIUS, SBIR/STTR, DIU, DARPA as primary reference frame); globally applicable.</spec>
+      <spec name="Partnerships">Government program relationships, CVC validation, and prime-contractor relationships preferred but not a hard requirement.</spec>
+      <spec name="IP">Defense-appropriate expectations: patents weighted at zero for software-primary defense companies; patents add modest positive signal for hardware-intensive companies; ITAR/EAR-protected know-how and classified approaches treated via Information Scarcity Protocol (Section 1.5). Moat-buildability trajectory (platform lock-in, manufacturing throughput, sole-source positioning) replaces patent moat as the primary defensibility signal.</spec>
+    </block>
+
+    <block id="1.4" name="Two-Profile Structure">
+      The $500K-$15M range is split into Profile B (Seed, $500K-$3M) and Profile A (Series A, $3M-$15M) to create meaningful separation between two genuinely different fundraising environments. Because no universal regulatory stage applies across defense technology companies, the instrument uses three routing inputs simultaneously: (1) raise size, (2) development stage selected from the Defense Development Stage Taxonomy (DDST) in Section 2.1, and (3) investor composition characterized by the four-tier classification in Section 5 Block 1. The DDST serves the dual function that FDA regulatory stage serves in LS v5.1 - it anchors routing logic AND product-maturity signal context - and is operationalized in Section 2.1 and applied through the Product, Traction and Government Demand criterion (C3/A3/B3).
+    </block>
+
+    <block id="1.5" name="Information Scarcity Protocol" status="Carried from Tech ICP v1.0 with defense-specific content">
+      <revision_note>Two-track INFORMATION-SCARCE vs. INFORMATION-ABSENT classification carried from Tech ICP v1.0 (originally LS v5.1 v5.0 R4) with mechanism preserved exactly. Defense-specific observable-signal lists (research Workstream 4; PCDB DS-12A, DS-4) replace the tech signal lists. Two defense-specific named sub-protocols are added inside this block: the Classified-Program SCARCE Protocol (PCDB DS-12A) and the Stealth-Company Protocol (PCDB DS-12E). The "highest-predictive, lowest-observable" problem is acute in defense because key signals (classified programs, ITAR-controlled details, clearance specifics, contract-vehicle terms) are structurally non-public; the Classified-Program SCARCE Protocol governs every midpoint-default applied in a classified context. EVIDENCE BASE IS TENTATIVE for the defense-specific signal lists and the one-artifact SCARCE standard - additional cases are needed to validate that the SCARCE/ABSENT distinctions function correctly across the defense business models the rubric covers.</revision_note>
+
+      When information for a criterion is insufficient to produce a confident score, assign the midpoint of the applicable scoring band and flag the score with [INSUFFICIENT DATA]. Do not penalize companies for missing information below the midpoint. This protocol applies to all criteria in both profiles. The Data Confidence indicator in Section 5 aggregates these flags to provide an overall assessment of score reliability.
+
+      MIDPOINT-DEFAULT JUSTIFICATION STANDARD: When the midpoint-default is applied to a criterion, the Justification field must do more than cite protocol application. The evaluator must articulate why the midpoint - rather than a score above or below midpoint within the band - is appropriate given whatever partial evidence exists. If partial evidence supports a score above or below the midpoint, score accordingly and document the partial evidence. Reserve the exact midpoint for situations where evidence is genuinely absent and no directional signal is available.
+
+      <two_track_classification>
+        INFORMATION-SCARCE vs. INFORMATION-ABSENT CLASSIFICATION:
+
+        Before applying the midpoint-default to any criterion, the evaluator must classify the missing information as one of two types:
+
+        INFORMATION-SCARCE: Evidence exists that the company has engaged in the activity measured by this criterion, but the details are not publicly disclosed. The existence of the underlying activity is supported by some observable signal, even if specifics are not available. When information is SCARCE: apply the midpoint-default. Flag as [INSUFFICIENT DATA - INFORMATION-SCARCE]. In the Justification field, state the observable signal that confirms the underlying activity exists.
+
+        INFORMATION-ABSENT: No evidence exists that the company has engaged in the activity measured by this criterion. The absence is not caused by non-disclosure of existing information but by the non-existence of the things the information would describe. When information is ABSENT: score in the lowest applicable band per the band definitions. The midpoint-default does not apply. Flag as [INSUFFICIENT DATA - INFORMATION-ABSENT] and document in the Justification field: (a) what evidence was searched for, (b) why the absence is classified as information-absent rather than information-scarce, and (c) the specific band assigned and its justification.
+
+        AMBIGUOUS CASES: When partial evidence exists but it is ambiguous whether the underlying activity has occurred, default to INFORMATION-SCARCE and document the ambiguity. The INFORMATION-ABSENT classification should only be applied when the evaluator has actively searched for evidence of the underlying activity across available sources and found none.
+      </two_track_classification>
+
+      <defense_specific_observable_signals>
+        DEFENSE-SPECIFIC OBSERVABLE SIGNALS - INFORMATION-SCARCE (activity exists but details not disclosed):
+        C1 Team: Founder has confirmed employment history with any defense halo employer or government institution; LinkedIn shows active history; product exists implying a team built it; clearance/FCL signals in bios.
+        C2 Sector: Company has a website or SAM.gov registration; product addresses an identifiable defense sub-sector.
+        C3 Traction: Any SBIR.gov record; any USASpending.gov obligation; DIU/AFWERX press release; press release referencing "undisclosed government customer" with independent corroboration; exercise/demo announcement.
+        C4 Government Access: SAM.gov entity registration; FCL in disclosed bios; reference to ATO/IL process in press; ITAR/EAR registration where product plainly requires it.
+        C5 Cap Table: Investor names disclosed on Crunchbase/PitchBook; accelerator membership disclosed; round structure inferable from Crunchbase.
+        C6 Capital Efficiency: UNDERLYING-ACTIVITY DEFINITION - the activity C6 measures is CAPITAL DEPLOYMENT (the conversion of capital into operations), not fundraising events. INFORMATION-SCARCE when corroborated deployment evidence exists alongside undisclosed financing: a shipped or demonstrated prototype, a named operating team, or observable operations each corroborates that capital is being deployed while round sizes and capital history remain undisclosed. Also SCARCE on partial financial signals: round size disclosed; employee count observable (LinkedIn); time since last round known; SBIR/STTR award amounts on SBIR.gov.
+        C7 Position and Exit: Sub-sector inferable; acquirer universe assessable from named defense M&amp;A activity.
+
+        DEFENSE-SPECIFIC TRIGGER CONDITIONS - INFORMATION-ABSENT (underlying activity does not exist):
+        C1 Team: No employees confirmed on LinkedIn; founder identity uncorroborated by third-party sources; advisor-only "team" with no confirmed FTEs.
+        C2 Sector: No website or SAM.gov registration; no product description in any public source.
+        C3 Traction: No SBIR.gov record; no USASpending obligations; no press coverage of any government engagement; no prototype references in any source.
+        C4 Government Access: No SAM.gov registration; no clearance or FCL signals; no vehicle evidence; no ITAR/EAR registration where product plainly requires it.
+        C5 Cap Table: No investor names disclosed and no founder attestation possible (company has no investors).
+        C6 Capital Efficiency: INFORMATION-ABSENT only when NO corroborated capital-deployment evidence exists - no fundraising disclosed, no documented capital history, AND no deployment corroboration (no shipped or demonstrated prototype, no named operating team, no observable operations). A zero-disclosure company WITH corroborated deployment evidence is INFORMATION-SCARCE (midpoint track), not ABSENT.
+        C7 Position and Exit: Sub-sector so novel no acquirer universe can be defined (rare).
+      </defense_specific_observable_signals>
+
+      <classified_program_scarce_protocol>
+        CLASSIFIED-PROGRAM SCARCE PROTOCOL: When a company's claimed activity involves classified programs, ITAR-controlled technical details, or security-clearance specifics, the evaluator must classify the information scarcity as follows before applying any midpoint default:
+
+        INFORMATION-SCARCE (justified midpoint default applies): At least ONE of the following corroborating public artifacts is present: (a) a USASpending.gov or SAM.gov obligation to a known or classified program office; (b) a press release referencing an "undisclosed government customer" that is independently corroborated by a second source; (c) company bios referencing active security clearances and/or a Facility Clearance (FCL); (d) named cleared personnel listed on the company's team page or in a press release. When information is SCARCE under this protocol, apply the midpoint default. Flag as [INSUFFICIENT DATA - INFORMATION-SCARCE - CLASSIFIED-PROGRAM]. The Justification field MUST name the specific corroborating artifact. A bare mid-point invocation citing only "classified program" without naming the artifact is a format error.
+
+        INFORMATION-ABSENT (lowest band; midpoint default does NOT apply): No footprint exists on either the public-facing side OR the government-facing side - no SBIR.gov record, no USASpending obligations, no program mention in any source, no clearance or FCL signal, only a bare claim of classified work with no corroboration. Score in the lowest applicable band. Flag as [INSUFFICIENT DATA - INFORMATION-ABSENT]. Document in the Justification: (a) what was searched, (b) why the absence is classified as ABSENT rather than SCARCE, and (c) the specific band assigned.
+
+        AMBIGUOUS CASES: Default to INFORMATION-SCARCE when any government-facing artifact exists, even a thin one. Reserve INFORMATION-ABSENT for companies with truly zero footprint across all search dimensions.
+      </classified_program_scarce_protocol>
+
+      <stealth_company_protocol>
+        STEALTH-COMPANY PROTOCOL: Some legitimate defense companies operate in deliberate operational security (opsec) stealth - no public website, no press coverage, no Crunchbase profile - because their technology is sensitive. This is distinct from pre-operational companies that have built nothing.
+
+        LEGITIMATE OPSEC STEALTH (evaluable despite no public presence): Shows a GOVERNMENT-FACING FOOTPRINT despite no public-facing presence: SAM.gov registration, SBIR.gov awards, USASpending obligations, USPTO filings, clearance/FCL signals in any discoverable bio or reference. The government-facing footprint is sufficient to classify the company as INFORMATION-SCARCE on the affected criteria and apply the Classified-Program SCARCE Protocol.
+
+        PRE-OPERATIONAL WITH NOTHING: No footprint on EITHER the public-facing side OR the government-facing side - no SAM.gov registration, no SBIR.gov awards, no USASpending obligations, no USPTO filings, no clearance signals, no government program mentions anywhere in public records.
+
+        TEAM DIMENSION NOTE: The founding team's backgrounds are typically assessable even for stealth companies (LinkedIn profiles, conference bios, alumni records). Do not default the team dimension (C1) to INFORMATION-SCARCE solely because the company is in stealth. C1 is assessed on the available team signals; apply INFORMATION-SCARCE only to team-specific dimensions that are genuinely undisclosed (e.g., number of FTEs when the company has no online presence).
+
+        OUTPUT FLAG (Block 1): Add the field [STEALTH-MODE - government-facing corroboration: PRESENT / ABSENT]. PRESENT: at least one government-facing artifact found; applies INFORMATION-SCARCE protocol with corroborating artifact cited. ABSENT: no government-facing footprint; affected criteria score INFORMATION-ABSENT (lowest band) rather than INFORMATION-SCARCE.
+      </stealth_company_protocol>
+    </block>
+
+    <block id="1.6" name="Market Context Note Protocol">
+      Any deviation from the client's original specifications in the scoring criteria, weights, or band definitions must be documented in a Market Context Note at the point of deviation. The evaluator has latitude to adjust, reorder, replace, or add criteria relative to the original specifications, provided deviations are disclosed. Defense-specific Market Context Note required format strings - the hardware-vs-software track tag (HW/SW), the dual-use focus-risk indicator, the stale-tier indicator, and the CFIUS sub-threshold notation - are defined in Section 5 Block 1.
+    </block>
+
+    <block id="1.7" name="Scoring Architecture">
+      Both profiles score on a base scale of 100 points. The Sector Market-Event Modifier on the Sector criterion (A2/B2) can adjust the total by up to plus or minus 2 points, producing an operative scoring range of 98-102 points. Fundability tier thresholds are defined in absolute point values and apply across the full scoring range. The C2 Sector Market-Event Modifier is the sole envelope-expanding mechanism.
+
+      DESIGN CONSTRAINT: This instrument uses an additive, independent-criterion scoring architecture. No criterion modifies another criterion's score; the C2 sector modifier is the only mechanism that moves the total off 100. When a single development (such as a CFIUS inquiry, a program cancellation, or a key-person departure) affects multiple criteria simultaneously, the independent scoring structure cannot express the correlated risk quantitatively. Evaluators should describe cross-criterion risk correlations qualitatively in the Top 3 Fundability Risks (Block 5) and Fundraising Outlook (Block 5) sections of the output. The quantitative scores for each criterion remain independently assessed per their respective band definitions.
+
+      CROSS-CRITERION SYMMETRY: When a single risk affects multiple criteria and appears in multiple Top 3 Fundability Risk entries in Block 5, each risk entry must note the correlation to the other affected criteria. A cross-criterion risk described from only one direction understates its aggregate impact on the evaluation.
+
+      OPERATIONAL VIABILITY CONDITION ANCHORS: The OVC anchors are C1 (Team) AND C3 (Traction). When the company scores in its lowest defined band on BOTH C1 and C3, C2 (Sector) is capped at the lower-mid ceiling AND the Sector Market-Event Modifier's positive range is suppressed (modifier maximum 0): no positive modifier may apply, while an earned, named-and-dated NEGATIVE modifier still applies in full. The suppression binds POSITIVE modifiers only - it exists to stop sector-driven inflation and never cancels a documented negative event. This is the "Fool's Gold" guard: a hot Tier-1 sector score cannot inflate a company that has neither a credible team nor any traction. Full mechanism in A2/B2.
+    </block>
+
+  </section>
+
+  <!-- ============================================================
+       SECTION 2 - ROUTING LOGIC
+       ============================================================ -->
+  <section id="2" name="Routing Logic">
+
+    <block id="2.1" name="Profile Assignment Rules">
+      Every company evaluated under this instrument must first be routed to Profile A or Profile B. Routing is based on three required inputs: (1) the company's target raise size; (2) the company's development stage selected from the DDST enumerated taxonomy below; and (3) the company's investor composition characterized by the four-tier classification in Section 5 Block 1. The routing decision is made before any criterion is scored. A routing rationale that fails to ADDRESS one of the three inputs is a format error; recording a degraded confidence state for an input (below) ADDRESSES it - a missing or degraded raise figure is an evidence state to be dispositioned under the rules of this block, not a compliance failure.
+
+      RAISE-INPUT CONFIDENCE STATE (required): the target-raise input carries one of three confidence states, recorded in Block 1 - CONFIRMED (a stated figure from the company or a primary source), LOW-CONFIDENCE (a figure exists but is provisional, dated, or secondhand), or ABSENT (no figure in any source). LOW-CONFIDENCE and ABSENT are the routing-layer analogs of Section 1.5's INFORMATION-SCARCE and INFORMATION-ABSENT classifications.
+
+      TRIANGULATION UNDER A DEGRADED RAISE INPUT: when the raise input is ABSENT or LOW-CONFIDENCE, the evaluator is authorized to route on the secondary inputs (DDST stage plus investor composition) in ANY raise range - the authorization is not limited to the $2.5M-$3.5M gap band. The routing confidence must be recorded in the Block-1 Routing Rationale, and the re-route risk (a later-confirmed raise figure re-routing the company to the other profile) must be surfaced as a fundability risk in Block 5. Raise absence ALONE does not block scoring where triangulation is available.
+
+      INPUT-PRIORITY RULE (conflicts): for profile selection, the fundraising-ENVIRONMENT inputs (raise size and investor composition) outrank DDST product maturity. When the DDST stage points to one profile and both environment inputs point to the other, route on the environment inputs and document the conflict in the Routing Rationale: the instrument evaluates fundraising velocity, and the profile is the raise environment, not the engineering stage.
+
+      ROUTING-DEFERRED - CONFIRMATION REQUIRED (terminal disposition; same determination-state family as the Section 2.3 contingent gate disposition): when the raise input is ABSENT AND the secondary inputs cannot support a confident triangulation (e.g., investor composition also unassessable), routing is deferred pending input confirmation - record ROUTING-DEFERRED - CONFIRMATION REQUIRED in Block 1, state the input that would resolve it, and do not score. Where the deferral coincides with an enumerated Section 2.2 scope state (e.g., Out of Scope - No US Defense Nexus), the scope state governs and is recorded per Section 2.2.
+
+      <enumerated_stages>
+        DEFENSE DEVELOPMENT STAGE TAXONOMY (DDST) - eight ordered stages DS-0 through DS-7, sharing one spine across software-primary and hardware-intensive companies, forking only at DS-5 and re-converging at DS-6/DS-7. This taxonomy serves the dual function FDA regulatory stage serves in LS v5.1: it anchors routing logic AND product-maturity signal context.
+
+        DS-0: Concept / Pre-Prototype - IP, research, or concept only; nothing demonstrated in hardware or software. Observable: patent filings or published research; founding thesis; no SAM.gov/SBIR.gov record (or a pending application only).
+
+        DS-1: Working Prototype (Undemonstrated) - A functional prototype or alpha software exists but has not been shown in an operational or exercise context. Observable: demo videos, technical whitepapers, lab/bench test data; company product page; possibly a pending Phase I.
+
+        DS-2: SBIR/STTR Phase I (Feasibility Validated) - A government entity has competitively funded a feasibility study. Observable: SBIR.gov Phase I award record; AFWERX/NavalX/Army-AAL SBIR listing.
+
+        DS-3: Operational / Exercise Demonstration - Technology demonstrated in a controlled military exercise, wargame, or government-witnessed test. Observable: DoD/service press referencing exercise participation (Project Convergence, RIMPAC, Northern Edge, EDGE, similar); DIU/AFWERX demo announcements.
+
+        DS-4: Funded Prototype (Phase II or DIU/AFWERX/NavalX OTA prototype) - Competitively selected, substantial government R&amp;D funding for prototype development. Co-equal entries: SBIR Phase II and a DIU OT prototype award are both DS-4 entries; the DIU OT is modestly stronger as a fielding/transition vehicle. Observable: SBIR.gov Phase II record; DIU/AFWERX OT award on USASpending.gov or press.
+
+        DS-5: Production-Eligible Transition. FORKS BY TRACK:
+          Software/cyber sub-track: DS-5(SW) = ATO/cATO granted, IL4-IL6 authorization, or FedRAMP authorization. Observable: ATO announcement in press or company site; FedRAMP Marketplace listing; IL authorization announcement.
+          Hardware sub-track: DS-5(HW) = SBIR Phase III, prototype-OT to production-OT conversion (section 4022(f)), qualification/type-classification, or Blue UAS listing. Observable: SBIR.gov Phase III record; production-OT announcement on USASpending or press; Blue UAS list; qualification/type-classification disclosure. A parallel manufacturing-throughput axis (units/month capacity) intensifies from DS-5(HW) onward.
+
+        DS-6: Contracted Revenue (Active Production/Service) - Revenue is flowing from active government or strategic contracts, possibly across multiple customers. Observable: announced contract values; multiple agency customers; revenue disclosed in funding PR; USASpending.gov obligations beyond R&amp;D.
+
+        DS-7: Program of Record (Durable FYDP Demand) - A funded program line in the Future Years Defense Program. The apex pre-scaling demand signal (fewer than 1% of SBIR Phase I awardees reach it). Observable: budget documents (P-forms, R-forms); program-office PoR announcement; trade-press confirmation (Breaking Defense, DefenseScoop, Defense News).
+      </enumerated_stages>
+
+      <profile_route id="A" name="Profile A - $3M-$15M Raise Environment">
+        Assign to Profile A if the company's target raise is $3M-$15M inclusive. Profile A companies are typically at DDST DS-5 through DS-7 with institutional Series A lead engagement and formal board governance. Profile A expects contracts, bookings, ATO/PoR trajectory, experienced operating teams with defense halo-employer or government-domain pedigree, and institutional-quality CFIUS-clean cap tables.
+      </profile_route>
+
+      <profile_route id="B" name="Profile B - $500K-under-$3M Raise Environment">
+        Assign to Profile B if the company's target raise is $500K to under $3M. Profile B companies are typically at DDST DS-0 through DS-4 with a seed-stage specialist lead, operator-angel syndicate, or accelerator-anchored composition. Profile B expects strong team and founder-market-fit signals, emerging government demand (Phase I, exercise demonstration, early award), and a clean SAFE-based or priced-seed cap table.
+      </profile_route>
+
+      <profile_route id="GAP" name="Gap Range - $2.5M-$3.5M">
+        Companies targeting $2.5M-$3.5M fall in the gap between profiles. Resolve routing using the secondary inputs: route to Profile A if DDST is DS-5 or higher OR investor composition reflects a priced round led by a Defense-Specialist Institutional Lead; route to Profile B if DDST is DS-4 or lower AND investor composition is seed-stage (specialist seed lead, operator-angel syndicate, or non-dilutive-only). If still ambiguous, conduct a split evaluation under both profiles and report the score range, mirroring the LS/Tech gap protocol.
+      </profile_route>
+
+      <profile_route id="PRE_SEED" name="Pre-Seed Below $500K With Institutional Participation">
+        Companies with target raise below $500K but with at least one institutional participant are routed to Profile B with an INFORMATION-SCARCE flag. Companies with total raised under $275K and no institutional participation are classified Out of Scope - Pre-Seed Exclusion per Section 2.2.
+      </profile_route>
+    </block>
+
+    <block id="2.2" name="Scope Boundaries">
+      The instrument is calibrated for private capital markets. Publicly traded companies, pre-seed companies (total raised under $275K with no institutional participation), post-close / not-currently-raising companies, and subjects with no US defense nexus are OUT OF SCOPE per the boundaries below. An OUT OF SCOPE flag is a scope/instrument mismatch, not a disqualifying deficiency. Out-of-scope companies may be evaluated as benchmark exercises if clearly flagged.
+
+      <scope_boundary name="Upper Ceiling and Tolerance Band">
+        Companies whose target raise is $15M or below are IN SCOPE. Companies whose target raise exceeds $15M but is at or below $16.5M (10% above the $15M ceiling) are classified as GRAY ZONE. Gray Zone companies are evaluated under Profile A with a mandatory Gray Zone scope flag in the output. The evaluator must note the overshoot in the Routing Rationale and acknowledge that the instrument's calibration may be less precise for raises above $15M. Companies whose target raise exceeds $16.5M are OUT OF SCOPE and may only be evaluated as benchmark exercises with an Out of Scope - Benchmark flag.
+      </scope_boundary>
+
+      <scope_boundary name="Lower Floor and Pre-Seed Exclusion">
+        Companies with target raise of $500K or above are IN SCOPE under Profile B. Companies with target raise below $500K but with at least one institutional participant (named VC fund or Tier 1/2 accelerator) are IN SCOPE with an INFORMATION-SCARCE flag, routed to Profile B. Companies with total raised under $275K AND no institutional participation are classified OUT OF SCOPE - Pre-Seed Exclusion. Pre-Seed Exclusion evaluations may proceed as benchmark exercises with an Out of Scope - Benchmark flag.
+      </scope_boundary>
+
+      <scope_boundary name="Post-Close / Not Currently Raising">
+        Companies that have JUST CLOSED a round and are not currently raising are OUT OF SCOPE - POST-CLOSE: the instrument evaluates active raises, and a completed round is a velocity outcome, not an evaluable fundraising posture. Record the closed round as a positive velocity datum (size, oversubscription, lead) in the evaluation record; do NOT force the company through the raise-size ceiling test as an overage. BOUNDARY (drawn tightly): this state applies ONLY where the dossier establishes the round is CLOSED and no active raise exists. A company that IS raising - on however thin a dossier, or with a degraded raise input - is IN SCOPE and is dispositioned under Section 2.1's raise-confidence rules; difficulty of evaluation never qualifies for this exit.
+      </scope_boundary>
+
+      <scope_boundary name="No US Defense Nexus">
+        Subjects with NO US-defense footprint - foreign-domicile or purely commercial subjects where no US-government-facing artifact exists and the DDST taxonomy is unmappable (every DDST stage from DS-2 upward anchors on a US-government artifact) - are OUT OF SCOPE - NO US DEFENSE NEXUS. The Section 1.3 "globally applicable" claim presumes a US-defense nexus; where none exists, the instrument's reference frame does not apply. A NON-COMPARABILITY DISCLAIMER is a REQUIRED field in the evaluation record for this state: scores or observations produced in a benchmark exercise on such a subject are not comparable to in-scope evaluations. BOUNDARY (drawn tightly): this state applies ONLY to zero-US-defense-footprint subjects; a US-nexus company with a thin or degraded dossier is IN SCOPE and is dispositioned under Section 2.1 - difficulty of evaluation never qualifies for this exit.
+      </scope_boundary>
+
+      <scope_boundary name="Hardware/Deep-Tech/Defense/Space Profile Limitation">
+        The instrument is calibrated for software-primary and dual-use technology companies. Hardware-intensive companies - including pure hardware, autonomous systems with hardware dependence, defense kinetics, hypersonics, directed energy, space hardware, and maritime platforms - are within the general scope but produce persistent band language friction, most notably on C3 (where certification milestones and government contract revenue replace ARR), C6 (where higher burn tolerance and capex/grants substitute for lean-burn metrics), and C7-Moat (where manufacturing throughput and ITAR-protected know-how replace network effects). Application notes embedded within C3, C4, C6, and C7 provide an analog framework for hardware-intensive evaluations. This is a documented boundary condition, not a rubric deficiency. Evaluators must document the hardware classification in the Block 1 Market Context Note field, identify which criteria required analog application, and note that rubric fit limitations apply. Clients whose pipeline exceeds approximately 20% hardware-intensive companies should commission a dedicated hardware track (see Future Revisions Log FV-defense-1).
+      </scope_boundary>
+
+      <scope_flag_definitions>
+        <flag value="In Scope">Target raise falls within the $500K-$15M range. Standard evaluation applies.</flag>
+        <flag value="Gray Zone">Target raise exceeds $15M but is at or below $16.5M (10% tolerance). Evaluation proceeds under Profile A with a mandatory acknowledgment that instrument calibration may be less precise.</flag>
+        <flag value="Out of Scope - Benchmark">Target raise exceeds $16.5M, or company is publicly traded. Evaluation may proceed as a benchmark exercise if clearly flagged. Scores should not be compared directly to in-scope evaluations.</flag>
+        <flag value="Out of Scope - Pre-Seed Exclusion">Total raised under $275K with no institutional participation. Evaluation may proceed as a benchmark exercise if clearly flagged.</flag>
+        <flag value="Out of Scope - Post-Close">Round just closed; no active raise. Recorded as a velocity datum, not forced through the raise-size ceiling as an overage. Scope/instrument mismatch, not a disqualifying deficiency.</flag>
+        <flag value="Out of Scope - No US Defense Nexus">No US-defense footprint; DDST unmappable. Non-comparability disclaimer REQUIRED in the evaluation record. Scope/instrument mismatch, not a disqualifying deficiency.</flag>
+      </scope_flag_definitions>
+    </block>
+
+    <block id="2.3" name="Automatic Disqualifiers" status="Defense ICP v1.0 - fourteen disqualifiers in five categories">
+      <revision_note>The defense instrument carries FOURTEEN automatic disqualifiers in FIVE categories: six defense-specific (Categories A and B) plus eight carried/adapted from the Tech ICP (Categories C, D, E). Two categories are NEW relative to both predecessors: (A) National Security and Export Control, and (B) Government Contracting Integrity. The two-level SBIR treatment (B2) is the key disqualifier-design decision: an adjudicated SBIR/FCA finding is a Block-2 gate; a behavioral SBIR-mill pattern is a scored deduction within C3 (Design Section 12B). Conditional disqualifiers (A3 FCL revocation; bid protest; full-time core leadership) default to a deduction/flag and gate only when core revenue is provably blocked/threatened. EVIDENCE BASE IS TENTATIVE for the mill-vs-adjudicated boundary thresholds and the founder-ownership thresholds carried from Tech ICP.</revision_note>
+
+      The following conditions trigger automatic disqualification regardless of score. A disqualified company is classified as Out of Scope and does not receive a fundability tier assignment. If any disqualifier is triggered, the evaluation terminates after the Disqualifier Screen (Block 2 of the output format). No criterion scores, total score, or fundability tier are assigned. A score below 40 with no disqualifier triggered is classified as Tier 4 - Not Ready, not as Out of Scope. Out of Scope status is reserved for instrument scope mismatches and disqualifier triggers.
+
+      The disqualifiers are organized in five categories below: (A) National Security and Export Control; (B) Government Contracting Integrity; (C) Legal and IP; (D) Team Integrity; (E) Cap Table and Deal Structure. Mark each as CLEAR, TRIGGERED with explanation, NOT APPLICABLE where the non-applicability rule applies, or CONTINGENT - ATTESTATION REQUIRED where a gate's contingent disposition applies (defined for C1 and E1 below). Marking NOT APPLICABLE does not trigger disqualification. Marking CONTINGENT - ATTESTATION REQUIRED does not trigger disqualification: the evaluation PROCEEDS, the open item is recorded as a Block-5 flag, and the named attestation is a mandatory pre-engagement condition. DETERMINATION-STATE COMPLETENESS RULE (construction convention, v2.0 and later): every gate, routing point, and classification point in this instrument must enumerate a disposition for the unverified/ambiguous evidence state, cross-referencing Section 1.5's INFORMATION-SCARCE / INFORMATION-ABSENT / ambiguous-defaults-to-SCARCE vocabulary; the evidence-tiered trigger grammar of D1/D2 and the conditional_escalation_rules is the house template, and a binary CLEAR/TRIGGERED authoring of a determination point is a construction error.
+
+      In addition to the automatic disqualifiers below, a scored_deductions element lists conditions that produce scored deductions within specific criteria rather than disqualification.
+
+      <disqualifier_category name="A - National Security and Export Control">
+        <disqualifier id="A1" name="Unmitigated CFIUS/FOCI Exposure">
+          <triggering_condition>Foreign ownership, control, or influence that clearly blocks contract eligibility, with NO disclosed mitigation agreement (e.g., adversarial-state or PRC-linked investor with board or control rights; foreign co-founder controlling the entity without a mitigation agreement; a US investing fund with disqualifying foreign-LP control creating FOCI).</triggering_condition>
+          <observability>Cap table and press (Crunchbase, PitchBook, Business Wire); sovereign/PRC-linked fund names; CFIUS-review news; NSIC/DFARS disclosures; SAM.gov entity registration; FOCI determination from DCSA when public.</observability>
+          <non_applicability>NOT a disqualifier where a DISCLOSED CFIUS MITIGATION AGREEMENT exists (scored as high-concern in C5 per Design Section 9A); or where foreign capital is allied-nation and non-controlling (moderate concern in C5).</non_applicability>
+          <scored_deduction_alternative>YES - sub-disqualifier CFIUS concern levels are scored in C5 (Design Section 9A band ceilings). Only unmitigated, eligibility-blocking FOCI triggers this gate.</scored_deduction_alternative>
+        </disqualifier>
+
+        <disqualifier id="A2" name="Adjudicated ITAR/EAR Enforcement">
+          <triggering_condition>A FINALIZED/ADJUDICATED export-control enforcement action against the company or its principals (civil penalty, consent agreement, or criminal conviction - the Vescent Photonics $400K-plus settlement for improper foreign-subcontractor use is the archetype).</triggering_condition>
+          <observability>DDTC debarment list; BIS denial order list; DoJ press releases.</observability>
+          <non_applicability>An ITAR/EAR registration gap or open inquiry without adjudication is NOT this gate (C4 flag in the lowest band). Applies only to finalized enforcement.</non_applicability>
+          <scored_deduction_alternative>NO - adjudicated enforcement is binary.</scored_deduction_alternative>
+        </disqualifier>
+
+        <disqualifier id="A3" name="Facility-Clearance Revocation Blocking Core Revenue (conditional)">
+          <triggering_condition>An FCL revoked or suspended AND the company's CORE REVENUE requires the now-blocked classified work. Both conditions must be present.</triggering_condition>
+          <observability>DCSA communications (sometimes public); company press; trade press.</observability>
+          <non_applicability>NOT a disqualifier where the company's core revenue does NOT depend on classified work (an FCL issue becomes a C4 deduction within the lower-mid band plus Block-5 flag). The conditionality is essential: many defense companies can continue commercially if their FCL is a supplementary capability.</non_applicability>
+          <scored_deduction_alternative>YES - non-core FCL issues are a C4 band deduction.</scored_deduction_alternative>
+        </disqualifier>
+      </disqualifier_category>
+
+      <disqualifier_category name="B - Government Contracting Integrity">
+        <disqualifier id="B1" name="Debarment or Suspension">
+          <triggering_condition>The company OR its principals appear as excluded parties in the SAM.gov exclusions database (debarred or suspended from federal contracting).</triggering_condition>
+          <observability>SAM.gov exclusions list (public, searchable by company name or DUNS/UEI).</observability>
+          <non_applicability>NONE - active debarment is dispositive.</non_applicability>
+          <scored_deduction_alternative>NO.</scored_deduction_alternative>
+        </disqualifier>
+
+        <disqualifier id="B2" name="Adjudicated SBIR or False Claims Act Finding">
+          <triggering_condition>An ADJUDICATED civil or criminal SBIR or False Claims Act finding against the company or founders. Archetype cases: TrellisWare Technologies (majority-owned subsidiary of ViaSat) - $12,177,631.90 settlement, SBIR ineligibility, DOJ/SDCA, March 12, 2018; Lithium Power Technologies - approximately $5M plus debarment; ML Energia - president convicted; Fractal Systems / Smart Polymers (Aldissi) - approximately $10.5M fraud, 15-year sentence.</triggering_condition>
+          <observability>DoJ/OIG press releases; SBIR.gov fraud page; PACER court records.</observability>
+          <non_applicability>NONE for an adjudicated finding.</non_applicability>
+          <scored_deduction_alternative>YES - CRITICAL TWO-LEVEL TREATMENT. A BEHAVIORAL SBIR-MILL PATTERN (no adjudication) is a SCORED DEDUCTION within C3 (see Design Section 12B). The two levels: adjudicated finding = this Block-2 gate; behavioral pattern (many Phase I awards across agencies with no Phase II/III transition and no contract/commercial revenue, topic-hopping, or multi-year stall) = C3 scored deduction. This distinction is dispositive: this gate fires ONLY on an adjudicated finding.</scored_deduction_alternative>
+        </disqualifier>
+
+        <disqualifier id="B3" name="Commercialization-Barring CRADA or Exclusivity Agreement">
+          <triggering_condition>A CRADA or government agreement whose specific terms BAR COMMERCIALIZATION or BLOCK INVESTOR RIGHTS such that venture returns are structurally impossible (not merely constrained).</triggering_condition>
+          <observability>Disclosed agreements; press release terms; diligence. Gate applies only when the barring term is DOCUMENTED; possible terms that cannot be confirmed are Block-5 risk flags, not gates.</observability>
+          <non_applicability>Ordinary CRADAs and standard government-purpose data-rights provisions that do NOT bar commercialization are normal in defense and not a gate.</non_applicability>
+          <scored_deduction_alternative>YES - exclusivity that constrains (but does not bar) leads to a C5 independence deduction plus a Block-5 CVC independence flag.</scored_deduction_alternative>
+        </disqualifier>
+      </disqualifier_category>
+
+      <disqualifier_category name="C - Legal and IP">
+        <disqualifier id="C1" name="Defense IP Not Assigned to Company">
+          <triggering_condition>CONFIRMED-ADVERSE EVIDENCE OR REFUSAL is required to trigger this gate. TRIGGERED when (i) CONFIRMED evidence establishes that the company's CORE (venture-thesis) IP is not assigned to the company - a confirmed assignment of core IP to a prior employer, a university or DARPA program, or a government program; a confirmed SBIR/STTR data-rights defect; or a confirmed TTO exclusive-license defect where the TTO retains rights that impair commercialization - OR (ii) the company refuses to confirm: Refusal to confirm IP assignment when directly asked is itself a triggering condition (refusal is an act, not an absence of records). CORE/NON-CORE QUALIFIER: the gate applies to the company's core venture-thesis IP, determined against the company's own stated thesis. A government- or prime-owned NON-CORE asset accessed via CRADA or license is NOT this gate - it routes to a Block-5 commercialization-structure flag. REVERSAL CONDITION: if the government- or prime-owned asset IS the core venture thesis, the gate TRIGGERS; the core/non-core determination and its basis must be documented in the Block-2 field.</triggering_condition>
+          <contingent_disposition>CONTINGENT - ATTESTATION REQUIRED (the third determination state, per Section 1.5's INFORMATION-SCARCE / INFORMATION-ABSENT / ambiguous-defaults-to-SCARCE vocabulary): when IP assignment is UNVERIFIED on available records (e.g., an unrecorded founder-inventor assignment, or pre-grant software IP with no USPTO trace) AND no refusal has occurred, the gate does NOT trigger. Mark CONTINGENT - ATTESTATION REQUIRED: the evaluation PROCEEDS; affected dimensions score per Section 1.5 (SCARCE/ABSENT discipline unchanged - this disposition licenses no midpoint default by itself); a Block-5 flag records the open item; and IP-assignment attestation is a MANDATORY PRE-ENGAGEMENT CONDITION. Absence of public assignment records is an evidence state, not a triggering condition.</contingent_disposition>
+          <observability>USPTO assignment records (public); TTO license terms; SBIR data-rights terms (often disclosed in SBIR awards); standard VC diligence question.</observability>
+          <non_applicability>NONE for a CONFIRMED core-IP assignment defect - confirmed unassigned core IP is dispositive for venture fundability. Minor, curable license gaps with a documented remediation path may be Block-5 flagged rather than gated, but only when the gap is genuinely minor and a remediation timeline is disclosed. (An unverified assignment posture with no refusal is not a gap in this sense; it takes the CONTINGENT - ATTESTATION REQUIRED disposition above.)</non_applicability>
+          <scored_deduction_alternative>NO (binary assignment defect); minor curable gaps lead to a Block-5 flag only.</scored_deduction_alternative>
+        </disqualifier>
+
+        <disqualifier id="C2" name="Material Pending Litigation Threatening Core Revenue">
+          <triggering_condition>A bid protest, False Claims Act action, or IP dispute that materially THREATENS THE COMPANY'S CORE REVENUE (not peripheral litigation). Both the existence of the litigation AND its core-revenue threat must be present.</triggering_condition>
+          <observability>GAO bid-protest docket (public); PACER court records; press.</observability>
+          <non_applicability>Litigation that does NOT threaten core revenue (a typical bid protest by a competitor on a non-core award) leads to a Block-5 risk flag, not a gate.</non_applicability>
+          <scored_deduction_alternative>YES - non-core litigation leads to a Block-5 flag.</scored_deduction_alternative>
+        </disqualifier>
+      </disqualifier_category>
+
+      <disqualifier_category name="D - Team Integrity">
+        <disqualifier id="D1" name="Founder Securities Fraud or Falsified Military Service">
+          <triggering_condition>Active or past SECURITIES FRAUD history (SEC enforcement); OR WHOLESALE FALSIFICATION OF MILITARY SERVICE OR RANK - stolen-valor-grade fabrication (not minor exaggeration, which is handled by the NCSP deduction in C1).</triggering_condition>
+          <observability>SEC litigation releases; court records (PACER); Defense Manpower Data Center (DMDC) military records when public.</observability>
+          <non_applicability>NONE for fabrication. Minor service-claim exaggeration is the NCSP deduction in C1 (Design Section 5D), not this gate.</non_applicability>
+          <scored_deduction_alternative>YES - minor exaggeration leads to a C1 NCSP deduction per Design Section 5D. Wholesale fabrication triggers the gate.</scored_deduction_alternative>
+        </disqualifier>
+
+        <disqualifier id="D2" name="Misrepresented Credentials (Wholesale Fabrication)">
+          <triggering_condition>Wholesale fabrication of educational credentials, professional role history, or institutional affiliation - not mere embellishment or title inflation (which is the NCSP minor-contradiction deduction).</triggering_condition>
+          <observability>Public records; institutional verification; LinkedIn cross-check against company filings.</observability>
+          <non_applicability>NONE for wholesale fabrication.</non_applicability>
+          <scored_deduction_alternative>YES - embellishment short of fabrication leads to a C1 NCSP minor-contradiction deduction.</scored_deduction_alternative>
+        </disqualifier>
+
+        <disqualifier id="D3" name="Lack of Full-Time Core-Leadership Commitment (defense-calibrated)">
+          <triggering_condition>The CORE CEO or CTO is part-time or uncommitted with NO DOCUMENTED FULL-TIME TRANSITION PLAN. Applies only to CEO and CTO roles, not to other team members.</triggering_condition>
+          <observability>LinkedIn current-employer field; company disclosures; concurrent-role signals.</observability>
+          <non_applicability>NOT APPLICABLE where a documented full-time transition timeline is published or attested. ALSO NOT APPLICABLE to part-time senior advisors or fractional non-core roles - these are NORMAL in defense (common among senior military/IC alumni) and do not trigger this gate. Only the core CEO/CTO part-time status (without a transition plan) is dispositive.</non_applicability>
+          <scored_deduction_alternative>YES - the advisor-heavy / engineering-light pattern is a C1 NCSP deduction (Design Section 5D, "advisor-heavy team inflation" contradiction type), not this gate.</scored_deduction_alternative>
+        </disqualifier>
+      </disqualifier_category>
+
+      <disqualifier_category name="E - Cap Table and Deal Structure">
+        <disqualifier id="E1" name="Cap-Table Integrity Defect">
+          <triggering_condition>CONFIRMED-ADVERSE EVIDENCE OR REFUSAL is required to trigger this gate. TRIGGERED when (i) CONFIRMED evidence establishes a sporadic, messy, or structurally compromised cap table - confirmed unresolved ownership disputes, confirmed dead equity, confirmed material terms that were undisclosed and have surfaced adverse, or confirmed legal encumbrances - OR (ii) the company refuses: Refusal to provide a cap table summary by band when directly asked is itself a triggering condition (refusal is an act, not an absence of records). RE-ROUTED STATE ITEMS: bare "missing documentation" and bare "undisclosed material terms" - the default condition of a pre-diligence seed dossier - are evidence states, not triggers; they take the CONTINGENT - ATTESTATION REQUIRED disposition below unless and until disclosure or diligence CONFIRMS a defect, at which point the gate triggers on the confirmed evidence.</triggering_condition>
+          <contingent_disposition>CONTINGENT - ATTESTATION REQUIRED (the third determination state, per Section 1.5's INFORMATION-SCARCE / INFORMATION-ABSENT / ambiguous-defaults-to-SCARCE vocabulary): an undisclosed cap table with NO refusal on direct request does NOT trigger this gate. Mark CONTINGENT - ATTESTATION REQUIRED: the evaluation PROCEEDS; C5 scores per Section 1.5 and its own band definitions; a Block-5 flag records the open item; and a cap-table summary by band (founder attestation by band acceptable) is a MANDATORY PRE-ENGAGEMENT CONDITION. Non-disclosure is an evidence state; refusal is the act that triggers.</contingent_disposition>
+          <observability>Cap-table diligence; founder attestation by band; prior-round filings; pattern of refusal across multiple direct questions.</observability>
+          <non_applicability>NONE.</non_applicability>
+          <scored_deduction_alternative>NO.</scored_deduction_alternative>
+        </disqualifier>
+
+        <disqualifier id="E2" name="Founder Ownership Below Threshold" status="TENTATIVE - calibration needed">
+          <triggering_condition>Aggregate founder/CEO ownership below approximately 10% post-Seed or below 15% post-Series A, without explanation (e.g., recapitalization, prior exit).</triggering_condition>
+          <observability>Cap-table diligence; founder attestation by band; LTSE/Carta benchmark comparison.</observability>
+          <non_applicability>NONE.</non_applicability>
+          <scored_deduction_alternative>NO. [TENTATIVE - thresholds carried verbatim from Tech ICP; re-confirm against the defense cohort where heavy non-dilutive funding may alter typical ownership trajectories.]</scored_deduction_alternative>
+        </disqualifier>
+
+        <disqualifier id="E3" name="SAFE Stack Without Priced Round">
+          <triggering_condition>Stacked SAFEs exceeding $3M total with no priced round in 24-plus months.</triggering_condition>
+          <observability>Funding-history records; founder attestation; Crunchbase round history; explicit absence of a priced round in the funding timeline.</observability>
+          <non_applicability>NONE. SAFE stacks below $3M, or any SAFE stack with a priced round within 24 months, are handled as scored deductions within C5, not as disqualifiers.</non_applicability>
+          <scored_deduction_alternative>NO (for the $3M-plus-no-priced-round combination); sub-threshold SAFE stacks are a C5 within-band deduction.</scored_deduction_alternative>
+        </disqualifier>
+      </disqualifier_category>
+
+      <scored_deductions>
+        The following conditions are NOT automatic disqualifiers but produce scored deductions within their respective criteria (or Block-5 flags). They are listed here for evaluator routing reference; documentation occurs at the criterion level.
+
+        CFIUS sub-threshold concern (high-concern, mitigated, or allied/opaque): C5 band caps per Design Section 9A (high-concern leads to lower-mid cap; moderate/opaque leads to upper-mid cap).
+        SBIR mill behavioral pattern (no adjudication): C3 scored deduction per Design Section 12B (moderate signature reduces C3 by approximately 25-40% of its points or drops one band; severe signature drops to C3 lowest band).
+        CVC exclusivity/independence constraint (constrains but does not bar): C5 independence deduction plus Block-5 CVC independence flag.
+        CMMC absence where the contract type requires it: C4 within-band deduction (not a disqualifier).
+        Minor NCSP contradictions (title inflation, minor service-claim exaggeration, embellishment short of fabrication): C1 deductions per Design Section 5D.
+        Single-program / single-customer dependency: C7-Exit sub-component cap at the lower-mid ceiling (Design Section 10C).
+        Non-core FCL revocation/suspension: C4 within-band deduction plus Block-5 flag (escalates to disqualifier A3 only if core revenue requires the blocked classified work).
+        Active bid protest naming the company that does NOT threaten core revenue: Block-5 risk flag (escalates to disqualifier C2 only if it threatens core revenue).
+        ITAR/EAR registration absence where the product plainly requires it (no adjudication): C4 flag in the lowest band (escalates to disqualifier A2 only on adjudicated enforcement).
+      </scored_deductions>
+
+      <conditional_escalation_rules>
+        CONDITIONAL ESCALATION RULES (PCDB Design Section 11 Decision 7): (1) Active bid protest naming the company defaults to a Block-5 risk flag; escalates to the C2 disqualifier only if it threatens core revenue - a protest is common and frequently resolved. (2) Facility-Clearance revoked/suspended defaults to a C4 Access deduction plus Block-5 flag; escalates to the A3 conditional disqualifier only when core revenue requires the blocked classified work. (3) Lack of full-time core-leadership commitment applies only to the core CEO/CTO without a transition plan; part-time senior advisors are normal in defense and do not trigger D3.
+      </conditional_escalation_rules>
+    </block>
+
+  </section>
+
+  <section id="5" name="Standardized Scoring Output Format" status="Defense ICP v1.0 R11">
+    <revision_note>Output format inherits the seven-block structure from Tech ICP v1.0 / LS v5.1 with defense-specific field-level additions placed INTO existing blocks (no new blocks; Block IDs 0-6 only). Block 0 Sector field uses the defense four-part format (Tier / Sub-Sector / Software-vs-Hardware Track / Tier-Table Version) plus a [SECTOR TIER TABLE STALE] stamp field. Block 1 replaces the development-stage enumerated list with the DDST DS-0 through DS-7 taxonomy, adds the Stealth-Mode flag, and adds the four defense Market Context Note format strings. Block 2 replaces the ten-disqualifier four-category structure with the defense fourteen-disqualifier five-category structure (A-E). Block 3 modifier_sub_block carries ONE modifier component (Sector Market-Event Modifier, plus/minus 2; not three) and adds defense documentation requirements. Block 4 uses defense weight values and labels the OVC anchors C1 and C3. Block 5 uses the Defense Investor Archetype Taxonomy (seven archetypes) and adds the Valuation Realism Note, CFIUS Forward-Looking Flag, and Dual-Use Focus-Risk Note. Block 6 adds the defense Format Compliance items and the tier-table version stamp.</revision_note>
+
+    <block id="0" name="Evaluation Header">
+      <instruction>Header metadata for every evaluation. The Sector field uses the defense four-part format.</instruction>
+      <field name="Company Name">[Full legal name]</field>
+      <field name="Company Address">[Primary office address]</field>
+      <field name="Sector">[Tier (1 / 2 / 3 / Out-of-Favor)] / [Sub-Sector] / [Software-vs-Hardware Track (SW / HW)] / [Tier-Table Version (v2026-Q2)]. Tier is the sub-sector's appetite tier from the Section 3 A2 / Section 4 B2 sector tier table. Sub-Sector identifies the specific defense vertical (e.g., "counter-UAS," "maritime-autonomy," "defense-AI/C4ISR," "space/ISR," "munitions/strike," "directed-energy," "defense-cyber"). Track is SW (software-primary) or HW (hardware-intensive) per the Block-1 Market Context Note track tag. TRACK-TAG ASSIGNMENT RULE: the track follows the FUNDABILITY PHYSICS of the revenue-bearing product, not the physical embodiment - a software-margin product delivered on a hardware form factor tags SW; a company whose economics are units, throughput, and production tags HW. When the physical embodiment diverges from the assigned tag, a FORM-FACTOR NOTE is REQUIRED in the Block-1 Market Context Note stating the divergence and the assignment basis. The tag selects the C4 operative-gate applicability and the C6 and C7-Moat application notes; state the assignment basis at the tag sites. Tier-Table Version is the version date of the sector tier table used (v2026-Q2 by default). For multi-sub-sector companies, choose the primary sub-sector by use-of-proceeds focus and dominant demand line; document cross-sector positioning in the Block 1 Market Context Note.</field>
+      <field name="Sector Tier Table Staleness Stamp">[Blank by default. Populate with [SECTOR TIER TABLE STALE - v2026-Q2] when the analysis date is more than 12 months after the tier-table version date OR a mandatory trigger event has occurred since the version date, per Section 3/4 sector_tier_table_versioning and Design Section 12D. When stamped, the Sector Market-Event Modifier is capped at plus/minus 1.]</field>
+      <field name="Evaluation Date">[YYYY-MM-DD]</field>
+      <field name="Rubric Version">[Defense ICP v2.0, 2026-07-06]</field>
+      <field name="Research Dossier Date">[YYYY-MM-DD]</field>
+      <field name="Primary Sources">[List of primary source categories with numeric count or range. "Multiple" is not an acceptable count value. Acceptable defense sources: SBIR.gov award records, USASpending.gov obligations, SAM.gov entity/exclusion records, DoD/service press, DIU/AFWERX/NavalX announcements, FedRAMP Marketplace, Blue UAS list, Crunchbase/PitchBook, Business Wire, USPTO assignment records, DMDC/public military records, GAO bid-protest docket, PACER, founder interviews, budget documents (P-forms/R-forms), trade press (Breaking Defense, DefenseScoop, Defense News).]</field>
+      <field name="Evaluator">[Model identifier or human evaluator name]</field>
+    </block>
+
+    <block id="1" name="Routing Determination">
+      <instruction>Routes the company to Profile A or Profile B using three required inputs, each of which must be ADDRESSED - recording a LOW-CONFIDENCE or ABSENT raise-confidence state per Section 2.1 addresses the raise input. Failure to address an input is a format error.</instruction>
+      <field name="Profile Assigned">[Profile A / Profile B / ROUTING-DEFERRED - CONFIRMATION REQUIRED (per Section 2.1) / Out of Scope - Benchmark / Out of Scope - Pre-Seed Exclusion]</field>
+      <field name="Target Raise">[$X.XM + confidence state per Section 2.1: CONFIRMED / LOW-CONFIDENCE / ABSENT. When ABSENT with triangulated routing, state "ABSENT - routed on secondary inputs"; when routing is deferred, state "ROUTING-DEFERRED - CONFIRMATION REQUIRED" and the input that would resolve it.]</field>
+      <field name="Total Raised to Date">[$X.XM]</field>
+      <field name="Development Stage (DDST)">[Select from the Defense Development Stage Taxonomy: DS-0 Concept / Pre-Prototype / DS-1 Working Prototype (Undemonstrated) / DS-2 SBIR-STTR Phase I (Feasibility Validated) / DS-3 Operational / Exercise Demonstration / DS-4 Funded Prototype (Phase II or DIU/AFWERX/NavalX OT) / DS-5 Production-Eligible Transition (software: ATO/cATO, IL4-IL6, or FedRAMP; hardware: SBIR Phase III, production-OT per section 4022(f), qualification/type-classification, or Blue UAS) / DS-6 Contracted Revenue (Active Production/Service) / DS-7 Program of Record (Durable FYDP Demand). Select the single most accurate value; for DS-5 note the track (SW/HW).]</field>
+      <field name="Investor Composition">[Select from the four-tier classification: Defense-Specialist Institutional Lead / Defense Seed Specialist Lead / Operator-Angel Syndicate / Non-Dilutive-Only or No Real Lead. See routing_input_definitions below.]</field>
+      <field name="Routing Rationale">[1-3 sentences explicitly ADDRESSING all three required inputs: (1) RAISE SIZE - the target raise amount WITH its confidence state (CONFIRMED / LOW-CONFIDENCE / ABSENT per Section 2.1); (2) DDST STAGE - the DDST value assigned above; (3) INVESTOR COMPOSITION - the tier from routing_input_definitions. All three inputs must be addressed; a recorded LOW-CONFIDENCE or ABSENT raise state WITH documented secondary-input triangulation is COMPLIANT - failure to address an input is the format error. When routing on secondary inputs under a degraded raise, record the routing confidence and surface the re-route risk in Block 5. When the environment-over-maturity input-priority rule resolved a conflict, state it. For gap-range cases ($2.5M-$3.5M with a CONFIRMED raise), state the tie-break applied per Section 2.1.]</field>
+      <field name="Split Evaluation">[No / Yes - if Yes, indicate both profiles per Section 2.1 gap-range protocol and report the score range.]</field>
+      <field name="Scope Flag">[In Scope / Gray Zone / Out of Scope - Benchmark / Out of Scope - Pre-Seed Exclusion / Out of Scope - Post-Close / Out of Scope - No US Defense Nexus - see rationale; value must be drawn from the Section 2.2 enumerated set]</field>
+      <field name="Stealth-Mode Flag">[STEALTH-MODE - government-facing corroboration: PRESENT / ABSENT]. PRESENT: at least one government-facing artifact found (SAM.gov, SBIR.gov, USASpending, USPTO, clearance/FCL signal) despite no public-facing presence; the company is evaluated under the INFORMATION-SCARCE track with the corroborating artifact cited. ABSENT: no government-facing footprint; affected criteria score INFORMATION-ABSENT (lowest band) rather than INFORMATION-SCARCE. Leave blank only when the company is not in stealth (normal public presence). Per Section 1.5 Stealth-Company Protocol and Design Section 12E.]</field>
+
+      <routing_input_definitions>
+        FOUR-TIER INVESTOR COMPOSITION CLASSIFICATION (the secondary routing input; aligns with the Section 3/4 C5 syndicate hierarchy):
+        - Defense-Specialist Institutional Lead: a Tier-1 specialist or institutional lead is leading or near-leading a priced round (In-Q-Tel, a16z American Dynamism, Founders Fund, Lux, Shield Capital, Razor's Edge, 8VC, DCVC, General Catalyst defense practice). Corroborates Profile A in the gap range.
+        - Defense Seed Specialist Lead: a dedicated defense seed specialist leads the round (Squadra, Decisive Point, Scout, Overmatch, Harpoon, Marlinspike, Silent, Snowpoint, Cubit, Ensemble) or a top-tier generalist acting on an explicit defense thesis. Seed-stage; corroborates Profile B in the gap range.
+        - Operator-Angel Syndicate: an operator-angel or angel syndicate leads (e.g., Elad Gil, Palmer Luckey, Delian Asparouhov, Trae Stephens as angels), with no institutional lead. Seed-stage; corroborates Profile B.
+        - Non-Dilutive-Only or No Real Lead: non-dilutive government capital (SBIR/STTR/STRATFI/DARPA/OT) is the only "investment," or friends-and-family with no institutional lead. Seed-stage; corroborates Profile B.
+      </routing_input_definitions>
+
+      <field name="Market Context Note">[Optional. Document rubric-fit considerations, the software-vs-hardware track classification, scope-boundary conditions, profile-assignment uncertainties, and the defense flag invocations below. Required format strings:
+        (a) HARDWARE TRACK TAG: "Market Context Note: Hardware-intensive track - C3/C4/C6/C7 hardware application notes invoked (certification/production-OT/throughput substitute for ARR and lean-burn metrics)." (Use SOFTWARE TRACK TAG analog when software-primary.) TRACK-TAG ASSIGNMENT RULE (per Block 0): the tag follows the fundability physics of the revenue-bearing product, not the embodiment; state the assignment basis. FORM-FACTOR NOTE (required when the embodiment diverges from the tag): "Form-factor note: [embodiment] diverges from assigned track [SW/HW]; assignment basis: [fundability-physics rationale]."
+        (b) DUAL-USE FOCUS-RISK INDICATOR: "Market Context Note: Dual-use positioning claimed; see Block 5 Dual-Use Focus-Risk Note." (Fires only when dual-use is claimed; the focus-risk note itself fires only when NEITHER market shows traction.)
+        (c) STALE-TIER INDICATOR: "Market Context Note: [SECTOR TIER TABLE STALE - v2026-Q2] - Sector Market-Event Modifier capped at plus/minus 1 per Design Section 12D."
+        (d) CFIUS SUB-THRESHOLD NOTATION: "Market Context Note: CFIUS/FOCI sub-threshold concern present (level: high-concern / moderate); C5 band ceiling applied; see Block 5 CFIUS Forward-Looking Flag if maturation risk exists."]</field>
+    </block>
+
+    <block id="2" name="Disqualifier Screen">
+      <instruction>Screen all fourteen disqualifiers in five categories (A-E) per Section 2.3 BEFORE any scoring. Mark each CLEAR, TRIGGERED (with explanation), NOT APPLICABLE (where the non-applicability rule applies; marking NOT APPLICABLE does not trigger disqualification), or CONTINGENT - ATTESTATION REQUIRED (where a gate's contingent disposition applies per Section 2.3 - contingent marks do not disqualify and do not block scoring). If any disqualifier is TRIGGERED, the evaluation terminates: Blocks 3-5 are populated with "N/A - Disqualified" and the basis (EXCEPTION: the Block-4 Overall Data Confidence field is UNCONDITIONAL and is populated on every evaluation, including terminated and disqualified ones); Block 6 is still completed. A score below 40 with no disqualifier triggered is Tier 4 - Not Ready, NOT Out of Scope.</instruction>
+
+      <category name="A - National Security and Export Control">
+        <field name="(A1) Unmitigated CFIUS/FOCI Exposure">[CLEAR / TRIGGERED - explanation. TRIGGERED only when foreign ownership/control/influence clearly blocks contract eligibility with NO disclosed mitigation agreement. A disclosed CFIUS mitigation agreement or allied/non-controlling capital is NOT this gate - it is a scored C5 concern (high or moderate). Sub-threshold CFIUS concern is recorded in C5 band ceilings.]</field>
+        <field name="(A2) Adjudicated ITAR/EAR Enforcement">[CLEAR / NOT APPLICABLE / TRIGGERED - explanation. TRIGGERED only on a finalized/adjudicated export-control enforcement action (civil penalty, consent agreement, or criminal conviction - the Vescent Photonics archetype). An ITAR/EAR registration gap or open inquiry without adjudication is NOT this gate (it is a C4 lowest-band flag). Mark NOT APPLICABLE where the product plainly does not implicate ITAR/EAR.]</field>
+        <field name="(A3) Facility-Clearance Revocation Blocking Core Revenue">[CLEAR / NOT APPLICABLE / TRIGGERED - explanation. TRIGGERED only when an FCL is revoked/suspended AND the company's core revenue requires the now-blocked classified work (BOTH conditions). Where core revenue does NOT depend on classified work, an FCL issue is a C4 within-band deduction plus a Block-5 flag, not this gate. Mark NOT APPLICABLE where the company holds/requires no FCL.]</field>
+      </category>
+
+      <category name="B - Government Contracting Integrity">
+        <field name="(B1) Debarment or Suspension">[CLEAR / TRIGGERED - explanation. TRIGGERED when the company or its principals appear as excluded parties in the SAM.gov exclusions database. Active debarment is dispositive; no non-applicability.]</field>
+        <field name="(B2) Adjudicated SBIR or False Claims Act Finding">[CLEAR / TRIGGERED - explanation. TRIGGERED on an ADJUDICATED civil or criminal SBIR/FCA finding against the company or founders (archetypes: TrellisWare $12,177,631.90 SBIR settlement 2018; Lithium Power Technologies ~$5M plus debarment; ML Energia; Fractal Systems/Smart Polymers ~$10.5M). TWO-LEVEL TREATMENT (state explicitly): an ADJUDICATED finding is THIS Block-2 gate; a BEHAVIORAL SBIR-MILL PATTERN with no adjudication is NOT this gate - it is a SCORED DEDUCTION within C3 (Design Section 12B). No non-applicability for an adjudicated finding.]</field>
+        <field name="(B3) Commercialization-Barring CRADA or Exclusivity Agreement">[CLEAR / NOT APPLICABLE / TRIGGERED - explanation. TRIGGERED only when a CRADA or government agreement has DOCUMENTED terms that bar commercialization or block investor rights such that venture returns are structurally impossible. Ordinary CRADAs and standard government-purpose data-rights provisions are normal and not a gate. Exclusivity that constrains (but does not bar) is a C5 independence deduction plus a Block-5 flag. Mark NOT APPLICABLE where no such agreement exists.]</field>
+      </category>
+
+      <category name="C - Legal and IP">
+        <field name="(C1) Defense IP Not Assigned to Company">[CLEAR / CONTINGENT - ATTESTATION REQUIRED / TRIGGERED - explanation. TRIGGERED only on CONFIRMED-ADVERSE evidence that CORE (venture-thesis) IP is not assigned to the company (confirmed assignment to a prior employer, university/DARPA/government program; a confirmed SBIR/STTR data-rights defect; or a confirmed TTO exclusive-license defect impairing commercialization), OR on the act of refusal: refusal to confirm IP assignment when directly asked is itself a triggering condition. CORE/NON-CORE: a government- or prime-owned NON-CORE asset accessed via CRADA or license is a Block-5 commercialization-structure flag, not this gate; if that asset IS the core venture thesis, the gate TRIGGERS - document the core/non-core determination and its basis. CONTINGENT - ATTESTATION REQUIRED when assignment is unverified with no refusal (per Section 1.5): evaluation proceeds; affected scoring per Section 1.5; Block-5 flag records the open item; IP-assignment attestation is a mandatory pre-engagement condition. Minor, curable license gaps with a disclosed remediation timeline may be Block-5 flagged rather than gated. No non-applicability for a confirmed unassigned-core-IP defect.]</field>
+        <field name="(C2) Material Pending Litigation Threatening Core Revenue">[CLEAR / NOT APPLICABLE / TRIGGERED - explanation. TRIGGERED when a bid protest, FCA action, or IP dispute materially threatens the company's CORE revenue (both the litigation AND its core-revenue threat must be present). Litigation that does not threaten core revenue (a typical competitor bid protest on a non-core award) is a Block-5 risk flag. Mark NOT APPLICABLE where no material litigation exists.]</field>
+      </category>
+
+      <category name="D - Team Integrity">
+        <field name="(D1) Founder Securities Fraud or Falsified Military Service">[CLEAR / TRIGGERED - explanation. TRIGGERED on active/past securities-fraud history (SEC enforcement) OR wholesale falsification of military service or rank (stolen-valor-grade fabrication). Minor service-claim exaggeration is the C1 NCSP deduction (Design Section 5D), NOT this gate. No non-applicability for fabrication.]</field>
+        <field name="(D2) Misrepresented Credentials (Wholesale Fabrication)">[CLEAR / TRIGGERED - explanation. TRIGGERED on wholesale fabrication of educational credentials, professional role history, or institutional affiliation. Embellishment or title inflation short of fabrication is the C1 NCSP minor-contradiction deduction. No non-applicability for wholesale fabrication.]</field>
+        <field name="(D3) Lack of Full-Time Core-Leadership Commitment">[CLEAR / NOT APPLICABLE / TRIGGERED - explanation. TRIGGERED only when the core CEO or CTO is part-time/uncommitted with NO documented full-time transition plan. Mark NOT APPLICABLE where a documented full-time transition timeline is published/attested, OR for part-time senior advisors and fractional non-core roles (normal in defense among senior military/IC alumni). The advisor-heavy / engineering-light pattern is a C1 NCSP deduction, not this gate.]</field>
+      </category>
+
+      <category name="E - Cap Table and Deal Structure">
+        <field name="(E1) Cap-Table Integrity Defect">[CLEAR / CONTINGENT - ATTESTATION REQUIRED / TRIGGERED - explanation. TRIGGERED only on CONFIRMED-ADVERSE evidence of a sporadic, messy, or structurally compromised cap table (confirmed unresolved ownership disputes, confirmed dead equity, confirmed adverse material terms, confirmed legal encumbrances), OR on the act of refusal: refusal to provide a cap-table summary by band when directly asked is itself a triggering condition. CONTINGENT - ATTESTATION REQUIRED when the cap table is undisclosed with no refusal on direct request (per Section 1.5): evaluation proceeds; C5 scores per Section 1.5 and its band definitions; Block-5 flag records the open item; a cap-table summary by band (founder attestation by band acceptable) is a mandatory pre-engagement condition. Bare non-disclosure ("missing documentation," "undisclosed material terms") is an evidence state, not a trigger.]</field>
+        <field name="(E2) Founder Ownership Below Threshold">[CLEAR / TRIGGERED - explanation. Aggregate founder/CEO ownership below approximately 10% post-Seed or below 15% post-Series A, without explanation (e.g., recapitalization, prior exit). TENTATIVE - thresholds carried from Tech ICP; defense companies with heavy non-dilutive funding may show atypical ownership trajectories.]</field>
+        <field name="(E3) SAFE Stack Without Priced Round">[CLEAR / TRIGGERED - explanation. Stacked SAFEs exceeding $3M total with no priced round in 24-plus months.]</field>
+      </category>
+
+      <field name="Disqualifier Outcome">[ALL CLEAR (or NOT APPLICABLE / CONTINGENT - ATTESTATION REQUIRED on gates with no trigger - contingent marks do not disqualify and do not block scoring) - proceed with evaluation / TRIGGERED - terminate evaluation, classify Out of Scope, populate Blocks 3 through 5 with "N/A - Disqualified" and the basis (exception: the Block-4 Overall Data Confidence field is unconditional and is populated on every evaluation), complete Block 6]</field>
+    </block>
+
+    <block id="3" name="Criterion Scoring">
+      <instruction>Score each of the seven criteria for the assigned profile using the criterion_score_template. The modifier_sub_block is completed for C2 (A2/B2) only. Repeat the criterion_score_template for every criterion.</instruction>
+
+      <criterion_score_template>
+        <field name="Criterion ID">[A1 / A2 / A3 / A4 / A5 / A6 / A7 OR B1 / B2 / B3 / B4 / B5 / B6 / B7]</field>
+        <field name="Criterion Name">[Per Section 3 or Section 4 criterion name]</field>
+        <field name="Weight">[Per Section 3 or Section 4 weight_pct]</field>
+        <field name="Max Points">[Per Section 3 or Section 4 max_points]</field>
+        <field name="Band Assigned">[Band label per Section 3 or Section 4 band element]</field>
+        <field name="Score">[Numeric score within the assigned band range]</field>
+        <field name="Justification">[2 to 6 sentences explaining the score with reference to observable evidence. Required documentation by criterion:
+          - C1 (A1/B1): the FMF signal assessment; the solo-founder deduction or waiving exception with the resulting within-band position; and the NCSP result (each contradiction named with its contradicting source, or a one-sentence "no contradicted claims identified"), including the Section 1.5 classification of any unverified items considered under the NCSP Classification Rule.
+          - C2 (A2/B2): the assigned sub-sector tier and basis; the OVC result (see modifier_sub_block).
+          - C3 (A3/B3): the SBIR-Progression Quality sub-component position (strong / healthy / thin / mill signature) and, if a mill signature is present, the trigger(s) met and the deduction applied (Design Section 12B). State the track (hardware/software) application note invoked.
+          - C4 (A4/B4): the Procurement Pathway Literacy position (demonstrated / partial / nascent) and the basis (executed vehicle? acquisition-experienced personnel?); the assessed access stack; any CMMC within-band deduction; for software-primary companies, the operative-gate determination and its delivery-model basis per the A4 OPERATIVE-GATE TEST.
+          - C5 (A5/B5): the assessed CFIUS/FOCI concern level (disqualifier / high-concern / moderate / clean) and the basis; the named lead and its tier (an unnamed "VC round" is a format error).
+          - C6 (A6/B6): where a Section 1.5 classification was applied, the ISP class assigned (INFORMATION-SCARCE or INFORMATION-ABSENT) and its deployment-evidence basis (what corroboration exists or is absent).
+          - C7 (A7/B7): the Moat position and moat type(s); the Exit position with named candidate acquirers and a cited comparable transaction for any top/upper-mid Exit; any single-program-dependency cap or broad-universe exception applied, with the acquirer-universe breadth evidence cited.
+          - WHEREVER a midpoint default is applied to a classified/ITAR/clearance context, NAME the specific corroborating artifact per the Block 1.5 Classified-Program SCARCE Protocol. A bare midpoint invocation citing only "classified program" without naming the artifact is a format error.]</field>
+        <field name="Data Confidence Flag">[HIGH / MODERATE / LOW per Section 1.5 INFORMATION-SCARCE vs INFORMATION-ABSENT classification. Append [INSUFFICIENT DATA - INFORMATION-SCARCE] (with the observable signal cited, or [INSUFFICIENT DATA - INFORMATION-SCARCE - CLASSIFIED-PROGRAM] with the corroborating artifact named) or [INSUFFICIENT DATA - INFORMATION-ABSENT] (with the absence search performed documented) if applicable.]</field>
+      </criterion_score_template>
+
+      <modifier_sub_block criterion="C2 (A2/B2)">
+        <instruction>Completed for C2 only. C2 carries a SINGLE modifier component - the Sector Market-Event Modifier (plus/minus 2). There are no other modifier components (no AI Modifier, no separate M and A Modifier). A non-zero modifier MUST name and date the triggering event; a non-zero modifier with no named, dated event is a FORMAT ERROR.</instruction>
+        <field name="Base Tier Score (pre-modifier)">[The C2 base tier classification score before the modifier, within the base band range (A2 0-15 / B2 0-18).]</field>
+        <field name="Sector Market-Event Modifier Value">[+2 / +1 / 0 / -1 / -2 per the Section 3/4 C2 modifier definitions. Capped at plus/minus 1 when the tier table is stale.]</field>
+        <field name="Sector Market-Event Modifier Justification">[Required when the value is non-zero: NAME the specific event and its DATE (e.g., a named appropriation, a named acquisition with EV, a named PoR, a named cancellation or shakeout). State whether the staleness cap applied. A non-zero value without a named, dated event is a format error.]</field>
+        <field name="Modifier-Adjusted C2 Score">[Base tier score plus the applied modifier. Format: "Base: [value] + Modifier: [value] = [adjusted]". May exceed the base tier ceiling or fall below the base tier floor (operative envelope 98-102 at the total level).]</field>
+        <field name="Operational Viability Condition">[Triggered / Not Triggered - per A2/B2 OVC. If Triggered, document: (a) the C1 (Team) and C3 (Traction) scores that triggered the cap - both in their lowest bands; (b) the uncapped C2 score that would have applied; (c) the capped score recorded (A2 capped at 7 / B2 capped at 9) with the modifier's positive range suppressed (modifier maximum 0; a documented negative modifier still applies). If Not Triggered, one-sentence confirmation: "Operational Viability Condition not triggered - C1=[X] and/or C3=[X] above threshold."]</field>
+      </modifier_sub_block>
+    </block>
+
+    <block id="4" name="Total Score and Tier Determination">
+      <instruction>Aggregates criterion scores into a total, applies the consistency check, assigns the fundability tier, and reports the operational viability summary.</instruction>
+
+      <score_summary>
+        <field name="Sum of Criterion Scores">[Numeric total across all seven criteria. Profile A: sum A1 through A7. Profile B: sum B1 through B7. Include the modifier-adjusted C2 score.]</field>
+        <field name="Base Score (pre-modifier)">[Sum of criterion scores using the C2 base tier score before the Sector Market-Event Modifier. Used for tier-threshold reconciliation when the modifier is non-zero.]</field>
+        <field name="Modifier-Adjusted Total Score">[Base score plus the applied Sector Market-Event Modifier (plus/minus 2; capped at plus/minus 1 when the tier table is stale). Operative envelope 98-102; maximum 102; minimum 0 for non-disqualified evaluations.]</field>
+      </score_summary>
+
+      <consistency_check>
+        <instruction>Verify internal arithmetic. The Modifier-Adjusted Total Score must equal Base Score plus the Sector Market-Event Modifier. If arithmetic does not reconcile, the evaluation is a format error and must be revised before submission.</instruction>
+        <field name="Arithmetic Check">[PASS / FAIL with explanation]</field>
+        <field name="Weight Total Check">[Confirm the sum of criterion weights equals 100. PASS / FAIL with explanation. Profile A: A1(22)+A2(15)+A3(20)+A4(12)+A5(11)+A6(8)+A7(12) = 100. Profile B: B1(26)+B2(18)+B3(16)+B4(12)+B5(10)+B6(10)+B7(8) = 100.]</field>
+      </consistency_check>
+
+      <fundability_tier>
+        <instruction>Assign the tier based on the Modifier-Adjusted Total Score per the threshold table. Out of Scope is reserved for disqualifier triggers and scope mismatches per Sections 2.2 and 2.3, not for low scores.</instruction>
+        <tier_thresholds>
+          <tier label="Tier 1 - Strong Fit" range="80-102">High-velocity fundraising candidate; primary audience deploys; full institutional Series A or seed-specialist path visible; recommended for active pipeline.</tier>
+          <tier label="Tier 2 - Qualified Fit" range="60-79">Qualified fundraising candidate; secondary audience deploys; pipeline-eligible with documented risks in Top 3 Fundability Risks.</tier>
+          <tier label="Tier 3 - Conditional Fit" range="40-59">Conditional fundraising candidate; specific risk mitigation required before active engagement; not in primary pipeline.</tier>
+          <tier label="Tier 4 - Not Ready" range="below 40">Not fundraising-ready at current development stage; revisit on milestone achievement (e.g., a Phase II, an OT prototype, an ATO, or a first contract).</tier>
+          <tier label="Out of Scope" range="N/A">Disqualifier triggered or scope mismatch per Sections 2.2 and 2.3. No tier assignment.</tier>
+        </tier_thresholds>
+        <field name="Tier Assigned">[Tier 1 / Tier 2 / Tier 3 / Tier 4 / Out of Scope - with score and basis]</field>
+      </fundability_tier>
+
+      <data_confidence>
+        <instruction>Aggregate the per-criterion Data Confidence Flags into an overall rating. Apply the founder-attestation aggregation rule per Section 1.5: when two or more criteria carry INFORMATION-SCARCE flags driven by founder-attestation-only signals, the rating moves to MODERATE; when four or more, to LOW. This applies in parallel to the total INSUFFICIENT DATA flag count below. SPECIES-DISTINCT COUNTING: the aggregation counts INFORMATION-SCARCE and INFORMATION-ABSENT flags as DISTINCT SPECIES, and the rating must state both counts (e.g., "LOW - 6 flags: 2 SCARCE / 4 ABSENT"). ABSENT-DOMINATED ANNOTATION (required): when ABSENT flags are the majority of the count, the rating MUST carry the annotation that it reflects HIGH-CONFIDENCE EVIDENCE OF ABSENCE - the conclusions are reliable findings that the underlying activities do not exist, not thin-evidence uncertainty; the label without this annotation misstates the evaluation's epistemic character. GOVERNS-RULE: the mechanical flag-count ladder GOVERNS the label. A qualitative-override annotation (with its basis documented) may be recorded ALONGSIDE the ladder-governed label; it never replaces it. UNCONDITIONAL FIELD: every evaluation - including terminated, disqualified, and partial evaluations - carries an Overall Data Confidence rating; "N/A - Disqualified" is not a permitted value for this field.</instruction>
+        <rating value="HIGH">Two or fewer INSUFFICIENT DATA flags across all criteria; primary evidence is independently observable. Founder-attestation aggregation rule not triggered.</rating>
+        <rating value="MODERATE">Three to five INSUFFICIENT DATA flags across criteria, OR the founder-attestation aggregation rule is triggered at the 2-criterion threshold. Some scores rest on midpoint-default or founder-attested bands; conclusions are directionally reliable but specific score points are less precise.</rating>
+        <rating value="LOW">Six or more INSUFFICIENT DATA flags across criteria, OR the founder-attestation aggregation rule is triggered at the 4-criterion threshold. Many scores rest on midpoint-default or attested bands; conclusions are directionally indicative but should be confirmed before client-engagement decisions. (Common for legitimate-opsec stealth and classified-program-heavy companies; not by itself a negative signal.)</rating>
+        <field name="Overall Data Confidence">[HIGH / MODERATE / LOW with brief explanation citing the species-distinct flag counts (SCARCE vs ABSENT), any founder-attestation aggregation rule invocation, the ABSENT-dominated annotation where required, and any qualitative-override annotation recorded alongside the ladder-governed label. UNCONDITIONAL: populated for terminated and disqualified evaluations as well.]</field>
+      </data_confidence>
+
+      <operational_viability_summary>
+        <instruction>Summarize operational viability per the C1 (Team) and C3 (Traction) score bands. This applies regardless of whether the OVC formally triggered (the OVC trigger is the extreme case of the broader profile). The anchors are C1 and C3. The four labels below PARTITION all sixteen anchor-band geometries (four bands per anchor): OPERATIONAL covers both anchors in top or upper-mid (4 geometries); DEVELOPING covers at least one anchor in lower-mid with neither in lowest (5); MARGINAL covers exactly one anchor in lowest (6); PRE-OPERATIONAL covers both in lowest (1). Every evaluation maps to exactly one label, and the label selection must cite BOTH anchor band assignments.</instruction>
+        <mapping_rules>
+          <mapping value="OPERATIONAL">Both C1 (A1/B1) and C3 (A3/B3) are in their top or upper-mid bands. The company has demonstrated both team viability and government-demand validation. The fundraising path is unobstructed at the operational-viability level; success depends on sub-sector tier, market timing, and deal mechanics.</mapping>
+          <mapping value="DEVELOPING">At least one of C1 (A1/B1) and C3 (A3/B3) is in its lower-mid band, and NEITHER is in its lowest band. The company has partially demonstrated both operational-viability dimensions: neither has failed, but at least one is not yet validated at the upper-mid level. The fundraising path is open but development-stage-conditional; the under-validated dimension(s) are documented in Top 3 Fundability Risks where material. The OVC has not triggered. This label covers the five anchor-band geometries previously uncovered between OPERATIONAL and MARGINAL.</mapping>
+          <mapping value="MARGINAL">C1 OR C3 (exactly one of the two) is in its lowest band. The company has demonstrated one of the two operational-viability dimensions but not the other. The path is conditional on remediation of the weak dimension. The OVC has not triggered (single condition); the asymmetric profile is flagged in Top 3 Fundability Risks.</mapping>
+          <mapping value="PRE-OPERATIONAL">Both C1 AND C3 are in their lowest defined bands. The Operational Viability Condition has triggered and C2 is capped at the lower-mid ceiling (A2 at 7 / B2 at 9) with the modifier's positive range suppressed (modifier maximum 0; a documented negative modifier still applies). The company has demonstrated neither minimum operating capacity nor minimum government-demand validation; the fundraising path is structurally obstructed regardless of sub-sector tailwinds.</mapping>
+        </mapping_rules>
+        <field name="Operational Viability Status">[OPERATIONAL / DEVELOPING / MARGINAL / PRE-OPERATIONAL with citation of the C1 (Team) and C3 (Traction) band assignments]</field>
+      </operational_viability_summary>
+
+      <fundraising_readiness>
+        <instruction>Maps the fundability tier and operational viability status to a fundraising-readiness narrative for the client-engagement decision.</instruction>
+        <mapping_rule>
+          <mapping tier="Tier 1" viability="OPERATIONAL">Ready for active pipeline. Strong-fit candidate with operational viability confirmed. Engagement priority: high.</mapping>
+          <mapping tier="Tier 2" viability="OPERATIONAL, DEVELOPING, or MARGINAL">Pipeline-eligible with documented risks. Engagement priority: medium; risk mitigation discussed before client engagement.</mapping>
+          <mapping tier="Tier 3" viability="OPERATIONAL, DEVELOPING, or MARGINAL">Conditional engagement. Specific risk mitigation required; pipeline placement deferred pending milestone achievement.</mapping>
+          <mapping tier="Tier 4 or any tier with PRE-OPERATIONAL viability">Not ready for active engagement. Revisit on documented milestone achievement (operational-viability remediation or score-band advancement).</mapping>
+          <mapping tier="Out of Scope">No fundraising-readiness assessment. The disqualifier or scope flag governs.</mapping>
+        </mapping_rule>
+        <field name="Fundraising Readiness Statement">[1 to 2 sentences citing the tier, the operational viability status, and the recommended engagement priority.]</field>
+      </fundraising_readiness>
+    </block>
+
+    <block id="5" name="Qualitative Assessment">
+      <instruction>Provides the qualitative complement to the quantitative scoring. Required for every non-disqualified evaluation. Each field must be populated with content specific to the evaluation; placeholder text is a format error. This is the ONLY block where cross-criterion risk is documented (additive-independence constraint - no criterion modifies another).</instruction>
+
+      <top_3_fundability_strengths>
+        <instruction>Identify the three strongest fundraising signals. Each must cite the underlying criterion and observable evidence, framed in terms of fundraising appeal to the target defense investor archetype, not technical or mission merit.</instruction>
+        <field name="Strength 1">[1 to 3 sentences naming the strength, citing the criterion (A1/B1 through A7/B7), and identifying the observable evidence.]</field>
+        <field name="Strength 2">[1 to 3 sentences naming the strength, citing the criterion, and identifying the observable evidence.]</field>
+        <field name="Strength 3">[1 to 3 sentences naming the strength, citing the criterion, and identifying the observable evidence.]</field>
+      </top_3_fundability_strengths>
+
+      <top_3_fundability_risks>
+        <instruction>Identify the three most material fundraising risks. Each must cite the underlying criterion and observable evidence, framed in terms of investor concerns at deal-velocity assessment. Cross-criterion risks (a single development affecting multiple criteria simultaneously per Section 1.7 - e.g., a CFIUS inquiry touching C5, C4, and C3) MUST be flagged here with the correlated criteria identified.</instruction>
+        <field name="Risk 1">[1 to 3 sentences naming the risk, citing the criterion or criteria affected, and identifying the observable evidence. Cross-criterion correlations stated explicitly when applicable.]</field>
+        <field name="Risk 2">[1 to 3 sentences naming the risk, citing the criterion or criteria affected, and identifying the observable evidence.]</field>
+        <field name="Risk 3">[1 to 3 sentences naming the risk, citing the criterion or criteria affected, and identifying the observable evidence.]</field>
+      </top_3_fundability_risks>
+
+      <fundraising_outlook>
+        <instruction>Synthesizes the evaluation into a forward-looking narrative: (a) the most likely investor archetype that will lead the round; (b) the expected timeline and process dynamics; (c) the key risks to closing. The Most Likely Investor Archetype is selected from the Defense Investor Archetype Taxonomy below. A primary archetype is required; a secondary is optional when two distinct paths are visible.</instruction>
+
+        <defense_investor_archetypes>
+          <archetype name="Defense-Specialist Institutional Lead">A Tier-1 specialist fund leading the round (a16z American Dynamism, Founders Fund defense vertical, Lux Capital, 8VC, DCVC, General Catalyst defense practice). Writes $2M-$15M-plus checks across Seed and Series A. Primary fit signals: defense/dual-use sector classification, elite founding-team pedigree (Anduril/Palantir/DARPA/DIU alumni), government contract traction, CFIUS-clean cap table. Best fit: Tier-1/Tier-2 sub-sector companies with strong team and demonstrated government demand, either profile.</archetype>
+          <archetype name="National-Security Strategic Investor">In-Q-Tel and equivalent IC/strategic capital vehicles (OSC, APFIT, NSIC, equivalent). Provides non-equity or equity-adjacent investment with catalytic downstream validation (for every dollar IQT invests, approximately $28-$40 of commercial VC typically follows). Primary fit signals: IC/government-validated problem urgency, technology transition/adoption readiness. Best fit: companies whose problem has explicit IC/operational urgency and a transition path.</archetype>
+          <archetype name="Defense Seed Specialist / First-Check Fund">Dedicated defense seed specialists writing first institutional checks at $250K-$5M (Squadra Ventures, Scout Ventures, Decisive Point, Harpoon Ventures, Silent Ventures, Overmatch Ventures, Marlinspike Partners, Snowpoint Ventures, Cubit Capital, Ensemble VC). Often leads before Tier-1 institutional funds engage. Primary fit signals: strong team signal in a Tier-1/Tier-2 sub-sector, early government demand (Phase I / exercise demo), CFIUS-clean. Best fit: Profile B companies with strong team and emerging government traction.</archetype>
+          <archetype name="Defense-Prime Corporate Venture">CVC arms of major defense primes (Lockheed Martin Ventures, expanding toward approximately $1B; RTX Ventures; Boeing/AEI HorizonX; Northrop Grumman; Booz Allen; L3Harris strategic capital). Provides GTM access, pilot partnerships, and a potential acquirer signal. Independence caveats apply (exclusivity/control terms - a C5 deduction plus a Block-5 flag). Primary fit signals: alignment with the prime's technology roadmap, supply-chain fit, absence of CFIUS/FOCI complications. Best fit: companies whose product fits a prime's roadmap and whose cap table can absorb a strategic without independence concerns.</archetype>
+          <archetype name="Operator-Angel / Defense Syndicate">Individual operator-angels and their co-investment syndicates (Elad Gil, Palmer Luckey, Delian Asparouhov, Trae Stephens, and comparable operators). Typically lead at pre-seed or early seed at $100K-$2M. Often a precursor to institutional defense rounds. Primary fit signals: founder-pedigree alignment with the angel's domain, a compelling technology thesis. Best fit: early Profile B companies with strong founder credibility ahead of institutional traction.</archetype>
+          <archetype name="Generalist Top-Tier with Defense Thesis">A top-tier generalist fund acting on an explicit defense or national-security thesis (not merely defense-sector-aware). Writes $3M-$15M checks. Primary fit signals: strong founding team with crossover appeal (commercial plus defense), dual-use positioning, Tier-1/Tier-2 sub-sector, institutional-quality cap table. Best fit: Profile A companies with crossover team appeal and dual-use optionality.</archetype>
+          <archetype name="Non-Dilutive Government Program">SBIR/STTR (Phase I/II/III), STRATFI/TACFI, DIU/AFWERX/NavalX OT, DARPA grants, OSC/APFIT/NSIC. Not equity; non-dilutive validation capital that reduces burn and provides a demand signal. Often the first "investor" for pre-seed and seed defense companies. Primary fit signals: IP assignable to the company, eligible small-business status, a technically credible team, ITAR/EAR registration where required. Best fit: pre-seed/seed companies establishing competitively-awarded government demand.</archetype>
+        </defense_investor_archetypes>
+
+        <field name="Most Likely Investor Archetype (Primary)">[Select one from the Defense Investor Archetype Taxonomy above. State the archetype name and one-sentence justification citing the criteria that anchor the fit (typically C1 team, C2 sub-sector tier, C3 traction, C5 lead quality).]</field>
+        <field name="Most Likely Investor Archetype (Secondary, optional)">[Optional. Select one when two distinct fundraising paths are visible (e.g., Defense Seed Specialist primary plus Non-Dilutive Government Program secondary for an early-seed company building government demand). Leave blank if only one path is visible.]</field>
+        <field name="Expected Process Timeline">[1 to 2 sentences describing the expected fundraising timeline from active outreach to close, citing DDST stage, sub-sector tier, and any flags (stealth, stale-tier, CFIUS sub-threshold) that compress or extend the timeline.]</field>
+        <field name="Closing Risks">[1 to 3 sentences identifying the key risks to closing. Cross-reference Top 3 Fundability Risks and note any cross-criterion correlations per Section 1.7. PRE-OPERATIONAL viability status and any single-program-dependency cap must be cited here when applicable.]</field>
+      </fundraising_outlook>
+
+      <valuation_realism_note status="NOT SCORED - qualitative only">
+        <instruction>Records any material gap between the company's implied raise valuation and the strategic-acquirer multiple universe (e.g., a venture multiple far above approximately 2 to 2.5x revenue or approximately 20x EBITDA - the June 2026 Stephens warning of venture-stage defense valuations at "50, 100, 200x" against a legacy industry at 2 to 2.5x revenue). This note is QUALITATIVE ONLY and NEVER modifies the C7 score or any other score (additive-independence constraint). The "material" threshold is left to evaluator judgment in v1.0 [TENTATIVE - define a concrete trigger multiple once cohort raise-valuation data exists].</instruction>
+        <field name="Valuation Realism Note">[NOT SCORED. 1 to 3 sentences recording any material gap between the implied raise valuation and the strategic-acquirer multiple universe, with the comparison basis (named comp or multiple). State explicitly that this is descriptive only and does not affect any score. If no material gap, state "No material valuation-vs-multiple gap identified."]</field>
+      </valuation_realism_note>
+
+      <cfius_forward_looking_flag status="NOT SCORED - documents maturation risk">
+        <instruction>Fires when foreign capital is currently tolerable but will become disqualifying once classified or greater-than-$5M unclassified work is pursued (the 2026 DFARS section 847 expansion from approximately 2,000 to approximately 41,000 reviewed companies). Documents the maturation risk; does NOT affect the C5 score.</instruction>
+        <field name="CFIUS Forward-Looking Flag">[NOT SCORED. Populate when currently-tolerable foreign capital will become disqualifying at a future milestone (classified work or greater-than-$5M unclassified contracts). State the specific foreign-capital source, the triggering future milestone, and the maturation risk. If not applicable, leave blank or state "No forward-looking CFIUS maturation risk identified."]</field>
+      </cfius_forward_looking_flag>
+
+      <dual_use_focus_risk_note status="NOT SCORED - fires only when dual-use claimed and NEITHER market shows traction">
+        <instruction>Fires ONLY when the company claims dual-use positioning (two simultaneous go-to-market motions) AND neither the defense market nor the commercial market shows real traction (the Stephens "pick one market first" caution). Distinguish "dual-use" (two simultaneous GTMs) from "defense-focused with commercial applications" (single GTM, latent optionality) - only the former can trigger this note. Dual-use positioning carries NO modifier and NO band adjustment anywhere; commercial revenue is scored on its merits in C3, commercial financial independence in C6, and a widened acquirer universe in C7-Exit.</instruction>
+        <field name="Dual-Use Focus-Risk Note">[NOT SCORED. Populate ONLY when dual-use (two simultaneous GTMs) is claimed AND neither market shows traction: 1 to 2 sentences noting the focus risk and that neither market is yet validated. If the company is defense-focused with latent commercial optionality (single GTM), or if either market shows traction, do NOT fire this note - state "Dual-Use Focus-Risk Note not triggered" with the one-line basis.]</field>
+      </dual_use_focus_risk_note>
+    </block>
+
+    <block id="6" name="Evaluation Footer">
+      <instruction>Required for every evaluation including disqualified evaluations. Provides closure metadata and auditability anchors.</instruction>
+      <field name="Evaluation Conclusion">[1 to 3 sentences summarizing the overall conclusion: tier assignment (or Out of Scope basis), operational viability status, primary investor archetype, and the recommended engagement decision.]</field>
+      <field name="Rubric Version Confirmation">[Defense ICP v2.0, 2026-07-06]</field>
+      <field name="Tier-Table Version Stamp">[v2026-Q2 by default. If the staleness mechanism triggered, stamp [SECTOR TIER TABLE STALE - v2026-Q2] and confirm the Sector Market-Event Modifier was capped at plus/minus 1.]</field>
+      <field name="Format Compliance Check">[PASS / FAIL with explanation. PASS confirms the standard inherited checks AND the defense items: (a) the four-part Sector field is present in Block 0, the track tag states its fundability-physics assignment basis at the tag sites, and a form-factor note is present where the embodiment diverges from the tag; (b) the Stealth-Mode flag is populated in Block 1 (PRESENT/ABSENT) where the company is in stealth; (c) all five disqualifier categories (A-E) are screened in Block 2; (d) the Sector Market-Event Modifier names and dates its event if non-zero; (e) classified-SCARCE corroborating artifacts are cited wherever a midpoint default was applied to a classified/ITAR/clearance context; (f) the OVC was checked against C1 (Team) and C3 (Traction); (g) the routing rationale addresses all three inputs (RAISE SIZE with its confidence state, DDST STAGE, INVESTOR COMPOSITION), records the routing confidence and the Block-5 re-route risk where routing proceeded on secondary inputs, and the Scope Flag value is drawn from the Section 2.2 enumerated set; (h) C3 documents the SBIR-Progression position, C4 the Procurement Pathway Literacy position and (software-primary) the operative-gate determination with its delivery-model basis, and C5 the CFIUS concern level and the named lead and tier; (i) weight arithmetic reconciles per the Block 4 consistency check (A and B each sum to 100); (j) midpoint-default justifications meet the Section 1.5 standard, the Block-4 Data Confidence rating states species-distinct counts (SCARCE vs ABSENT) with the ABSENT-dominated annotation where required, and any qualitative-override annotation appears alongside (never replacing) the ladder-governed label; (k) the Block-5 Valuation Realism Note, CFIUS Forward-Looking Flag, and Dual-Use Focus-Risk Note are addressed (populated or explicitly marked not-triggered); (l) every Block-2 gate marked CONTINGENT - ATTESTATION REQUIRED documents the unverified posture, cites the Section 1.5 classification applied to the affected criterion scoring, records the Block-5 open-item flag, and names the required pre-engagement attestation; (m) the C1 Justification records the Section 1.5 classification of any unverified items considered under the NCSP Classification Rule; (n) any default-tier invocation states the tier-table row(s) checked before the default was applied, and any Tier-1 sector credit cites the government-facing engagement artifact; (o) where a Section 1.5 classification was applied at C6, the Justification states the ISP class assigned and its deployment-evidence basis; (p) the Operational Viability Status label maps to a defined row of the sixteen-geometry partition and cites both anchor band assignments (C1 and C3).]</field>
+      <field name="Subsequent Audit Date">[YYYY-MM-DD - optional, populated if a post-engagement audit is scheduled]</field>
+    </block>
+
+  </section>
+
+<!-- Sections 6-7 (Revision Log, Future Revisions) moved to:
+     defense-rubric-revision-history.xml -->
+
+</rubric>

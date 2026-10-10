@@ -64,36 +64,8 @@ describe('buildSystemParts', () => {
   });
 });
 
-describe('dossier assembly', () => {
-  // Reproduces the join logic from dossier/index.ts:80 and :94
-
-  it('assembles R4b from C1-C7 criterion outputs', () => {
-    const c1 = 'C1 output';
-    const c2 = 'C2 output';
-    const c3 = 'C3 output';
-    const c4 = 'C4 output';
-    const c5 = 'C5 output';
-    const c6 = 'C6 output';
-    const c7 = 'C7 output';
-    const r4b = [c1, c2, c3, c4, c5, c6, c7].join('\n\n');
-
-    expect(r4b).toBe('C1 output\n\nC2 output\n\nC3 output\n\nC4 output\n\nC5 output\n\nC6 output\n\nC7 output');
-  });
-
-  it('assembles final dossier from all blocks', () => {
-    const blocks = ['r0', 'r1', 'r2', 'r3', 'r4a', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'r5', 'r6r7r8'];
-    const dossier = blocks.join('\n\n');
-    // 14 blocks = 13 separators
-    expect(dossier.split('\n\n')).toHaveLength(14);
-    expect(dossier).toContain('r0');
-    expect(dossier).toContain('r6r7r8');
-  });
-
-  it('assembles allPriorBlocks for R6-R8', () => {
-    const allPriorBlocks = ['r0', 'r1', 'r2', 'r3', 'r4a', 'r4b', 'r5'].join('\n\n');
-    expect(allPriorBlocks.split('\n\n')).toHaveLength(7);
-  });
-});
+// Dossier assembly order and prior-context wiring are tested against the real
+// orchestrator in dependency-waiting.test.ts.
 
 describe('score assembly user content', () => {
   // Reproduces the inline formatting from score/sub-steps.ts:125-135

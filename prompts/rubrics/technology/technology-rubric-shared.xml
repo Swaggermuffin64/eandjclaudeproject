@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   TECHNOLOGY COMPANY FUNDRAISING ICP EVALUATION INSTRUMENT
-  Version 1.0 — Shared Sections (Evaluation Context, Routing Logic, Output Format)
+  Version 2.0 — Shared Sections (Evaluation Context, Routing Logic, Output Format)
   These sections apply to both Profile A and Profile B.
   Profile-specific criteria are in separate files:
-    - Technology Rubric - Profile A.xml
-    - Technology Rubric - Profile B.xml
+    - technology-rubric-profile-a.xml
+    - technology-rubric-profile-b.xml
 -->
 
 <rubric
-  version="1.0"
-  revision_date="2026-05-12"
+  version="2.0"
+  revision_date="2026-06-16"
   evaluation_target="Fundraising Velocity and Investor Appetite"
-  scope="Private technology companies raising $500K-$15M (with tolerance band to $16.5M)"
+  scope="Private technology companies raising $500K–$15M (with tolerance band to $16.5M)"
   not_for="Due diligence, portfolio management, technical merit evaluation">
 
+<!-- ============================================================
+     SECTION 1 — EVALUATION CONTEXT
+     ============================================================ -->
+
+<section id="1" name="Evaluation Context">
 
 <block id="1.1" name="Instrument Purpose">
 This is a two-profile Ideal Company Profile (ICP) scoring instrument built for a fundraiser to use as a top-of-funnel qualification and prioritization tool. Its purpose is to evaluate private technology companies (software, AI/ML, developer tools, cybersecurity, defense/dual-use, fintech, health tech, climate tech) that are actively seeking capital in the $500K–$15M range and produce a structured, scored assessment of each company's probability of successfully closing a funding round.
@@ -26,10 +31,11 @@ The rubric is explicitly built to identify companies that can raise money most e
 STANDING INSTRUCTION: The objective is fundraising velocity and investor appetite — not technical promise. Score accordingly.
 </block>
 
-<block id="1.3" name="Client Specifications">
+<block id="1.3" name="Client Specifications" status="Revised — Tech v2.0 R1">
+<revision_note>Tech v2.0 R1: Softened the Team Priority "strong preference for halo-employer alumni" language to expressly acknowledge the non-traditional founder equivalences operationalized in A1/B1 (Change C / R3), preventing an internal contradiction between this design-brief spec and the broadened "or equivalent" criteria. No other Block 1.3 text was altered; the solo-founder protocol reference and the Cap Table spec are unchanged.</revision_note>
 <spec name="Funding Stage Fit">Series A (100%), Seed/Pre-Seed+ (85%), Pre-Seed below $500K with no institutional participation (excluded)</spec>
 <spec name="Fundraising Target Range">$500K–$15M</spec>
-<spec name="Team Priority">Single most important criterion at Profile B (Seed/Pre-Seed+). Strong preference for halo-employer alumni, repeat founders, and technical founders with research-lab or frontier-lab pedigree. Solo founders accepted with profile-specific penalty per A1/B1 solo-founder protocol.</spec>
+<spec name="Team Priority">Single most important criterion at Profile B (Seed/Pre-Seed+). Strong preference for halo-employer alumni, repeat founders, and technical founders with research-lab or frontier-lab pedigree — with non-traditional founder equivalences (deep vertical-domain operator experience, academic/research standing, and authentic open-source leadership) expressly recognized under the A1/B1 "or equivalent" qualifying criteria, so that this preference is not read as halo-employer-only. Solo founders accepted with profile-specific penalty per A1/B1 solo-founder protocol.</spec>
 <spec name="Cap Table">Sporadic or messy cap tables are a hard disqualifier across both profiles. Founder ownership below 10% post-Seed, stacked SAFEs above $3M with no priced round in 24+ months, and IP not assigned to the company are additional hard disqualifiers per Section 2.3.</spec>
 <spec name="Geography">No restrictions; globally applicable.</spec>
 <spec name="Partnerships">Preferred but not a hard requirement.</spec>
@@ -41,6 +47,7 @@ The $500K–$15M range is split into Profile A ($3M–$15M) and Profile B ($500K
 </block>
 
 <block id="1.5" name="Information Scarcity Protocol" status="Revised — Tech v1.0 R1">
+<revision_note>Tech v1.0 R1: Two-track INFORMATION-SCARCE vs. INFORMATION-ABSENT classification transferred from LS v5.1 v5.0 R4 with mechanism preserved exactly. Tech-specific observable-signal lists per criterion (D1a/D1b of the Design Brief) replace life-science signal lists. The "highest-predictive, lowest-observable" problem is more acute in tech than in life science because key predictive metrics (Net Revenue Retention, Burn Multiple, cap table specifics) are structurally non-public; a founder-attestation-by-band protocol is added in this section to handle these criteria. EVIDENCE BASE IS TENTATIVE for the tech-specific signal lists — additional cases are needed to validate that the SCARCE/ABSENT distinctions function correctly across the five business models covered by the rubric.</revision_note>
 
 When information for a criterion is insufficient to produce a confident score, assign the midpoint of the applicable scoring band and flag the score with [INSUFFICIENT DATA]. Do not penalize companies for missing information below the midpoint. This protocol applies to all criteria in both profiles. The Data Confidence indicator in Section 5 aggregates these flags to provide an overall assessment of score reliability.
 
@@ -153,6 +160,7 @@ Companies with target raise below $500K but with at least one institutional part
 </block>
 
 <block id="2.2" name="Scope Boundaries" status="Revised — Tech v1.0 R2; HD-Tech-1a">
+<revision_note>Tech v1.0 R2: Scope boundary structure transfers from LS v5.1 §2.2 with three modifications. The upper ceiling and tolerance band mechanism is preserved with tech-specific values ($15M ceiling, $16.5M Gray Zone, above $16.5M Out of Scope — Benchmark). A pre-seed exclusion floor is added at the lower end ($275K with no institutional participation = Out of Scope — Pre-Seed Exclusion). A Hardware/Deep-Tech/Defense/Space Profile Limitation scope boundary is added analogous to LS v5.1 HD-1a, signaling that hardware-intensive companies are within general scope but evaluated via application notes. An AI-Native Frontier Fund-Mandate-Fit scope boundary is added to address companies whose raise sizes ($50M–$2B+) structurally exceed the primary audience's check capacity even when otherwise high-scoring.</revision_note>
 
 The instrument is calibrated for private capital markets. Publicly traded companies and pre-seed companies (total raised under $275K with no institutional participation) are OUT OF SCOPE. An OUT OF SCOPE flag is a scope/instrument mismatch, not a disqualifying deficiency. Out-of-scope companies may be evaluated as benchmark exercises if clearly flagged.
 
@@ -184,7 +192,9 @@ Companies classified AI-Native Frontier per A2/B2 — research-lab pedigree (ex-
 </scope_flag_definitions>
 </block>
 
-<block id="2.3" name="Automatic Disqualifiers" status="Revised — Tech v1.0 R3">
+<block id="2.3" name="Automatic Disqualifiers" status="Revised — Tech v1.0 R3; Tech v2.0 R2">
+<revision_note>Tech v1.0 R3: LS v5.1 used 4 disqualifiers (a–d) plus (b-alt) for non-therapeutic data security. The tech rubric expands the list to 10 disqualifiers (a–j) organized in four categories, reflecting tech-specific terminal conditions (founder ownership below 10% post-Seed, IP not assigned, open-source signal manipulation, etc.) that have no LS v5.1 parallel. The 23 research-proposed items were rationalized via an observability filter; items requiring legal diligence (specific liquidation preferences, side-letter provisions, MFN clauses, specific vesting schedule terms) are moved to scored deductions or Block 5 documentation. The Tier 4 (Not Ready) / Out of Scope distinction transfers from LS v5.1 v5.0 R5.</revision_note>
+<revision_note>Tech v2.0 R2: Added two terminal disqualifiers — (k) Sanctioned Jurisdiction / OFAC-SDN Exposure and (l) Fabricated or Undisclosed Related-Party Customer — in a new fifth category, Regulatory and Customer Integrity, closing the two terminal-stakes coverage gaps identified in Steps 3-4 (sanctions exposure; wholesale customer fabrication). Per the Step 5 Section 5 scoping decision, (l) is written at the wholesale-fabrication bar only — mirroring (g)'s "fabricated wholesale, not when claims are merely inflated" discipline — and explicitly routes inflated (real-but-overstated) customer relationships to the A1/B1 NCSP scored deduction, not to termination. (k) triggers on binary jurisdiction/SDN conditions only. The high bars on (g) and (i) are unchanged; no existing disqualifier (a)-(j) text was altered.</revision_note>
 
 The following conditions trigger automatic disqualification regardless of score. A disqualified company is classified as Out of Scope and does not receive a fundability tier assignment. If any disqualifier is triggered, the evaluation terminates after the Disqualifier Screen (Block 2 of the output format). No criterion scores, total score, or fundability tier are assigned. A score below 40 with no disqualifier triggered is classified as Tier 4 — Not Ready, not as Out of Scope. Out of Scope status is reserved for instrument scope mismatches and disqualifier triggers.
 
@@ -258,6 +268,22 @@ Non-applicability: Mark NOT APPLICABLE for tech companies not handling protected
 </disqualifier>
 </disqualifier_category>
 
+<disqualifier_category name="Regulatory and Customer Integrity">
+<disqualifier id="k" name="Sanctioned Jurisdiction / OFAC-SDN Exposure">
+Triggering condition: The company's primary operating jurisdiction, a named entity in its ownership or control structure, or a named revenue customer cited as a traction signal appears on the OFAC Specially Designated Nationals (SDN) list or an equivalent US sanctions list (e.g., BIS Entity List, SDN sectoral lists); OR the company's stated business model requires processing transactions in or with sanctioned jurisdictions without documented compliance controls (licensing, an OFAC screening program, or equivalent). This is a binary, observable condition determined by a sanctions-list lookup against the stated jurisdiction, owner, or customer; it does not require a judgment about the degree of exposure. The instrument's "globally applicable" scope (Section 1.3) makes this screen necessary to keep that scope internally consistent.
+Observability: OFAC SDN List search (sanctionssearch.ofac.treas.gov); BIS Entity List; the stated operating jurisdiction; named ownership and customer entities. A direct list match, or a stated model that requires sanctioned-jurisdiction processing without controls, equals a trigger.
+Non-applicability: Mark NOT APPLICABLE for companies with no cross-border payment exposure, no international revenue, and no named ownership or customer entity in a sanctioned jurisdiction. Marking NOT APPLICABLE does not trigger disqualification.
+Scored-deduction routing: None. This disqualifier is binary; there is no sub-threshold scored-deduction case. A jurisdiction, owner, or customer is either on a sanctions list (or the model requires sanctioned-jurisdiction processing without controls) or it is not.
+</disqualifier>
+
+<disqualifier id="l" name="Fabricated or Undisclosed Related-Party Customer">
+Triggering condition: A customer cited as a primary traction signal is (a) demonstrably non-existent — no corroborating record in any independent source (no website, no registration, no third-party reference, no public footprint) after a documented search; or (b) a related party (an investor in the company, a co-founder, a family member, or an entity controlled by the founders or their affiliates) presented as an arm's-length commercial customer without disclosure of the relationship. This disqualifier applies only at the wholesale-fabrication bar — the cited customer either does not exist as claimed, or is a related party misrepresented as independent. It is the customer-claim analog of disqualifier (g)'s wholesale-credential-fabrication standard.
+Observability: Independent corroboration search for the named customer (corporate registry, website, press coverage, third-party databases); related-party cross-check against the cap table, founder networks, and corporate filings; founder disclosure of customer relationships when directly asked.
+Non-applicability: Mark NOT APPLICABLE for companies that cite no named customer as a primary traction signal (e.g., pre-revenue companies scored on team and demo). Marking NOT APPLICABLE does not trigger disqualification.
+Scored-deduction routing (hard boundary from Step 5): Inflated relationships — a real, independent customer whose depth, revenue, or commitment is overstated — are NOT routed here. They are handled as a scored deduction within A1/B1 via the Negative Credibility Signal Protocol (false competitive/traction claim) and within A3/B3 via the revenue-recognition standard. DQ-l terminates only on wholesale fabrication (a non-existent customer) or undisclosed related-party misrepresentation. The inflation-versus-fabrication line stays in the scored layer where a wrong call costs points, not a termination; only the unambiguous fabrication case reaches this terminal gate.
+</disqualifier>
+</disqualifier_category>
+
 <scored_deductions>
 The following conditions are NOT automatic disqualifiers but produce scored deductions within their respective criteria. They are listed here for evaluator routing reference; documentation occurs at the criterion level.
 
@@ -275,25 +301,23 @@ Pure software startup with material founder time spent on patent prosecution at 
 </section>
 
 <!-- ============================================================
-     SECTION 3 — PROFILE A EVALUATION RUBRIC
-     Target: Private technology companies raising $3M–$15M
-     Expected development stage: Commercial Early Revenue through Commercial Series A+ Revenue
-     WEIGHT CHECK: A1(24) + A2(16) + A3(30) + A4(10) + A5(8) + A6(6) + A7(6) = 100
-     NOTE: A2 base max = 16pts; with combined AI + M&A modifier capped at ±2 the criterion final range is 14–18 (scoring envelope 98–102)
+     SECTION 5 — STANDARDIZED SCORING OUTPUT FORMAT
+     Applies to both Profile A and Profile B evaluations.
+     All blocks are mandatory. Complete every field.
 
-     BAND RANGE DERIVATION LOGIC (Profile A):
-     Bands follow the LS v5.1 proportional structure: top ~20–25%, upper-mid ~20–25%, lower-mid ~30%, lowest ~20–25%.
-     A1 (max 24): 19–24 top; 14–18 upper-mid; 7–13 lower-mid; 0–6 lowest.
-     A2 (max 16): 13–16 PEAK; 9–12 ACTIVE; 5–8 COOL; 0–4 COLD (per Design Brief C3a tier table).
-     A3 (max 30): 23–30 top; 16–22 upper-mid; 8–15 lower-mid; 0–7 lowest.
-     A4 (max 10): 8–10 top; 6–7 upper-mid; 3–5 lower-mid; 0–2 lowest.
-     A5 (max 8): 7–8 top; 5–6 upper-mid; 3–4 lower-mid; 0–2 lowest.
-     A6 (max 6): 5–6 top; 3–4 upper-mid; 1–2 lower-mid; 0 lowest.
-     A7 (max 6): 5–6 top; 3–4 upper-mid; 1–2 lower-mid; 0 lowest.
+     DESIGN CONSTRAINTS:
+       (a) Identical in structure for every evaluation regardless of
+           profile, company, or evaluator.
+       (b) Plain text with no markdown, no special characters, and
+           no rendering dependencies.
+       (c) Self-auditing: every score can be verified from the output
+           alone.
+       (d) Structurally enforcing of internal consistency between
+           criterion scores, total score, and fundability tier.
      ============================================================ -->
 
-<section id="3" name="Profile A Evaluation Rubric">
-
+<section id="5" name="Standardized Scoring Output Format" status="Revised — Tech v1.0 R11">
+<revision_note>Tech v1.0 R11: Output format inherits the seven-block structure from LS v5.1 v5.1 with field-level adaptations for tech context. Block 0 Sector field restructured to four-part format (Primary Sector / Sub-Sector / AI Tier Classification / Business Model). Block 1 Development Stage enumerated list replaces FDA stage values with the tech taxonomy from Section 2.1. Block 1 Routing Rationale required to cite three inputs (RAISE SIZE, DEVELOPMENT STAGE, INVESTOR COMPOSITION) per LS v5.1 R4-05. Block 1 includes routing_input_definitions sub-element with the four-tier investor composition classification. Block 1 Market Context Note format strings added for Fund-Mandate-Fit flag, Wrapper-Risk flag, and Hardware Profile flag. Block 2 Disqualifier Screen restructured with 10 disqualifiers grouped in four categories. Block 3 modifier_sub_block expanded to include AI Tier Classification, AI Modifier value, AI Modifier Justification, M&amp;A Modifier, Combined Modifier (with cap notation), Combined Modifier Justification. Block 4 operational_viability_summary mapping rules adapted for tech anchor criteria. Block 5 Most Likely Investor Archetype field uses defined seven-archetype taxonomy with primary and optional secondary selection.</revision_note>
 
 <block id="0" name="Evaluation Header">
 <instruction>Required for every evaluation. Provides traceability metadata.</instruction>
@@ -307,7 +331,8 @@ Pure software startup with material founder time spent on patent prosecution at 
 <field name="Evaluator">[Model identifier or human evaluator name]</field>
 </block>
 
-<block id="1" name="Routing Determination">
+<block id="1" name="Routing Determination" status="Revised — Tech v2.0 R7">
+<revision_note>Tech v2.0 R7: Added a fourth Market Context Note flag string — the Archetype-Misfit flag — that discloses when a company falls outside v2.0's reliable scoring range, defined by four observable triggers (AI-adjacent/frontier-by-research without named-lab pedigree; token or hybrid cap structure; claimed-revenue-only with no verification pathway; novel category with no comps and no strategic partnerships). The trigger list was defined last, after the A1/B1 "or equivalent" (R3) and A3/B3 government-procurement (R5) coverage additions, and it explicitly excludes non-traditional founders and government customers because v2.0 now scores them natively, so the flag fires only on still-uncovered archetypes. The flag is additive: it does not change tier assignment or the Data Confidence machinery, and the existing Fund-Mandate-Fit, Wrapper-Risk, and Hardware flag strings are preserved.</revision_note>
 <instruction>Establishes profile assignment and scope status before any scoring begins.</instruction>
 <field name="Profile Assigned">[Profile A / Profile B / Out of Scope — Benchmark / Out of Scope — Pre-Seed Exclusion]</field>
 <field name="Target Raise">[$X.XM]</field>
@@ -345,10 +370,13 @@ For AI-Augmented Wrapper Wrapper-Risk flag: "Market Context Note: AI-Augmented W
 
 For Hardware Profile flag: "Market Context Note: Hardware/Deep-Tech application notes applied to A3/B3 (traction certification milestones), A4/B4 (Burn Multiple relaxation), A6/B6 (patent weighting), A2/B2 (Defense/Robotics sector classification). See Future Revisions Log entry FV-tech-1 for deferred Profile C development."
 
+For Archetype-Misfit flag: "Market Context Note: ARCHETYPE-MISFIT — [trigger condition(s)]. Tier assignment is directionally indicative but scoring reliability is reduced for this archetype. Independent verification recommended before engagement decision." Invoke this flag when the company exhibits one or more characteristics that v2.0 does not score natively (i.e., where native scoring has not been established through a Revised criterion in this version): (1) AI-adjacent-infrastructure positioning, or frontier-by-research classification without named-lab pedigree (the v2.0 AI-Native taxonomy has no native slot for these); (2) a token or token/equity-hybrid capital structure (v2.0 A5/B5 language is equity-only); (3) primary revenue reported exclusively as company-claimed metrics with no contract documentation and no independent verification pathway; (4) a novel category with no completed acquisitions in the specific sub-vertical in the trailing 36 months AND no comparable strategic partnerships. Do NOT invoke for: non-traditional founder pedigree (now scored natively per the A1/B1 "or equivalent" equivalences); government/sovereign customers (now scored natively per the A3/B3 government-procurement equivalence note); companies with recognized ARR or documented bookings (addressed by the A3/B3 revenue-recognition standard); or companies clearly classifiable in an existing AI tier (Frontier/Applied/Non-AI/Wrapper). This flag does not change tier assignment and appears alongside any other applicable flags. It measures a different axis from the Data Confidence rating (archetype fit versus data completeness); when invoked, the Data Confidence rating may remain HIGH/MODERATE/LOW per its standard criteria.
+
 Leave blank if no notes are required.]</field>
 </block>
 
-<block id="2" name="Disqualifier Screen">
+<block id="2" name="Disqualifier Screen" status="Revised — Tech v2.0 R8">
+<revision_note>Tech v2.0 R8: Mirrored the two new Section 2.3 disqualifiers (k) and (l) into the output Disqualifier Screen by adding a fifth category, Regulatory and Customer Integrity, with the corresponding (k) and (l) fields in CLEAR / NOT APPLICABLE / TRIGGERED format, and extended the Disqualifier Outcome NOT-APPLICABLE track to include (k) and (l). The (l) field carries the explicit routing note that inflated (real-but-overstated) customer relationships go to the NCSP scored deduction, not to termination, keeping Section 2.3 and Block 2 identical. No other Block 2 field was altered.</revision_note>
 <instruction>The disqualifier screen is a gate. If any disqualifier is TRIGGERED, the evaluation terminates here. The company is classified as Out of Scope. No criterion scores, total score, fundability tier, or fundraising readiness are assigned. Blocks 3–5 are populated with "N/A — Disqualified" and the basis for disqualification. Block 6 (Footer) is still completed.
 
 Disqualifiers are organized in four categories. Mark each as CLEAR, TRIGGERED with explanation, or NOT APPLICABLE where the non-applicability rule applies. Marking NOT APPLICABLE does not trigger disqualification.</instruction>
@@ -375,7 +403,12 @@ Disqualifiers are organized in four categories. Mark each as CLEAR, TRIGGERED wi
 <field name="(j) Data Security Enforcement Action">[CLEAR / NOT APPLICABLE / TRIGGERED — explanation; mark NOT APPLICABLE for tech companies not handling protected health information, genomic data, regulated financial data, or other regulated data categories]</field>
 </category>
 
-<field name="Disqualifier Outcome">[ALL CLEAR / NOT APPLICABLE TRACK FOR (h), (i), and/or (j) WITH NO TRIGGER — proceed with evaluation / TRIGGERED — terminate evaluation; classify Out of Scope; populate Blocks 3 through 5 with "N/A — Disqualified" and basis for disqualification; complete Block 6]</field>
+<category name="Regulatory and Customer Integrity">
+<field name="(k) Sanctioned Jurisdiction / OFAC-SDN Exposure">[CLEAR / NOT APPLICABLE / TRIGGERED — explanation; OFAC SDN or equivalent sanctions-list match on operating jurisdiction, a named owner, or a named customer, or a stated model requiring sanctioned-jurisdiction processing without compliance controls; mark NOT APPLICABLE for companies with no cross-border payment exposure, no international revenue, and no named entity in a sanctioned jurisdiction]</field>
+<field name="(l) Fabricated or Undisclosed Related-Party Customer">[CLEAR / NOT APPLICABLE / TRIGGERED — explanation; triggers only at the wholesale-fabrication bar (a demonstrably non-existent customer, or an undisclosed related party presented as arm's-length). Route inflated (real-but-overstated) relationships to the A1/B1 NCSP scored deduction, NOT to termination; mark NOT APPLICABLE for companies citing no named customer as a primary traction signal]</field>
+</category>
+
+<field name="Disqualifier Outcome">[ALL CLEAR / NOT APPLICABLE TRACK FOR (h), (i), (j), (k), and/or (l) WITH NO TRIGGER — proceed with evaluation / TRIGGERED — terminate evaluation; classify Out of Scope; populate Blocks 3 through 5 with "N/A — Disqualified" and basis for disqualification; complete Block 6]</field>
 </block>
 
 <block id="3" name="Criterion Scoring">
@@ -518,7 +551,7 @@ Cite primary sources where possible (e.g., "Crunchbase round history confirms"; 
 
 </section>
 
-  <!-- Sections 6-7 (Revision Log, Future Revisions) moved to:
-       Technology Rubric - Revision History.xml -->
+<!-- Sections 6-7 (Revision Log, Future Revisions) moved to:
+     technology-rubric-revision-history.xml -->
 
 </rubric>

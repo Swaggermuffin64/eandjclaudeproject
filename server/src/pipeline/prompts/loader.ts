@@ -4,26 +4,69 @@ import type { RubricType } from '@shared/types/pipeline.js';
 
 const PROMPTS_DIR = resolve(import.meta.dirname, '../../../../prompts');
 
+/** The three chunk files each rubric is split into, relative to PROMPTS_DIR. */
+interface RubricChunkPaths {
+  shared: string;
+  profileA: string;
+  profileB: string;
+}
+
+/** The loaded text of one rubric's three chunks. */
+interface RubricChunks {
+  shared: string;
+  profileA: string;
+  profileB: string;
+}
+
+/**
+ * Where each rubric's chunks live. Every rubric is split the same way:
+ * shared (Sections 1, 2, 5), Profile A criteria (Section 3), Profile B criteria (Section 4).
+ * Adding a rubric means adding its RubricType and one entry here.
+ */
+const RUBRIC_CHUNK_PATHS: Record<RubricType, RubricChunkPaths> = {
+  'life-sciences': {
+    shared: 'rubrics/life_sciences/life-sciences-rubric-v5.1-shared.xml',
+    profileA: 'rubrics/life_sciences/life-sciences-rubric-v5.1-profile-a.xml',
+    profileB: 'rubrics/life_sciences/life-sciences-rubric-v5.1-profile-b.xml',
+  },
+  technology: {
+    shared: 'rubrics/technology/technology-rubric-shared.xml',
+    profileA: 'rubrics/technology/technology-rubric-profile-a.xml',
+    profileB: 'rubrics/technology/technology-rubric-profile-b.xml',
+  },
+  defense: {
+    shared: 'rubrics/defense/defense-rubric-shared.xml',
+    profileA: 'rubrics/defense/defense-rubric-profile-a.xml',
+    profileB: 'rubrics/defense/defense-rubric-profile-b.xml',
+  },
+};
+
 let cachedPrompts: {
   researchDossierTemplate: string;
-  lifeSciencesShared: string;
-  lifeSciencesProfileA: string;
-  lifeSciencesProfileB: string;
-  technologyShared: string;
-  technologyProfileA: string;
-  technologyProfileB: string;
+  rubrics: Record<RubricType, RubricChunks>;
 } | null = null;
+
+function readPromptFile(relativePath: string): string {
+  return readFileSync(resolve(PROMPTS_DIR, relativePath), 'utf-8');
+}
+
+function loadRubricChunks(paths: RubricChunkPaths): RubricChunks {
+  return {
+    shared: readPromptFile(paths.shared),
+    profileA: readPromptFile(paths.profileA),
+    profileB: readPromptFile(paths.profileB),
+  };
+}
 
 function loadAll() {
   if (cachedPrompts) return cachedPrompts;
   cachedPrompts = {
-    researchDossierTemplate: readFileSync(resolve(PROMPTS_DIR, 'research_dossier/research-dossier-template.xml'), 'utf-8'),
-    lifeSciencesShared: readFileSync(resolve(PROMPTS_DIR, 'rubrics/life_sciences/life-sciences-rubric-v5.1-shared.xml'), 'utf-8'),
-    lifeSciencesProfileA: readFileSync(resolve(PROMPTS_DIR, 'rubrics/life_sciences/life-sciences-rubric-v5.1-profile-a.xml'), 'utf-8'),
-    lifeSciencesProfileB: readFileSync(resolve(PROMPTS_DIR, 'rubrics/life_sciences/life-sciences-rubric-v5.1-profile-b.xml'), 'utf-8'),
-    technologyShared: readFileSync(resolve(PROMPTS_DIR, 'rubrics/technology/technology-rubric-shared.xml'), 'utf-8'),
-    technologyProfileA: readFileSync(resolve(PROMPTS_DIR, 'rubrics/technology/technology-rubric-profile-a.xml'), 'utf-8'),
-    technologyProfileB: readFileSync(resolve(PROMPTS_DIR, 'rubrics/technology/technology-rubric-profile-b.xml'), 'utf-8'),
+    researchDossierTemplate: readPromptFile('research_dossier/research-dossier-template.xml'),
+    rubrics: {
+      'life-sciences': loadRubricChunks(RUBRIC_CHUNK_PATHS['life-sciences']),
+      technology: loadRubricChunks(RUBRIC_CHUNK_PATHS.technology),
+      defense: loadRubricChunks(RUBRIC_CHUNK_PATHS.defense),
+    },
   };
   return cachedPrompts;
 }
@@ -37,11 +80,8 @@ export function getResearchDossierTemplate(): string {
  * Use getRubricShared/getRubricProfile for profile-specific access.
  */
 export function getRubricPrompt(rubric: RubricType): string {
-  const prompts = loadAll();
-  if (rubric === 'life-sciences') {
-    return prompts.lifeSciencesShared + '\n' + prompts.lifeSciencesProfileA + '\n' + prompts.lifeSciencesProfileB;
-  }
-  return prompts.technologyShared + '\n' + prompts.technologyProfileA + '\n' + prompts.technologyProfileB;
+  const chunks = loadAll().rubrics[rubric];
+  return chunks.shared + '\n' + chunks.profileA + '\n' + chunks.profileB;
 }
 
 /**
@@ -49,19 +89,15 @@ export function getRubricPrompt(rubric: RubricType): string {
  * This content is the same for both profiles and can be cached.
  */
 export function getRubricShared(rubric: RubricType): string {
-  const prompts = loadAll();
-  return rubric === 'life-sciences' ? prompts.lifeSciencesShared : prompts.technologyShared;
+  return loadAll().rubrics[rubric].shared;
 }
 
 /**
  * Returns profile-specific criterion definitions only.
  */
 export function getRubricProfile(rubric: RubricType, profile: 'A' | 'B'): string {
-  const prompts = loadAll();
-  if (rubric === 'life-sciences') {
-    return profile === 'A' ? prompts.lifeSciencesProfileA : prompts.lifeSciencesProfileB;
-  }
-  return profile === 'A' ? prompts.technologyProfileA : prompts.technologyProfileB;
+  const chunks = loadAll().rubrics[rubric];
+  return profile === 'A' ? chunks.profileA : chunks.profileB;
 }
 
 // ---------------------------------------------------------------------------

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  DEFENSE COMPANY FUNDRAISING ICP EVALUATION INSTRUMENT
+  Version 2.0 — Revision History and Future Revisions
+  Extracted from the main rubric file for reference.
+  This file is NOT sent to the scoring engine.
+
+  Original file header (includes the version history summary):
+
+  
+    DEFENSE COMPANY FUNDRAISING ICP EVALUATION INSTRUMENT
+    Version 2.0 — XML Format Optimized for Claude Opus
+    (v2.0 revision date: 2026-07-06 — tracked delta from v1.0 per the Step 6
+    Change Prioritization; Must+Should candidate set)
+    Constructed per Defense ICP Pre-Construction Design Brief (PCDB) v1.0
+    Raise scope: Private defense technology companies raising $500K-$15M
+    (Profile B Seed $500K-$3M; Profile A Series A $3M-$15M; tolerance band to $16.5M)
+  
+    Structural heritage: Life Science Fundraising ICP Evaluation Instrument v5.1
+    + Technology Company Fundraising ICP Evaluation Instrument v1.0.
+    All inherited mechanisms (two-track Information Scarcity Protocol; Midpoint-Default
+    Justification Standard; Negative Credibility Signal Protocol; Operational Viability
+    Condition; seven-block standardized output format; 100-point additive independent-
+    criterion scoring architecture; Tier 4 / Out-of-Scope distinction) are carried forward
+    with mechanism preserved exactly; this instrument supplies only the defense-specific
+    content that populates them.
+  
+    PCDB reference: Defense ICP PCDB v1.0 (Architecture Resolution Phase output).
+    Sector tier table version date: 2025-2026 snapshot (v2026-Q2).
+  
+    CONSTRUCTION NOTE ON CALIBRATION STATUS: Every defense-specific mechanism in v1.0
+    carries tentative-calibration status except mechanisms transferred directly from the
+    predecessors with multi-case validation heritage (Information Scarcity Protocol two-track
+    mechanism form, NCSP mechanism form, midpoint-default justification standard, OVC
+    mechanism form, cross-criterion symmetry instruction, 100-point additive architecture,
+    seven-block output format). [TENTATIVE] thresholds and snapshot-dependent memberships are
+    marked with status="TENTATIVE - calibration needed" on the relevant element and are v1.0
+    starting values to be validated against the first evaluated cohort, not unresolved design
+    questions. The Strategic Coherence Assessment (SCA) used in the Tech ICP A5/B5 is NOT
+    carried forward; the PCDB specified no SCA for any criterion. Its omission is deliberate.
+  
+    Version History:
+      v1.0 - Initial construction. Built from the Defense ICP PCDB v1.0 and the Defense ICP
+             Foundational Research Report (June 2026), structurally inherited from LS ICP v5.1
+             and Technology ICP v1.0.
+      v2.0 - Tracked-delta revision from the Step 6 Change Prioritization (Must+Should set;
+             fifteen changes across gate grammar, routing/scope, C2 tiering, C6 ISP class,
+             data confidence, the C4 ATO gate, track tagging, the OVC modifier, the viability
+             partition, and the Exit dependency cap). Four construction conventions adopted:
+             determination-state completeness; declared-delta by-reference discipline;
+             operative clauses carry their own scope; enforcement ships with the rule.
+             See the Section 6 revision log for the full record.
+-->
+
+  <!-- ============================================================
+       SECTION 6 - REVISION LOG
+       ============================================================ -->
+
+  <section id="6" name="Revision Log">
+    <note>
+      v1.0 INITIAL CONSTRUCTION (2026-06-11): The Defense Company Fundraising ICP Evaluation Instrument v1.0 was constructed from the Defense ICP Pre-Construction Design Brief (PCDB) v1.0 and structurally inherited from the Technology Company Fundraising ICP Evaluation Instrument v1.0 and the Life Science Fundraising ICP Evaluation Instrument v5.1.
+
+      MECHANISMS TRANSFERRED WITH FULL VALIDATION HERITAGE (from LS v5.1 and Tech v1.0, carrying their validation confidence): the two-track Information Scarcity Protocol (INFORMATION-SCARCE vs INFORMATION-ABSENT classification); the midpoint-default justification standard (a bare protocol citation is never sufficient); the Negative Credibility Signal Protocol mechanism form (deduction magnitudes and band-drop rule); the cross-criterion symmetry instruction (cross-criterion risk documented qualitatively in Block 5 only); the seven-block standardized output format (Blocks 0-6); the 100-point additive scoring architecture with independent criteria; the Tier 4 (Not Ready) vs Out of Scope distinction; the four-band-per-criterion structure; and the Operational Viability Condition mechanism form.
+
+      DELIBERATE OMISSION - STRATEGIC COHERENCE ASSESSMENT (SCA): The Tech ICP v1.0 uses a Strategic Coherence Assessment as a scored element in A5/B5. The SCA is DELIBERATELY NOT CARRIED FORWARD into the Defense ICP. The PCDB did not specify an SCA for any defense criterion, and no SCA mechanism appears anywhere in this instrument. This is an intentional design decision (PCDB; NON-NEGOTIABLE construction rule 4), not an omission by oversight. Where the predecessor placed an SCA, the defense instrument places the CFIUS/FOCI concern spectrum and the syndicate-quality hierarchy (C5) instead.
+
+      MECHANISMS TRANSFERRED AND ADAPTED WITH DEFENSE-SPECIFIC CONTENT (carrying tentative-calibration status): the halo-employer taxonomy (three defense credibility families - pure-defense companies, government/IC/military programs, academic/research institutions - with Tier-1/Tier-2 designations replacing the commercial/life-science equivalents); the NCSP contradiction types (defense-specific types - misrepresented military service, unverifiable clearances, exaggerated program participation, false SBIR PI attribution, advisor-heavy inflation, false first-in-class positioning - replacing the tech/LS types); the sector tier table (defense sub-sector tiers, v2026-Q2, replacing commercial sectors); the stage taxonomy (the Defense Development Stage Taxonomy DS-0 through DS-7, forking at DS-5 by software/hardware track, replacing software ARR stages or FDA stages); the disqualifier list (fourteen defense disqualifiers in five categories replacing the predecessors' four or ten); the four-tier base sector classification and the OVC re-anchored on C1 (Team) and C3 (Traction).
+
+      MECHANISMS NEWLY CONSTRUCTED FOR DEFENSE WITH NO PREDECESSOR ANALOG (carrying tentative-calibration status; each flagged TENTATIVE in the relevant element): the Classified-Program SCARCE Protocol (corroborating-artifact requirement for a justified midpoint); the SBIR-Mill Behavioral Detection Protocol (behavioral triggers and deduction magnitudes, distinct from the adjudicated Block-2 gate); the Stealth-Company Protocol (government-facing footprint distinguishing legitimate opsec from pre-operational emptiness); the Tier-Table Staleness Mechanism (the [SECTOR TIER TABLE STALE] stamp and the plus/minus 1 modifier cap); the CFIUS/FOCI concern spectrum in C5 (four levels mapped to band ceilings); the Government Access and Procurement Pathway criterion (C4 - no analog in either predecessor); the merged Competitive Position and Exit Optionality criterion (C7 with two scored sub-components, Moat and Exit); the single Sector Market-Event Modifier (plus/minus 2, replacing the Tech ICP's multi-component sector modifier); the Defense Investor Archetype Taxonomy (seven archetypes); the Valuation Realism Note in Block 5; the CFIUS Forward-Looking Flag; and the Dual-Use Focus-Risk Note.
+
+      All newly constructed and adapted mechanisms carry the phrase "EVIDENCE BASE IS TENTATIVE" in the relevant revision_note element or a status="TENTATIVE - calibration needed" attribute. The client has noted limited personal familiarity with the defense investment space; the foundation rests on public-source research with explicit uncertainty flagging. The first three to five evaluations conducted under v1.0 should be reviewed to identify miscalibrations and inform v1.1, with particular attention to the band thresholds (Design Section 3) and the traction-criterion calibration against the benchmark company set (Anduril, Saronic, Vannevar, Shield AI, Hadrian, Castelion, and comparable anchors).
+    </note>
+
+    <note>
+      v2.0 REVISION (2026-07-06): Tracked-delta revision produced from the v1.0-to-v2.0 iteration workflow over the 11-company performance-audit corpus (Steps 1-6: audit consolidation, cross-comparison, trend analysis, SWOT, design review, change prioritization). The Must and Should candidate sets shipped - fifteen changes: CH-07 gate grammar (C1/E1 confirmed-adverse-or-refusal triggers with a CONTINGENT - ATTESTATION REQUIRED third disposition); CH-08 C1 core/non-core qualifier with reversal condition; CH-09 NCSP named-contradicting-evidence deduction predicate; CH-10 NCSP severity-keyed material bucket; CH-04 routing-input confidence states with any-range triangulation and the environment-over-maturity priority rule; CH-05 two new scope states (Out of Scope - Post-Close; Out of Scope - No US Defense Nexus); CH-12 unified default-tier rule with precedence clause; CH-13 tier-table membership additions (enabling/infrastructure segments at Tier 3) and the Tier-1 Engagement Test; CH-18 the C6 capital-deployment ISP definition with two named floor-band patterns; CH-24 species-distinct data-confidence counting with the ABSENT-dominated annotation, governs-rule, and unconditional field; CH-15 the ATO Operative-Gate Test with the Profile-B within-band-deduction soften (declared profile delta); CH-25 the track-tag fundability-physics assignment rule with required form-factor note; CH-01 the sign-aware OVC modifier suppression (positive range only; earned negative modifiers apply); CH-23 the DEVELOPING viability label completing the sixteen-geometry partition; CH-21 the single-program-dependency broad-universe exception.
+
+      CONSTRUCTION CONVENTIONS ADOPTED (v2.0 and later; SP-1 through SP-4 from the design review): (1) DETERMINATION-STATE COMPLETENESS - every gate, routing point, and classification point enumerates a disposition for the unverified/ambiguous evidence state, cross-referenced to Section 1.5; stated once at the Section 2.3 introduction with the D1/D2 evidence-tiered grammar as the house template. (2) DECLARED-DELTA BY-REFERENCE DISCIPLINE - a Profile B element inheriting A-side text by reference must either match it or declare the divergence in-text; one v1.0 undeclared divergence was removed (B2 default-tier rule) and one intentional divergence was declared (B-side ATO treatment). (3) OPERATIVE CLAUSES CARRY THEIR OWN SCOPE - restated mechanisms carry full operative wording at every restatement site; the OVC suppression is synchronized verbatim at seven phrase instances across five sections. (4) ENFORCEMENT SHIPS WITH THE RULE - every new documentation discipline carries a Block-3 requirement and/or Block-6 Format Compliance item; items (l) through (p) and extensions to items (a), (g), (h), and (j) were added under this convention.
+
+      CALIBRATION-STATUS QUALIFIER (honest framing per the Step 6 verdict): the version number claims structural change, and the structural additions are real - new determination states, new scope states, a new viability label, new sub-component machinery. The RISK PROFILE, however, is closer to a calibration release: the new mechanisms are themselves uncalibrated single-cohort constructions, and every new threshold or boundary carries an inline [TENTATIVE] flag (the operative-gate APPLIED path; the broad-universe boundary; the enabling-segment tier assignment). The acceptance-side evidence gap is unchanged by this revision: the corpus contains zero Tier-1 outputs and no standalone Profile A completions, so the rejection machinery remains far better validated than the acceptance machinery.
+
+      CROSS-FAMILY FINDINGS RECORD (for LS v5.1 and Tech v1.0 owners): four formal T-V findings ship with this revision - CH-01 (direction-blind OVC modifier floor; verbatim in both siblings), CH-09 (unverifiable-claim member of the NCSP minor bucket; verbatim), CH-10 (count-keyed material bucket; verbatim), CH-24 (species-blind data-confidence counting; verbatim). Check-recommended: CH-07 and CH-08 (three-state gate grammar and core/non-core qualifier - Tech sibling strongly), CH-12 (default-tier rule form across profiles), CH-18 (C6 two-track ISP rows), CH-23 (viability-partition coverage). Notes: CH-04 (siblings authorize triangulation only inside the gap band), CH-05 (the post-close scope state is population-general).
+
+      OBSERVED VARIANCES FLAGGED, NOT EDITED (outside this round's authorization): (a) B2's band-text example lists diverge from A2's tier lists (B2 names "munitions and strike" and "maritime autonomy at peak appetite"; A2 lists maritime autonomy at Tier 2 and does not list munitions) - a pre-existing by-reference variance carried to the next revision round; (b) a fifth restatement site of the OVC modifier floor was discovered in the Block-4 PRE-OPERATIONAL mapping beyond the four sites the prioritization named, and was synchronized in the same pass; (c) the Block-2 instruction's mark-set restatement was a fourth site of the Section 2.3 mark set and was synchronized with the contingent value.
+
+      DEFERRED THIS ROUND: the Could set (CH-11, CH-14, CH-16, CH-17, CH-19, CH-20, CH-22, CH-26) is paused at the checkpoint pending go-ahead. The Won't set routed to the Future Revisions Log: CH-02 evidence folded into FV-defense-5; CH-03 opened as FV-defense-6; CH-06 annotated onto FV-defense-1. COMPLETION GATE: Step 8 change validation runs the standing seven-audit regression suite against this text before v2.0 is declared final; the F0-2 source-integrity flag (GoWave addendum gap) must be resolved before Step 8 treats the corpus as closed.
+    </note>
+  </section>
+
+  <!-- ============================================================
+       SECTION 7 - FUTURE REVISIONS LOG
+       ============================================================ -->
+
+  <section id="7" name="Future Revisions Log">
+
+    <header_note>
+      This log records issues identified during construction or use of the instrument that have been deliberately deferred to a future revision. Entries are not commitments to make the listed changes; they are commitments to review the listed issues before declaring the instrument complete. Each entry documents the problem, a proposed direction, and the reason for deferral. The header-note structure transfers from the predecessors verbatim. Deferral reasons include: insufficient case data to calibrate the proposed change; pending validation of the v1.0 construction across additional cases; structural-change scope larger than a point revision; downstream dependencies on LS v5.1 v6.0 revisions not yet completed.
+    </header_note>
+
+    <entry id="FV-defense-1" target="v2.0" title="Hardware / Defense Hardware Track (Profile C)" source="Construction Prompt Section 7.8; PCDB Design Section 2.2">
+      PROBLEM: The v1.0 instrument is calibrated for software-primary and dual-use technology companies. Hardware-intensive defense companies - kinetics, hypersonics, directed energy, maritime platforms, defense electronics - produce persistent band-language friction, most notably on C3 (where certification milestones and government contract revenue replace ARR), C6 (where higher burn tolerance and capex/grants substitute for lean-burn metrics), and C7-Moat (where manufacturing throughput and ITAR-protected know-how replace network effects). The v1.0 application notes provide an analog framework but are not a substitute for a dedicated track.
+
+      PROPOSED DIRECTION: Construct a Profile C hardware track calibrated to certification milestones (type-classification/qualification, Blue UAS, production-OT eligibility per section 4022(f)) as the primary product-viability anchor; government contract revenue as a separate scored sub-component; capex/grants/debt structures as alternate capital-efficiency anchors; manufacturing-throughput moat at top-band parity with software platform lock-in; and 7-12 year exit timelines as the baseline. Mirrors Tech ICP FV-tech-1 logic for the defense hardware pipeline.
+
+      DEFERRAL REASON: Profile C construction is a structural addition of similar scope to the v1.0 construction itself. Hardware-intensive evaluations in v1.0 proceed under the application-note framework with the hardware-intensive track tag invoked in the Block-1 Market Context Note. Clients whose pipeline exceeds approximately 20% hardware-intensive companies should commission Profile C development before broad use; the 20% pipeline threshold is the operational trigger. [v2.0 ANNOTATION: 5 of the 11 first-cohort audits invoked the hardware application notes (the CH-06 datum) - at or above the operational trigger if the corpus is representative. OPEN CLIENT QUESTION: confirm whether the evaluation pipeline's composition matches the audit corpus before commissioning Profile C.]
+    </entry>
+
+    <entry id="FV-defense-2" target="v1.1" title="NCSP Calibration for Defense Contradiction Types" source="Construction Prompt Section 7.8; PCDB Design Section 5D">
+      PROBLEM: The v1.0 defense-specific NCSP contradiction types (misrepresented military service, exaggerated program participation, false SBIR attribution, advisor-heavy inflation, false first-in-class positioning) have not been empirically calibrated. The inherited deduction magnitudes (1-point minor; 2-3-point material with permission to drop a band) derive from the LS/Tech NCSP heritage and may require adjustment for defense.
+
+      PROPOSED DIRECTION: After the first three to five evaluations with NCSP-triggered findings, review the deduction magnitudes and the band-drop rule for empirical alignment with defense-investor responses, including whether stolen-valor-grade and false-SBIR-attribution contradictions warrant a steeper deduction than the generic material magnitude.
+
+      DEFERRAL REASON: Insufficient case data to calibrate. The inherited NCSP heritage is functional but tentative for defense. Three to five cases with NCSP triggers are needed before refinement. [v2.0 STATUS: PARTIALLY RESOLVED - CH-10 re-keyed the material bucket on aggregate severity rather than contradiction count, resolving the magnitude-assignment half of this entry. OPEN REMAINDER for v2.1: whether stolen-valor-grade and false-SBIR-attribution contradictions warrant a steeper deduction than the generic material magnitude, to be reviewed on the first NCSP-triggered cases.]
+    </entry>
+
+    <entry id="FV-defense-3" target="v1.1 or v1.2" title="SBIR-Mill Threshold Calibration" source="Construction Prompt Section 7.8; PCDB Design Section 12B">
+      PROBLEM: All SBIR-mill behavioral-detection thresholds in C3 and Design Section 12B carry [TENTATIVE] status: the Phase-I-to-II conversion ratio below 20% across 5-plus awards, the 10-plus-Phase-I-with-0-Phase-III trigger, the 3-plus-year stall, the topic-hopping trigger, and the deduction magnitudes are analyst-set, not empirically derived.
+
+      PROPOSED DIRECTION: Calibrate against actual SBIR.gov records of the first cohort's companies and any known mill exemplars, updating the conversion ratio, the Phase-III stall duration, and the deduction magnitudes (moderate vs severe) accordingly.
+
+      DEFERRAL REASON: Calibration requires a cohort of real SBIR.gov records and confirmed mill exemplars to set defensible thresholds; the v1.0 values are conservative placeholders flagged TENTATIVE throughout.
+    </entry>
+
+    <entry id="FV-defense-4" target="v2.0" title="Tier-Table Versioning Protocol" source="Construction Prompt Section 7.8; PCDB Design Section 12D">
+      PROBLEM: The 2025-2026 sector tier table (v2026-Q2) will require re-evaluation at the triggers defined in Design Section 12D (annual; on each NDAA or full-year appropriations enactment; on any mandatory event - a new mega-program, a marquee M and A, a major cancellation, a Replicator-scale procurement, or a documented sector-wide multiple compression). The tier table is embedded in the C2 band definitions, so updating it currently requires editing the scoring criteria.
+
+      PROPOSED DIRECTION: Establish a versioning protocol that produces a dated tier-table document linked from the instrument header comment, allowing the scoring criteria (the C2 bands) to remain stable while the tier-table reference document is updated independently. The staleness mechanism (the stamp and the plus/minus 1 modifier cap) already provides the interim guard.
+
+      DEFERRAL REASON: Externalizing the tier table into a separately-versioned linked document is a structural change beyond a point revision; the v1.0 staleness mechanism guards against stale-table over-reach in the interim.
+    </entry>
+
+    <entry id="FV-defense-5" target="v6.0" title="Cross-Criterion Risk Correlation Mechanism" source="Construction Prompt Section 7.8; LS v5.1 FV-1; Tech ICP FV-tech-3">
+      PROBLEM: The additive model cannot express correlated risks arising from a single event. In defense this is acute: a CFIUS inquiry can affect C5 (cap table), C4 (access/eligibility), and C3 (traction/contract eligibility) simultaneously, yet the additive architecture scores each independently and documents the correlation only qualitatively in Block 5.
+
+      PROPOSED DIRECTION: A cross-criterion risk-correlation mechanism that can express a single event's correlated impact across multiple criteria without breaching additive independence in the base score - mirrors LS v5.1 FV-1 and Tech ICP FV-tech-3.
+
+      DEFERRAL REASON: Deferred pending alignment with the LS v5.1 v6.0 cross-criterion work; a correlation mechanism must be designed once across the instrument family rather than independently in the defense instrument, to keep the three rubrics architecturally consistent. [v2.0 ANNOTATION: the Sharp audit added a two-void interaction case to this file - team-absence and traction-absence compounding in ways the additive model cannot express (the CH-02 evidence, routed here per the Step 6 Won't-this-round decision).]
+    </entry>
+
+    <entry id="FV-defense-6" target="v3.0" title="Band-Geometry Architecture Review" source="Step 6 Change Prioritization (CH-03 routed; CH-02 residue)">
+      PROBLEM: The four-band-per-criterion geometry produces floor-band compression effects the first cohort surfaced: distinct failure signatures (SBIR-addiction, founder-capital multi-year stall, zero-documented-capital-history) compete for the same narrow floor ranges, and band boundaries at the C1/C3 anchor criteria drive both the viability partition and the OVC anchoring, so small boundary choices carry outsized downstream effects. v2.0 named the floor-band patterns (CH-18) and completed the label partition over the existing geometry (CH-23) without re-cutting any band.
+
+      PROPOSED DIRECTION: A family-wide band-geometry review - band counts, floor-band widths, and boundary placement at the OVC anchor criteria - conducted alongside the FV-defense-5 cross-criterion correlation work so any geometry change lands once across all three instruments rather than independently in the defense instrument.
+
+      DEFERRAL REASON: Structural-change scope larger than a point revision; requires the LS v5.1 v6.0 alignment window and more than one cohort of score-distribution data. The v2.0 pattern-naming and partition completion are the interim guards.
+    </entry>
+
+  </section>

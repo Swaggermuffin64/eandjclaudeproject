@@ -2,15 +2,43 @@
 
 <!--
 TECHNOLOGY COMPANY FUNDRAISING ICP EVALUATION INSTRUMENT
-Version 1.0 — XML Format Optimized for Claude Opus
-Constructed per Technology ICP Pre-Construction Design Brief v1.0, May 12, 2026
+Version 2.0 — XML Format Optimized for Claude Opus
+Constructed, June 17, 2026
 Weight Check: Profile A = 100% | Profile B = 100%
-Revision history moved to: Technology Rubric - Revision History.xml
+
+Version History:
+v1.0 — Initial construction. Built from the Technology ICP Pre-Construction
+Design Brief v1.0 and structurally inherited from Life Science Fundraising ICP
+Evaluation Instrument v5.1. All mechanisms in v1.0 carry tentative-calibration
+status except those transferred directly from LS v5.1 with multi-case validation
+heritage (SCA 3-rule formulation, Information Scarcity Protocol mechanism, NCSP
+mechanism form, midpoint-default justification standard, cross-criterion
+symmetry instruction, 100-point additive scoring architecture, seven-block
+output format).
+
+v2.0 - Judgment-surface-reduction and honesty pass (2026-06-16). Applied seven
+approved changes (revisions R1-R8 across modified blocks): a Section 1.3 consistency
+rider (R1); two terminal disqualifiers, (k) Sanctioned Jurisdiction / OFAC-SDN
+Exposure and (l) Fabricated or Undisclosed Related-Party Customer, at the existing
+wholesale bar (R2, mirrored in output Block 2 as R8); operationalization of the
+A1/B1 "or equivalent" non-traditional-founder equivalences and an FMF within-band
+note (R3); operationalization of the A1/B1 NCSP minor/material distinction (R4); an
+A3/B3 revenue-recognition standard plus a government/sovereign-procurement
+equivalence note (R5); operationalization of the A6/B6 moat hand-wave deductions
+(R6); and a Section 5 Block 1 Archetype-Misfit flag (R7). NO weights, tier
+thresholds, deduction magnitudes, or architecture were changed; the Information
+Scarcity two-track logic and Data Confidence aggregation (Section 1.5), the additive
+scoring architecture (Section 1.7), and the AI Wrapper Force-Test are untouched. All
+newly added mechanisms (DQ-k, DQ-l, the Archetype-Misfit flag) and all clarified
+mechanisms carry tentative-calibration status pending the first 5-10 evaluations.
+Deferred items (graduated cap-table severity, AI-Native taxonomy expansion, Profile C,
+token/crypto treatment, cross-criterion correlation, and tier-threshold and
+NCSP-magnitude recalibration) remain in the Future Revisions Log.
 -->
 
 <rubric
-  version="1.0"
-  revision_date="2026-05-12"
+  version="2.0"
+  revision_date="2026-06-16"
   evaluation_target="Fundraising Velocity and Investor Appetite"
   scope="Private technology companies raising $500K–$15M (with tolerance band to $16.5M)"
   not_for="Due diligence, portfolio management, technical merit evaluation">
@@ -31,10 +59,11 @@ The rubric is explicitly built to identify companies that can raise money most e
 STANDING INSTRUCTION: The objective is fundraising velocity and investor appetite — not technical promise. Score accordingly.
 </block>
 
-<block id="1.3" name="Client Specifications">
+<block id="1.3" name="Client Specifications" status="Revised — Tech v2.0 R1">
+<revision_note>Tech v2.0 R1: Softened the Team Priority "strong preference for halo-employer alumni" language to expressly acknowledge the non-traditional founder equivalences operationalized in A1/B1 (Change C / R3), preventing an internal contradiction between this design-brief spec and the broadened "or equivalent" criteria. No other Block 1.3 text was altered; the solo-founder protocol reference and the Cap Table spec are unchanged.</revision_note>
 <spec name="Funding Stage Fit">Series A (100%), Seed/Pre-Seed+ (85%), Pre-Seed below $500K with no institutional participation (excluded)</spec>
 <spec name="Fundraising Target Range">$500K–$15M</spec>
-<spec name="Team Priority">Single most important criterion at Profile B (Seed/Pre-Seed+). Strong preference for halo-employer alumni, repeat founders, and technical founders with research-lab or frontier-lab pedigree. Solo founders accepted with profile-specific penalty per A1/B1 solo-founder protocol.</spec>
+<spec name="Team Priority">Single most important criterion at Profile B (Seed/Pre-Seed+). Strong preference for halo-employer alumni, repeat founders, and technical founders with research-lab or frontier-lab pedigree — with non-traditional founder equivalences (deep vertical-domain operator experience, academic/research standing, and authentic open-source leadership) expressly recognized under the A1/B1 "or equivalent" qualifying criteria, so that this preference is not read as halo-employer-only. Solo founders accepted with profile-specific penalty per A1/B1 solo-founder protocol.</spec>
 <spec name="Cap Table">Sporadic or messy cap tables are a hard disqualifier across both profiles. Founder ownership below 10% post-Seed, stacked SAFEs above $3M with no priced round in 24+ months, and IP not assigned to the company are additional hard disqualifiers per Section 2.3.</spec>
 <spec name="Geography">No restrictions; globally applicable.</spec>
 <spec name="Partnerships">Preferred but not a hard requirement.</spec>
@@ -46,6 +75,7 @@ The $500K–$15M range is split into Profile A ($3M–$15M) and Profile B ($500K
 </block>
 
 <block id="1.5" name="Information Scarcity Protocol" status="Revised — Tech v1.0 R1">
+<revision_note>Tech v1.0 R1: Two-track INFORMATION-SCARCE vs. INFORMATION-ABSENT classification transferred from LS v5.1 v5.0 R4 with mechanism preserved exactly. Tech-specific observable-signal lists per criterion (D1a/D1b of the Design Brief) replace life-science signal lists. The "highest-predictive, lowest-observable" problem is more acute in tech than in life science because key predictive metrics (Net Revenue Retention, Burn Multiple, cap table specifics) are structurally non-public; a founder-attestation-by-band protocol is added in this section to handle these criteria. EVIDENCE BASE IS TENTATIVE for the tech-specific signal lists — additional cases are needed to validate that the SCARCE/ABSENT distinctions function correctly across the five business models covered by the rubric.</revision_note>
 
 When information for a criterion is insufficient to produce a confident score, assign the midpoint of the applicable scoring band and flag the score with [INSUFFICIENT DATA]. Do not penalize companies for missing information below the midpoint. This protocol applies to all criteria in both profiles. The Data Confidence indicator in Section 5 aggregates these flags to provide an overall assessment of score reliability.
 
@@ -158,6 +188,7 @@ Companies with target raise below $500K but with at least one institutional part
 </block>
 
 <block id="2.2" name="Scope Boundaries" status="Revised — Tech v1.0 R2; HD-Tech-1a">
+<revision_note>Tech v1.0 R2: Scope boundary structure transfers from LS v5.1 §2.2 with three modifications. The upper ceiling and tolerance band mechanism is preserved with tech-specific values ($15M ceiling, $16.5M Gray Zone, above $16.5M Out of Scope — Benchmark). A pre-seed exclusion floor is added at the lower end ($275K with no institutional participation = Out of Scope — Pre-Seed Exclusion). A Hardware/Deep-Tech/Defense/Space Profile Limitation scope boundary is added analogous to LS v5.1 HD-1a, signaling that hardware-intensive companies are within general scope but evaluated via application notes. An AI-Native Frontier Fund-Mandate-Fit scope boundary is added to address companies whose raise sizes ($50M–$2B+) structurally exceed the primary audience's check capacity even when otherwise high-scoring.</revision_note>
 
 The instrument is calibrated for private capital markets. Publicly traded companies and pre-seed companies (total raised under $275K with no institutional participation) are OUT OF SCOPE. An OUT OF SCOPE flag is a scope/instrument mismatch, not a disqualifying deficiency. Out-of-scope companies may be evaluated as benchmark exercises if clearly flagged.
 
@@ -189,7 +220,9 @@ Companies classified AI-Native Frontier per A2/B2 — research-lab pedigree (ex-
 </scope_flag_definitions>
 </block>
 
-<block id="2.3" name="Automatic Disqualifiers" status="Revised — Tech v1.0 R3">
+<block id="2.3" name="Automatic Disqualifiers" status="Revised — Tech v1.0 R3; Tech v2.0 R2">
+<revision_note>Tech v1.0 R3: LS v5.1 used 4 disqualifiers (a–d) plus (b-alt) for non-therapeutic data security. The tech rubric expands the list to 10 disqualifiers (a–j) organized in four categories, reflecting tech-specific terminal conditions (founder ownership below 10% post-Seed, IP not assigned, open-source signal manipulation, etc.) that have no LS v5.1 parallel. The 23 research-proposed items were rationalized via an observability filter; items requiring legal diligence (specific liquidation preferences, side-letter provisions, MFN clauses, specific vesting schedule terms) are moved to scored deductions or Block 5 documentation. The Tier 4 (Not Ready) / Out of Scope distinction transfers from LS v5.1 v5.0 R5.</revision_note>
+<revision_note>Tech v2.0 R2: Added two terminal disqualifiers — (k) Sanctioned Jurisdiction / OFAC-SDN Exposure and (l) Fabricated or Undisclosed Related-Party Customer — in a new fifth category, Regulatory and Customer Integrity, closing the two terminal-stakes coverage gaps identified in Steps 3-4 (sanctions exposure; wholesale customer fabrication). Per the Step 5 Section 5 scoping decision, (l) is written at the wholesale-fabrication bar only — mirroring (g)'s "fabricated wholesale, not when claims are merely inflated" discipline — and explicitly routes inflated (real-but-overstated) customer relationships to the A1/B1 NCSP scored deduction, not to termination. (k) triggers on binary jurisdiction/SDN conditions only. The high bars on (g) and (i) are unchanged; no existing disqualifier (a)-(j) text was altered.</revision_note>
 
 The following conditions trigger automatic disqualification regardless of score. A disqualified company is classified as Out of Scope and does not receive a fundability tier assignment. If any disqualifier is triggered, the evaluation terminates after the Disqualifier Screen (Block 2 of the output format). No criterion scores, total score, or fundability tier are assigned. A score below 40 with no disqualifier triggered is classified as Tier 4 — Not Ready, not as Out of Scope. Out of Scope status is reserved for instrument scope mismatches and disqualifier triggers.
 
@@ -263,6 +296,22 @@ Non-applicability: Mark NOT APPLICABLE for tech companies not handling protected
 </disqualifier>
 </disqualifier_category>
 
+<disqualifier_category name="Regulatory and Customer Integrity">
+<disqualifier id="k" name="Sanctioned Jurisdiction / OFAC-SDN Exposure">
+Triggering condition: The company's primary operating jurisdiction, a named entity in its ownership or control structure, or a named revenue customer cited as a traction signal appears on the OFAC Specially Designated Nationals (SDN) list or an equivalent US sanctions list (e.g., BIS Entity List, SDN sectoral lists); OR the company's stated business model requires processing transactions in or with sanctioned jurisdictions without documented compliance controls (licensing, an OFAC screening program, or equivalent). This is a binary, observable condition determined by a sanctions-list lookup against the stated jurisdiction, owner, or customer; it does not require a judgment about the degree of exposure. The instrument's "globally applicable" scope (Section 1.3) makes this screen necessary to keep that scope internally consistent.
+Observability: OFAC SDN List search (sanctionssearch.ofac.treas.gov); BIS Entity List; the stated operating jurisdiction; named ownership and customer entities. A direct list match, or a stated model that requires sanctioned-jurisdiction processing without controls, equals a trigger.
+Non-applicability: Mark NOT APPLICABLE for companies with no cross-border payment exposure, no international revenue, and no named ownership or customer entity in a sanctioned jurisdiction. Marking NOT APPLICABLE does not trigger disqualification.
+Scored-deduction routing: None. This disqualifier is binary; there is no sub-threshold scored-deduction case. A jurisdiction, owner, or customer is either on a sanctions list (or the model requires sanctioned-jurisdiction processing without controls) or it is not.
+</disqualifier>
+
+<disqualifier id="l" name="Fabricated or Undisclosed Related-Party Customer">
+Triggering condition: A customer cited as a primary traction signal is (a) demonstrably non-existent — no corroborating record in any independent source (no website, no registration, no third-party reference, no public footprint) after a documented search; or (b) a related party (an investor in the company, a co-founder, a family member, or an entity controlled by the founders or their affiliates) presented as an arm's-length commercial customer without disclosure of the relationship. This disqualifier applies only at the wholesale-fabrication bar — the cited customer either does not exist as claimed, or is a related party misrepresented as independent. It is the customer-claim analog of disqualifier (g)'s wholesale-credential-fabrication standard.
+Observability: Independent corroboration search for the named customer (corporate registry, website, press coverage, third-party databases); related-party cross-check against the cap table, founder networks, and corporate filings; founder disclosure of customer relationships when directly asked.
+Non-applicability: Mark NOT APPLICABLE for companies that cite no named customer as a primary traction signal (e.g., pre-revenue companies scored on team and demo). Marking NOT APPLICABLE does not trigger disqualification.
+Scored-deduction routing (hard boundary from Step 5): Inflated relationships — a real, independent customer whose depth, revenue, or commitment is overstated — are NOT routed here. They are handled as a scored deduction within A1/B1 via the Negative Credibility Signal Protocol (false competitive/traction claim) and within A3/B3 via the revenue-recognition standard. DQ-l terminates only on wholesale fabrication (a non-existent customer) or undisclosed related-party misrepresentation. The inflation-versus-fabrication line stays in the scored layer where a wrong call costs points, not a termination; only the unambiguous fabrication case reaches this terminal gate.
+</disqualifier>
+</disqualifier_category>
+
 <scored_deductions>
 The following conditions are NOT automatic disqualifiers but produce scored deductions within their respective criteria. They are listed here for evaluator routing reference; documentation occurs at the criterion level.
 
@@ -311,7 +360,10 @@ Pure software startup with material founder time spent on patent prosecution at 
 </weight_check>
 
 
-<criterion id="A1" name="Team Quality and Execution Credibility" weight_pct="24" max_points="24" status="Revised — Tech v1.0 R4">
+<criterion id="A1" name="Team Quality and Execution Credibility" weight_pct="24" max_points="24" status="Revised — Tech v1.0 R4; Tech v2.0 R3; Tech v2.0 R4">
+<revision_note>Tech v1.0 R4: Team Quality criterion includes Founder-Market Fit as a scored sub-component (rather than a standalone criterion) per Design Brief B1 parsimony decision and the LS v5.1 B1 Upper/Lower sub-band precedent. Halo-employer taxonomy with Tier 1 and Tier 2 named-examples (exemplary, not exhaustive) replaces life-science KOL framework. Solo-founder treatment differs by profile (2–3 point deduction Profile A; 1 point Profile B). Negative Credibility Signal Protocol transfers from LS v5.1 R3 with tech-specific contradiction types. EVIDENCE BASE IS TENTATIVE for NCSP calibration in tech: tech-specific trigger types (purchased GitHub stars, false AI-native positioning, halo-employer misrepresentation, false competitive moat claims) have not been empirically calibrated; LS v5.1 NCSP heritage is from a single case (NEXI Biotech). Additional cases are needed to validate deduction magnitudes and the band-drop rule.</revision_note>
+<revision_note>Tech v2.0 R3: Operationalized the halo_employer_taxonomy "or equivalent" framing by adding three explicit Non-Traditional Founder Equivalence categories (deep vertical-domain operator experience; academic/research standing; authentic open-source leadership), each gated by an external-verifiability and direct-relevance threshold, so evaluators stop anchoring solely on the named-employer/named-lab lists. Added an FMF within-band note permitting strong Founder-Market Fit to support upper-band placement when named pedigree is absent, within the existing single-criterion structure. The "clearly weak" floor is explicitly preserved: equivalence widens recognition without lowering the bar, and the top band remains unreachable by a team with no credible signal in any named or equivalent category. No band point ranges, weights, or the solo-founder protocol were changed.</revision_note>
+<revision_note>Tech v2.0 R4: Operationalized the NCSP minor-versus-material contradiction distinction by source and type — a contradiction is material when it involves a co-founder/C-suite member's verifiable credential, title, affiliation, or metric, or the company's own reported primary traction signal (flagship ARR, lead-customer claim, stated star count); and minor when it involves a peripheral team member or a secondary claim that does not alter the overall credibility picture. Deduction magnitudes are unchanged (1 point minor; 2-3 points material with band-drop permission), the "directly contradicted by verifiable evidence" cross-check directive is unchanged, and the verify-before-crediting posture is unchanged. Definitional clarification only.</revision_note>
 
 <purpose>Evaluates the founding and executive team's demonstrated ability to build, scale, and exit technology companies. Measures direct signals of fundraising credibility at the Series A level: operating-scale pedigree (halo-employer alumni); prior founding experience with success-or-failure-with-transparency distinction; co-founder configuration; technical depth (for AI-native and deep-tech, research-lab or frontier-lab pedigree); and Founder-Market Fit operationalized via Rachleff/Maples/Sequoia Arc tests. Single most heavily weighted criterion at Profile A per Design Brief B2 weight architecture (24 percentage points).</purpose>
 
@@ -332,6 +384,11 @@ Top management consultancies (McKinsey, BCG, Bain) in product or strategy roles.
 Top investment banks (Goldman, Morgan Stanley, JPM) in tech-coverage roles.
 
 Qualification criteria for halo-employer status: company at ≥$1B valuation or ≥1,000 employees at time of founder's tenure; relevance between founder's role/halo employer's domain and the new venture (high relevance = directly related; medium relevance = transferable but not directly related); recency within the past 8 years (tenure ending more than 10 years before company formation is documented but discounted).
+Non-Traditional Founder Equivalences (qualify under the "or equivalent" framing for Tier 2 halo-pedigree recognition; added Tech v2.0 R3): the named-employer and named-lab lists above are exemplary anchors, not an exhaustive definition of credible pedigree. A founder who does not carry a named-employer or named-lab affiliation may still qualify for Tier 2 recognition by meeting one of the following, each of which requires external verifiability and direct relevance to the company's target market (not merely an adjacent domain):
+1. Deep vertical-domain expertise — 10+ years of direct operator experience in the specific market the company addresses, at organizations where that domain expertise is verifiable (for example, major-league sports organizations, a Fortune 500 company in the target vertical, or a federal agency in the target domain). The vertical domain must be the company's target market, not an adjacent one.
+2. Academic/research standing — a record of peer-reviewed publication or funded research in the specific technical area the company commercializes, at a research university or national lab. Requires external verifiability (publication record, grant records, institutional affiliation).
+3. Authentic open-source leadership — demonstrated leadership of an open-source project with authentic adoption assessed per the A3/B3 community-metric standards (fork-to-star ratio, contributor velocity, independent deployment evidence), in the specific technical domain the company builds on.
+These equivalences widen recognition; they do not lower the bar. A founder must actually meet one of the qualifying thresholds above (or a named-employer/named-lab criterion) to clear Tier 2 recognition. A team with no credible signal in any named or equivalent category remains in the lowest band — the "clearly weak" floor is preserved, and the top band is not reachable by invoking equivalence without the underlying threshold being met.
 </halo_employer_taxonomy>
 </band>
 
@@ -355,6 +412,8 @@ Strong FMF signals (observable, supporting upper-mid to top band): prior publish
 Absence of FMF signals (information scarcity treatment per Section 1.5): INFORMATION-SCARCE for FMF — founder has documented employment or educational history in the relevant domain but no prior writing, talks, or public artifacts articulating the earned secret. Apply midpoint-default within the assigned A1 band. INFORMATION-ABSENT for FMF — founder has no documented domain exposure (employment, education, or research) AND no public artifacts. Score in the lowest applicable A1 band; do not apply midpoint-default.
 
 The FMF sub-component does not generate a separate score number; it informs the position within the A1 band. The Justification field must explicitly state the FMF signal assessment.
+
+FMF AND NON-NAMED PEDIGREE (Tech v2.0 R3): Strong Founder-Market Fit (per the Rachleff/Maples/Sequoia Arc tests above) can support placement at the upper portion of the assigned A1 band even when named-lab or named-employer pedigree is absent. This operates within the existing single-criterion A1 structure: FMF still does not generate a separate score and does not create a new criterion; it informs position within the band that the team's other signals establish.
 </scored_sub_component>
 
 <solo_founder_protocol>
@@ -369,6 +428,11 @@ DOCUMENTATION REQUIREMENT: When the solo-founder deduction is applied, the A1 Ju
 NEGATIVE CREDIBILITY SIGNAL PROTOCOL: Before finalizing the A1 score, the evaluator must assess whether any credibility claims made by the team — including titles, institutional affiliations, authorship or contribution claims, priority claims, and competitive positioning claims — are directly contradicted by verifiable evidence. Verifiable evidence includes: title records (LinkedIn, company website, filings); publication author lists; public regulatory records; direct competitive existence data (competitor websites, press releases, third-party databases); open-source community signal authenticity (fork-to-star ratio, star-acquisition velocity curve, contributor authenticity); AI capability technical analysis (API usage disclosures, team CV versus claimed proprietary model work).
 
 If one or more contradictions are identified, apply a deduction within the assigned band as follows:
+
+MATERIAL VERSUS MINOR — OPERATIONAL DEFINITION (Tech v2.0 R4): The minor-versus-material classification is determined by the SOURCE of the contradiction and the TYPE of claim contradicted, as follows. This definition assigns the existing deduction tiers below; it does not change their magnitudes.
+A contradiction is MATERIAL when EITHER: (i) it involves a claim by a co-founder or C-suite member (not a peripheral team member) about a credential, title, affiliation, or metric that is directly verifiable and is directly contradicted by an independent source; OR (ii) it involves the company's own reported primary traction signal — the flagship ARR figure, the lead-customer claim, or the stated GitHub star count — where the contradiction comes from a source at least as credible as the primary claim.
+A contradiction is MINOR when EITHER: (i) it involves a peripheral team member's (not co-founder/C-suite) credential or affiliation; OR (ii) it is an imprecision or overstatement in a secondary claim (not the primary traction signal and not a founding-team credential) where the inaccuracy does not alter the overall credibility picture.
+Where a single contradiction satisfies neither definition cleanly, default to the more conservative (minor) classification and document the basis.
 
 SINGLE MINOR CONTRADICTION (1-point deduction; do not drop below band floor):
 Title inflation (e.g., "founder" when actually employee #4; "CEO" when actually CTO).
@@ -393,6 +457,7 @@ DOCUMENTATION REQUIREMENT: The Justification field must name each contradiction,
 
 
 <criterion id="A2" name="Market Opportunity and Sector Tier" weight_pct="16" base_max_points="16" modifier_max_points="18" status="Revised — Tech v1.0 R5">
+<revision_note>Tech v1.0 R5: Sector criterion adopts a 4-tier base classification (PEAK / ACTIVE / COOL / COLD) rather than LS v5.1's 3-tier structure, reflecting sharper sector heat bifurcation in tech (research finding: CB Insights, PitchBook, Carta 2025 sector capital allocation data). AI-Native Modifier is added as a separate component beyond the M&amp;A Modifier, capped at ±2 combined to preserve the scoring envelope. M&amp;A Modifier thresholds are recalibrated for tech M&amp;A volume (5+ deals above $1B or 2+ above $5B for +2; 2–4 deals above $1B or 1 above $5B for +1). Operational Viability Condition anchor criteria shift from A2/A4 (LS v5.1) to A1/A3 (Team + Traction), reflecting the absence of a universal regulatory stage in tech. EVIDENCE BASE IS TENTATIVE for the AI Modifier values: calibration cases have not yet been accumulated for the tech context. The +2/+1/−1/−2 magnitudes reflect research-derived AI premium magnitudes (Carta primary data: 46% AI premium at Seed, 30% at Series A, 50%+ at Series B) but have not been validated empirically against the rubric's scoring envelope. EVIDENCE BASE IS TENTATIVE for the OVC anchor specifications: the substitution of Team + Traction for Clinical Stage + Validation has not been validated against the tech evaluation corpus. Additional cases are needed.</revision_note>
 
 <purpose>Evaluates whether the company operates in a technology sector currently attracting active investor capital and M&amp;A interest. Uses a three-component structure: base tier classification (general investor appetite); AI Modifier (reflecting the AI-native premium and the wrapper-risk discount); Market-Evidence Modifier (recent documented deal activity). The combined AI + M&amp;A Modifier is capped at ±2 to preserve the scoring envelope.</purpose>
 
@@ -495,7 +560,9 @@ DOCUMENTATION REQUIREMENT: When the Operational Viability Condition is triggered
 </criterion>
 
 
-<criterion id="A3" name="Product / Traction Evidence" weight_pct="30" max_points="30" status="Revised — Tech v1.0 R6">
+<criterion id="A3" name="Product / Traction Evidence" weight_pct="30" max_points="30" status="Revised — Tech v1.0 R6; Tech v2.0 R5">
+<revision_note>Tech v1.0 R6: Product/Traction Evidence is the highest-weighted criterion at Profile A (30 percentage points), reflecting research finding that traction weighting rises to ~40% at Series A (Carta primary data; 20VC; Visionaries Club; Tunguz NRR R²=0.54). Five business-model application notes (Non-AI SaaS, AI-Native Applied, Pre-Product Seed, Consumer, Developer Tools/Infrastructure) replace formal multi-track scoring per Design Brief C4a parsimony decision. NRR is included as a scored sub-component with founder-attestation-by-band acceptable; refusal to attest is a negative signal. GitHub raw star count is excluded as a primary scoring signal; six replacement metrics (fork-to-star ratio, contributor count, issue/PR activity, downstream "used by" count, package downloads, star-acquisition velocity curve) substitute. EVIDENCE BASE IS TENTATIVE for the Band 1 and Band 2 thresholds across business models: research-derived thresholds (Carta Series A SaaS $2–3M ARR median; Tunguz NRR ≥120% top decile) have not been validated empirically against the rubric's scoring envelope. Additional cases are needed.</revision_note>
+<revision_note>Tech v2.0 R5: Added a revenue-recognition standard that classifies which revenue figures qualify to be measured against the existing ARR/NRR thresholds (recognized ARR at full credit; bookings at 70–80%; LOI/pilot at 40–60%; company-claimed-without-documentation flagged INFORMATION-SCARCE per Section 1.5), collapsing the bookings-versus-ARR reproducibility divergence on this 30%-weight criterion. Added a government/sovereign-procurement equivalence note making the existing government-customer band equivalences available independent of the hardware-intensive tag, so software govtech/defense companies are not scored against commercial "F500" language; this also supplies the A3 scoring basis for the Block 5 Defense/Dual-Use archetype. No ARR/NRR thresholds, weights, or business-model band definitions were changed; both additions reduce or hold constant evaluator judgment surface.</revision_note>
 
 <purpose>Evaluates the maturity and credibility of the company's product and traction signals. Measures business-model-conditional evidence that investors evaluate during deal velocity assessment: at Profile A, evidence of unit economics, retention, and growth at scale dominates. This criterion replaces the regulatory-stage anchor of LS v5.1 A2 and carries the highest weight at Profile A per Design Brief B2 weight architecture.</purpose>
 
@@ -534,6 +601,15 @@ This band captures companies that have made meaningful product progress but have
 Pre-product or very early product with no traction signals at Series A relevance. ARR below $250K with weak growth, OR pre-revenue with no design-partner LOIs and no F500 engagement, OR consumer product with DAU/MAU below 15%, OR developer tools with no observable community or enterprise adoption. Graduation rate compression: companies that have failed to graduate from Seed after 24+ months with no traction movement (research finding: seed→A graduation rate fell from 30.6% to 15.4%; median wait 774 days) land in this band by default.
 </band>
 
+<revenue_recognition_standard>
+REVENUE-RECOGNITION STANDARD (Tech v2.0 R5): This standard defines which revenue figures qualify to be measured against the band thresholds above; it does not move those thresholds. Classify the figure first; the classified figure is then positioned against the existing ARR/NRR/growth bands. Apply as follows.
+Recognized ARR (scores at full credit against the band thresholds): revenue from executed contracts with paying customers that is recurring, invoiced, and in the collection cycle. Excludes deferred revenue not yet recognized, contracted-but-not-invoiced amounts, and MOU-stage commitments.
+Bookings / contracted-but-not-yet-invoiced (scores at 70–80% of the ARR credit the same dollar figure would earn): executed contracts where revenue will be invoiced on a future schedule. Position in the lower portion of the band that the full contracted amount would have supported, unless the invoicing timeline is confirmed to fall within 90 days, in which case the amount may be treated as recognized ARR.
+LOI / pilot / design-partner (scores at 40–60% of the ARR credit the same dollar figure would earn): non-binding letters of intent, pilot agreements, and design-partner relationships without executed revenue contracts. Position in the lower half of the band the full figure would have supported, or one band below if the pipeline-to-close path is unverified. (Named design-partner LOIs remain independently creditable under the AI-Native Applied and Pre-Product Seed bands and application notes; this clause governs only the case where an LOI/pilot figure is presented as if it were revenue.)
+Company-claimed metrics without contract documentation (flag INFORMATION-SCARCE): stated ARR, GMV, or run-rate figures with no verifiable basis in contracts, invoices, or independent confirmation. Apply the midpoint-default within the applicable band per the Section 1.5 INFORMATION-SCARCE protocol; do not score at face value. (This is the same INFORMATION-SCARCE treatment already defined in Section 1.5, invoked here rather than redefined.)
+This standard reduces evaluator judgment surface: it replaces an improvised "is this ARR?" call with a fixed classification of the figure. It does not introduce a new scored sub-band and does not alter the existing ARR/NRR thresholds or any business-model band definition.
+</revenue_recognition_standard>
+
 <application_note business_model="Non-AI SaaS">
 The Non-AI SaaS application note maps band positioning to ARR magnitude, NRR band, growth multiple, and customer concentration. Top-band placement requires evidence of unit economics at scale (LTV/CAC, payback period implied by NRR + growth, gross margin). Use NRR sub-component (founder-attested band) as the primary retention signal. Cite the application note explicitly in the A3 Justification field with format: "Application note invoked: Non-AI SaaS. Band positioning derived from [ARR, NRR band, growth, customer concentration]."
 </application_note>
@@ -558,6 +634,15 @@ The Developer Tools/Infrastructure application note maps band positioning to com
 The Hardware application note maps band positioning to: certification milestones (FCC, FAA, ITAR/EAR, defense-prime qualifications); government contract revenue (SAM.gov, usaspending.gov, DoD contract IDs); design-partner LOIs from prime contractors; pre-revenue acceptability with deep-technical-founder pedigree + national-lab pedigree + classified IP. Score equivalence mapping: "Commercial Pre-Revenue with certified product + LOI from DoD prime" maps to "Commercial Early Revenue" band for software. The hardware application note is invoked when Block 1 Market Context Note tags the company as hardware-intensive. Cite the application note explicitly in the A3 Justification field.
 </application_note>
 
+<government_procurement_equivalence_note>
+GOVERNMENT / SOVEREIGN-PROCUREMENT EQUIVALENCE (Tech v2.0 R5; applicable regardless of hardware classification): The Hardware application note above maps government contract revenue and DoD-prime LOIs to band positions, but it is invoked only when the company is tagged hardware-intensive. This note makes the same band equivalences available to software govtech, software defense, and other non-hardware-tagged companies whose primary customers are government bodies, defense primes, or sovereign agencies, so that government anchor customers are not forced to score against the commercial "F500 / regulated-industry leaders" band language. It does not create a new Profile C (see FV-tech-1) and does not alter any threshold.
+For a company in this class that is NOT tagged hardware-intensive, the following A3 band equivalences apply:
+A confirmed, executed government contract or DoD subcontract with a verifiable contract ID (SAM.gov, usaspending.gov, or equivalent) maps to "strong design-partner LOI from a regulated-industry leader" for band-positioning purposes.
+A Letter of Intent or pilot agreement with a government agency (state, federal, or sovereign) maps to "design-partner LOI" for band-positioning purposes.
+Certification milestones relevant to government procurement (FedRAMP, StateRAMP, CMMC, or equivalent) without a revenue contract map to "pre-revenue with demonstrated regulatory pathway," positioning in the lower mid-band, not the top band.
+This note also supplies the A3 scoring support for the Defense/Dual-Use Specialist investor archetype documented in Block 5, resolving the prior gap in which that archetype existed at output with no A3 scoring basis for government traction. Cite this note explicitly in the A3 Justification field when invoked, and record that the company was scored under the government-procurement equivalence rather than the hardware application note.
+</government_procurement_equivalence_note>
+
 <scored_sub_component name="Net Revenue Retention (NRR)">
 NRR is included as a scored sub-component within A3 at Profile A for Non-AI SaaS and AI-Native Applied business models. NRR is observable directly from public sources only for late-stage or publicly disclosed companies; at Series A, NRR is rarely public.
 
@@ -580,6 +665,7 @@ Star-acquisition velocity curve (GitHub history; star-history.com or equivalent)
 
 
 <criterion id="A4" name="Capital Efficiency and Runway Discipline" weight_pct="10" max_points="10" status="Revised — Tech v1.0 R7">
+<revision_note>Tech v1.0 R7: Runway bands use 24/18/12 month breakpoints (Loverro/Suster framework). Burn Multiple sub-component (Sacks framework, five tiers) is added as a scored sub-component; founder attestation by band accepted per Section 1.5 founder attestation protocol. Pre-revenue alternative scoring basis (absolute monthly burn versus team size, founder compensation discipline, runway, non-dilutive funding) is documented for companies where Burn Multiple is mathematically inapplicable. Hardware application note relaxes Burn Multiple acceptability bands for hardware/deep-tech/defense/space per Section 2.2.</revision_note>
 
 <purpose>Evaluates the company's capital efficiency and the quality of its runway planning. Measures whether the company is using capital wisely, whether burn rate is calibrated to development stage, and whether runway is sufficient to reach value-inflecting milestones. At Profile A, Burn Multiple becomes computable and decisive because revenue is present in most cases.</purpose>
 
@@ -620,6 +706,7 @@ HARDWARE APPLICATION NOTE: For hardware-intensive companies (per Section 2.2 Har
 
 
 <criterion id="A5" name="Cap Table and Deal Mechanics" weight_pct="8" max_points="8" status="Revised — Tech v1.0 R8">
+<revision_note>Tech v1.0 R8: Strategic Coherence Assessment with 3-rule formulation transfers from LS v5.1 v5.1 R1 with tech-specific example list (strategic pivot, layoffs, AI architecture change, co-founder departure during raise, pricing model change). SAFE stack treatment integrates the Walker/Carta deduction table with cross-reference to disqualifier (c) for the SAFE-stack-plus-stalled-pricing combination. Accelerator tier scoring uses four-tier classification (Tier 1/2/3/Unclassified) with named examples and qualifying criteria, mirroring LS v5.1 B5 R4-14 "exemplary not exhaustive" framing. Lead Investor Quality scoring uses four-tier classification with the "Real Lead" test. EVIDENCE BASE IS TENTATIVE for the accelerator tier thresholds and lead investor tier thresholds: tier classifications reflect research-derived practitioner consensus but have not been empirically validated against tech evaluation outcomes.</revision_note>
 
 <purpose>Evaluates cap table structure, round mechanics, and investor base quality at the Series A level. A clean, well-structured cap table with an institutional lead investor accelerates Series A closing and de-risks the subsequent Series B path. A messy or structurally compromised cap table is a hard disqualifier per Section 2.3. SAFE stacks above $3M combined with no priced round in 24+ months are also a hard disqualifier.</purpose>
 
@@ -704,7 +791,9 @@ Documentation requirement: When the No Real Lead pattern is identified, the A5 J
 </criterion>
 
 
-<criterion id="A6" name="Competitive Moat and Moat-Buildability" weight_pct="6" max_points="6" status="Revised — Tech v1.0 R9">
+<criterion id="A6" name="Competitive Moat and Moat-Buildability" weight_pct="6" max_points="6" status="Revised — Tech v1.0 R9; Tech v2.0 R6">
+<revision_note>Tech v1.0 R9: Unified band table with explicit Software and Hardware/Deep-Tech application notes (analogous to LS v5.1 B7 non-therapeutic application note). Helmer 7 Powers + NFX 4 Defensibilities combined taxonomy replaces LS v5.1 IP-centric framework. AI wrapper force-test integrates with A2 AI Modifier classification: 0–1 force-test failures support upper-mid to top band; 2 failures cap mid band; 3+ failures support lower band with Wrapper-Risk flag. Moat-buildability is scored as a distinct sub-component with 50/50 existence/trajectory split at Profile B shifting to 70/30 at Profile A. Hand-wave moat claim deductions apply. EVIDENCE BASE IS TENTATIVE for the existence/trajectory split ratios and force-test outcome thresholds; research-derived but not empirically validated.</revision_note>
+<revision_note>Tech v2.0 R6: Operationalized the HAND-WAVE INDICATOR DEDUCTIONS by giving each named claim category (data flywheel; network effects; AI moat / proprietary model; workflow embedding / switching costs) an all-of checklist of observable conditions that must be met for the claim to qualify as a hand-wave, and added an overlap rule so claims resting on the same Helmer/NFX source count once. Converts the rubric's most evaluator-divergent judgment into a checklist. Deduction magnitudes (1 point single; 2-3 points multiple with band-drop), the 70/30 existence/buildability split, the five force-test questions, and the 0-1/2/3+ outcome table are all unchanged.</revision_note>
 
 <purpose>Evaluates the company's competitive differentiation and its trajectory toward durable defensibility. At Profile A, moat existence weighs more heavily than moat-buildability trajectory because Series A companies have had longer to build moats. Patents are weighted at zero or slight-negative for pure software companies; weighted heavily for hardware/deep-tech via the Hardware application note. AI wrapper risk is force-tested.</purpose>
 
@@ -779,17 +868,19 @@ Workflow integration depth (integrations shipped) — concrete metric of embeddi
 Proprietary data accumulation rate — observable in product architecture and founder description of data flywheel.
 Distribution lock-ins shipped or in pipeline — exclusive partnerships, regulated-industry approvals, channel agreements.
 
-HAND-WAVE INDICATOR DEDUCTIONS: Research-derived hand-wave moat claims are discounted:
-"Data flywheel" with no mechanism for proprietary signal versus public data.
-"Network effects" claimed for products not actually multi-player.
-"AI moat" reducing to prompt engineering or fine-tuning on commodity models.
-
-When a hand-wave claim is identified, apply a 1-point deduction within the A6 band and document the deduction in Justification. If multiple hand-wave claims are identified, the deduction escalates to 2–3 points and may trigger the next lower band.
+HAND-WAVE INDICATOR DEDUCTIONS (operational criteria added Tech v2.0 R6): Research-derived hand-wave moat claims are discounted. A claim in each named category qualifies as a hand-wave only when ALL of the conditions listed for that category are met — this converts the prior open-ended "hand-wave-worthy" judgment into a checklist. The deduction magnitudes are unchanged.
+"Data flywheel" — a hand-wave when ALL of: the claim does not specify a mechanism by which proprietary data accumulates distinctly from public data; no accumulation rate, cross-user signal density, or proprietary retention period is stated or inferable; the data is not exclusive to the company (a competitor could build the same flywheel from the same sources).
+"Network effects" — a hand-wave when ALL of: the claim is stated as a category label (e.g., "we have network effects") without identifying the specific node type (user-to-user, user-to-content, cross-side marketplace, or protocol-based); no mechanism by which each additional user increases the product's value to existing users is described or inferable from product documentation.
+"AI moat" / proprietary model — a hand-wave when ALL of: the company has not passed Force-Test 1 (the model-proprietary-work test — proprietary training data, fine-tuning on proprietary data, or a custom model architecture); the moat claim rests solely on being "built on" a frontier model (GPT-4, Claude, or equivalent) rather than on proprietary work on top of or alongside it.
+"Workflow embedding" / switching costs — a hand-wave when ALL of: no specific integration point with a customer's core workflow is identified (e.g., "customers use us daily" without describing which workflow step the product occupies); no data-export friction, retraining cost, or contractual lock-in mechanism is identified.
+Overlap rule: when two or more claims from the same Helmer Power or NFX Defensibility category overlap (e.g., a "data flywheel" claim and an "AI moat" claim that both rest on the same data), count them as one claim, not two, for deduction-escalation purposes.
+When a hand-wave claim is identified, apply a 1-point deduction within the A6 band and document the deduction in Justification. If multiple distinct hand-wave claims are identified (after applying the overlap rule), the deduction escalates to 2–3 points and may trigger the next lower band.
 </moat_buildability>
 </criterion>
 
 
 <criterion id="A7" name="Exit Pathway and Acquirer Universe" weight_pct="6" max_points="6" status="Revised — Tech v1.0 R10">
+<revision_note>Tech v1.0 R10: Exit Pathway is included in both profiles per Design Brief C8a decision, with weight 6 at Profile A and weight 5 at Profile B reflecting the rhetoric-vs-reality tension at Seed. Acquirer universe density (5+ / 3–4 / 2 / 0–1 active acquirers in past 24 months) is the primary band anchor. Supplementary sub-components: comparable transaction availability (±1 within band); exit-timeline realism (1-point deduction for unrealistic timelines); fund-returnability sanity check as optional evaluator commentary. AI reverse-acqui-hire pattern documented as note for AI-Native Frontier companies.</revision_note>
 
 <purpose>Evaluates the visibility of the company's exit pathway through acquirer universe density and comparable transaction availability. At Profile A, the acquirer universe is more assessable than at Seed and the criterion carries the full LS v5.1 A7 weight of 6 points.</purpose>
 
@@ -856,7 +947,10 @@ AI REVERSE-ACQUI-HIRE PATTERN: Research documents an AI reverse-acqui-hire patte
 </weight_check>
 
 
-<criterion id="B1" name="Team Quality and Execution Credibility" weight_pct="33" max_points="33" status="Revised — Tech v1.0 R4">
+<criterion id="B1" name="Team Quality and Execution Credibility" weight_pct="33" max_points="33" status="Revised — Tech v1.0 R4; Tech v2.0 R3; Tech v2.0 R4">
+<revision_note>Tech v1.0 R4: Team Quality is the single most important criterion at Profile B (33 percentage points, the highest weight in the rubric), reflecting research finding that team weighting at Seed sits at 35–45% in practitioner consensus. At Seed, exceptional teams often lack prior exits; the top band signal is weighted toward halo-employer pedigree, technical depth, and Founder-Market Fit clarity rather than $500M+ exits. Solo-founder penalty is 1 point at Profile B (versus 2–3 points at Profile A) reflecting research finding that micro-VCs are more accepting of solo founders. FMF INFORMATION-SCARCE/INFORMATION-ABSENT treatment is identical to A1. NCSP tech-specific trigger types apply identically. EVIDENCE BASE IS TENTATIVE for NCSP calibration in tech per A1 revision_note.</revision_note>
+<revision_note>Tech v2.0 R3: Parallel to A1. The non-traditional-founder equivalences operationalized in the A1 halo_employer_taxonomy apply to B1 directly via B1's "per A1 halo_employer_taxonomy" references in the top and strong bands; added an FMF within-band note permitting strong Founder-Market Fit to support upper-band placement when named pedigree is absent, within the existing single-criterion B1 structure. The "clearly weak" floor is preserved. No band point ranges, the 33% weight, or the solo-founder protocol were changed.</revision_note>
+<revision_note>Tech v2.0 R4: Parallel to A1. Added the operational definition of the NCSP minor-versus-material distinction by source and type, identical to the A1 definition. Deduction magnitudes (1 point minor; 2-3 points material with band-drop permission), the cross-check directive, and the verify-before-crediting posture are unchanged. Definitional clarification only.</revision_note>
 
 <purpose>Evaluates the founding team's credibility as a fundraising signal at the $500K–$3M Seed level. Emphasizes halo-employer pedigree, technical depth (research-lab or frontier-lab for AI-native and deep-tech), and Founder-Market Fit clarity. Prior exits are valuable but not required at this stage. Single most heavily weighted criterion in the rubric.</purpose>
 
@@ -884,6 +978,8 @@ Strong FMF signals (supporting upper-mid to top band): prior published writing d
 Information scarcity treatment per Section 1.5: INFORMATION-SCARCE for FMF — founder has documented employment or educational history in the relevant domain but no prior writing, talks, or public artifacts articulating the earned secret. Apply midpoint-default within the assigned B1 band. INFORMATION-ABSENT for FMF — founder has no documented domain exposure AND no public artifacts. Score in the lowest applicable B1 band; do not apply midpoint-default.
 
 The FMF sub-component does not generate a separate score number; it informs the position within the B1 band. The Justification field must explicitly state the FMF signal assessment.
+
+FMF AND NON-NAMED PEDIGREE (Tech v2.0 R3): Strong Founder-Market Fit (per the Rachleff/Maples/Sequoia Arc tests above) can support placement at the upper portion of the assigned B1 band even when named-lab or named-employer pedigree is absent. This operates within the existing single-criterion B1 structure: FMF still does not generate a separate score and does not create a new criterion; it informs position within the band that the team's other signals establish.
 </scored_sub_component>
 
 <solo_founder_protocol>
@@ -896,6 +992,8 @@ DOCUMENTATION REQUIREMENT: When the solo-founder deduction is applied, the B1 Ju
 
 <negative_credibility_protocol>
 NEGATIVE CREDIBILITY SIGNAL PROTOCOL: Identical to the A1 NCSP protocol. Apply within the B1 band assignment:
+
+MATERIAL VERSUS MINOR — OPERATIONAL DEFINITION (Tech v2.0 R4): Identical to the A1 NCSP operational definition. A contradiction is MATERIAL when it involves (i) a co-founder/C-suite member's directly verifiable credential, title, affiliation, or metric contradicted by an independent source, or (ii) the company's own reported primary traction signal (flagship ARR, lead-customer claim, stated GitHub star count) contradicted by a source at least as credible as the primary claim. It is MINOR when it involves (i) a peripheral (non-co-founder/C-suite) team member's credential or affiliation, or (ii) an imprecision in a secondary claim that does not alter the overall credibility picture. Magnitudes are unchanged (1 point minor; 2-3 points material with band-drop permission); the cross-check directive and the verify-before-crediting posture are unchanged.
 
 SINGLE MINOR CONTRADICTION (1-point deduction; do not drop below band floor): Title inflation; modest contribution overstatement; unverifiable but plausible claims.
 
@@ -911,6 +1009,7 @@ DOCUMENTATION REQUIREMENT: The Justification field must name each contradiction,
 
 
 <criterion id="B2" name="Market Opportunity and Sector Tier" weight_pct="16" base_max_points="16" modifier_max_points="18" status="Revised — Tech v1.0 R5">
+<revision_note>Tech v1.0 R5: Sector criterion structure mirrors A2 exactly with identical 4-tier base taxonomy (PEAK/ACTIVE/COOL/COLD), identical AI-Native Modifier (+2/+1/0/−1 to −2), identical M&amp;A Modifier (recalibrated for tech volume), and identical combined-modifier cap of ±2. Operational Viability Condition trigger anchors on B1 + B3 (Team + Traction). EVIDENCE BASE IS TENTATIVE per A2 revision_note (AI Modifier values; OVC anchor specification).</revision_note>
 
 <purpose>Evaluates whether the company operates in a technology sector with active investor capital and downstream Series A appetite. Uses the same three-component structure as A2: base tier classification + AI Modifier + Market-Evidence (M&amp;A) Modifier, with combined AI + M&amp;A capped at ±2.</purpose>
 
@@ -974,7 +1073,9 @@ DOCUMENTATION REQUIREMENT: When triggered, document in B2 Justification: (a) B1 
 </criterion>
 
 
-<criterion id="B3" name="Product / Traction Evidence" weight_pct="15" max_points="15" status="Revised — Tech v1.0 R6">
+<criterion id="B3" name="Product / Traction Evidence" weight_pct="15" max_points="15" status="Revised — Tech v1.0 R6; Tech v2.0 R5">
+<revision_note>Tech v1.0 R6: Profile B Product/Traction Evidence uses Profile B thresholds — pre-revenue acceptability with strong design-partner LOIs, research-lab pedigree, or YC acceptance supports top-band placement. NRR is excluded from primary scoring at Profile B because customer cohorts are typically too young to compute retention; explicitly flagged as a forward-looking risk if customer cohorts exist with absent retention data. Five business-model application notes mirror A3 exactly with Profile B thresholds substituted. GitHub replacement metrics from A3 transfer identically. EVIDENCE BASE IS TENTATIVE per A3 revision_note.</revision_note>
+<revision_note>Tech v2.0 R5: Added the revenue-recognition standard (per A3, with B3 Seed thresholds) and the government/sovereign-procurement equivalence note (per A3, available independent of the hardware tag) to Profile B. The recognition standard classifies which figures qualify against the existing B3 thresholds; the government note scores government anchor customers at parity rather than against commercial "F500" language and supplies the B3 basis for the Block 5 Defense/Dual-Use archetype. No B3 thresholds, weights, or band definitions were changed; NRR remains excluded at Profile B per the existing nrr_exclusion_note.</revision_note>
 
 <purpose>Evaluates the company's product progress and early traction signals at the $500K–$3M Seed level. Pre-revenue acceptability is materially higher at Profile B than at Profile A: design-partner LOIs, research-lab pedigree, technical demos, and accelerator acceptance can support top-band placement without revenue.</purpose>
 
@@ -1011,6 +1112,10 @@ Developer Tools/Infrastructure: open-source community weak; no enterprise adopti
 Pre-product or very early product with no observable signals. No design-partner LOIs, no research-lab pedigree, no accelerator acceptance, no community traction, no enterprise pilots. Founder description of plans without demonstrable artifacts.
 </band>
 
+<revenue_recognition_standard>
+REVENUE-RECOGNITION STANDARD (Tech v2.0 R5): Applies identically to the A3 revenue-recognition standard, with the B3 (Seed) band thresholds substituted. Classify the figure first, then position the classified figure against the existing B3 bands: recognized ARR (recurring, invoiced, in collection) scores at full credit; bookings / contracted-but-not-yet-invoiced score at 70–80% of the same-dollar ARR credit (lower portion of the band the full amount would support, unless invoicing is confirmed within 90 days); LOI / pilot / design-partner figures presented as revenue score at 40–60% (lower half of the supported band, or one band below if the close path is unverified) — note that named design-partner LOIs remain independently creditable under the B3 pre-revenue bands and application notes, which already accept LOIs as a top-band signal at Seed; company-claimed metrics without contract documentation are flagged INFORMATION-SCARCE and take the midpoint-default per Section 1.5. This classification reduces judgment surface and does not alter the existing B3 thresholds or band definitions.
+</revenue_recognition_standard>
+
 <application_note business_model="Non-AI SaaS">Per A3 Non-AI SaaS application note with Profile B thresholds substituted. NRR explicitly excluded at Profile B; forward-looking retention risk flagged in Block 5 if customer cohorts exist with no retention data.</application_note>
 
 <application_note business_model="AI-Native Applied">Per A3 AI-Native Applied application note with Profile B thresholds substituted.</application_note>
@@ -1022,6 +1127,10 @@ Pre-product or very early product with no observable signals. No design-partner 
 <application_note business_model="Developer Tools / Infrastructure">Per A3 Developer Tools/Infrastructure application note with Profile B thresholds substituted. GitHub replacement metrics from A3 transfer identically; Band 1 thresholds at Profile B are reduced from A3 levels (fork-to-star ratio above 0.05; contributor count above 25; downloads above 25K/month).</application_note>
 
 <application_note business_model="Hardware/Deep-Tech/Defense/Space">Per A3 Hardware application note with Profile B thresholds. Certification milestones, government contract revenue, design-partner LOIs from prime contractors apply.</application_note>
+
+<government_procurement_equivalence_note>
+GOVERNMENT / SOVEREIGN-PROCUREMENT EQUIVALENCE (Tech v2.0 R5; applicable regardless of hardware classification): Applies the same equivalences as the A3 government-procurement equivalence note, available to non-hardware-tagged software govtech, software defense, and sovereign-customer companies at Profile B. An executed government contract or DoD subcontract with a verifiable contract ID maps to a "strong design-partner LOI from a regulated-industry leader"; a government-agency LOI or pilot maps to a "design-partner LOI"; government-procurement certification milestones (FedRAMP, StateRAMP, CMMC, or equivalent) without a revenue contract map to "pre-revenue with demonstrated regulatory pathway" at the lower mid-band. This supplies the B3 scoring support for the Block 5 Defense/Dual-Use archetype and does not create a Profile C or alter any threshold. Cite explicitly in the B3 Justification field when invoked.
+</government_procurement_equivalence_note>
 
 <replacement_metrics name="GitHub Star Replacement Metrics — Profile B Thresholds">
 Per A3 replacement_metrics sub-element with Band 1 thresholds at Profile B levels:
@@ -1040,6 +1149,7 @@ NRR EXCLUSION AT PROFILE B: NRR is typically not observable at Seed because cust
 
 
 <criterion id="B4" name="Capital Efficiency and Runway Discipline" weight_pct="7" max_points="7" status="Revised — Tech v1.0 R7">
+<revision_note>Tech v1.0 R7: Runway bands use identical breakpoints to A4 (24/18/12 months) with Profile-B-specific Justification interpretation: at Seed, 12-month runway is normal and the criterion focuses on whether use-of-proceeds plan extends runway to value-inflecting milestones rather than penalizing 12-month runway as concerning. Burn Multiple typically inapplicable pre-revenue at Profile B; pre-revenue alternative scoring basis is the dominant scoring path. Hardware application note transfers identically.</revision_note>
 
 <purpose>Evaluates the company's capital efficiency and the quality of its runway planning at the $500K–$3M Seed level. At Seed, the criterion focuses on whether the use-of-proceeds plan extends runway to value-inflecting milestones, not on penalizing 12-month runway as concerning. Burn Multiple is typically inapplicable pre-revenue.</purpose>
 
@@ -1074,6 +1184,7 @@ PROFILE B JUSTIFICATION INTERPRETATION: At Seed, 12-month runway is a normal ope
 
 
 <criterion id="B5" name="Cap Table and Deal Mechanics" weight_pct="12" max_points="12" status="Revised — Tech v1.0 R8">
+<revision_note>Tech v1.0 R8: SCA, SAFE stack treatment, accelerator tier scoring, and lead investor quality scoring all transfer identically from A5 to B5 with Profile-B-specific anchor signals. At Profile B, Tier 1 accelerator membership and Seed-stage micro-VC lead are the primary anchor signals rather than Series A institutional lead quality. EVIDENCE BASE IS TENTATIVE per A5 revision_note for accelerator and lead investor tier thresholds.</revision_note>
 
 <purpose>Evaluates cap table structure, round mechanics, and investor base quality at the $500K–$3M Seed level. At Profile B, accelerator tier and Seed-stage lead investor quality function as the primary anchor signals. A clean SAFE-based or priced-seed structure with identifiable institutional anchors accelerates the path to Series A.</purpose>
 
@@ -1134,7 +1245,9 @@ Lead investor quality scoring is identical to A5. Refer to A5 lead_investor_qual
 </criterion>
 
 
-<criterion id="B6" name="Competitive Moat and Moat-Buildability" weight_pct="12" max_points="12" status="Revised — Tech v1.0 R9">
+<criterion id="B6" name="Competitive Moat and Moat-Buildability" weight_pct="12" max_points="12" status="Revised — Tech v1.0 R9; Tech v2.0 R6">
+<revision_note>Tech v1.0 R9: Moat criterion structure mirrors A6 exactly (unified bands with Software and Hardware application notes; Helmer/NFX combined taxonomy; AI wrapper force-test with identical 0–1/2/3+ failure thresholds). At Profile B, the moat existence versus moat-buildability trajectory split is 50/50 (versus 70/30 at Profile A). Moat-buildability trajectory is the primary differentiator between top and upper-mid bands at Profile B because Seed companies have had less time to build moats. EVIDENCE BASE IS TENTATIVE per A6 revision_note.</revision_note>
+<revision_note>Tech v2.0 R6: Updated the HAND-WAVE INDICATOR DEDUCTIONS to invoke the operationalized A6 checklist (the four named categories each qualify only when all of that category's conditions are met; overlapping same-source claims count once). The operational criteria are present in both profiles by reference, consistent with B6's inheritance from A6. Magnitudes and the 50/50 existence/buildability split are unchanged.</revision_note>
 
 <purpose>Evaluates the company's competitive differentiation and trajectory toward durable defensibility at the $500K–$3M Seed level. At Profile B, moat-buildability trajectory weighs equally with moat existence (50/50 split); the upper-mid to top band differentiator is whether multiple credible moat-buildability signals are present.</purpose>
 
@@ -1167,12 +1280,13 @@ Moat-buildability is scored as a distinct sub-component within B6. At Profile B,
 
 Observable moat-buildability signals identical to A6 (engagement curves trending up; hard-side recruitment articulated; cohort retention not declining; workflow integration depth shipping; proprietary data accumulation rate; distribution lock-ins shipping).
 
-HAND-WAVE INDICATOR DEDUCTIONS: Identical to A6 (data flywheel without mechanism; network effects for non-multi-player; AI moat reducing to prompt engineering). 1-point deduction for single hand-wave claim; escalating to 2–3 points and band drop for multiple.
+HAND-WAVE INDICATOR DEDUCTIONS: Operationalized identically to A6 (Tech v2.0 R6). The four named categories — data flywheel; network effects; AI moat / proprietary model; workflow embedding / switching costs — each qualify as a hand-wave only when ALL of that category's conditions in the A6 checklist are met, and overlapping claims resting on the same Helmer Power or NFX Defensibility source count as one. 1-point deduction for a single hand-wave claim; escalating to 2–3 points and a band drop for multiple distinct claims (after the overlap rule). Magnitudes and the 50/50 existence/buildability split at Profile B are unchanged.
 </moat_buildability>
 </criterion>
 
 
 <criterion id="B7" name="Exit Pathway and Acquirer Universe" weight_pct="5" max_points="5" status="Revised — Tech v1.0 R10">
+<revision_note>Tech v1.0 R10: Exit Pathway is included at Profile B at the floor of meaningful contribution (5 points) per Design Brief C8a decision. The lower weight reflects research finding that "most investors don't think about exits at Seed — that's rhetoric not reality" while preserving the criterion's signal value because acquirer universe density and comparable transaction availability are increasingly assessable at Seed in technology sectors with high M&amp;A volume. Bands scaled proportionally to 5-point maximum.</revision_note>
 
 <purpose>Evaluates the visibility of the company's exit pathway through acquirer universe density and comparable transaction availability at the $500K–$3M Seed level. The criterion carries the floor of meaningful contribution (5 points) reflecting the rhetoric-vs-reality tension at Seed identified in research.</purpose>
 
@@ -1222,6 +1336,7 @@ RHETORIC-VS-REALITY TENSION AT SEED: At Profile B, exit pathway assessment is mo
      ============================================================ -->
 
 <section id="5" name="Standardized Scoring Output Format" status="Revised — Tech v1.0 R11">
+<revision_note>Tech v1.0 R11: Output format inherits the seven-block structure from LS v5.1 v5.1 with field-level adaptations for tech context. Block 0 Sector field restructured to four-part format (Primary Sector / Sub-Sector / AI Tier Classification / Business Model). Block 1 Development Stage enumerated list replaces FDA stage values with the tech taxonomy from Section 2.1. Block 1 Routing Rationale required to cite three inputs (RAISE SIZE, DEVELOPMENT STAGE, INVESTOR COMPOSITION) per LS v5.1 R4-05. Block 1 includes routing_input_definitions sub-element with the four-tier investor composition classification. Block 1 Market Context Note format strings added for Fund-Mandate-Fit flag, Wrapper-Risk flag, and Hardware Profile flag. Block 2 Disqualifier Screen restructured with 10 disqualifiers grouped in four categories. Block 3 modifier_sub_block expanded to include AI Tier Classification, AI Modifier value, AI Modifier Justification, M&amp;A Modifier, Combined Modifier (with cap notation), Combined Modifier Justification. Block 4 operational_viability_summary mapping rules adapted for tech anchor criteria. Block 5 Most Likely Investor Archetype field uses defined seven-archetype taxonomy with primary and optional secondary selection.</revision_note>
 
 <block id="0" name="Evaluation Header">
 <instruction>Required for every evaluation. Provides traceability metadata.</instruction>
@@ -1235,7 +1350,8 @@ RHETORIC-VS-REALITY TENSION AT SEED: At Profile B, exit pathway assessment is mo
 <field name="Evaluator">[Model identifier or human evaluator name]</field>
 </block>
 
-<block id="1" name="Routing Determination">
+<block id="1" name="Routing Determination" status="Revised — Tech v2.0 R7">
+<revision_note>Tech v2.0 R7: Added a fourth Market Context Note flag string — the Archetype-Misfit flag — that discloses when a company falls outside v2.0's reliable scoring range, defined by four observable triggers (AI-adjacent/frontier-by-research without named-lab pedigree; token or hybrid cap structure; claimed-revenue-only with no verification pathway; novel category with no comps and no strategic partnerships). The trigger list was defined last, after the A1/B1 "or equivalent" (R3) and A3/B3 government-procurement (R5) coverage additions, and it explicitly excludes non-traditional founders and government customers because v2.0 now scores them natively, so the flag fires only on still-uncovered archetypes. The flag is additive: it does not change tier assignment or the Data Confidence machinery, and the existing Fund-Mandate-Fit, Wrapper-Risk, and Hardware flag strings are preserved.</revision_note>
 <instruction>Establishes profile assignment and scope status before any scoring begins.</instruction>
 <field name="Profile Assigned">[Profile A / Profile B / Out of Scope — Benchmark / Out of Scope — Pre-Seed Exclusion]</field>
 <field name="Target Raise">[$X.XM]</field>
@@ -1273,10 +1389,13 @@ For AI-Augmented Wrapper Wrapper-Risk flag: "Market Context Note: AI-Augmented W
 
 For Hardware Profile flag: "Market Context Note: Hardware/Deep-Tech application notes applied to A3/B3 (traction certification milestones), A4/B4 (Burn Multiple relaxation), A6/B6 (patent weighting), A2/B2 (Defense/Robotics sector classification). See Future Revisions Log entry FV-tech-1 for deferred Profile C development."
 
+For Archetype-Misfit flag: "Market Context Note: ARCHETYPE-MISFIT — [trigger condition(s)]. Tier assignment is directionally indicative but scoring reliability is reduced for this archetype. Independent verification recommended before engagement decision." Invoke this flag when the company exhibits one or more characteristics that v2.0 does not score natively (i.e., where native scoring has not been established through a Revised criterion in this version): (1) AI-adjacent-infrastructure positioning, or frontier-by-research classification without named-lab pedigree (the v2.0 AI-Native taxonomy has no native slot for these); (2) a token or token/equity-hybrid capital structure (v2.0 A5/B5 language is equity-only); (3) primary revenue reported exclusively as company-claimed metrics with no contract documentation and no independent verification pathway; (4) a novel category with no completed acquisitions in the specific sub-vertical in the trailing 36 months AND no comparable strategic partnerships. Do NOT invoke for: non-traditional founder pedigree (now scored natively per the A1/B1 "or equivalent" equivalences); government/sovereign customers (now scored natively per the A3/B3 government-procurement equivalence note); companies with recognized ARR or documented bookings (addressed by the A3/B3 revenue-recognition standard); or companies clearly classifiable in an existing AI tier (Frontier/Applied/Non-AI/Wrapper). This flag does not change tier assignment and appears alongside any other applicable flags. It measures a different axis from the Data Confidence rating (archetype fit versus data completeness); when invoked, the Data Confidence rating may remain HIGH/MODERATE/LOW per its standard criteria.
+
 Leave blank if no notes are required.]</field>
 </block>
 
-<block id="2" name="Disqualifier Screen">
+<block id="2" name="Disqualifier Screen" status="Revised — Tech v2.0 R8">
+<revision_note>Tech v2.0 R8: Mirrored the two new Section 2.3 disqualifiers (k) and (l) into the output Disqualifier Screen by adding a fifth category, Regulatory and Customer Integrity, with the corresponding (k) and (l) fields in CLEAR / NOT APPLICABLE / TRIGGERED format, and extended the Disqualifier Outcome NOT-APPLICABLE track to include (k) and (l). The (l) field carries the explicit routing note that inflated (real-but-overstated) customer relationships go to the NCSP scored deduction, not to termination, keeping Section 2.3 and Block 2 identical. No other Block 2 field was altered.</revision_note>
 <instruction>The disqualifier screen is a gate. If any disqualifier is TRIGGERED, the evaluation terminates here. The company is classified as Out of Scope. No criterion scores, total score, fundability tier, or fundraising readiness are assigned. Blocks 3–5 are populated with "N/A — Disqualified" and the basis for disqualification. Block 6 (Footer) is still completed.
 
 Disqualifiers are organized in four categories. Mark each as CLEAR, TRIGGERED with explanation, or NOT APPLICABLE where the non-applicability rule applies. Marking NOT APPLICABLE does not trigger disqualification.</instruction>
@@ -1303,7 +1422,12 @@ Disqualifiers are organized in four categories. Mark each as CLEAR, TRIGGERED wi
 <field name="(j) Data Security Enforcement Action">[CLEAR / NOT APPLICABLE / TRIGGERED — explanation; mark NOT APPLICABLE for tech companies not handling protected health information, genomic data, regulated financial data, or other regulated data categories]</field>
 </category>
 
-<field name="Disqualifier Outcome">[ALL CLEAR / NOT APPLICABLE TRACK FOR (h), (i), and/or (j) WITH NO TRIGGER — proceed with evaluation / TRIGGERED — terminate evaluation; classify Out of Scope; populate Blocks 3 through 5 with "N/A — Disqualified" and basis for disqualification; complete Block 6]</field>
+<category name="Regulatory and Customer Integrity">
+<field name="(k) Sanctioned Jurisdiction / OFAC-SDN Exposure">[CLEAR / NOT APPLICABLE / TRIGGERED — explanation; OFAC SDN or equivalent sanctions-list match on operating jurisdiction, a named owner, or a named customer, or a stated model requiring sanctioned-jurisdiction processing without compliance controls; mark NOT APPLICABLE for companies with no cross-border payment exposure, no international revenue, and no named entity in a sanctioned jurisdiction]</field>
+<field name="(l) Fabricated or Undisclosed Related-Party Customer">[CLEAR / NOT APPLICABLE / TRIGGERED — explanation; triggers only at the wholesale-fabrication bar (a demonstrably non-existent customer, or an undisclosed related party presented as arm's-length). Route inflated (real-but-overstated) relationships to the A1/B1 NCSP scored deduction, NOT to termination; mark NOT APPLICABLE for companies citing no named customer as a primary traction signal]</field>
+</category>
+
+<field name="Disqualifier Outcome">[ALL CLEAR / NOT APPLICABLE TRACK FOR (h), (i), (j), (k), and/or (l) WITH NO TRIGGER — proceed with evaluation / TRIGGERED — terminate evaluation; classify Out of Scope; populate Blocks 3 through 5 with "N/A — Disqualified" and basis for disqualification; complete Block 6]</field>
 </block>
 
 <block id="3" name="Criterion Scoring">
@@ -1446,7 +1570,7 @@ Cite primary sources where possible (e.g., "Crunchbase round history confirms"; 
 
 </section>
 
-  <!-- Sections 6-7 (Revision Log, Future Revisions) moved to:
-       Technology Rubric - Revision History.xml -->
+<!-- Sections 6-7 (Revision Log, Future Revisions) moved to:
+     technology-rubric-revision-history.xml -->
 
 </rubric>

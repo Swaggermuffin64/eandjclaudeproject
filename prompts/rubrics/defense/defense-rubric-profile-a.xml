@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  DEFENSE COMPANY FUNDRAISING ICP EVALUATION INSTRUMENT
+  Version 2.0 — Profile A Criteria
+  Shared sections (evaluation context, routing, output format) are in:
+    defense-rubric-shared.xml
+-->
+
+  <!-- ============================================================
+       SECTION 3 - PROFILE A EVALUATION RUBRIC
+       Target: Private defense technology companies raising $3M-$15M
+       Expected DDST stage: DS-5 through DS-7
+       WEIGHT CHECK: A1(22)+A2(15)+A3(20)+A4(12)+A5(11)+A6(8)+A7(12)=100
+       NOTE: A2 base max = 15pts; with plus/minus 2 modifier max = 17pts (scoring range 98-102)
+       ============================================================ -->
+  <section id="3" name="Profile A Evaluation Rubric">
+
+    <weight_check profile="A">
+      <criterion id="A1" weight_pct="22" max_points="22"/>
+      <criterion id="A2" weight_pct="15" base_max_points="15" modifier_max_points="17"/>
+      <criterion id="A3" weight_pct="20" max_points="20"/>
+      <criterion id="A4" weight_pct="12" max_points="12"/>
+      <criterion id="A5" weight_pct="11" max_points="11"/>
+      <criterion id="A6" weight_pct="8"  max_points="8"/>
+      <criterion id="A7" weight_pct="12" max_points="12"/>
+      <total_weight>100</total_weight>
+    </weight_check>
+
+
+    <criterion id="A1" name="Team Quality and Defense-Domain Credibility" weight_pct="22" max_points="22" status="Defense ICP v1.0 R1">
+      <revision_note>Three-family defense halo-employer taxonomy (Design Section 5A) replaces the Tech ICP commercial halo set and the LS KOL framework. Founder-Market Fit is a scored sub-component positioned within the team band (the Tech ICP convention). Solo-founder protocol carried from Tech ICP with a defense exception (Design Section 5C). NCSP transfers from Tech/LS with defense-specific contradiction types (Design Section 5D); stolen-valor-grade falsified service escalates to the Block-2 disqualifier D1. EVIDENCE BASE IS TENTATIVE: the defense-specific NCSP contradiction types and the operator-vs-engineer pedigree balance have not been empirically calibrated.</revision_note>
+
+      <purpose>Evaluates the founding/executive team's demonstrated ability to build and field defense technology and to transact with the government. Measures a blend of (i) technical/engineering pedigree and (ii) operational/government-domain credibility (founder-market fit). Dominant fundraising-velocity predictor at both profiles (research Workstream 2b). Bands are near stage-invariant; the Profile-A delta is noted. Single most heavily weighted criterion.</purpose>
+
+      <band min="17" max="22" label="Exceptional Defense-Team Credibility">
+        At least one founder/key executive from a Tier-1 defense halo employer (see halo_employer_taxonomy) in a role demonstrating real technical depth or program authority - OR a complementary pair: a Tier-1 technical founder PLUS a Tier-1 operational/acquisition founder (the engineer-CEO plus operator pattern). Two or more Founder-Market-Fit signals present (e.g., prior end-user deployment in the exact domain AND government-side acquisition/program experience). Demonstrated development capacity (named engineering leads / shipped prototype), not advisor-fronted; the team can build, not merely convene. Clearance-eligible or cleared key personnel where the domain requires it. A-DELTA: at Profile A, evidence the team has EXECUTED a government contract or fielded a system (a prior exit or an executed government contract under this team), not merely won an award, can anchor the top band.
+      </band>
+
+      <band min="12" max="16" label="Strong Credibility with Gaps">
+        Credible technical pedigree from Tier-2 sources plus some domain credibility, but missing EITHER elite technical depth OR deep operational/acquisition experience; OR strong Tier-2 coverage across both dimensions. One FMF signal present; founder-market fit is plausible but not richly corroborated. Development capacity demonstrated but thin (small technical bench).
+      </band>
+
+      <band min="6" max="11" label="Developing Credibility">
+        Relevant background but thin on BOTH the technical-depth and operational-domain dimensions (e.g., a strong commercial-tech team new to defense with limited domain credibility; or operators with development capacity still being built). FMF asserted via domain employment/education but no public artifacts (INFORMATION-SCARCE leads to midpoint within this band). No cleared personnel where the domain will require clearances.
+      </band>
+
+      <band min="0" max="5" label="Insufficient or Advisor-Fronted Team">
+        No relevant defense-domain or elite-technical pedigree. "Advisor-heavy / engineering-light" - many senior advisors/retired flag officers on the masthead, near-zero technical FTEs (the War College "Fool's Gold" pattern); triggers NCSP review (Design Section 5D). Founder identity/background uncorroborated by third-party sources (INFORMATION-ABSENT, not SCARCE).
+      </band>
+
+      <halo_employer_taxonomy>
+        DEFENSE HALO-EMPLOYER TAXONOMY (three credibility families, each with Tier-1 and Tier-2 designations; exemplary, not exhaustive - "or equivalent" framing applies). [Tier-1/Tier-2 company assignments are a 2025-2026 snapshot and will drift; re-confirm at tier-table re-versioning per Design Section 12D.]
+
+        Family (i) - Pure-defense companies (alumni networks):
+          Tier 1: Anduril, Palantir, SpaceX, Shield AI (the recurring "Palantir/PayPal/SpaceX mafia" pattern; founder lineage from these firms is the strongest commercial-defense pedigree signal).
+          Tier 2: Saronic, Castelion, Vannevar, Epirus, Rebellion Defense, Skydio and comparable scaled venture-backed defense companies; primes' elite advanced units (Lockheed Skunk Works, Northrop advanced programs).
+
+        Family (ii) - Government / IC / military programs:
+          Tier 1: DARPA program managers; DIU fellows/leadership; In-Q-Tel investment/technical staff; IC officers in relevant programs; special-operations (SOF) officers in a domain relevant to the company's product; senior PEO/acquisition leaders.
+          Tier 2: broader military service (non-SOF, relevant branch/MOS); program-office staff below PM; service-lab technical staff.
+
+        Family (iii) - Academic / research institutions:
+          Tier 1: MIT Lincoln Laboratory, JHU Applied Physics Laboratory (APL), MITRE, SRI, other FFRDCs/UARCs, and DARPA-funded principal investigators.
+          Tier 2: high-pedigree commercial deep-tech research backgrounds (Tesla, NVIDIA, Google AI/DeepMind) paired with a defense-domain co-founder; strong university research programs without a defense nexus on their own.
+
+        Band logic uses the taxonomy directly: TOP requires Tier-1 pedigree in EITHER the technical or the operational/government family AND complementary depth in the other dimension; UPPER-MID requires Tier-1 in one dimension with thinner coverage in the other OR strong Tier-2 across both; LOWER-MID is relevant background thin on both dimensions; LOWEST is no relevant pedigree or the advisor-fronted Fool's-Gold pattern.
+      </halo_employer_taxonomy>
+
+      <scored_sub_component name="Founder-Market Fit (FMF)">
+        Founder-Market Fit is scored within the A1 band assignment as a sub-component rather than a standalone criterion (the Tech ICP NRR/FMF convention - it outputs a position within the band, never a number, and cannot change the band). Defense FMF "earned-secret" signals, ordered:
+        - Prior DEPLOYMENT in a relevant operational context.
+        - Prior ACQUISITION/PROCUREMENT experience from the government side.
+        - Prior CLASSIFIED-PROGRAM experience (existence observable via clearance/bio signals even where details are INFORMATION-SCARCE).
+        - Prior experience as an END-USER of the class of system the company builds.
+        - PUBLISHED WRITING / CONFERENCE PRESENTATIONS on the operational problem (the defense analog of the Rachleff/Maples/Sequoia Arc "earned secret" test).
+
+        SCORING RULE: two or more corroborated FMF signals position the team at the TOP of its current band; one signal positions at the middle; none positions at the lower portion of the band. FMF never moves the team across bands by itself. The Justification field must explicitly state the FMF signal assessment. All "classified-program experience" handling uses the INFORMATION-SCARCE track (midpoint within band, justified, with a named corroborating artifact) - never penalize undisclosed-but-corroborated clearance/program signals (Design Section 12A).
+      </scored_sub_component>
+
+      <solo_founder_protocol>
+        SOLO-FOUNDER TREATMENT (carried from Tech ICP with a defense exception): apply a 2-3 point deduction at Profile A for a solo founder, with permission to drop to the next lower band if the deduction would exceed the band floor (mirroring NCSP material-contradiction mechanics). The greater Profile A penalty (vs. Profile B's 1-point deduction) reflects that institutional Series A leads are systematically less accepting of solo founders.
+
+        DEFENSE EXCEPTIONS (either suffices to waive the deduction): (1) the solo founder is a Tier-1 individual (e.g., former DARPA PM, senior PEO, senior SOF/IC leader) AND has assembled a NAMED, CREDIBLE TECHNICAL BENCH (so the company is not "general-on-the-payroll" with no development capacity); OR (2) the founder has a prior exit above $500M (the inherited Tech ICP exception).
+
+        DOCUMENTATION REQUIREMENT: When the solo-founder deduction is applied or waived, the A1 Justification field must explicitly state the deduction magnitude (or the waiving exception) and the resulting score position within the band.
+      </solo_founder_protocol>
+
+      <negative_credibility_protocol>
+        NEGATIVE CREDIBILITY SIGNAL PROTOCOL (defense contradiction types): Before finalizing the A1 score, the evaluator must assess whether any credibility claims made by the team are directly contradicted by verifiable evidence. Verifiable evidence includes: title records (LinkedIn, company website, filings); SBIR.gov award PI records; public military records / Defense Manpower Data Center (DMDC); Blue UAS list membership and SBIR Phase II awardee records; competitor existence data.
+
+        Defense-specific contradiction types:
+        - Misrepresented military service or rank (cross-check LinkedIn/bio against public military records / DMDC). STOLEN-VALOR-GRADE fabrication escalates beyond a deduction to the Team-Integrity disqualifier D1 (Design Section 11); minor exaggeration is the deduction below.
+        - Claimed security clearances that cannot be verified (clearance existence is sometimes verifiable; level usually not).
+        - Exaggerated government program participation or advisory roles.
+        - False SBIR authorship / PI attribution (cross-check SBIR.gov award PI records).
+        - "Advisor-heavy / engineering-light" team inflation (many senior advisors/retired flag officers, near-zero technical FTEs).
+        - Claimed "first-in-class" positioning contradicted by existing Blue UAS list members or SBIR Phase II awardees in the same sub-sector.
+
+        CLASSIFICATION RULE (deduction predicate): a deduction under this protocol requires NAMED CONTRADICTING EVIDENCE - a specific claim and the specific verifiable source that contradicts it. An UNVERIFIED-UNCORROBORATED claim (plausible but not confirmable - e.g., a structurally non-public clearance claim, or an in-window provisional patent with no public trace) is NOT a contradiction and never earns a credibility deduction; it is classified and routed to evidence-band placement per Section 1.5 (INFORMATION-SCARCE / INFORMATION-ABSENT) and, where diligence-material, recorded as a Block-5 flag. The "first-in-class" strict predicate is unchanged. If one or more contradictions are identified, apply a deduction within the assigned band as follows:
+        MINOR CONTRADICTION(S): informal title inflation, modest overstatement, or comparable promotional items - each contradicted by a named source - where the AGGREGATE SEVERITY of the set remains minor. Apply a 1-point deduction within the assigned band; do not drop below the band floor. Multiple genuinely-minor promotional items REMAIN in this bucket unless their aggregate severity warrants escalation; the severity basis for keeping or escalating must be documented.
+        MATERIAL CONTRADICTION (severity-keyed, not count-keyed): a single materially false claim, OR a cluster of contradicted claims whose AGGREGATE SEVERITY is material. Apply a 2-3 point deduction within the assigned band; the evaluator may drop to the next lower band if the deduction would exceed the band floor. The Justification must state the severity basis for the bucket assignment (why the item or cluster is material) - an item count alone never assigns this bucket.
+        NO CONTRADICTIONS IDENTIFIED: No deduction. Score per band definitions on their merits.
+
+        This protocol applies regardless of whether the midpoint-default is in effect. DOCUMENTATION REQUIREMENT: The Justification field must name each contradiction, identify the source that contradicts it, state the deduction applied, and record the classification of any unverified items considered (classified as Section 1.5 evidence states under the Classification Rule, not as contradictions). When no contradictions are found, a one-sentence statement is sufficient: "Negative Credibility Signal Protocol applied - no contradicted claims identified."
+      </negative_credibility_protocol>
+    </criterion>
+
+
+    <criterion id="A2" name="Sector and Market Alignment" weight_pct="15" base_max_points="15" modifier_max_points="17" status="Defense ICP v1.0 R2">
+      <revision_note>Four-tier base classification (Tier 1 PEAK / Tier 2 ACTIVE / Tier 3 SELECTIVE / Out-of-Favor) from the dated defense sector tier table (research Workstream 3; PCDB DS-4). A SINGLE Sector Market-Event Modifier (plus/minus 2) replaces the Tech ICP's three-component modifier structure - it is not split into AI / M&amp;A / dual-use components. Dual-use carries no modifier and no band adjustment; it is qualitative-only (Block 5). The OVC anchors are C1 (Team) and C3 (Traction). The tier-table staleness mechanism (Design Section 12D) caps the modifier at plus/minus 1 when the table is stale. EVIDENCE BASE IS TENTATIVE: the M&amp;A enterprise-value modifier bands and the appropriations +1/+2 boundary are anchored on few comps.</revision_note>
+
+      <purpose>Evaluates whether the company operates in a defense sub-sector currently attracting investor capital and program demand. Two parts: a four-tier base classification (general appetite, from the dated tier table) and a single Sector Market-Event Modifier (plus/minus 2). Stage-invariant. Subject to the OVC cap (this criterion is the capped criterion, not an OVC anchor).</purpose>
+
+      <band min="12" max="15" label="Tier 1 Sector - Peak Investor Appetite">
+        Sub-sector is on the current Tier 1 list: Autonomy/UAS; Counter-UAS; Defense AI / C4ISR / mission software; Space/ISR-from-space. Multiple rounds of $20M or more at Seed-A and active M&amp;A/IPO motion in the sub-sector within the trailing 12 months. Appropriations trend rising; named program demand exists (e.g., Replicator/Drone Dominance, Golden Dome adjacency). TIER-1 ENGAGEMENT TEST: Tier-1 appetite credit requires DEMONSTRATED defense engagement - at least one government-facing artifact (SBIR.gov or USASpending record, SAM.gov registration with defense activity, a DIU/AFWERX/prime announcement, or documented exercise participation) - not a sub-sector string-match. A defense-claiming company with zero government-facing artifacts does not earn Tier-1 credit on naming alone; classify it per the sub-sector its DEMONSTRATED positioning supports, or per the default-tier rule if off-table after the table check. The engagement artifact must be cited in the Justification wherever Tier-1 credit is granted.
+      </band>
+
+      <band min="8" max="11" label="Tier 2 Sector - Active Investor Interest">
+        Sub-sector on the current Tier 2 list: Maritime autonomy; Hypersonics/directed energy; Cyber/zero-trust; Logistics/supply-chain; Defense electronics; EW/SIGINT. Funding present but thinner or expanding from a smaller base; some M&amp;A.
+      </band>
+
+      <band min="4" max="7" label="Tier 3 Sector - Selective Investor Interest">
+        Sub-sector on the current Tier 3 list: Quantum for defense; Biodefense/CBRN; Human performance/soldier systems; Training and simulation; Enabling/infrastructure segments (MBSE, digital-engineering, and defense "picks-and-shovels" tooling) [added v2.0 - assigned Tier 3: appetite is real but selective and thesis-driven; assignment stops these segments from landing on the default rule]. Niche or mixed-trajectory funding; selective, thesis-driven investor interest only.
+      </band>
+
+      <band min="0" max="3" label="Out-of-Favor or Unproven Sector">
+        Pure services / labor-intensive low-growth; single-program hardware with no commercial or transition path; SBIR-mill R&amp;D shops; sub-sectors with documented contraction.
+      </band>
+
+      <default_tier_rule>
+        DEFAULT-TIER RULE: if the sub-sector is not on the dated tier table, default to Tier 3 / lower-mid and document the classification basis in the A2 Justification (mirrors the Tech ICP default-tier rule). PRECEDENCE: explicit band criteria govern over the default - a sub-sector meeting a documented band condition (e.g., the Out-of-Favor band's documented-contraction criterion) classifies by that band, never by the default. The default is an admission of ignorance about investor appetite, invoked ONLY after the tier table's named entries have been checked; the Justification must state the table row(s) checked before the default was invoked.
+      </default_tier_rule>
+
+      <sector_tier_table_versioning status="TENTATIVE - calibration needed">
+        SECTOR TIER TABLE VERSIONING: The sector tier classification above reflects the 2025-2026 snapshot (version date: v2026-Q2). Defense sub-sector investor appetite moves with Congressional appropriations and battlefield lessons faster than commercial sectors. The tier table must be re-evaluated: (i) at least annually; (ii) on each NDAA or full-year appropriations enactment; and (iii) on any mandatory trigger event - a new mega-program (Golden-Dome-scale appropriation), a marquee M&amp;A (BlueHalo-scale enterprise value), a major program cancellation, a Replicator-scale procurement announcement, or a documented sector-wide multiple compression or shakeout.
+
+        STALENESS NOTATION: When the analysis date is MORE THAN 12 MONTHS after the tier-table version date (v2026-Q2), or when a mandatory trigger event has occurred since the version date, the evaluator must: (a) stamp Block 0 with [SECTOR TIER TABLE STALE - v2026-Q2]; (b) stamp Block 5 with the same flag; (c) CAP the Sector Market-Event Modifier at plus/minus 1 (not plus/minus 2) until the tier table is re-versioned. A stale tier table cannot drive a full plus/minus 2 swing.
+      </sector_tier_table_versioning>
+
+      <component id="1" name="Sector Market-Event Modifier" points="-2 to +2" status="Defense ICP v1.0 - single modifier (NOT split into multiple components)">
+        <instruction>This is the SINGLE combined modifier on C2 - it is not split into two or three components. After assigning the base tier score, apply the modifier below. A modifier value other than 0 MUST cite a specific named event with a date in the C2 Justification; a non-zero modifier with no named event is a FORMAT ERROR. The modifier adjusts the base score and may cause the final C2 score to exceed the base tier ceiling or fall below the base tier floor (operative envelope 98-102). When the tier table is stale (see sector_tier_table_versioning), cap this modifier at plus/minus 1.</instruction>
+
+        <modifier value="+2" label="Transformational - Sector-Redefining">
+          A tens-of-billions appropriations program that redefines the sub-sector (e.g., the $151B Golden Dome initiative for space/missile-defense adjacency); OR a strategic acquisition with enterprise value greater than $3B (e.g., BlueHalo / AeroVironment, approximately $4.1B); OR a flagship Program-of-Record designation that anchors the sub-sector (e.g., Palantir Maven Smart System); OR a large Replicator / Drone Dominance-scale procurement.
+        </modifier>
+        <modifier value="+1" label="Materially Positive - Sub-Sector-Specific">
+          A marquee appropriations increase that lifts a SPECIFIC sub-sector without redefining the whole sector (e.g., the near-doubling of Army small-cUAS to approximately $994M in FY2027); OR a strategic acquisition in the $300M-$3B range (e.g., Leidos-Kudu Dynamics, $300M). NOTE: the $994M Army small-cUAS event is assigned +1, NOT +2 - it materially lifts counter-UAS specifically but does not redefine the defense sector as a whole.
+        </modifier>
+        <modifier value="0" label="Stable / No Qualifying Event">
+          No documented marquee event in the trailing window; ordinary deal flow only. The base tier score stands without adjustment.
+        </modifier>
+        <modifier value="-1" label="Materially Negative">
+          A documented program cancellation or appropriations cut affecting the sub-sector; OR a marquee down-round or shutdown of a comparable company.
+        </modifier>
+        <modifier value="-2" label="Sector-Defining Negative / Shakeout">
+          A sector-wide multiple compression or shakeout event (the Stephens scenario), or a sub-sector-defining cancellation that resets investor appetite.
+        </modifier>
+      </component>
+
+      <operational_viability_condition>
+        OPERATIONAL VIABILITY CONDITION: Before finalizing the A2 score, apply the following gate (the "Fool's Gold" guard).
+
+        TRIGGER: If the company scores in its lowest defined band on BOTH A1 (Team Quality and Defense-Domain Credibility, Band 0-5) AND A3 (Product, Traction and Government Demand, Band 0-4 "Under-Traction for Stage"), the A2 final score (base tier score plus any Sector Market-Event Modifier) is capped at the lower-mid ceiling (A2 max 7) AND the Sector Market-Event Modifier's positive range is suppressed (modifier maximum 0): no positive modifier may apply; an earned, named-and-dated NEGATIVE modifier still applies in full (the suppression binds positive modifiers only).
+
+        RATIONALE: When the company has neither a credible team (lowest A1 band) nor any traction (lowest A3 band), a hot Tier-1 sector score cannot be monetized regardless of how favorable sector conditions are. The AND condition prevents penalizing companies with a strong team but absent traction (or vice versa). The anchors are C1 (Team) and C3 (Traction), directly implementing research Design-Risk #1.
+
+        CAP VALUE: A2 capped at 7 (the lower-mid band ceiling); modifier maximum 0 (positive range suppressed; a documented negative modifier still applies).
+
+        DOCUMENTATION REQUIREMENT: When triggered, document in the A2 Justification: (a) the A1 and A3 scores that triggered the cap; (b) the uncapped A2 score that would have applied; (c) the capped score recorded. When not triggered, a one-sentence confirmation is sufficient: "Operational Viability Condition not triggered - A1=[X] and/or A3=[X] above threshold."
+      </operational_viability_condition>
+    </criterion>
+
+
+    <criterion id="A3" name="Product, Traction and Government Demand" weight_pct="20" max_points="20" status="Defense ICP v1.0 R3">
+      <revision_note>Defined separately for Profile A (contract, bookings, and durability signals). There is no universal ARR analog; the pre-contract "ARR analog" is government bookings/contract backlog and non-dilutive award value, and the contract-stage signals are bookings, ATO/PoR trajectory, and multi-customer adoption. SBIR-Progression Quality is a scored sub-component with a mill-signature branch (Design Sections 6C / 12B). One of the two OVC anchors (with C1). EVIDENCE BASE IS TENTATIVE: the Profile-A dollar anchors derive from a single Breaking Defense benchmark and the Vannevar comp; the SBIR-mill numeric thresholds are analyst-set.</revision_note>
+
+      <purpose>Evaluates the maturity and credibility of the company's product and the strength of demonstrated government demand. At Series A, evidence of contracts, bookings, ATO/PoR trajectory, and multi-customer adoption dominates. Research benchmark anchors: approximately $10M contracts/bookings supports a ~$25M Series A; approximately $20M-plus booked annual revenue supports a $40-50M Series B; Vannevar reached ~$25M sales / 15 agencies before its $75M Series B.</purpose>
+
+      <scope_note>
+        SCOPE NOTE - C3 vs. C4: Awards, contracts, and revenue derived from government programs are scored in C3 (Product, Traction and Government Demand). Security clearances, facility clearances, authorizations (ATO/IL/FedRAMP/CMMC), ITAR/EAR registration, procurement vehicle eligibility, and program-office relationships are scored exclusively in C4 (Government Access and Procurement Pathway). An ATO grant is scored in C4 as an access credential; its resulting contract revenue is scored in C3. No single artifact or relationship is scored in both criteria.
+      </scope_note>
+
+      <band min="16" max="20" label="Exceptional Contract Traction">
+        Substantial contracted backlog/bookings (approximately $10M or more supporting the raise) AND a durability signal: production-OT, SBIR Phase III, PoR trajectory, or (software) a granted ATO/cATO - and/or multiple agency customers. DS-6/DS-7 (contracted revenue at volume / PoR). A granted ATO contributes to this top band ONLY when paired with contract revenue (ATO plus bookings equals durability evidence); a Program-of-Record designation is a top-band signal in its own right.
+      </band>
+
+      <band min="11" max="15" label="Strong Traction with Gaps">
+        Meaningful contracts/bookings (approximately $3M-$10M) with at least one transition/production-eligible signal (Phase III, production-OT, or ATO), but not yet multi-customer scale or a PoR. DS-5 reached. A single STRATFI/TACFI award sits in this upper-mid band (strong government plus matched private validation, not yet production revenue or a PoR).
+      </band>
+
+      <band min="5" max="10" label="Developing Traction">
+        Early awards (Phase II / DIU OT, DS-4) with bookings below approximately $3M and no production-eligible transition yet.
+      </band>
+
+      <band min="0" max="4" label="Under-Traction for Stage">
+        Only Phase I or a prototype at a Series A raise level (DS-1/DS-2) - a red flag of stage/traction mismatch. Marketing claims of "interest" with no SBIR.gov/USASpending corroboration (INFORMATION-ABSENT).
+      </band>
+
+      <scored_sub_component name="SBIR-Progression Quality" status="TENTATIVE - mill thresholds need calibration">
+        SBIR-PROGRESSION QUALITY (scored as position-within-band inside C3; the mill signature additionally drives the Design Section 12B scored deduction). Baseline (healthy): approximately 40-60% of applying Phase I awardees convert to Phase II.
+
+        Positioning:
+        - Strong progression (top of band): a clean Phase I to Phase II to Phase III / production-OT / PoR transition path, with transition to a real customer.
+        - Healthy / in-progress (middle): Phase I to Phase II with a credible (not yet executed) transition plan.
+        - Thin (lower portion): Phase I awards only, early, no Phase II yet (consistent with stage).
+        - Mill signature (deduction): drops the within-band position to the floor and triggers the scored deduction below.
+
+        SBIR-MILL BEHAVIORAL DETECTION (scored deduction within C3, NOT a disqualifier; the adjudicated case is the Block-2 B2 gate). Mill-signature triggers (ANY ONE is sufficient) [all TENTATIVE]:
+        - a Phase I to Phase II conversion rate below 20% across 5 or more Phase I awards;
+        - 10 or more Phase I awards with 0 Phase III / 0 transition and 0 contract/commercial revenue;
+        - 3 or more years with Phase I awards only and no transition and no contract/commercial revenue;
+        - topic-hopping across unrelated agencies/topics with no through-line to a coherent product.
+        Observability: SBIR.gov award records (counts, phases, dates, agencies, PI names); USASpending.gov transition/obligation records.
+        Deduction magnitudes [TENTATIVE, aligned to NCSP magnitudes]: a MODERATE mill signature (one trigger) reduces the C3 score by approximately 25-40% of its maximum OR drops one band (analyst's choice, justified); a SEVERE mill signature (two or more triggers, or one trigger with extreme values) drops C3 to the lowest band.
+        Connection to Block-2 gate: if an ADJUDICATED SBIR/FCA finding exists against the company or its founders (Block-2 gate B2), the C3 scoring is superseded - the evaluation terminates at Block 2. The C3 mill deduction applies ONLY to behavioral patterns without adjudication.
+      </scored_sub_component>
+
+      <application_note track="Hardware-intensive">
+        HARDWARE APPLICATION NOTE (counter-UAS kinetics, hypersonics, maritime hardware): ARR analogs do not apply; substitute contract backlog/bookings, units delivered/produced, demonstrated production rate (units/month), live-fire/qualification results, Blue UAS / type-classification status, and production-OT awards. A successful live-fire demo plus a production-OT plus demonstrated monthly capacity substitutes for "ARR" at the top band. Invoke when Block 1 Market Context Note tags the company hardware-intensive; cite in the C3 Justification.
+      </application_note>
+
+      <application_note track="Software-primary">
+        SOFTWARE APPLICATION NOTE (defense-AI, C4ISR, cyber): substitute ATO/IL level, number of agency deployments/seats, recurring contract value, and integration onto a PoR platform (e.g., Maven Smart System, Lattice) for ARR. Invoke when Block 1 Market Context Note tags the company software-primary; cite in the C3 Justification.
+      </application_note>
+    </criterion>
+
+
+    <criterion id="A4" name="Government Access and Procurement Pathway" weight_pct="12" max_points="12" status="Defense ICP v1.0 R4 - no predecessor analog">
+      <revision_note>A criterion with NO analog in either predecessor (LS folds regulatory status into FDA stage; Tech has no equivalent). Retained as standalone per Design Section 1 Decision 2. Stage-invariant: one profile delta only (authorizations scored as granted at Profile A vs. in-progress/credible-trajectory at Profile B). Procurement Pathway Literacy is a scored sub-component (Design Section 7D). EVIDENCE BASE IS TENTATIVE: the software-only ATO cap and the top-band sufficiency of relationships-alone are calibration items.</revision_note>
+
+      <purpose>Government Access and Procurement Pathway measures the company's demonstrated capability to transact with the government - the clearances, authorizations, program-office relationships, and acquisition-pathway literacy required to convert demand into contracts - as distinct from the demand itself (scored in C3, Traction). It warrants its own weight because a company can have genuine government interest yet be unable to transact (no FCL, no ATO, no vehicle, no acquisition-literate personnel), and conversely a company can have strong transaction infrastructure ahead of large bookings. No other criterion captures transaction capability.</purpose>
+
+      <scope_note>
+        SCOPE NOTE - C3 vs. C4: Awards, contracts, and revenue derived from government programs are scored in C3 (Product, Traction and Government Demand). Security clearances, facility clearances, authorizations (ATO/IL/FedRAMP/CMMC), ITAR/EAR registration, procurement vehicle eligibility, and program-office relationships are scored exclusively in C4 (Government Access and Procurement Pathway). An ATO grant is scored in C4 as an access credential; its resulting contract revenue is scored in C3. No single artifact or relationship is scored in both criteria.
+      </scope_note>
+
+      <band min="10" max="12" label="Demonstrated Transaction Capability">
+        Holds the full access stack required by the sub-sector: a Facility Clearance (FCL) and key-personnel clearances where classified work applies; a granted ATO/cATO or IL4-IL6 authorization (software); a Blue UAS listing (UAS); or a section 4022(f)-eligible production pathway (hardware). One or more documented program-office or contracting-officer relationships (named office, not rumored). Demonstrated pathway literacy (an executed contract vehicle - OTA/SBIR/IDIQ - plus acquisition-experienced personnel on the team). A-DELTA: at Profile A the authorization must be GRANTED/ACTIVE; at Profile B a credible IN-PROGRESS authorization (ATO underway with a sponsoring office) supports the top band.
+      </band>
+
+      <band min="7" max="9" label="Good but Incomplete Access">
+        At least one strong access signal (an executed vehicle OR an active clearance/authorization) but not the full stack. Program-office engagement evidenced but not yet a sustained, named relationship.
+      </band>
+
+      <band min="3" max="6" label="Nascent Access">
+        Demonstrates pathway awareness (talks the OTA/FAR/DFARS language, has a registered SAM.gov entity, ITAR/EAR registration where required) but lacks demonstrated relationships or authorizations. CMMC required-but-absent where the contract type will demand it is a scored deduction within this band, not a disqualifier.
+      </band>
+
+      <band min="0" max="2" label="No Observable Access">
+        No clearances, no authorizations, no SAM.gov registration, no documented government relationship; no evidence of pathway literacy. Absence of an ITAR/EAR registration where the product plainly requires it (flag).
+      </band>
+
+      <regulatory_analog_scoring>
+        REGULATORY-ANALOG SCORING (the defense "FDA-designation" analogs):
+        - ATO (software): granted supports the top band; in-progress with a sponsoring office supports upper-mid. OPERATIVE-GATE TEST (required determination for software-primary companies): an ATO IS the operative gate when the product's delivery model requires the COMPANY to hold its own authorization to transact - cloud or SaaS delivered into a government boundary under the company's authorization. An ATO is NOT the operative gate when deployment inherits the CUSTOMER'S authorization boundary - on-premises, customer-deployed, offline/edge, or own-data architectures. The C4 Justification must state the operative-gate determination and its delivery-model basis. TREATMENT WHERE THE ATO IS THE OPERATIVE GATE AND NO ENGAGEMENT EXISTS: at Profile A, no ATO engagement caps C4 at the lower-mid ceiling (max 6); at Profile B, no ATO engagement is a WITHIN-BAND DEDUCTION, not a cap - a DECLARED PROFILE DELTA executing v1.0's inline soften condition, met twice in the first cohort (credible software companies transacting via non-ATO pathways at seed). Where the ATO is NOT the operative gate per the test, ATO absence carries no cap and no deduction. [TENTATIVE - the test's APPLIED path (a software company where the ATO clearly IS the operative gate) is untested in the first cohort; validate on first contact.]
+        - FedRAMP: a stage-neutral strong signal wherever present (achievable at either profile; scored as a positive access signal, not tied to Profile A vs. B).
+        - CMMC: absence where the contract type requires it is a scored deduction within the applicable band (not a disqualifier); presence is a modest positive supporting the upper-mid or top band.
+        - ITAR/EAR registration: a BASELINE EXPECTATION. Its presence is not scored up; its absence where the product plainly requires it is a flag and contributes to the lowest band. (Adjudicated ITAR/EAR enforcement is separately the disqualifier A2.)
+      </regulatory_analog_scoring>
+
+      <scored_sub_component name="Procurement Pathway Literacy">
+        PROCUREMENT PATHWAY LITERACY (scored as position-within-band inside C4, never standalone). Positioning rule:
+        - Demonstrated literacy (top of band): an EXECUTED contract vehicle (OTA/SBIR/IDIQ) AND acquisition-experienced personnel on the team (former contracting officer, PEO/program staff, or a founder with documented procurement experience). BOTH required.
+        - Partial literacy (middle): EITHER an executed vehicle OR acquisition-experienced personnel, not both.
+        - Nascent literacy (lower portion): SAM.gov-registered, references OTA/FAR/DFARS/SBIR correctly, but has no executed vehicle and no acquisition-experienced personnel - awareness without demonstrated capability.
+        The C4 Justification must document the pathway-literacy position and the basis (executed vehicle? acquisition-experienced personnel?).
+      </scored_sub_component>
+
+      <application_note track="Software-primary">
+        SOFTWARE APPLICATION NOTE: weight ATO/cATO/IL level and FedRAMP status as the primary access signals.
+      </application_note>
+
+      <application_note track="Hardware-intensive">
+        HARDWARE APPLICATION NOTE: weight FCL, type-classification/qualification pathway, and production-OT eligibility (section 4022(f)); ATO is generally not the operative gate (hardware companies are not capped on ATO).
+      </application_note>
+    </criterion>
+
+
+    <criterion id="A5" name="Cap Table and Investor Base" weight_pct="11" max_points="11" status="Defense ICP v1.0 R5">
+      <revision_note>The CFIUS/FOCI concern spectrum is the primary scoring logic (Design Section 9A), implemented as explicit band ceilings. Trusted-capital definition per Design Section 9B; defense-prime CVC routing per Design Section 9C; four-tier syndicate hierarchy per Design Section 9D. Disqualifier-level CFIUS/FOCI is gated in Block 2 (A1) before scoring; this criterion scores only sub-disqualifier concern levels. Stage-invariant content. EVIDENCE BASE IS TENTATIVE: the foreign-stake mitigable/unmitigable threshold, fund-tier membership, and operator-angel tier are calibration items.</revision_note>
+
+      <purpose>Evaluates cap-table cleanliness and the quality of capital behind the company: CFIUS/FOCI exposure, trusted-capital sourcing, syndicate/lead quality, and defense-prime CVC dynamics. A messy or structurally compromised cap table, unmitigated FOCI, IP not assigned, stacked SAFEs above $3M with no priced round, and founder ownership below threshold are hard disqualifiers per Section 2.3. This criterion scores only sub-disqualifier CFIUS concern levels and syndicate quality.</purpose>
+
+      <band min="9" max="11" label="Clean Cap Table, Trusted Capital, Specialist Lead">
+        All-US / trusted-capital sources, no adversarial (PRC/Russia/Iran/DPRK/sanctioned-nexus) capital; NSIC-compatible. A Tier-1 specialist or institutional lead is in or near the round (see syndicate hierarchy: In-Q-Tel, a16z American Dynamism, Founders Fund, Lux, Shield Capital, Razor's Edge, 8VC, DCVC, General Catalyst defense practice). IP cleanly assigned to the company; no foreign-entity assignment; clean prior-round structure. PRECEDENCE NOTE: the Block-2 C1 gate governs the IP-assignment DETERMINATION; the "IP cleanly assigned" mention here is descriptive band content, not a second adjudication - where C1 is marked CONTINGENT - ATTESTATION REQUIRED, this dimension scores per Section 1.5 and the band mention neither re-triggers nor re-opens the gate.
+      </band>
+
+      <band min="6" max="8" label="Sound Cap Table, Moderate Concern">
+        Allied/friendly international investor present, OR a US fund with an opaque LP structure (defaults to moderate, not clean), OR a credible Tier-2 specialist lead rather than Tier-1. No disqualifying FOCI; any foreign nexus is allied and disclosed.
+      </band>
+
+      <band min="3" max="5" label="Concentrated or Opaque Capital">
+        High-concern but sub-disqualifier CFIUS posture: known foreign-LP concentration in an investing fund, OR a CFIUS-mitigable foreign co-founder with a disclosed mitigation agreement (this caps the criterion at this lower-mid ceiling). Generalist VC with no defense thesis, or an operator-angel syndicate with no institutional lead.
+      </band>
+
+      <band min="0" max="2" label="Problematic or Unfundable Structure">
+        Friends-and-family only / no lead; chaotic prior rounds; founder ownership already marginal (approaching the below-10%/below-15% disqualifier thresholds without crossing them). Undisclosed or evasive responses on capital sourcing (INFORMATION-ABSENT on a diligence-critical dimension).
+      </band>
+
+      <cfius_foci_concern_spectrum>
+        CFIUS/FOCI CONCERN SPECTRUM (determines C5 band ceiling - this is the primary scoring logic, not a secondary note):
+
+        DISQUALIFIER LEVEL (Block 2 gate - not scored in C5): Unmitigated FOCI clearly blocking contract eligibility (foreign control without mitigation agreement; adversarial-state investor with board rights). Evaluated at Block 2 (Disqualifier A1); C5 is not scored.
+
+        HIGH-CONCERN / SUB-DISQUALIFIER (C5 capped at lower-mid ceiling): A US fund with KNOWN FOREIGN-LP CONCENTRATION that creates FOCI risk; OR a CFIUS-mitigable foreign co-founder with a DISCLOSED mitigation agreement. Cap: B5 max 5 / A5 max 5.
+
+        MODERATE CONCERN (C5 capped at upper-mid ceiling): Any ALLIED/FRIENDLY-NATION international investor (non-adversarial, non-controlling); OR an all-US fund whose LP structure is OPAQUE OR UNDISCLOSED. Opaque LP structures default to MODERATE - never to CLEAN. Cap: B5 max 7 / A5 max 8.
+
+        CLEAN (C5 top band eligible): All-US trusted-capital sources only, no adversarial nexus (no PRC-, Russia-, Iran-, DPRK-linked or sanctioned-entity capital, no adversarial sovereign fund), NSIC-compatible, LP structure visible or reasonably assessable as all-US.
+
+        TRUSTED-CAPITAL DEFINITION: US plus allied/friendly-nation capital with no adversarial nexus (no PRC-, Russia-, Iran-, DPRK-linked or sanctioned-entity capital, and no sovereign-fund capital from an adversarial state).
+
+        PUBLIC-SOURCE ASSESSMENT METHOD: Investor names and fund identities from Crunchbase/PitchBook/Business Wire; sovereign or PRC-linked fund names from known lists; NSIC/DFARS disclosures; press on any CFIUS review. An LP structure that cannot be assessed defaults to MODERATE concern (not clean) - the evaluator cannot certify cleanliness it cannot see.
+
+        FORWARD-LOOKING CFIUS FLAG (Block 5, not C5 scored): When foreign capital is currently tolerable but will become disqualifying once classified or greater-than-$5M unclassified work is pursued (the 2026 DFARS section 847 expansion from ~2,000 to ~41,000 reviewed companies), record a Block-5 CFIUS Forward-Looking Note. The note does not affect the C5 score; it documents the maturation risk.
+
+        The C5 Justification MUST state the assessed CFIUS concern level (disqualifier / high-concern / moderate / clean) and the basis.
+      </cfius_foci_concern_spectrum>
+
+      <cvc_routing_instruction>
+        DEFENSE-PRIME CVC ROUTING (Lockheed Martin Ventures, RTX Ventures, Boeing/AEI HorizonX, Northrop, etc.): Positive strategic validation (pilot access, technical endorsement) is scored in C5 (Cap Table / investor quality). Acquirer-fit value (the prime as a plausible acquirer) is scored in C7-Exit (Design Section 10) - NEVER both (no double-count). Exclusivity / control / right-of-first-refusal terms that constrain independence are an independence deduction within C5 PLUS a Block-5 independence-concern flag.
+      </cvc_routing_instruction>
+
+      <syndicate_quality_hierarchy>
+        SYNDICATE-QUALITY / SPECIALIST-LEAD HIERARCHY (scored specifically - generic VC presence is NOT credited; research Design-Risk #5). The evaluator MUST name the lead and its tier in the C5 Justification; crediting an unnamed "VC round" is a format error.
+        - Tier 1 lead: In-Q-Tel; a16z American Dynamism; Founders Fund; Lux Capital; Shield Capital; Razor's Edge; 8VC; DCVC; General Catalyst defense practice. A Tier-1 lead or near-term term sheet supports the C5 top band.
+        - Tier 2 lead: dedicated smaller defense specialists (Squadra, Decisive Point, Scout, Overmatch, Harpoon, Marlinspike, Silent, Snowpoint, Cubit, Ensemble) OR a top-tier generalist fund acting on an explicit defense thesis. Supports upper-mid.
+        - Tier 3 lead: a generalist VC with NO defense thesis, OR an operator-angel syndicate (e.g., Elad Gil, Palmer Luckey, Delian Asparouhov, Trae Stephens as angels). Supports lower-mid. [TENTATIVE - some operator-angel leads may carry signal closer to Tier 2; calibrate.]
+        - Tier 4: friends-and-family / no institutional lead. Lowest.
+      </syndicate_quality_hierarchy>
+    </criterion>
+
+
+    <criterion id="A6" name="Capital Efficiency and Milestone Structure" weight_pct="8" max_points="8" status="Defense ICP v1.0 R6">
+      <revision_note>Defined separately for Profile A (burn vs. bookings and contract economics). Evaluates whether the company converts capital into milestone progress at a rate appropriate to defense revenue cycles, and whether non-dilutive capital is leverage rather than a substitute for real demand ("SBIR addiction"). Hardware/software application notes per Design Section 3. EVIDENCE BASE IS TENTATIVE: the Seed runway threshold is a conventional venture default, not defense-specific primary data.</revision_note>
+
+      <purpose>Evaluates whether the company converts capital into milestone progress at a rate appropriate to defense revenue cycles. At Series A, with revenue present, efficiency is read directly from burn against bookings and contract economics. The SBIR-addiction signature cross-references the C3 SBIR-progression deduction (Design Section 12B).</purpose>
+
+      <band min="7" max="8" label="Exceptional Contract Economics">
+        Burn well-covered by contracted backlog/bookings; favorable program economics; non-dilutive capital amplifies (not replaces) contract revenue; clear path to default-alive.
+      </band>
+
+      <band min="5" max="6" label="Sound Economics">
+        Burn reasonable against bookings; economics workable; minor concentration or margin concerns.
+      </band>
+
+      <band min="2" max="4" label="Capital-Hungry for Stage">
+        Burn high relative to bookings; thin program margins; runway dependent on the current raise closing.
+      </band>
+
+      <band min="0" max="1" label="Unsustainable Economics">
+        Burn far exceeds bookings; no credible path to sustainable economics; SBIR-dependence persisting at Series A scale (cross-reference the C3 SBIR-progression deduction and Design Section 12B). ADDITIONAL NAMED FLOOR-BAND PATTERNS per B6: the FOUNDER-CAPITAL MULTI-YEAR STALL and the ZERO-DOCUMENTED-CAPITAL-HISTORY POSTURE (INFORMATION-ABSENT per Section 1.5's C6 deployment-evidence definition) score this band where they present at Profile A.
+      </band>
+
+      <application_note track="Hardware-intensive">
+        HARDWARE APPLICATION NOTE: capital intensity is structurally higher (tooling, materials, production lines); relax burn-multiple expectations and weight capital-efficiency-of-production instead (units or production-rate per dollar, demonstrated yield). A higher burn that is building manufacturing throughput is read as investment, not inefficiency - corroborate with the C7 "factory is the weapon" note. Invoke via the Block-1 hardware-intensive track tag; cite the tag and its assignment basis (fundability-physics rule per Block 0) in the C6 Justification.
+      </application_note>
+
+      <application_note track="Software-primary">
+        SOFTWARE APPLICATION NOTE: standard burn-vs-revenue discipline applies; weight gross margin and deployment efficiency.
+      </application_note>
+    </criterion>
+    <criterion id="A7" name="Competitive Position and Exit Optionality" weight_pct="12" max_points="12" status="Defense ICP v1.0 R7">
+      <revision_note>Moat and Exit are MERGED into a single criterion (Design Section 1 Decision 3) so the seven-criterion convention holds; each is a scored sub-component reconciled into one C7 band. Internal split is approximately Moat 7 / Exit 5 within A7=12 [TENTATIVE - analyst-assigned; calibrate if Exit proves more or less legible than assumed]. Moat hierarchy and patent treatment per Design Section 8; Exit acquirer universe and single-program-dependency cap per Design Section 10. Deliberately a low-weighted criterion at Seed, rising at Series A as throughput, sole-source positioning, and platform lock-in become assessable. EVIDENCE BASE IS TENTATIVE: the internal Moat/Exit split, the throughput-vs-sole-source ordering, the hardware-patent magnitude, and the single-program hard-cap are all calibration items.</revision_note>
+
+      <purpose>Evaluates competitive defensibility (Moat sub-component) and strategic-acquisition optionality (Exit sub-component) as a single combined read. The band reflects the COMBINED Moat-plus-Exit assessment; each sub-component is scored as position-within-band and reconciled into one C7 score. The lowest-weighted criterion at Seed by deliberate design (moat/exit are largely illegible early; the June 2026 Stephens shakeout warning makes venture multiples unreliable), rising at Series A.</purpose>
+
+      <band min="10" max="12" label="Strong Defensibility and Clear Exit Optionality">
+        A high-observability moat: platform lock-in with a PoR (Maven Smart System / Lattice integration), demonstrated manufacturing throughput ("the factory is the weapon"), or documented sole-source positioning (SAM.gov J and A). AND multiple credible strategic acquirers in the named universe plausibly fit the company's product and scale, with no single-program dependency and comparable transactions available to cite.
+      </band>
+
+      <band min="7" max="9" label="Defensible with Optionality">
+        At least one credible moat type (a qualification/ATO/clearance barrier to entry, or emerging manufacturing throughput) AND a plausible (if narrower) acquirer set. Some concentration risk but not single-program-dependent.
+      </band>
+
+      <band min="3" max="6" label="Thin Moat / Constrained Exit">
+        Moat asserted but weakly observable; narrow or speculative acquirer fit. Single-program or single-customer dependency CAPS the Exit sub-component at this lower-mid ceiling, subject to the broad-universe exception in the Exit sub-component (see Exit sub-component, Design Section 10C).
+      </band>
+
+      <band min="0" max="2" label="No Observable Moat / Unclear Exit">
+        No defensible position observable and no patents where they would be expected for the technology type (see Moat patent treatment, Design Section 8B); no credible acquirer path; commodity positioning; no comparable transactions.
+      </band>
+
+      <scored_sub_component name="Moat (Defensibility)" weight_within_c7="approximately 7 of 12 at Profile A">
+        MOAT SUB-COMPONENT (scored as position-within-the-C7-band, reconciled with Exit; never a standalone number). Defense moat hierarchy, ordered strongest to weakest fundability signal AND weighted by observability (favor observable signals):
+        1. Platform lock-in with a PoR - integration into a funded DoD system (Maven Smart System, Lattice OS). Strongest AND highly observable; anchors the top.
+        2. Manufacturing / production-throughput advantage ("the factory is the weapon") - observable via facilities, production-rate disclosures, and delivery records.
+        3. Sole-source positioning - observable via SAM.gov sole-source justifications and J and A (Justification and Approval) documents.
+        4. ATO / clearance / qualification barriers to entry - the defense regulatory-moat analog; observable.
+        5. ITAR/EAR-protected technical know-how - strong in practice but largely INFORMATION-SCARCE.
+        6. Classified approaches - existence sometimes observable, details protected (INFORMATION-SCARCE).
+        Top Moat positions require a high-observability moat (platform-lock-in-with-PoR, throughput, or sole-source). [TENTATIVE - the ordering of manufacturing throughput above sole-source positioning is a fundability judgment; calibrate against Series A-to-B outcomes.]
+
+        PATENT TREATMENT IN DEFENSE:
+        - Software-primary defense companies: patents add approximately zero signal (carried from the Tech ICP treatment).
+        - Hardware-intensive defense companies: patents add a modest positive signal (genuine barriers in manufacturing/materials/propulsion) - a within-band positioning nudge, not a band move [TENTATIVE - magnitude unquantified; set conservatively until cohort data exists].
+        - Absence of patents PLUS corroborated classified/ITAR work: NEUTRAL (treat as INFORMATION-SCARCE, not a weakness - patents would require disclosure the company cannot make).
+        - Absence of patents PLUS no other moat PLUS no classified work: a genuine weakness contributing to the lowest C7 band.
+
+        SCARCE HANDLING FOR MOAT: ITAR-know-how and classified-approach moats are scored on the INFORMATION-SCARCE track - a corroborating artifact (a clearance/FCL signal, a USASpending obligation to a classified program office) supports a MIDPOINT Moat position with justification; a bare claim with no corroboration is INFORMATION-ABSENT (lowest). The Justification must name the corroborating artifact (Design Section 12A).
+      </scored_sub_component>
+
+      <application_note track="Hardware-intensive" applies_to="Moat sub-component">
+        "THE FACTORY IS THE WEAPON" APPLICATION NOTE (Moat, hardware/manufacturing-intensive; Hadrian, X-Bow, Castelion archetype): demonstrated production rate, vertical integration, and facility scale SUBSTITUTE for an IP/patent moat. A company with a working high-throughput production line and vertical integration can reach the TOP of the Moat sub-component with little or no patent portfolio. Observable via facility announcements, production-rate disclosures, and delivery/units records. Invoke via the Block-1 hardware-intensive track tag; cite the tag and its assignment basis (fundability-physics rule per Block 0) in the C7 Justification. (Encodes the research finding that defense manufacturing investment rose to approximately $4.7B / 39 deals in 2025.)
+      </application_note>
+
+      <application_note track="Software-primary" applies_to="Moat sub-component">
+        SOFTWARE APPLICATION NOTE (Moat): patents add approximately zero signal; weight platform lock-in (PoR integration) and ATO/IL barriers to entry instead.
+      </application_note>
+
+      <scored_sub_component name="Exit (Acquirer Fit and Optionality)" weight_within_c7="approximately 5 of 12 at Profile A">
+        EXIT SUB-COMPONENT (scored as position-within-the-C7-band, reconciled with Moat). PURPOSE: "The Exit sub-component measures the credibility and breadth of the company's strategic-acquisition optionality. It is deliberately underweighted because, at Seed, exit pathways are largely illegible, and because the June 2026 Stephens warning - venture-stage defense valuations of '50, 100, 200x' against a legacy industry trading at 2 to 2.5x revenue - makes exit-multiple-based scoring unreliable. The instrument therefore scores observable acquirer fit and single-program dependency, not speculative exit value."
+
+        NAMED STRATEGIC-ACQUIRER UNIVERSE (the only acquirers an evaluator may cite; no fabrication): Anduril (8-plus acquisitions, including ExoAnalytic); Palantir; L3Harris; RTX (Raytheon Technologies); Lockheed Martin; Northrop Grumman; Boeing; General Dynamics; SAIC; Leidos (acquired Kudu Dynamics for $300M in 2025); AeroVironment (acquired BlueHalo for approximately $4.1B enterprise value, 2024-2025).
+
+        EXIT POSITIONING:
+        - TOP Exit position: MULTIPLE credible acquirers across the named universe plausibly fit the company's product and scale; NO single-program dependency; comparable transactions exist to cite.
+        - UPPER-MID: a plausible acquirer set exists but is narrower; some concentration risk.
+        - LOWER-MID: single-program dependency (one program/one customer drives the company) - this observable condition CAPS the Exit sub-component at the lower-mid ceiling, subject to the broad-universe exception below; narrow or speculative acquirer fit.
+        - LOWEST: no credible acquirer path; commodity positioning; no comparable transactions.
+
+        COMPARABLE TRANSACTIONS an evaluator may cite for top/upper-mid placements: BlueHalo/AeroVironment (approximately $4.1B EV); Leidos-Kudu Dynamics ($300M, 2025); strategic buyers paying up to approximately 20x EBITDA for differentiated assets vs. approximately 2 to 2.5x revenue for the legacy defense industry.
+
+        SINGLE-PROGRAM-DEPENDENCY CAP (with broad-universe exception): When a company demonstrates single-program or single-customer dependency (one PoR, one contract vehicle, or one customer appears in all public records), this observable condition CAPS THE EXIT SUB-COMPONENT AT THE LOWER-MID CEILING within C7 - UNLESS the acquirer universe is demonstrably BROAD AND ACTIVE: MULTIPLE named acquirers from the permitted universe plausibly fit the company's product and scale AND a citable comparable transaction exists. When the exception applies, the dependency is a WITHIN-BAND DEDUCTION on the Exit sub-component rather than a hard cap. When the exception does NOT apply - concentrated demand WITHOUT a demonstrably broad courted universe, including the single-acquirer extension (only one plausible acquirer appears across the record) - the hard lower-mid cap stands. The cap-or-exception decision must cite the acquirer-universe breadth evidence either way (the named acquirers and the comp where the exception applies; the narrowness observation where it does not). [TENTATIVE - the exception executes the v1.0 inline soften condition, met once in the first cohort; the boundary between a broad and a narrow courted universe is a calibration item.]
+
+        DOCUMENTATION REQUIREMENT: For any TOP or UPPER-MID Exit position, the C7 Justification must NAME the candidate acquirers and CITE a comparable transaction. A top/upper-mid Exit placement without named acquirers and a cited comp is a format error.
+
+        VALUATION REALISM NOTE POINTER: Multiple-realism (any material gap between the company's implied raise valuation and the strategic-acquirer multiple universe) is recorded in the Block-5 Valuation Realism Note. It is QUALITATIVE ONLY, carries an explicit "not scored" annotation, and NEVER modifies the C7 score (additive-independence constraint). Do not route the valuation gap into the C7 score.
+      </scored_sub_component>
+    </criterion>
+  </section>
